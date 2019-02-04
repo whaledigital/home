@@ -22,7 +22,8 @@ ratings:
     - '**.js'
     - '**.css'
     - '**.scss'
-exclude_paths:
+exclude_patterns:
   - 'test/'
   - '**/*.test.*'
   - 'node_modules/'
+  - 'src/graphql-types.d.ts'
