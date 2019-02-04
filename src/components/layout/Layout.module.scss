@@ -1,0 +1,16 @@
+@import '~styles/config';
+
+:global {
+  @import '~styles/base';
+}
+
+.layout {
+  display: block;
+
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}

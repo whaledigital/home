@@ -1,0 +1,22 @@
+@import '~styles/config';
+
+.navigation {
+  @include reset-list;
+  @include grid-row($justify: space-between);
+
+  &__item {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 0.85rem;
+
+    & > a {
+      color: $color-light;
+      text-decoration: none;
+    }
+
+    & > &Active {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+}

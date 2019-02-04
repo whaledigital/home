@@ -1,0 +1,21 @@
+import React from 'react';
+
+import { withLayout } from 'components/layout/Layout';
+import { Segment } from 'components/segment/Segment';
+import { SEO } from 'components/seo/SEO';
+
+const AboutPage = () => {
+  return (
+    <>
+      <SEO
+        title="About"
+        keywords={[`development`]}
+      />
+      <Segment inverted>
+        <h1>About</h1>
+      </Segment>
+    </>
+  );
+};
+
+export default withLayout(AboutPage);

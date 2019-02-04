@@ -1,0 +1,25 @@
+@import '~styles/config';
+
+.header {
+  display: block;
+  margin: 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: $gutter 0;
+  }
+
+  &__logo {
+    @include reset-anchor;
+  }
+
+  &__navigation {
+    display: flex;
+    margin-left: auto;
+  }
+}

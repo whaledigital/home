@@ -1,0 +1,97 @@
+@import '~styles/config';
+
+.footer {
+  @include container;
+  
+  width: 100%;
+  color: $color-light;
+
+  &__grid {
+    padding: $gutter*4 0$gutter*2;
+    display: grid;
+    grid-template-columns: auto 28% 24%;
+    grid-template-rows: auto;
+    grid-template-areas: "logo services company" "countries services company" "social services company";
+
+    &Logo {
+      grid-area: logo;
+    }
+
+    &Countries {
+      grid-area: countries;
+    }
+
+    &Services {
+      grid-area: services;
+    }
+
+    &Company {
+      grid-area: company;
+    }
+
+    &Social {
+      grid-area: social;
+    }
+  }
+
+  &__countriesList {
+    @include reset-list;
+
+    padding: 0;
+    margin: $gutter 0 0;
+    line-height: 2rem;
+
+    & > li {
+      font-size: .8rem;
+      display: inline-block;
+      min-width: 33%;
+      padding: 0;
+      margin: 0;
+
+      & > a {
+        color: $color-light;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__servicesBlock,
+  &__companyBlock {
+    margin: 0;
+    padding: 4px 0 0 $gutter;
+
+    ul {
+      @include reset-list;
+
+      margin-top: $gutter;
+
+      & > li {
+        font-size: .8rem;
+        line-height: 1;
+        & > a {
+          color: $color-light;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__socialUl {
+    @include reset-list;
+
+    margin-top: $gutter*4;
+
+    & > li {
+      display: inline-block;
+      margin-right: $gutter*2;
+    }
+  }
+
+  &__bottom {
+    @include grid-row($justify: space-between);
+    
+    font-size: .8rem;
+    border-top: 1px solid rgba($color-light, .15);
+    padding: $gutter*2 0;
+  }
+}

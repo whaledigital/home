@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": ".",
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "paths": {
+      "src/*": ["src/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "pages/*": ["src/pages/*"],
+      "styles/*": ["src/styles/*"],
+      "templates/*": ["src/templates/*"],
+      "utils/*": ["src/utils/*"]
+    },
+    "sourceMap": true,
+    "target": "esnext",
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}

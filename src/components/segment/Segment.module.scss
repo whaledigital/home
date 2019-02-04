@@ -1,0 +1,12 @@
+@import '~styles/config';
+
+.segment {
+  @include segment;
+
+  color: $color-light;
+
+  &__inverted {
+    background: $color-light;
+    color: $color-dark;
+  }
+}
