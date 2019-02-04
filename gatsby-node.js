@@ -1,4 +1,6 @@
 const path = require('path');
+const slash = require('slash');
+const { kebabCase } = require('lodash');
 
 // Create slugs for files.
 // Slug will used for blog page path.
@@ -36,15 +38,62 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  return new Promise((resolve, reject) => {
+    const templates = ['service'].reduce(
+      (mem, templateName) => ({
+        ...mem,
+        [templateName]: path.resolve(
+          `src/templates/${kebabCase(templateName)}.tsx`
+        ),
+      }),
+      {}
+    );
+
+    graphql(`
+      {
+        services: allContentfulService {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then(result => {
+      if (result.errors) {
+        return reject(new Error(result.errors));
+      }
+
+      const services = result.data.services.edges.map(p => p.node);
+
+      // Create services pages
+      services.forEach(service => {
+        createPage({
+          path: service.slug,
+          component: slash(templates.service),
+          context: {
+            slug: service.slug,
+          },
+        });
+      });
+
+      resolve();
+    });
+  });
+};
+
 exports.onCreatePage = ({ page, actions }) => {
   const { deletePage, createPage } = actions;
   return new Promise(resolve => {
-    // if the page component is the index page component
-    // create a new page but with '/' as path
+    // If the page component is the index page component create a new page but with '/' as path
     if (page.componentPath === `${__dirname}/src/pages/index/index.tsx`) {
       deletePage(page);
       createPage({ ...page, path: '/' });
     }
+
     resolve();
   });
 };

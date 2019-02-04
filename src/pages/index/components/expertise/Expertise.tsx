@@ -1,5 +1,6 @@
-import React from 'react';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 
 import { ImageSharp } from 'src/graphql-types';
 import { Segment } from 'components/segment/Segment';
@@ -25,8 +26,10 @@ export const Expertise = ({ items }: ExpertiseProps) => (
       <div key={node.slug}>
         <h2>{node.title}</h2>
         <div>
-          <Img fluid={node.image.fluid} />
-          <p>{node.directions.join(' / ')}</p>
+          <Link to={node.slug}>
+            <Img fluid={node.image.fluid} />
+            <p>{node.directions.join(' / ')}</p>
+          </Link>
         </div>
       </div>
     ))}
