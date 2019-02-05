@@ -1,5 +1,7 @@
 ---
 engines:
+  scss-lint:
+    enabled: true
   csslint:
     enabled: true
   duplication:
@@ -13,6 +15,7 @@ engines:
     enabled: true
   tslint:
     enabled: true
+    config: tslint.json
     channel: beta
 ratings:
   paths:

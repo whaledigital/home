@@ -5,8 +5,8 @@ import get from 'lodash/get';
 import { withLayout, LayoutProps } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 
-import { Expertise } from './components/expertise/Expertise';
-import { Heading } from './components/heading/Heading';
+import Expertise from './components/expertise/Expertise';
+import Heading from './components/heading/Heading';
 
 class IndexPage extends React.Component<LayoutProps> {
   render () {

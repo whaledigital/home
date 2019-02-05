@@ -62,7 +62,12 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ['./src/styles/'],
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-root-import',

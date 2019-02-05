@@ -51,10 +51,8 @@
 
 @mixin container() {
   margin: 0 auto;
-
   padding-left: $container-gutter-mobile;
   padding-right: $container-gutter-mobile;
-
   max-width: $page-width + $container-gutter-mobile * 1;
 
   @media (min-width: $min-mobile) {

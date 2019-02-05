@@ -1,4 +1,4 @@
-@import '~styles/config';
+@import 'config';
 
 :root {
   --grid-column-count: #{$grid-column-count};
@@ -13,10 +13,8 @@
   right: 0;
   bottom: 0;
   z-index: 9001;
-
   overflow: hidden;
   pointer-events: none;
-
   transform-origin: 50% 0%;
 
   &__container {
@@ -24,7 +22,6 @@
 
     opacity: 0;
     height: 100%;
-
     transition: opacity 0.2s;
   }
 
@@ -61,10 +58,8 @@
     &::after {
       content: '';
       display: block;
-
       width: 100%;
       height: 100%;
-
       background: rgba(255, 255, 255, 0.1);
     }
 
@@ -72,7 +67,6 @@
       position: absolute;
       top: 0;
       left: 0;
-
       background: rgba(0, 0, 0, 0.05);
     }
   }
@@ -85,24 +79,18 @@
     top: 0;
     z-index: 9001;
     opacity: 1;
-
     padding: 0 15px;
     height: 26px;
-
     font-size: 12px;
     color: #999;
     text-transform: uppercase;
-
     cursor: pointer;
     pointer-events: all;
-
     background-color: #fff;
-
     border-style: solid;
     border-width: 0 1px 1px;
     border-color: rgba(0, 0, 0, 0.1);
     border-radius: 0 0 2px 2px;
-
     transition: opacity 0.25s, transform 0.1s;
 
     &:hover {

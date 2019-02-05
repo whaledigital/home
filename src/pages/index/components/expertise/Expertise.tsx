@@ -20,18 +20,23 @@ interface ExpertiseProps {
   items: ExpertiseNode[];
 }
 
-export const Expertise = ({ items }: ExpertiseProps) => (
-  <Segment inverted>
-    {items.map(({ node }: ExpertiseNode) => (
-      <div key={node.slug}>
-        <h2>{node.title}</h2>
-        <div>
-          <Link to={node.slug}>
-            <Img fluid={node.image.fluid} />
-            <p>{node.directions.join(' / ')}</p>
-          </Link>
+const Expertise = ({ items }: ExpertiseProps) => {
+  if (!items) return null;
+  return (
+    <Segment inverted>
+      {items.map(({ node }: ExpertiseNode) => (
+        <div key={node.slug}>
+          <h2>{node.title}</h2>
+          <div>
+            <Link to={node.slug}>
+              <Img fluid={node.image.fluid} />
+              <p>{node.directions.join(' / ')}</p>
+            </Link>
+          </div>
         </div>
-      </div>
-    ))}
-  </Segment>
-);
+      ))}
+    </Segment>
+  );
+};
+
+export default Expertise;

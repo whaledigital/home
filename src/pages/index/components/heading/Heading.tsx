@@ -8,8 +8,10 @@ interface HeadingProps {
   description: string;
 }
 
-export const Heading = ({ description }: HeadingProps) => (
+const Heading = ({ description }: HeadingProps) => (
   <Segment>
     <h1 className={s.description}>{description}</h1>
   </Segment>
 );
+
+export default Heading;

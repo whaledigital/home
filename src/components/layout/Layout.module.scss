@@ -1,4 +1,4 @@
-@import '~styles/config';
+@import 'config';
 
 :global {
   @import '~styles/base';
@@ -6,7 +6,6 @@
 
 .layout {
   display: block;
-
   min-height: 100vh;
 }
 
