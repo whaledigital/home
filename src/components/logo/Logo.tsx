@@ -9,7 +9,7 @@ interface LogoProps {
   height?: number;
 }
 
-export const Logo = (props: LogoProps) => (
+const Logo = (props: LogoProps) => (
   <div className={s.logo}>
     <LogoSVG className={s.logo__svg} {...props} />
     <h3 className={s.logo__name}>
@@ -22,3 +22,5 @@ Logo.defaultProps = {
   height: 40,
   width: 40,
 };
+
+export default Logo;

@@ -1,0 +1,93 @@
+@import 'config';
+
+.dropdown {
+  border: 1px solid rgba($color-light, 0.15);
+  box-sizing: border-box;
+  background-color: $color-dark;
+  position: relative;
+  height: 40px;
+  padding: 5px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.1s;
+  display: block;
+  min-width: 80px;
+  color: $color-light;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before {
+    content: attr(data-value);
+    position: absolute;
+    display: block;
+  }
+
+  &::after {
+    transform: rotateZ(45deg);
+    border: 2px solid $color-light;
+    top: calc(50% - 7px);
+    position: absolute;
+    border-left: none;
+    border-top: none;
+    transition: border-color 0.2s;
+    height: 10px;
+    right: 18px;
+    content: '';
+    width: 10px;
+  }
+
+  &Active {
+    background-color: rgba($color-dark, 0.1);
+    font-weight: 500;
+
+    &::after {
+      transform: rotateZ(225deg);
+      top: calc(50% - 3px);
+      border-color: rgba($color-light, 0.8);
+    }
+  }
+
+  &__list {
+    @include reset-list;
+
+    border: 1px solid rgba($color-light, 0.15);
+    background-color: $color-dark;
+    position: absolute;
+    visibility: hidden;
+    max-height: 264px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: calc(100% + 2px);
+    opacity: 0;
+    top: 100%;
+    left: -1px;
+
+    .dropdownActive & {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__item {
+      display: block;
+      margin: 0;
+      padding: 5px 15px;
+      border-bottom: 1px solid rgba($color-light, 0.15);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: rgba($color-light, 0.1);
+      }
+
+      &Active {
+        background-color: rgba($color-light, 0.1);
+      }
+    }
+  }
+}

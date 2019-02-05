@@ -28,7 +28,7 @@ const Expertise = ({ items }: ExpertiseProps) => {
         <div key={node.slug}>
           <h2>{node.title}</h2>
           <div>
-            <Link to={node.slug}>
+            <Link to={`/${node.slug}`}>
               <Img fluid={node.image.fluid} />
               <p>{node.directions.join(' / ')}</p>
             </Link>

@@ -1,8 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import { Logo } from 'components/logo/Logo';
-import { Segment } from 'components/segment/Segment';
+import Logo from 'components/logo/Logo';
 
 import s from './Footer.module.scss';
 

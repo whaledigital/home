@@ -1,0 +1,11 @@
+@import 'config';
+
+.button {
+  border: none;
+  color: $color-light;
+  background: $color-primary;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0 $gutter*2;
+  cursor: pointer;
+}

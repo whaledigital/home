@@ -20,6 +20,23 @@
 
   &__navigation {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-left: auto;
+    width: 100%;
+
+    &Menu {
+      display: flex;
+      margin-left: $gutter * 4;
+    }
+
+    &Buttons {
+      display: flex;
+      margin-left: auto;
+
+      & > * {
+        margin-left: $gutter;
+      }
+    }
   }
 }

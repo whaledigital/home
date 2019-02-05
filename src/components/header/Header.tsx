@@ -1,13 +1,26 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import { Logo } from 'components/logo/Logo';
+import Logo from 'components/logo/Logo';
+import Dropdown from 'components/dropdown/Dropdown';
+import Button from 'components/button/Button';
 
 import s from './Header.module.scss';
 
 interface HeaderProps {
   children?: React.ReactNode;
 }
+
+const options = [
+  {
+    label: 'Ru',
+    value: 'ru',
+  },
+  {
+    label: 'En',
+    value: 'en',
+  },
+];
 
 export const Header = ({ children }: HeaderProps) => (
   <header className={s.header}>
@@ -17,7 +30,17 @@ export const Header = ({ children }: HeaderProps) => (
           <Logo />
         </Link>
         <div className={s.header__navigation}>
-          {children}
+          <div className={s.header__navigationMenu}>
+            {children}
+          </div>
+          <div className={s.header__navigationButtons}>
+            <Dropdown
+              onChange={console.log}
+              options={options}
+              value="ru"
+            />
+            <Button title="Get in touch" />
+          </div>
         </div>
       </div>
     </div>
