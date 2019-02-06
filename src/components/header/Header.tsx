@@ -39,7 +39,7 @@ export const Header = ({ children }: HeaderProps) => (
               options={options}
               value="ru"
             />
-            <Button title="Get in touch" />
+            <Button title="Start a project" />
           </div>
         </div>
       </div>
