@@ -5,7 +5,7 @@ import { GsapTools } from './GsapTools';
 
 const LOCAL_STORAGE_KEY_VISIBLE = '_devtoolsVisible';
 
-export const Devtools = () => {
+export const DevTools = () => {
   if (typeof window === 'undefined') {
     return null;
   }

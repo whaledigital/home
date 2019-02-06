@@ -15,9 +15,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: SEOProps) => {
     const metaDescription = description || data.site.siteMetadata.description;
     return (
       <Helmet
-        htmlAttributes={{
-          lang,
-        }}
+        htmlAttributes={{ lang }}
         title={title}
         titleTemplate={`%s | ${data.site.siteMetadata.title}`}
         meta={[
@@ -72,7 +70,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: SEOProps) => {
 
 SEO.defaultProps = {
   keywords: [],
-  lang: `en`,
+  lang: `ru`,
   meta: [],
 };
 

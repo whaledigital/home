@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Whale Digital`,
-    description: `We are the best`,
+    description: `Inspiring businesses to bring innovative ideas to life`,
     googleVerification: `abcdefz`,
   },
   plugins: [
@@ -107,9 +107,11 @@ module.exports = {
         name: `Whale Digital`,
         short_name: `Whale Digital`,
         start_url: `/`,
-        background_color: `#f7f7f7`,
-        theme_color: `#191919`,
-        display: `minimal-ui`,
+        background_color: `#01022a`,
+        theme_color: `#0062ff`,
+        display: `standalone`,
+        icon: `./src/assets/icon.png`,
+        include_favicon: true,
       },
     },
     /* eslint-enable camelcase */

@@ -23,7 +23,7 @@ interface ExpertiseProps {
 const Expertise = ({ items }: ExpertiseProps) => {
   if (!items) return null;
   return (
-    <Segment inverted>
+    <Segment>
       {items.map(({ node }: ExpertiseNode) => (
         <div key={node.slug}>
           <h2>{node.title}</h2>

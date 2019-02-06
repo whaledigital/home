@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { Header } from 'components/header/Header';
 import { Footer } from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
-import { Devtools } from 'components/devtools/Devtools';
+import { DevTools } from 'components/devtools/DevTools';
 import { store } from 'src/store';
 
 import s from './Layout.module.scss';
@@ -27,7 +27,7 @@ const Layout = (props: LayoutProps) => (
       </Header>
       {props.children}
       <Footer />
-      <Devtools />
+      <DevTools />
     </div>
   </Provider>
 );
