@@ -20,5 +20,29 @@ module.exports = (baseConfig, mode, defaultConfig) => {
   });
   defaultConfig.resolve.extensions.push('.md');
 
+  // Add scss loader
+  defaultConfig.module.rules.push({
+    test: /\.s(a|c)ss$/,
+    include: path.resolve(__dirname, '../src'),
+    loaders: [
+      require.resolve('style-loader'),
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+      {
+        loader: require.resolve('sass-loader'),
+        options: {
+          includePaths: [path.resolve(__dirname, '../src/styles/')],
+        }
+      },
+    ],
+  });
+  defaultConfig.resolve.extensions.push('.scss');
+
   return defaultConfig;
 };
