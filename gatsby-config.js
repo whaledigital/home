@@ -3,6 +3,7 @@ module.exports = {
     title: `Whale Digital`,
     description: `Inspiring businesses to bring innovative ideas to life`,
     googleVerification: `abcdefz`,
+    siteUrl: `https://www.whale.digital`,
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -105,7 +106,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Whale Digital`,
-        short_name: `Whale Digital`,
+        short_name: `Whale`,
         start_url: `/`,
         background_color: `#01022a`,
         theme_color: `#0062ff`,
@@ -115,6 +116,37 @@ module.exports = {
       },
     },
     /* eslint-enable camelcase */
+
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.whale.digital',
+        sitemap: 'https://www.whale.digital/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+      },
+    },
 
     // This plugin generates a service worker and AppShell
     // html file so the site works offline and is otherwise
