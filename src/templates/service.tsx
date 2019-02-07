@@ -4,7 +4,7 @@ import * as React from 'react';
 import { get } from 'lodash';
 
 import { ImageSharp } from 'src/graphql-types';
-import { Segment } from 'components/segment/Segment';
+import Segment from 'components/segment/Segment';
 import { withLayout, LayoutProps } from 'components/layout/Layout';
 
 export interface SeviceItem {

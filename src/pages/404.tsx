@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { withLayout } from 'components/layout/Layout';
-import { Segment } from 'components/segment/Segment';
+import Segment from 'components/segment/Segment';
 import { SEO } from 'components/seo/SEO';
 
 const NotFoundPage = () => (

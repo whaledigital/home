@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Segment } from 'components/segment/Segment';
+import Segment from 'components/segment/Segment';
 
 import Background from './components/background/Background';
 import s from './Heading.module.scss';

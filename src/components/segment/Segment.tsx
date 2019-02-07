@@ -11,7 +11,7 @@ interface SegmentProps {
   inverted?: boolean;
 }
 
-export const Segment = (props: SegmentProps) => {
+const Segment = (props: SegmentProps) => {
   const { children, container, title, inverted } = props;
   const content = container ? <Container title={title}>{children}</Container> : children;
   const className = inverted ? [s.segment, s.segment__inverted].join(' ') : s.segment;
@@ -27,3 +27,5 @@ Segment.defaultProps = {
   container: true,
   inverted: false,
 };
+
+export default Segment;
