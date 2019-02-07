@@ -10,12 +10,13 @@ interface HeadingProps {
 }
 
 const Heading = ({ description }: HeadingProps) => (
-  <>
+  <div className={s.heading}>
     <Segment>
-      <h1 className={s.description}>{description}</h1>
+      <h1 className={s.heading__description}>{description}</h1>
     </Segment>
+    <div className={s.heading__shadow} />
     <Background fill="#01022a" />
-  </>
+  </div>
 );
 
 export default Heading;

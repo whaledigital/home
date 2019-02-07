@@ -13,17 +13,14 @@ interface MenuProps extends React.HTMLProps<HTMLDivElement> {
   pathname: string;
 }
 
-export const Navigation = ({ items, pathname }: MenuProps) => (
+export const Navigation = ({ items }: MenuProps) => (
   <ul className={s.navigation}>
-    {items.map((item) => {
-      const activeClassName = pathname === item.path ? s.navigation__itemActive : undefined;
-      return (
+    {items.map(item => (
         <li key={item.path} className={s.navigation__item}>
-          <Link to={item.path} activeClassName={activeClassName}>
+          <Link to={item.path} activeClassName={s.navigation__itemActive}>
             {item.name}
           </Link>
         </li>
-      );
-    })}
+      ))}
   </ul>
 );
