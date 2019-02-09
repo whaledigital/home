@@ -3,6 +3,11 @@ import React from 'react';
 
 import Logo from 'components/logo/Logo';
 
+import Facebook from 'assets/svg/facebook.svg';
+import Twitter from 'assets/svg/twitter.svg';
+import Linkedin from 'assets/svg/linkedin.svg';
+import Instagram from 'assets/svg/instagram.svg';
+
 import s from './Footer.module.scss';
 
 export const Footer = (props: any) => (
@@ -59,9 +64,26 @@ export const Footer = (props: any) => (
       </div>
       <div className={s.footer__gridSocial}>
         <ul className={s.footer__socialUl}>
-          <li>F</li>
-          <li>Tw</li>
-          <li>In</li>
+          <li>
+            <a href="/">
+              <Facebook />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <Twitter />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <Linkedin />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <Instagram />
+            </a>
+          </li>
         </ul>
       </div>
     </div>

@@ -68,6 +68,10 @@
     & > li {
       display: inline-block;
       margin-right: $gutter*2;
+
+      & > a > * {
+        fill: $color-light;
+      }
     }
   }
 
