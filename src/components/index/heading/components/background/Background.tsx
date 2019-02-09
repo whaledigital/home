@@ -43,15 +43,38 @@ class Background extends React.Component<BackgroundProps> {
   count = 0;
 
   componentDidMount () {
+    this.buildCamera();
+    this.buildScene();
+    this.buildRenderer();
+    this.start();
+    window.addEventListener('resize', this.onWindowResize, false);
+  }
+
+  componentWillUnmount () {
+    this.stop();
+    this.mount.removeChild(this.renderer.domElement);
+    window.removeEventListener('resize', this.onWindowResize);
+  }
+
+  buildCamera = () => {
     this.width = this.mount.clientWidth;
     this.height = this.mount.clientHeight;
-
-    this.scene = new THREE.Scene();
 
     this.camera = new THREE.PerspectiveCamera(50, this.width / this.height, 1, 1400);
     this.camera.position.z = this.positionZ;
     this.camera.position.x = this.positionX;
     this.camera.position.y = this.positionY;
+  }
+
+  buildRenderer = () => {
+    this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    this.renderer.setClearColor(this.props.fill);
+    this.renderer.setSize(this.width, this.height);
+    this.mount.appendChild(this.renderer.domElement);
+  }
+
+  buildScene = () => {
+    this.scene = new THREE.Scene();
 
     const numParticles = this.amountX * this.amountY;
     const positions = new Float32Array(numParticles * 3);
@@ -80,24 +103,8 @@ class Background extends React.Component<BackgroundProps> {
       vertexShader: this.shaderParse(vertexShader),
     });
 
-    this.renderer = new THREE.WebGLRenderer({ antialias: true });
-    this.renderer.setClearColor(this.props.fill);
-    this.renderer.setSize(this.width, this.height);
-    this.mount.appendChild(this.renderer.domElement);
-
     this.particles = new THREE.Points(geometry, material);
     this.scene.add(this.particles);
-
-    this.start();
-
-    window.addEventListener('resize', this.onWindowResize, false);
-  }
-
-  componentWillUnmount () {
-    this.stop();
-    this.mount.removeChild(this.renderer.domElement);
-
-    window.removeEventListener('resize', this.onWindowResize);
   }
 
   onWindowResize = () => {
@@ -143,7 +150,8 @@ class Background extends React.Component<BackgroundProps> {
     for (let ix = 0; ix < this.amountX; ix += 1) {
       for (let iy = 0; iy < this.amountY; iy += 1) {
         positions[i + 1] =
-          Math.sin((ix + this.count) * 0.3) * 50 + Math.sin((iy + this.count) * 0.5) * 50;
+          Math.sin((ix + this.count) * 0.3) * 50 +
+          Math.sin((iy + this.count) * 0.5) * 50;
         scales[j] =
           (Math.sin((ix + this.count) * 0.3) + 1) * 6 +
           (Math.sin((iy + this.count) * 0.5) + 1) * 6;

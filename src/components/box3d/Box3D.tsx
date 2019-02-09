@@ -4,8 +4,8 @@ import s from './Box3D.module.scss';
 
 interface Box3DProps {
   perspective?: number;
-  width?: number | string;
-  height?: number | string;
+  width: number | string;
+  height: number | string;
   children: React.ReactNode;
 }
 
@@ -15,9 +15,7 @@ interface Box3DState {
 
 class Box3D extends React.Component<Box3DProps, Box3DState> {
   static defaultProps = {
-    height: 200,
     perspective: 40,
-    width: 200,
   };
 
   state = {
@@ -82,6 +80,8 @@ class Box3D extends React.Component<Box3DProps, Box3DState> {
     const {
       transform,
     } = this.state;
+    if (!width || !height) return null;
+
     return (
       <div
         ref={ref => this.containerRef = ref}

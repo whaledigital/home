@@ -1,33 +1,43 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import get from 'lodash/get';
 
+import GQL from 'src/graphql-types';
 import { withLayout, LayoutProps } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Expertise from 'components/index/expertise/Expertise';
+import Stories from 'components/index/stories/Stories';
 import Heading from 'components/index/heading/Heading';
 
-class IndexPage extends React.Component<LayoutProps> {
+interface HomeProps extends LayoutProps {
+  data: {
+    home: GQL.ContentfulHomeConnection;
+    services: GQL.ContentfulServiceConnection;
+  };
+}
+
+class HomePage extends React.Component<HomeProps> {
   render () {
-    const [home] = get(this, 'props.data.allContentfulHome.edges');
-    const services = get(this, 'props.data.allContentfulService.edges');
+    const [home] = this.props.data.home.edges;
+    const services = this.props.data.services.edges;
     return (
       <>
         <SEO title={home.node.title} keywords={[`development`]} />
         <Heading description={home.node.description.description} />
         <Expertise items={services} />
+        <Stories />
       </>
     );
   }
 }
 
-export default withLayout(IndexPage);
+export default withLayout(HomePage);
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulHome {
+    home: allContentfulHome {
       edges {
         node {
+          id
           title
           description {
             description
@@ -35,9 +45,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulService(sort: { fields: order }) {
+    services: allContentfulService(sort: { fields: order }) {
       edges {
         node {
+          id
           title
           slug
           image {

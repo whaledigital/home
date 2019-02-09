@@ -6,6 +6,32 @@
   width: 100%;
   color: $color-light;
 
+  a {
+    color: $color-light;
+    text-decoration: none;
+    transition: color 0.6s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__countriesList {
+    @include reset-list;
+
+    padding: 0;
+    margin: $gutter 0 0;
+    line-height: 2rem;
+
+    & > li {
+      font-size: 0.8rem;
+      display: inline-block;
+      min-width: 33%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
   &__grid {
     padding: $gutter*4 0 $gutter*2;
     display: grid;
@@ -34,27 +60,6 @@
     }
   }
 
-  &__countriesList {
-    @include reset-list;
-
-    padding: 0;
-    margin: $gutter 0 0;
-    line-height: 2rem;
-
-    & > li {
-      font-size: 0.8rem;
-      display: inline-block;
-      min-width: 33%;
-      padding: 0;
-      margin: 0;
-
-      & > a {
-        color: $color-light;
-        text-decoration: none;
-      }
-    }
-  }
-
   &__socialUl {
     @include reset-list;
 
@@ -79,11 +84,6 @@
       & > li {
         font-size: 0.8rem;
         line-height: 1;
-
-        & > a {
-          color: $color-light;
-          text-decoration: none;
-        }
       }
     }
   }

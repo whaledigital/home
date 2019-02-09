@@ -1,6687 +1,16938 @@
 /* tslint:disable */
+export type Maybe<T> = T | null;
+
+export interface SitePageConnectionSort {
+  fields: (Maybe<SitePageConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<SitePageConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterSitePage {
+  jsonName?: Maybe<SitePageConnectionJsonNameQueryString>;
+
+  internalComponentName?: Maybe<
+    SitePageConnectionInternalComponentNameQueryString
+  >;
+
+  path?: Maybe<SitePageConnectionPathQueryString_2>;
+
+  component?: Maybe<SitePageConnectionComponentQueryString>;
+
+  componentChunkName?: Maybe<SitePageConnectionComponentChunkNameQueryString>;
+
+  context?: Maybe<SitePageConnectionContextInputObject>;
+
+  pluginCreator?: Maybe<SitePageConnectionPluginCreatorInputObject>;
+
+  pluginCreatorId?: Maybe<SitePageConnectionPluginCreatorIdQueryString_2>;
+
+  componentPath?: Maybe<SitePageConnectionComponentPathQueryString>;
+
+  id?: Maybe<SitePageConnectionIdQueryString_2>;
+
+  internal?: Maybe<SitePageConnectionInternalInputObject_2>;
+}
+
+export interface SitePageConnectionJsonNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionInternalComponentNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionComponentQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionComponentChunkNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionContextInputObject {
+  slug?: Maybe<SitePageConnectionContextSlugQueryString>;
+}
+
+export interface SitePageConnectionContextSlugQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorInputObject {
+  resolve?: Maybe<SitePageConnectionPluginCreatorResolveQueryString>;
+
+  id?: Maybe<SitePageConnectionPluginCreatorIdQueryString>;
+
+  name?: Maybe<SitePageConnectionPluginCreatorNameQueryString>;
+
+  version?: Maybe<SitePageConnectionPluginCreatorVersionQueryString>;
+
+  pluginOptions?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsInputObject
+  >;
+
+  nodeAPIs?: Maybe<SitePageConnectionPluginCreatorNodeApIsQueryList>;
+
+  browserAPIs?: Maybe<SitePageConnectionPluginCreatorBrowserApIsQueryList>;
+
+  ssrAPIs?: Maybe<SitePageConnectionPluginCreatorSsrApIsQueryList>;
+
+  pluginFilepath?: Maybe<
+    SitePageConnectionPluginCreatorPluginFilepathQueryString
+  >;
+
+  packageJson?: Maybe<SitePageConnectionPluginCreatorPackageJsonInputObject>;
+
+  internal?: Maybe<SitePageConnectionPluginCreatorInternalInputObject>;
+}
+
+export interface SitePageConnectionPluginCreatorResolveQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsInputObject {
+  plugins?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPluginsQueryList>;
+
+  name?: Maybe<SitePageConnectionPluginCreatorPluginOptionsNameQueryString>;
+
+  path?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathQueryString>;
+
+  trackingId?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsTrackingIdQueryString
+  >;
+
+  head?: Maybe<SitePageConnectionPluginCreatorPluginOptionsHeadQueryBoolean>;
+
+  anonymize?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsAnonymizeQueryBoolean
+  >;
+
+  respectDNT?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsRespectDntQueryBoolean
+  >;
+
+  maxWidth?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger
+  >;
+
+  backgroundColor?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString
+  >;
+
+  pathToConfigModule?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPathToConfigModuleQueryString
+  >;
+
+  includePaths?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsIncludePathsQueryList
+  >;
+
+  src?: Maybe<SitePageConnectionPluginCreatorPluginOptionsSrcQueryString>;
+
+  assets?: Maybe<SitePageConnectionPluginCreatorPluginOptionsAssetsQueryString>;
+
+  components?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsComponentsQueryString
+  >;
+
+  pages?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPagesQueryString>;
+
+  styles?: Maybe<SitePageConnectionPluginCreatorPluginOptionsStylesQueryString>;
+
+  templates?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsTemplatesQueryString
+  >;
+
+  utils?: Maybe<SitePageConnectionPluginCreatorPluginOptionsUtilsQueryString>;
+
+  color?: Maybe<SitePageConnectionPluginCreatorPluginOptionsColorQueryString>;
+
+  spaceId?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsSpaceIdQueryString
+  >;
+
+  accessToken?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsAccessTokenQueryString
+  >;
+
+  host?: Maybe<SitePageConnectionPluginCreatorPluginOptionsHostQueryString>;
+
+  environment?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsEnvironmentQueryString
+  >;
+
+  short_name?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsShortNameQueryString
+  >;
+
+  start_url?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString
+  >;
+
+  background_color?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString_2
+  >;
+
+  theme_color?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString
+  >;
+
+  display?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsDisplayQueryString
+  >;
+
+  icon?: Maybe<SitePageConnectionPluginCreatorPluginOptionsIconQueryString>;
+
+  include_favicon?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsIncludeFaviconQueryBoolean
+  >;
+
+  sitemap?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsSitemapQueryString
+  >;
+
+  policy?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPolicyQueryList>;
+
+  output?: Maybe<SitePageConnectionPluginCreatorPluginOptionsOutputQueryString>;
+
+  query?: Maybe<SitePageConnectionPluginCreatorPluginOptionsQueryQueryString>;
+
+  pathCheck?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsQueryList {
+  elemMatch?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsInputObject
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsInputObject {
+  resolve?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsResolveQueryString
+  >;
+
+  id?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPluginsIdQueryString>;
+
+  name?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsNameQueryString
+  >;
+
+  version?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsVersionQueryString
+  >;
+
+  pluginOptions?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsInputObject
+  >;
+
+  browserAPIs?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList
+  >;
+
+  ssrAPIs?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsSsrApIsQueryList
+  >;
+
+  pluginFilepath?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginFilepathQueryString
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsResolveQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
+  maxWidth?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger
+  >;
+
+  backgroundColor?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsSsrApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPluginsPluginFilepathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsTrackingIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsHeadQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsAnonymizeQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsRespectDntQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPathToConfigModuleQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsIncludePathsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsSrcQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsAssetsQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsComponentsQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPagesQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsStylesQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsTemplatesQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsUtilsQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsSpaceIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsAccessTokenQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsHostQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsEnvironmentQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsShortNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsDisplayQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsIconQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsIncludeFaviconQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsSitemapQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPolicyQueryList {
+  elemMatch?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPolicyInputObject
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPolicyInputObject {
+  userAgent?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPolicyUserAgentQueryString
+  >;
+
+  allow?: Maybe<
+    SitePageConnectionPluginCreatorPluginOptionsPolicyAllowQueryString
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPolicyUserAgentQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPolicyAllowQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsOutputQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsQueryQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorNodeApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorBrowserApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorSsrApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPluginFilepathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonInputObject {
+  name?: Maybe<SitePageConnectionPluginCreatorPackageJsonNameQueryString>;
+
+  description?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDescriptionQueryString
+  >;
+
+  version?: Maybe<SitePageConnectionPluginCreatorPackageJsonVersionQueryString>;
+
+  main?: Maybe<SitePageConnectionPluginCreatorPackageJsonMainQueryString>;
+
+  author?: Maybe<SitePageConnectionPluginCreatorPackageJsonAuthorQueryString>;
+
+  license?: Maybe<SitePageConnectionPluginCreatorPackageJsonLicenseQueryString>;
+
+  dependencies?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDependenciesQueryList
+  >;
+
+  devDependencies?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDevDependenciesQueryList
+  >;
+
+  peerDependencies?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonPeerDependenciesQueryList
+  >;
+
+  keywords?: Maybe<SitePageConnectionPluginCreatorPackageJsonKeywordsQueryList>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDescriptionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonMainQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonAuthorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonLicenseQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDependenciesQueryList {
+  elemMatch?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDependenciesInputObject
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDependenciesInputObject {
+  name?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDependenciesNameQueryString
+  >;
+
+  version?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDependenciesVersionQueryString
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDependenciesNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDependenciesVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDevDependenciesQueryList {
+  elemMatch?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDevDependenciesInputObject
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDevDependenciesInputObject {
+  name?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDevDependenciesNameQueryString
+  >;
+
+  version?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonDevDependenciesVersionQueryString
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDevDependenciesNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonDevDependenciesVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonPeerDependenciesQueryList {
+  elemMatch?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonPeerDependenciesInputObject
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonPeerDependenciesInputObject {
+  name?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonPeerDependenciesNameQueryString
+  >;
+
+  version?: Maybe<
+    SitePageConnectionPluginCreatorPackageJsonPeerDependenciesVersionQueryString
+  >;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonPeerDependenciesNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonPeerDependenciesVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorPackageJsonKeywordsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorInternalInputObject {
+  contentDigest?: Maybe<
+    SitePageConnectionPluginCreatorInternalContentDigestQueryString
+  >;
+
+  type?: Maybe<SitePageConnectionPluginCreatorInternalTypeQueryString>;
+
+  owner?: Maybe<SitePageConnectionPluginCreatorInternalOwnerQueryString>;
+}
+
+export interface SitePageConnectionPluginCreatorInternalContentDigestQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorInternalTypeQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorInternalOwnerQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionPluginCreatorIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionComponentPathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionInternalInputObject_2 {
+  type?: Maybe<SitePageConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<SitePageConnectionInternalContentDigestQueryString_2>;
+
+  description?: Maybe<SitePageConnectionInternalDescriptionQueryString>;
+
+  owner?: Maybe<SitePageConnectionInternalOwnerQueryString_2>;
+}
+
+export interface SitePageConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionInternalDescriptionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionSort {
+  fields: (Maybe<SitePluginConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<SitePluginConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterSitePlugin {
+  resolve?: Maybe<SitePluginConnectionResolveQueryString_2>;
+
+  id?: Maybe<SitePluginConnectionIdQueryString_2>;
+
+  name?: Maybe<SitePluginConnectionNameQueryString_2>;
+
+  version?: Maybe<SitePluginConnectionVersionQueryString_2>;
+
+  pluginOptions?: Maybe<SitePluginConnectionPluginOptionsInputObject_2>;
+
+  nodeAPIs?: Maybe<SitePluginConnectionNodeApIsQueryList_2>;
+
+  browserAPIs?: Maybe<SitePluginConnectionBrowserApIsQueryList_2>;
+
+  ssrAPIs?: Maybe<SitePluginConnectionSsrApIsQueryList_2>;
+
+  pluginFilepath?: Maybe<SitePluginConnectionPluginFilepathQueryString_2>;
+
+  packageJson?: Maybe<SitePluginConnectionPackageJsonInputObject_2>;
+
+  internal?: Maybe<SitePluginConnectionInternalInputObject_2>;
+}
+
+export interface SitePluginConnectionResolveQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsInputObject_2 {
+  plugins?: Maybe<SitePluginConnectionPluginOptionsPluginsQueryList_2>;
+
+  name?: Maybe<SitePluginConnectionPluginOptionsNameQueryString_2>;
+
+  path?: Maybe<SitePluginConnectionPluginOptionsPathQueryString_2>;
+
+  trackingId?: Maybe<SitePluginConnectionPluginOptionsTrackingIdQueryString_2>;
+
+  head?: Maybe<SitePluginConnectionPluginOptionsHeadQueryBoolean_2>;
+
+  anonymize?: Maybe<SitePluginConnectionPluginOptionsAnonymizeQueryBoolean_2>;
+
+  respectDNT?: Maybe<SitePluginConnectionPluginOptionsRespectDntQueryBoolean_2>;
+
+  maxWidth?: Maybe<SitePluginConnectionPluginOptionsMaxWidthQueryInteger_2>;
+
+  backgroundColor?: Maybe<
+    SitePluginConnectionPluginOptionsBackgroundColorQueryString_3
+  >;
+
+  pathToConfigModule?: Maybe<
+    SitePluginConnectionPluginOptionsPathToConfigModuleQueryString_2
+  >;
+
+  includePaths?: Maybe<
+    SitePluginConnectionPluginOptionsIncludePathsQueryList_2
+  >;
+
+  src?: Maybe<SitePluginConnectionPluginOptionsSrcQueryString_2>;
+
+  assets?: Maybe<SitePluginConnectionPluginOptionsAssetsQueryString_2>;
+
+  components?: Maybe<SitePluginConnectionPluginOptionsComponentsQueryString_2>;
+
+  pages?: Maybe<SitePluginConnectionPluginOptionsPagesQueryString_2>;
+
+  styles?: Maybe<SitePluginConnectionPluginOptionsStylesQueryString_2>;
+
+  templates?: Maybe<SitePluginConnectionPluginOptionsTemplatesQueryString_2>;
+
+  utils?: Maybe<SitePluginConnectionPluginOptionsUtilsQueryString_2>;
+
+  color?: Maybe<SitePluginConnectionPluginOptionsColorQueryString_2>;
+
+  spaceId?: Maybe<SitePluginConnectionPluginOptionsSpaceIdQueryString_2>;
+
+  accessToken?: Maybe<
+    SitePluginConnectionPluginOptionsAccessTokenQueryString_2
+  >;
+
+  host?: Maybe<SitePluginConnectionPluginOptionsHostQueryString_2>;
+
+  environment?: Maybe<
+    SitePluginConnectionPluginOptionsEnvironmentQueryString_2
+  >;
+
+  short_name?: Maybe<SitePluginConnectionPluginOptionsShortNameQueryString_2>;
+
+  start_url?: Maybe<SitePluginConnectionPluginOptionsStartUrlQueryString_2>;
+
+  background_color?: Maybe<
+    SitePluginConnectionPluginOptionsBackgroundColorQueryString_4
+  >;
+
+  theme_color?: Maybe<SitePluginConnectionPluginOptionsThemeColorQueryString_2>;
+
+  display?: Maybe<SitePluginConnectionPluginOptionsDisplayQueryString_2>;
+
+  icon?: Maybe<SitePluginConnectionPluginOptionsIconQueryString_2>;
+
+  include_favicon?: Maybe<
+    SitePluginConnectionPluginOptionsIncludeFaviconQueryBoolean_2
+  >;
+
+  sitemap?: Maybe<SitePluginConnectionPluginOptionsSitemapQueryString_2>;
+
+  policy?: Maybe<SitePluginConnectionPluginOptionsPolicyQueryList_2>;
+
+  output?: Maybe<SitePluginConnectionPluginOptionsOutputQueryString_2>;
+
+  query?: Maybe<SitePluginConnectionPluginOptionsQueryQueryString_2>;
+
+  pathCheck?: Maybe<SitePluginConnectionPluginOptionsPathCheckQueryBoolean_2>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsQueryList_2 {
+  elemMatch?: Maybe<SitePluginConnectionPluginOptionsPluginsInputObject_2>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsInputObject_2 {
+  resolve?: Maybe<SitePluginConnectionPluginOptionsPluginsResolveQueryString_2>;
+
+  id?: Maybe<SitePluginConnectionPluginOptionsPluginsIdQueryString_2>;
+
+  name?: Maybe<SitePluginConnectionPluginOptionsPluginsNameQueryString_2>;
+
+  version?: Maybe<SitePluginConnectionPluginOptionsPluginsVersionQueryString_2>;
+
+  pluginOptions?: Maybe<
+    SitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2
+  >;
+
+  browserAPIs?: Maybe<
+    SitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2
+  >;
+
+  ssrAPIs?: Maybe<SitePluginConnectionPluginOptionsPluginsSsrApIsQueryList_2>;
+
+  pluginFilepath?: Maybe<
+    SitePluginConnectionPluginOptionsPluginsPluginFilepathQueryString_2
+  >;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsResolveQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2 {
+  maxWidth?: Maybe<
+    SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2
+  >;
+
+  backgroundColor?: Maybe<
+    SitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2
+  >;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsSsrApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPluginsPluginFilepathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsTrackingIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsHeadQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsAnonymizeQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsRespectDntQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsBackgroundColorQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPathToConfigModuleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsIncludePathsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsSrcQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsAssetsQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsComponentsQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPagesQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsStylesQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsTemplatesQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsUtilsQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsSpaceIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsAccessTokenQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsHostQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsEnvironmentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsShortNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsStartUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsBackgroundColorQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsThemeColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsDisplayQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsIconQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsIncludeFaviconQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsSitemapQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPolicyQueryList_2 {
+  elemMatch?: Maybe<SitePluginConnectionPluginOptionsPolicyInputObject_2>;
+}
+
+export interface SitePluginConnectionPluginOptionsPolicyInputObject_2 {
+  userAgent?: Maybe<
+    SitePluginConnectionPluginOptionsPolicyUserAgentQueryString_2
+  >;
+
+  allow?: Maybe<SitePluginConnectionPluginOptionsPolicyAllowQueryString_2>;
+}
+
+export interface SitePluginConnectionPluginOptionsPolicyUserAgentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPolicyAllowQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsOutputQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsQueryQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginOptionsPathCheckQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginConnectionNodeApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionBrowserApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionSsrApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPluginFilepathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonInputObject_2 {
+  name?: Maybe<SitePluginConnectionPackageJsonNameQueryString_2>;
+
+  description?: Maybe<SitePluginConnectionPackageJsonDescriptionQueryString_2>;
+
+  version?: Maybe<SitePluginConnectionPackageJsonVersionQueryString_2>;
+
+  main?: Maybe<SitePluginConnectionPackageJsonMainQueryString_2>;
+
+  author?: Maybe<SitePluginConnectionPackageJsonAuthorQueryString_2>;
+
+  license?: Maybe<SitePluginConnectionPackageJsonLicenseQueryString_2>;
+
+  dependencies?: Maybe<SitePluginConnectionPackageJsonDependenciesQueryList_2>;
+
+  devDependencies?: Maybe<
+    SitePluginConnectionPackageJsonDevDependenciesQueryList_2
+  >;
+
+  peerDependencies?: Maybe<
+    SitePluginConnectionPackageJsonPeerDependenciesQueryList_2
+  >;
+
+  keywords?: Maybe<SitePluginConnectionPackageJsonKeywordsQueryList_2>;
+}
+
+export interface SitePluginConnectionPackageJsonNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonMainQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonAuthorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonLicenseQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonDependenciesQueryList_2 {
+  elemMatch?: Maybe<SitePluginConnectionPackageJsonDependenciesInputObject_2>;
+}
+
+export interface SitePluginConnectionPackageJsonDependenciesInputObject_2 {
+  name?: Maybe<SitePluginConnectionPackageJsonDependenciesNameQueryString_2>;
+
+  version?: Maybe<
+    SitePluginConnectionPackageJsonDependenciesVersionQueryString_2
+  >;
+}
+
+export interface SitePluginConnectionPackageJsonDependenciesNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonDependenciesVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonDevDependenciesQueryList_2 {
+  elemMatch?: Maybe<
+    SitePluginConnectionPackageJsonDevDependenciesInputObject_2
+  >;
+}
+
+export interface SitePluginConnectionPackageJsonDevDependenciesInputObject_2 {
+  name?: Maybe<SitePluginConnectionPackageJsonDevDependenciesNameQueryString_2>;
+
+  version?: Maybe<
+    SitePluginConnectionPackageJsonDevDependenciesVersionQueryString_2
+  >;
+}
+
+export interface SitePluginConnectionPackageJsonDevDependenciesNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonDevDependenciesVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonPeerDependenciesQueryList_2 {
+  elemMatch?: Maybe<
+    SitePluginConnectionPackageJsonPeerDependenciesInputObject_2
+  >;
+}
+
+export interface SitePluginConnectionPackageJsonPeerDependenciesInputObject_2 {
+  name?: Maybe<
+    SitePluginConnectionPackageJsonPeerDependenciesNameQueryString_2
+  >;
+
+  version?: Maybe<
+    SitePluginConnectionPackageJsonPeerDependenciesVersionQueryString_2
+  >;
+}
+
+export interface SitePluginConnectionPackageJsonPeerDependenciesNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonPeerDependenciesVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionPackageJsonKeywordsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionInternalInputObject_2 {
+  contentDigest?: Maybe<SitePluginConnectionInternalContentDigestQueryString_2>;
+
+  type?: Maybe<SitePluginConnectionInternalTypeQueryString_2>;
+
+  owner?: Maybe<SitePluginConnectionInternalOwnerQueryString_2>;
+}
+
+export interface SitePluginConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionSort {
+  fields: (Maybe<DirectoryConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<DirectoryConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterDirectory {
+  id?: Maybe<DirectoryConnectionIdQueryString_2>;
+
+  internal?: Maybe<DirectoryConnectionInternalInputObject_2>;
+
+  sourceInstanceName?: Maybe<
+    DirectoryConnectionSourceInstanceNameQueryString_2
+  >;
+
+  absolutePath?: Maybe<DirectoryConnectionAbsolutePathQueryString_2>;
+
+  relativePath?: Maybe<DirectoryConnectionRelativePathQueryString_2>;
+
+  extension?: Maybe<DirectoryConnectionExtensionQueryString_2>;
+
+  size?: Maybe<DirectoryConnectionSizeQueryInteger_2>;
+
+  prettySize?: Maybe<DirectoryConnectionPrettySizeQueryString_2>;
+
+  modifiedTime?: Maybe<DirectoryConnectionModifiedTimeQueryString_2>;
+
+  accessTime?: Maybe<DirectoryConnectionAccessTimeQueryString_2>;
+
+  changeTime?: Maybe<DirectoryConnectionChangeTimeQueryString_2>;
+
+  birthTime?: Maybe<DirectoryConnectionBirthTimeQueryString_2>;
+
+  root?: Maybe<DirectoryConnectionRootQueryString_2>;
+
+  dir?: Maybe<DirectoryConnectionDirQueryString_2>;
+
+  base?: Maybe<DirectoryConnectionBaseQueryString_2>;
+
+  ext?: Maybe<DirectoryConnectionExtQueryString_2>;
+
+  name?: Maybe<DirectoryConnectionNameQueryString_2>;
+
+  relativeDirectory?: Maybe<DirectoryConnectionRelativeDirectoryQueryString_2>;
+
+  dev?: Maybe<DirectoryConnectionDevQueryInteger_2>;
+
+  mode?: Maybe<DirectoryConnectionModeQueryInteger_2>;
+
+  nlink?: Maybe<DirectoryConnectionNlinkQueryInteger_2>;
+
+  uid?: Maybe<DirectoryConnectionUidQueryInteger_2>;
+
+  gid?: Maybe<DirectoryConnectionGidQueryInteger_2>;
+
+  rdev?: Maybe<DirectoryConnectionRdevQueryInteger_2>;
+
+  blksize?: Maybe<DirectoryConnectionBlksizeQueryInteger_2>;
+
+  ino?: Maybe<DirectoryConnectionInoQueryInteger_2>;
+
+  blocks?: Maybe<DirectoryConnectionBlocksQueryInteger_2>;
+
+  atimeMs?: Maybe<DirectoryConnectionAtimeMsQueryFloat_2>;
+
+  mtimeMs?: Maybe<DirectoryConnectionMtimeMsQueryFloat_2>;
+
+  ctimeMs?: Maybe<DirectoryConnectionCtimeMsQueryFloat_2>;
+
+  birthtimeMs?: Maybe<DirectoryConnectionBirthtimeMsQueryFloat_2>;
+
+  atime?: Maybe<DirectoryConnectionAtimeQueryString_2>;
+
+  mtime?: Maybe<DirectoryConnectionMtimeQueryString_2>;
+
+  ctime?: Maybe<DirectoryConnectionCtimeQueryString_2>;
+
+  birthtime?: Maybe<DirectoryConnectionBirthtimeQueryString_2>;
+}
+
+export interface DirectoryConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionInternalInputObject_2 {
+  contentDigest?: Maybe<DirectoryConnectionInternalContentDigestQueryString_2>;
+
+  type?: Maybe<DirectoryConnectionInternalTypeQueryString_2>;
+
+  description?: Maybe<DirectoryConnectionInternalDescriptionQueryString_2>;
+
+  owner?: Maybe<DirectoryConnectionInternalOwnerQueryString_2>;
+}
+
+export interface DirectoryConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionInternalDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionSourceInstanceNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionAbsolutePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionRelativePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionExtensionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionPrettySizeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionModifiedTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionAccessTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionChangeTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionBirthTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionRootQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionDirQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionBaseQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionExtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionRelativeDirectoryQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionDevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionModeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionNlinkQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionUidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionGidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionRdevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionBlksizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionInoQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionBlocksQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionAtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionMtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionCtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionBirthtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryConnectionAtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionMtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionCtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryConnectionBirthtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionSort {
+  fields: (Maybe<FileConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<FileConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterFile {
+  id?: Maybe<FileConnectionIdQueryString_2>;
+
+  internal?: Maybe<FileConnectionInternalInputObject_2>;
+
+  sourceInstanceName?: Maybe<FileConnectionSourceInstanceNameQueryString_2>;
+
+  absolutePath?: Maybe<FileConnectionAbsolutePathQueryString_2>;
+
+  relativePath?: Maybe<FileConnectionRelativePathQueryString_2>;
+
+  extension?: Maybe<FileConnectionExtensionQueryString_2>;
+
+  size?: Maybe<FileConnectionSizeQueryInteger_2>;
+
+  prettySize?: Maybe<FileConnectionPrettySizeQueryString_2>;
+
+  modifiedTime?: Maybe<FileConnectionModifiedTimeQueryString_2>;
+
+  accessTime?: Maybe<FileConnectionAccessTimeQueryString_2>;
+
+  changeTime?: Maybe<FileConnectionChangeTimeQueryString_2>;
+
+  birthTime?: Maybe<FileConnectionBirthTimeQueryString_2>;
+
+  root?: Maybe<FileConnectionRootQueryString_2>;
+
+  dir?: Maybe<FileConnectionDirQueryString_2>;
+
+  base?: Maybe<FileConnectionBaseQueryString_2>;
+
+  ext?: Maybe<FileConnectionExtQueryString_2>;
+
+  name?: Maybe<FileConnectionNameQueryString_2>;
+
+  relativeDirectory?: Maybe<FileConnectionRelativeDirectoryQueryString_2>;
+
+  dev?: Maybe<FileConnectionDevQueryInteger_2>;
+
+  mode?: Maybe<FileConnectionModeQueryInteger_2>;
+
+  nlink?: Maybe<FileConnectionNlinkQueryInteger_2>;
+
+  uid?: Maybe<FileConnectionUidQueryInteger_2>;
+
+  gid?: Maybe<FileConnectionGidQueryInteger_2>;
+
+  rdev?: Maybe<FileConnectionRdevQueryInteger_2>;
+
+  blksize?: Maybe<FileConnectionBlksizeQueryInteger_2>;
+
+  ino?: Maybe<FileConnectionInoQueryInteger_2>;
+
+  blocks?: Maybe<FileConnectionBlocksQueryInteger_2>;
+
+  atimeMs?: Maybe<FileConnectionAtimeMsQueryFloat_2>;
+
+  mtimeMs?: Maybe<FileConnectionMtimeMsQueryFloat_2>;
+
+  ctimeMs?: Maybe<FileConnectionCtimeMsQueryFloat_2>;
+
+  birthtimeMs?: Maybe<FileConnectionBirthtimeMsQueryFloat_2>;
+
+  atime?: Maybe<FileConnectionAtimeQueryString_2>;
+
+  mtime?: Maybe<FileConnectionMtimeQueryString_2>;
+
+  ctime?: Maybe<FileConnectionCtimeQueryString_2>;
+
+  birthtime?: Maybe<FileConnectionBirthtimeQueryString_2>;
+
+  publicURL?: Maybe<PublicUrlQueryString_4>;
+}
+
+export interface FileConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionInternalInputObject_2 {
+  contentDigest?: Maybe<FileConnectionInternalContentDigestQueryString_2>;
+
+  type?: Maybe<FileConnectionInternalTypeQueryString_2>;
+
+  mediaType?: Maybe<FileConnectionInternalMediaTypeQueryString_2>;
+
+  description?: Maybe<FileConnectionInternalDescriptionQueryString_2>;
+
+  owner?: Maybe<FileConnectionInternalOwnerQueryString_2>;
+}
+
+export interface FileConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionInternalMediaTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionInternalDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionSourceInstanceNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionAbsolutePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionRelativePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionExtensionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionPrettySizeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionModifiedTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionAccessTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionChangeTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionBirthTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionRootQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionDirQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionBaseQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionExtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionRelativeDirectoryQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionDevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionModeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionNlinkQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionUidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionGidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionRdevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionBlksizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionInoQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionBlocksQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionAtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionMtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionCtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionBirthtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileConnectionAtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionMtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionCtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileConnectionBirthtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface PublicUrlQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonConnectionSort {
+  fields: (Maybe<DataJsonConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<DataJsonConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterDataJson {
+  id?: Maybe<DataJsonConnectionIdQueryString_2>;
+
+  internal?: Maybe<DataJsonConnectionInternalInputObject_2>;
+}
+
+export interface DataJsonConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonConnectionInternalInputObject_2 {
+  contentDigest?: Maybe<DataJsonConnectionInternalContentDigestQueryString_2>;
+
+  type?: Maybe<DataJsonConnectionInternalTypeQueryString_2>;
+
+  owner?: Maybe<DataJsonConnectionInternalOwnerQueryString_2>;
+}
+
+export interface DataJsonConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionSort {
+  fields: (Maybe<ContentfulContentTypeConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulContentTypeConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulContentType {
+  id?: Maybe<ContentfulContentTypeConnectionIdQueryString_2>;
+
+  name?: Maybe<ContentfulContentTypeConnectionNameQueryString_2>;
+
+  displayField?: Maybe<
+    ContentfulContentTypeConnectionDisplayFieldQueryString_2
+  >;
+
+  description?: Maybe<ContentfulContentTypeConnectionDescriptionQueryString_2>;
+
+  internal?: Maybe<ContentfulContentTypeConnectionInternalInputObject_2>;
+}
+
+export interface ContentfulContentTypeConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionDisplayFieldQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulContentTypeConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulContentTypeConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulContentTypeConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulContentTypeConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionSort {
+  fields: (Maybe<ContentfulServiceConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulServiceConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulService {
+  title?: Maybe<ContentfulServiceConnectionTitleQueryString_2>;
+
+  slug?: Maybe<ContentfulServiceConnectionSlugQueryString_2>;
+
+  directions?: Maybe<ContentfulServiceConnectionDirectionsQueryList_2>;
+
+  order?: Maybe<ContentfulServiceConnectionOrderQueryInteger_2>;
+
+  image?: Maybe<ContentfulServiceConnectionImageInputObject_2>;
+
+  id?: Maybe<ContentfulServiceConnectionIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulServiceConnectionContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulServiceConnectionCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulServiceConnectionUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulServiceConnectionInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulServiceConnectionNodeLocaleQueryString_2>;
+}
+
+export interface ContentfulServiceConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionSlugQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionDirectionsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageInputObject_2 {
+  contentful_id?: Maybe<
+    ContentfulServiceConnectionImageContentfulIdQueryString_2
+  >;
+
+  id?: Maybe<ContentfulServiceConnectionImageIdQueryString_2>;
+
+  file?: Maybe<ContentfulServiceConnectionImageFileInputObject_2>;
+
+  title?: Maybe<ContentfulServiceConnectionImageTitleQueryString_2>;
+
+  description?: Maybe<ContentfulServiceConnectionImageDescriptionQueryString_2>;
+
+  node_locale?: Maybe<ContentfulServiceConnectionImageNodeLocaleQueryString_2>;
+
+  internal?: Maybe<ContentfulServiceConnectionImageInternalInputObject_2>;
+}
+
+export interface ContentfulServiceConnectionImageContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageFileInputObject_2 {
+  url?: Maybe<ContentfulServiceConnectionImageFileUrlQueryString_2>;
+
+  details?: Maybe<ContentfulServiceConnectionImageFileDetailsInputObject_2>;
+
+  fileName?: Maybe<ContentfulServiceConnectionImageFileFileNameQueryString_2>;
+
+  contentType?: Maybe<
+    ContentfulServiceConnectionImageFileContentTypeQueryString_2
+  >;
+}
+
+export interface ContentfulServiceConnectionImageFileUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageFileDetailsInputObject_2 {
+  size?: Maybe<ContentfulServiceConnectionImageFileDetailsSizeQueryInteger_2>;
+
+  image?: Maybe<ContentfulServiceConnectionImageFileDetailsImageInputObject_2>;
+}
+
+export interface ContentfulServiceConnectionImageFileDetailsSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageFileDetailsImageInputObject_2 {
+  width?: Maybe<
+    ContentfulServiceConnectionImageFileDetailsImageWidthQueryInteger_2
+  >;
+
+  height?: Maybe<
+    ContentfulServiceConnectionImageFileDetailsImageHeightQueryInteger_2
+  >;
+}
+
+export interface ContentfulServiceConnectionImageFileDetailsImageWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageFileDetailsImageHeightQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageFileFileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageFileContentTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageInternalInputObject_2 {
+  type?: Maybe<ContentfulServiceConnectionImageInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulServiceConnectionImageInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulServiceConnectionImageInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulServiceConnectionImageInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionImageInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulServiceConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulServiceConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulServiceConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulServiceConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceConnectionNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionSort {
+  fields: (Maybe<ContentfulHomeConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulHomeConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulHome {
+  title?: Maybe<ContentfulHomeConnectionTitleQueryString_2>;
+
+  description?: Maybe<ContentfulHomeConnectionDescriptionInputObject_2>;
+
+  id?: Maybe<ContentfulHomeConnectionIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulHomeConnectionContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulHomeConnectionCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulHomeConnectionUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulHomeConnectionInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulHomeConnectionNodeLocaleQueryString_2>;
+}
+
+export interface ContentfulHomeConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInputObject_2 {
+  id?: Maybe<ContentfulHomeConnectionDescriptionIdQueryString_2>;
+
+  parent?: Maybe<ContentfulHomeConnectionDescriptionParentQueryString_2>;
+
+  children?: Maybe<ContentfulHomeConnectionDescriptionChildrenQueryList_2>;
+
+  description?: Maybe<
+    ContentfulHomeConnectionDescriptionDescriptionQueryString_2
+  >;
+
+  internal?: Maybe<ContentfulHomeConnectionDescriptionInternalInputObject_2>;
+}
+
+export interface ContentfulHomeConnectionDescriptionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionParentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionChildrenQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInternalInputObject_2 {
+  type?: Maybe<ContentfulHomeConnectionDescriptionInternalTypeQueryString_2>;
+
+  mediaType?: Maybe<
+    ContentfulHomeConnectionDescriptionInternalMediaTypeQueryString_2
+  >;
+
+  content?: Maybe<
+    ContentfulHomeConnectionDescriptionInternalContentQueryString_2
+  >;
+
+  contentDigest?: Maybe<
+    ContentfulHomeConnectionDescriptionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulHomeConnectionDescriptionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInternalMediaTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInternalContentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionDescriptionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulHomeConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulHomeConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulHomeConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulHomeConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeConnectionNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionSort {
+  fields: (Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionSortByFieldsEnum
+  >)[];
+
+  order?: (Maybe<ContentfulHomeDescriptionTextNodeConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulHomeDescriptionTextNode {
+  id?: Maybe<ContentfulHomeDescriptionTextNodeConnectionIdQueryString_2>;
+
+  description?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionDescriptionQueryString_2
+  >;
+
+  internal?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionInternalInputObject_2
+  >;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionInternalInputObject_2 {
+  type?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionInternalTypeQueryString_2
+  >;
+
+  mediaType?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionInternalMediaTypeQueryString_2
+  >;
+
+  content?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionInternalContentQueryString_2
+  >;
+
+  contentDigest?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnectionInternalOwnerQueryString_2
+  >;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionInternalMediaTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionInternalContentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionSort {
+  fields: (Maybe<ContentfulNavigationConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulNavigationConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulNavigation {
+  title?: Maybe<ContentfulNavigationConnectionTitleQueryString_2>;
+
+  slug?: Maybe<ContentfulNavigationConnectionSlugQueryString_2>;
+
+  order?: Maybe<ContentfulNavigationConnectionOrderQueryInteger_2>;
+
+  id?: Maybe<ContentfulNavigationConnectionIdQueryString_2>;
+
+  contentful_id?: Maybe<
+    ContentfulNavigationConnectionContentfulIdQueryString_2
+  >;
+
+  createdAt?: Maybe<ContentfulNavigationConnectionCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulNavigationConnectionUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulNavigationConnectionInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulNavigationConnectionNodeLocaleQueryString_2>;
+}
+
+export interface ContentfulNavigationConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionSlugQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulNavigationConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulNavigationConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulNavigationConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulNavigationConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulNavigationConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationConnectionNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionSort {
+  fields: (Maybe<ContentfulOfficeConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulOfficeConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulOffice {
+  title?: Maybe<ContentfulOfficeConnectionTitleQueryString_2>;
+
+  slug?: Maybe<ContentfulOfficeConnectionSlugQueryString_2>;
+
+  order?: Maybe<ContentfulOfficeConnectionOrderQueryInteger_2>;
+
+  id?: Maybe<ContentfulOfficeConnectionIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulOfficeConnectionContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulOfficeConnectionCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulOfficeConnectionUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulOfficeConnectionInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulOfficeConnectionNodeLocaleQueryString_2>;
+
+  map?: Maybe<ContentfulOfficeConnectionMapInputObject_2>;
+}
+
+export interface ContentfulOfficeConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionSlugQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulOfficeConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulOfficeConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulOfficeConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulOfficeConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulOfficeConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionMapInputObject_2 {
+  lon?: Maybe<ContentfulOfficeConnectionMapLonQueryFloat_2>;
+
+  lat?: Maybe<ContentfulOfficeConnectionMapLatQueryFloat_2>;
+}
+
+export interface ContentfulOfficeConnectionMapLonQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulOfficeConnectionMapLatQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetConnectionSort {
+  fields: (Maybe<ContentfulAssetConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulAssetConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulAsset {
+  contentful_id?: Maybe<ContentfulAssetConnectionContentfulIdQueryString_2>;
+
+  id?: Maybe<ContentfulAssetConnectionIdQueryString_2>;
+
+  file?: Maybe<ContentfulAssetConnectionFileInputObject_2>;
+
+  title?: Maybe<ContentfulAssetConnectionTitleQueryString_2>;
+
+  description?: Maybe<ContentfulAssetConnectionDescriptionQueryString_2>;
+
+  node_locale?: Maybe<ContentfulAssetConnectionNodeLocaleQueryString_2>;
+
+  internal?: Maybe<ContentfulAssetConnectionInternalInputObject_2>;
+
+  fixed?: Maybe<FixedTypeName_4>;
+
+  resolutions?: Maybe<ResolutionsTypeName_4>;
+
+  fluid?: Maybe<FluidTypeName_4>;
+
+  sizes?: Maybe<SizesTypeName_4>;
+
+  resize?: Maybe<ResizeTypeName_4>;
+}
+
+export interface ContentfulAssetConnectionContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionFileInputObject_2 {
+  url?: Maybe<ContentfulAssetConnectionFileUrlQueryString_2>;
+
+  details?: Maybe<ContentfulAssetConnectionFileDetailsInputObject_2>;
+
+  fileName?: Maybe<ContentfulAssetConnectionFileFileNameQueryString_2>;
+
+  contentType?: Maybe<ContentfulAssetConnectionFileContentTypeQueryString_2>;
+}
+
+export interface ContentfulAssetConnectionFileUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionFileDetailsInputObject_2 {
+  size?: Maybe<ContentfulAssetConnectionFileDetailsSizeQueryInteger_2>;
+
+  image?: Maybe<ContentfulAssetConnectionFileDetailsImageInputObject_2>;
+}
+
+export interface ContentfulAssetConnectionFileDetailsSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetConnectionFileDetailsImageInputObject_2 {
+  width?: Maybe<ContentfulAssetConnectionFileDetailsImageWidthQueryInteger_2>;
+
+  height?: Maybe<ContentfulAssetConnectionFileDetailsImageHeightQueryInteger_2>;
+}
+
+export interface ContentfulAssetConnectionFileDetailsImageWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetConnectionFileDetailsImageHeightQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetConnectionFileFileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionFileContentTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulAssetConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulAssetConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulAssetConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulAssetConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedTypeName_4 {
+  base64?: Maybe<FixedBase64QueryString_4>;
+
+  tracedSVG?: Maybe<FixedTracedSvgQueryString_4>;
+
+  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_4>;
+
+  width?: Maybe<FixedWidthQueryFloat_4>;
+
+  height?: Maybe<FixedHeightQueryFloat_4>;
+
+  src?: Maybe<FixedSrcQueryString_4>;
+
+  srcSet?: Maybe<FixedSrcSetQueryString_4>;
+
+  srcWebp?: Maybe<FixedSrcWebpQueryString_4>;
+
+  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_4>;
+}
+
+export interface FixedBase64QueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedTracedSvgQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedAspectRatioQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FixedWidthQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FixedHeightQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FixedSrcQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedSrcSetQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedSrcWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedSrcSetWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsTypeName_4 {
+  base64?: Maybe<ResolutionsBase64QueryString_4>;
+
+  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_4>;
+
+  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_4>;
+
+  width?: Maybe<ResolutionsWidthQueryFloat_4>;
+
+  height?: Maybe<ResolutionsHeightQueryFloat_4>;
+
+  src?: Maybe<ResolutionsSrcQueryString_4>;
+
+  srcSet?: Maybe<ResolutionsSrcSetQueryString_4>;
+
+  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_4>;
+
+  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_4>;
+}
+
+export interface ResolutionsBase64QueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsTracedSvgQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsAspectRatioQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResolutionsWidthQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResolutionsHeightQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResolutionsSrcQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsSrcSetQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsSrcWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsSrcSetWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidTypeName_4 {
+  base64?: Maybe<FluidBase64QueryString_4>;
+
+  tracedSVG?: Maybe<FluidTracedSvgQueryString_4>;
+
+  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_4>;
+
+  src?: Maybe<FluidSrcQueryString_4>;
+
+  srcSet?: Maybe<FluidSrcSetQueryString_4>;
+
+  srcWebp?: Maybe<FluidSrcWebpQueryString_4>;
+
+  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_4>;
+
+  sizes?: Maybe<FluidSizesQueryString_4>;
+}
+
+export interface FluidBase64QueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidTracedSvgQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidAspectRatioQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FluidSrcQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSrcSetQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSrcWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSrcSetWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSizesQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesTypeName_4 {
+  base64?: Maybe<SizesBase64QueryString_4>;
+
+  tracedSVG?: Maybe<SizesTracedSvgQueryString_4>;
+
+  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_4>;
+
+  src?: Maybe<SizesSrcQueryString_4>;
+
+  srcSet?: Maybe<SizesSrcSetQueryString_4>;
+
+  srcWebp?: Maybe<SizesSrcWebpQueryString_4>;
+
+  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_4>;
+
+  sizes?: Maybe<SizesSizesQueryString_4>;
+}
+
+export interface SizesBase64QueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesTracedSvgQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesAspectRatioQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SizesSrcQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSrcSetQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSrcWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSrcSetWebpQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSizesQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeTypeName_4 {
+  base64?: Maybe<ResizeBase64QueryString_4>;
+
+  tracedSVG?: Maybe<ResizeTracedSvgQueryString_4>;
+
+  src?: Maybe<ResizeSrcQueryString_4>;
+
+  width?: Maybe<ResizeWidthQueryInt_4>;
+
+  height?: Maybe<ResizeHeightQueryInt_4>;
+
+  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_4>;
+}
+
+export interface ResizeBase64QueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeTracedSvgQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeSrcQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeWidthQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResizeHeightQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResizeAspectRatioQueryFloat_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface MarkdownRemarkConnectionSort {
+  fields: (Maybe<MarkdownRemarkConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<MarkdownRemarkConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterMarkdownRemark {
+  id?: Maybe<MarkdownRemarkConnectionIdQueryString_2>;
+
+  internal?: Maybe<MarkdownRemarkConnectionInternalInputObject_2>;
+
+  frontmatter?: Maybe<MarkdownRemarkConnectionFrontmatterInputObject_2>;
+
+  rawMarkdownBody?: Maybe<MarkdownRemarkConnectionRawMarkdownBodyQueryString_2>;
+
+  html?: Maybe<HtmlQueryString_4>;
+
+  excerpt?: Maybe<ExcerptQueryString_4>;
+
+  headings?: Maybe<HeadingsQueryList_4>;
+
+  timeToRead?: Maybe<TimeToReadQueryInt_4>;
+
+  tableOfContents?: Maybe<TableOfContentsQueryString_4>;
+
+  wordCount?: Maybe<WordCountTypeName_4>;
+}
+
+export interface MarkdownRemarkConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionInternalInputObject_2 {
+  content?: Maybe<MarkdownRemarkConnectionInternalContentQueryString_2>;
+
+  type?: Maybe<MarkdownRemarkConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    MarkdownRemarkConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<MarkdownRemarkConnectionInternalOwnerQueryString_2>;
+}
+
+export interface MarkdownRemarkConnectionInternalContentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionFrontmatterInputObject_2 {
+  title?: Maybe<MarkdownRemarkConnectionFrontmatterTitleQueryString_2>;
+}
+
+export interface MarkdownRemarkConnectionFrontmatterTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkConnectionRawMarkdownBodyQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface HtmlQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ExcerptQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface HeadingsQueryList_4 {
+  elemMatch?: Maybe<HeadingsListElemTypeName_4>;
+}
+
+export interface HeadingsListElemTypeName_4 {
+  value?: Maybe<HeadingsListElemValueQueryString_4>;
+
+  depth?: Maybe<HeadingsListElemDepthQueryInt_4>;
+}
+
+export interface HeadingsListElemValueQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface HeadingsListElemDepthQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface TimeToReadQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface TableOfContentsQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface WordCountTypeName_4 {
+  paragraphs?: Maybe<WordCountParagraphsQueryInt_4>;
+
+  sentences?: Maybe<WordCountSentencesQueryInt_4>;
+
+  words?: Maybe<WordCountWordsQueryInt_4>;
+}
+
+export interface WordCountParagraphsQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface WordCountSentencesQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface WordCountWordsQueryInt_4 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePageJsonNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageInternalComponentNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageComponentQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageComponentChunkNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageContextInputObject {
+  slug?: Maybe<SitePageContextSlugQueryString>;
+}
+
+export interface SitePageContextSlugQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorInputObject {
+  resolve?: Maybe<SitePagePluginCreatorResolveQueryString>;
+
+  id?: Maybe<SitePagePluginCreatorIdQueryString>;
+
+  name?: Maybe<SitePagePluginCreatorNameQueryString>;
+
+  version?: Maybe<SitePagePluginCreatorVersionQueryString>;
+
+  pluginOptions?: Maybe<SitePagePluginCreatorPluginOptionsInputObject>;
+
+  nodeAPIs?: Maybe<SitePagePluginCreatorNodeApIsQueryList>;
+
+  browserAPIs?: Maybe<SitePagePluginCreatorBrowserApIsQueryList>;
+
+  ssrAPIs?: Maybe<SitePagePluginCreatorSsrApIsQueryList>;
+
+  pluginFilepath?: Maybe<SitePagePluginCreatorPluginFilepathQueryString>;
+
+  packageJson?: Maybe<SitePagePluginCreatorPackageJsonInputObject>;
+
+  internal?: Maybe<SitePagePluginCreatorInternalInputObject>;
+}
+
+export interface SitePagePluginCreatorResolveQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsInputObject {
+  plugins?: Maybe<SitePagePluginCreatorPluginOptionsPluginsQueryList>;
+
+  name?: Maybe<SitePagePluginCreatorPluginOptionsNameQueryString>;
+
+  path?: Maybe<SitePagePluginCreatorPluginOptionsPathQueryString>;
+
+  trackingId?: Maybe<SitePagePluginCreatorPluginOptionsTrackingIdQueryString>;
+
+  head?: Maybe<SitePagePluginCreatorPluginOptionsHeadQueryBoolean>;
+
+  anonymize?: Maybe<SitePagePluginCreatorPluginOptionsAnonymizeQueryBoolean>;
+
+  respectDNT?: Maybe<SitePagePluginCreatorPluginOptionsRespectDntQueryBoolean>;
+
+  maxWidth?: Maybe<SitePagePluginCreatorPluginOptionsMaxWidthQueryInteger>;
+
+  backgroundColor?: Maybe<
+    SitePagePluginCreatorPluginOptionsBackgroundColorQueryString
+  >;
+
+  pathToConfigModule?: Maybe<
+    SitePagePluginCreatorPluginOptionsPathToConfigModuleQueryString
+  >;
+
+  includePaths?: Maybe<SitePagePluginCreatorPluginOptionsIncludePathsQueryList>;
+
+  src?: Maybe<SitePagePluginCreatorPluginOptionsSrcQueryString>;
+
+  assets?: Maybe<SitePagePluginCreatorPluginOptionsAssetsQueryString>;
+
+  components?: Maybe<SitePagePluginCreatorPluginOptionsComponentsQueryString>;
+
+  pages?: Maybe<SitePagePluginCreatorPluginOptionsPagesQueryString>;
+
+  styles?: Maybe<SitePagePluginCreatorPluginOptionsStylesQueryString>;
+
+  templates?: Maybe<SitePagePluginCreatorPluginOptionsTemplatesQueryString>;
+
+  utils?: Maybe<SitePagePluginCreatorPluginOptionsUtilsQueryString>;
+
+  color?: Maybe<SitePagePluginCreatorPluginOptionsColorQueryString>;
+
+  spaceId?: Maybe<SitePagePluginCreatorPluginOptionsSpaceIdQueryString>;
+
+  accessToken?: Maybe<SitePagePluginCreatorPluginOptionsAccessTokenQueryString>;
+
+  host?: Maybe<SitePagePluginCreatorPluginOptionsHostQueryString>;
+
+  environment?: Maybe<SitePagePluginCreatorPluginOptionsEnvironmentQueryString>;
+
+  short_name?: Maybe<SitePagePluginCreatorPluginOptionsShortNameQueryString>;
+
+  start_url?: Maybe<SitePagePluginCreatorPluginOptionsStartUrlQueryString>;
+
+  background_color?: Maybe<
+    SitePagePluginCreatorPluginOptionsBackgroundColorQueryString_2
+  >;
+
+  theme_color?: Maybe<SitePagePluginCreatorPluginOptionsThemeColorQueryString>;
+
+  display?: Maybe<SitePagePluginCreatorPluginOptionsDisplayQueryString>;
+
+  icon?: Maybe<SitePagePluginCreatorPluginOptionsIconQueryString>;
+
+  include_favicon?: Maybe<
+    SitePagePluginCreatorPluginOptionsIncludeFaviconQueryBoolean
+  >;
+
+  sitemap?: Maybe<SitePagePluginCreatorPluginOptionsSitemapQueryString>;
+
+  policy?: Maybe<SitePagePluginCreatorPluginOptionsPolicyQueryList>;
+
+  output?: Maybe<SitePagePluginCreatorPluginOptionsOutputQueryString>;
+
+  query?: Maybe<SitePagePluginCreatorPluginOptionsQueryQueryString>;
+
+  pathCheck?: Maybe<SitePagePluginCreatorPluginOptionsPathCheckQueryBoolean>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsQueryList {
+  elemMatch?: Maybe<SitePagePluginCreatorPluginOptionsPluginsInputObject>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsInputObject {
+  resolve?: Maybe<SitePagePluginCreatorPluginOptionsPluginsResolveQueryString>;
+
+  id?: Maybe<SitePagePluginCreatorPluginOptionsPluginsIdQueryString>;
+
+  name?: Maybe<SitePagePluginCreatorPluginOptionsPluginsNameQueryString>;
+
+  version?: Maybe<SitePagePluginCreatorPluginOptionsPluginsVersionQueryString>;
+
+  pluginOptions?: Maybe<
+    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject
+  >;
+
+  browserAPIs?: Maybe<
+    SitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList
+  >;
+
+  ssrAPIs?: Maybe<SitePagePluginCreatorPluginOptionsPluginsSsrApIsQueryList>;
+
+  pluginFilepath?: Maybe<
+    SitePagePluginCreatorPluginOptionsPluginsPluginFilepathQueryString
+  >;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsResolveQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
+  maxWidth?: Maybe<
+    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger
+  >;
+
+  backgroundColor?: Maybe<
+    SitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString
+  >;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsSsrApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPluginsPluginFilepathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsTrackingIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsHeadQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsAnonymizeQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsRespectDntQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsMaxWidthQueryInteger {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsBackgroundColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPathToConfigModuleQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsIncludePathsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsSrcQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsAssetsQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsComponentsQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPagesQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsStylesQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsTemplatesQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsUtilsQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsSpaceIdQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsAccessTokenQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsHostQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsEnvironmentQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsShortNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsStartUrlQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsBackgroundColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsThemeColorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsDisplayQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsIconQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsIncludeFaviconQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsSitemapQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPolicyQueryList {
+  elemMatch?: Maybe<SitePagePluginCreatorPluginOptionsPolicyInputObject>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPolicyInputObject {
+  userAgent?: Maybe<
+    SitePagePluginCreatorPluginOptionsPolicyUserAgentQueryString
+  >;
+
+  allow?: Maybe<SitePagePluginCreatorPluginOptionsPolicyAllowQueryString>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPolicyUserAgentQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPolicyAllowQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsOutputQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsQueryQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginOptionsPathCheckQueryBoolean {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePagePluginCreatorNodeApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorBrowserApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorSsrApIsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPluginFilepathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonInputObject {
+  name?: Maybe<SitePagePluginCreatorPackageJsonNameQueryString>;
+
+  description?: Maybe<SitePagePluginCreatorPackageJsonDescriptionQueryString>;
+
+  version?: Maybe<SitePagePluginCreatorPackageJsonVersionQueryString>;
+
+  main?: Maybe<SitePagePluginCreatorPackageJsonMainQueryString>;
+
+  author?: Maybe<SitePagePluginCreatorPackageJsonAuthorQueryString>;
+
+  license?: Maybe<SitePagePluginCreatorPackageJsonLicenseQueryString>;
+
+  dependencies?: Maybe<SitePagePluginCreatorPackageJsonDependenciesQueryList>;
+
+  devDependencies?: Maybe<
+    SitePagePluginCreatorPackageJsonDevDependenciesQueryList
+  >;
+
+  peerDependencies?: Maybe<
+    SitePagePluginCreatorPackageJsonPeerDependenciesQueryList
+  >;
+
+  keywords?: Maybe<SitePagePluginCreatorPackageJsonKeywordsQueryList>;
+}
+
+export interface SitePagePluginCreatorPackageJsonNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDescriptionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonMainQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonAuthorQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonLicenseQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDependenciesQueryList {
+  elemMatch?: Maybe<SitePagePluginCreatorPackageJsonDependenciesInputObject>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDependenciesInputObject {
+  name?: Maybe<SitePagePluginCreatorPackageJsonDependenciesNameQueryString>;
+
+  version?: Maybe<
+    SitePagePluginCreatorPackageJsonDependenciesVersionQueryString
+  >;
+}
+
+export interface SitePagePluginCreatorPackageJsonDependenciesNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDependenciesVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDevDependenciesQueryList {
+  elemMatch?: Maybe<SitePagePluginCreatorPackageJsonDevDependenciesInputObject>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDevDependenciesInputObject {
+  name?: Maybe<SitePagePluginCreatorPackageJsonDevDependenciesNameQueryString>;
+
+  version?: Maybe<
+    SitePagePluginCreatorPackageJsonDevDependenciesVersionQueryString
+  >;
+}
+
+export interface SitePagePluginCreatorPackageJsonDevDependenciesNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonDevDependenciesVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonPeerDependenciesQueryList {
+  elemMatch?: Maybe<
+    SitePagePluginCreatorPackageJsonPeerDependenciesInputObject
+  >;
+}
+
+export interface SitePagePluginCreatorPackageJsonPeerDependenciesInputObject {
+  name?: Maybe<SitePagePluginCreatorPackageJsonPeerDependenciesNameQueryString>;
+
+  version?: Maybe<
+    SitePagePluginCreatorPackageJsonPeerDependenciesVersionQueryString
+  >;
+}
+
+export interface SitePagePluginCreatorPackageJsonPeerDependenciesNameQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonPeerDependenciesVersionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorPackageJsonKeywordsQueryList {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorInternalInputObject {
+  contentDigest?: Maybe<SitePagePluginCreatorInternalContentDigestQueryString>;
+
+  type?: Maybe<SitePagePluginCreatorInternalTypeQueryString>;
+
+  owner?: Maybe<SitePagePluginCreatorInternalOwnerQueryString>;
+}
+
+export interface SitePagePluginCreatorInternalContentDigestQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorInternalTypeQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorInternalOwnerQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePagePluginCreatorIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageComponentPathQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageInternalInputObject_2 {
+  type?: Maybe<SitePageInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<SitePageInternalContentDigestQueryString_2>;
+
+  description?: Maybe<SitePageInternalDescriptionQueryString>;
+
+  owner?: Maybe<SitePageInternalOwnerQueryString_2>;
+}
+
+export interface SitePageInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageInternalDescriptionQueryString {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePageInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginResolveQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsInputObject_2 {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsQueryList_2>;
+
+  name?: Maybe<SitePluginPluginOptionsNameQueryString_2>;
+
+  path?: Maybe<SitePluginPluginOptionsPathQueryString_2>;
+
+  trackingId?: Maybe<SitePluginPluginOptionsTrackingIdQueryString_2>;
+
+  head?: Maybe<SitePluginPluginOptionsHeadQueryBoolean_2>;
+
+  anonymize?: Maybe<SitePluginPluginOptionsAnonymizeQueryBoolean_2>;
+
+  respectDNT?: Maybe<SitePluginPluginOptionsRespectDntQueryBoolean_2>;
+
+  maxWidth?: Maybe<SitePluginPluginOptionsMaxWidthQueryInteger_2>;
+
+  backgroundColor?: Maybe<SitePluginPluginOptionsBackgroundColorQueryString_3>;
+
+  pathToConfigModule?: Maybe<
+    SitePluginPluginOptionsPathToConfigModuleQueryString_2
+  >;
+
+  includePaths?: Maybe<SitePluginPluginOptionsIncludePathsQueryList_2>;
+
+  src?: Maybe<SitePluginPluginOptionsSrcQueryString_2>;
+
+  assets?: Maybe<SitePluginPluginOptionsAssetsQueryString_2>;
+
+  components?: Maybe<SitePluginPluginOptionsComponentsQueryString_2>;
+
+  pages?: Maybe<SitePluginPluginOptionsPagesQueryString_2>;
+
+  styles?: Maybe<SitePluginPluginOptionsStylesQueryString_2>;
+
+  templates?: Maybe<SitePluginPluginOptionsTemplatesQueryString_2>;
+
+  utils?: Maybe<SitePluginPluginOptionsUtilsQueryString_2>;
+
+  color?: Maybe<SitePluginPluginOptionsColorQueryString_2>;
+
+  spaceId?: Maybe<SitePluginPluginOptionsSpaceIdQueryString_2>;
+
+  accessToken?: Maybe<SitePluginPluginOptionsAccessTokenQueryString_2>;
+
+  host?: Maybe<SitePluginPluginOptionsHostQueryString_2>;
+
+  environment?: Maybe<SitePluginPluginOptionsEnvironmentQueryString_2>;
+
+  short_name?: Maybe<SitePluginPluginOptionsShortNameQueryString_2>;
+
+  start_url?: Maybe<SitePluginPluginOptionsStartUrlQueryString_2>;
+
+  background_color?: Maybe<SitePluginPluginOptionsBackgroundColorQueryString_4>;
+
+  theme_color?: Maybe<SitePluginPluginOptionsThemeColorQueryString_2>;
+
+  display?: Maybe<SitePluginPluginOptionsDisplayQueryString_2>;
+
+  icon?: Maybe<SitePluginPluginOptionsIconQueryString_2>;
+
+  include_favicon?: Maybe<SitePluginPluginOptionsIncludeFaviconQueryBoolean_2>;
+
+  sitemap?: Maybe<SitePluginPluginOptionsSitemapQueryString_2>;
+
+  policy?: Maybe<SitePluginPluginOptionsPolicyQueryList_2>;
+
+  output?: Maybe<SitePluginPluginOptionsOutputQueryString_2>;
+
+  query?: Maybe<SitePluginPluginOptionsQueryQueryString_2>;
+
+  pathCheck?: Maybe<SitePluginPluginOptionsPathCheckQueryBoolean_2>;
+}
+
+export interface SitePluginPluginOptionsPluginsQueryList_2 {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsInputObject_2>;
+}
+
+export interface SitePluginPluginOptionsPluginsInputObject_2 {
+  resolve?: Maybe<SitePluginPluginOptionsPluginsResolveQueryString_2>;
+
+  id?: Maybe<SitePluginPluginOptionsPluginsIdQueryString_2>;
+
+  name?: Maybe<SitePluginPluginOptionsPluginsNameQueryString_2>;
+
+  version?: Maybe<SitePluginPluginOptionsPluginsVersionQueryString_2>;
+
+  pluginOptions?: Maybe<
+    SitePluginPluginOptionsPluginsPluginOptionsInputObject_2
+  >;
+
+  browserAPIs?: Maybe<SitePluginPluginOptionsPluginsBrowserApIsQueryList_2>;
+
+  ssrAPIs?: Maybe<SitePluginPluginOptionsPluginsSsrApIsQueryList_2>;
+
+  pluginFilepath?: Maybe<
+    SitePluginPluginOptionsPluginsPluginFilepathQueryString_2
+  >;
+}
+
+export interface SitePluginPluginOptionsPluginsResolveQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsPluginOptionsInputObject_2 {
+  maxWidth?: Maybe<
+    SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2
+  >;
+
+  backgroundColor?: Maybe<
+    SitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2
+  >;
+}
+
+export interface SitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsBrowserApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsSsrApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPluginsPluginFilepathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsTrackingIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsHeadQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginPluginOptionsAnonymizeQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginPluginOptionsRespectDntQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginPluginOptionsMaxWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SitePluginPluginOptionsBackgroundColorQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPathToConfigModuleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsIncludePathsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsSrcQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsAssetsQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsComponentsQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPagesQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsStylesQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsTemplatesQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsUtilsQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsSpaceIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsAccessTokenQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsHostQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsEnvironmentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsShortNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsStartUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsBackgroundColorQueryString_4 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsThemeColorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsDisplayQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsIconQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsIncludeFaviconQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginPluginOptionsSitemapQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPolicyQueryList_2 {
+  elemMatch?: Maybe<SitePluginPluginOptionsPolicyInputObject_2>;
+}
+
+export interface SitePluginPluginOptionsPolicyInputObject_2 {
+  userAgent?: Maybe<SitePluginPluginOptionsPolicyUserAgentQueryString_2>;
+
+  allow?: Maybe<SitePluginPluginOptionsPolicyAllowQueryString_2>;
+}
+
+export interface SitePluginPluginOptionsPolicyUserAgentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPolicyAllowQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsOutputQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsQueryQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginOptionsPathCheckQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SitePluginNodeApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginBrowserApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginSsrApIsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPluginFilepathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonInputObject_2 {
+  name?: Maybe<SitePluginPackageJsonNameQueryString_2>;
+
+  description?: Maybe<SitePluginPackageJsonDescriptionQueryString_2>;
+
+  version?: Maybe<SitePluginPackageJsonVersionQueryString_2>;
+
+  main?: Maybe<SitePluginPackageJsonMainQueryString_2>;
+
+  author?: Maybe<SitePluginPackageJsonAuthorQueryString_2>;
+
+  license?: Maybe<SitePluginPackageJsonLicenseQueryString_2>;
+
+  dependencies?: Maybe<SitePluginPackageJsonDependenciesQueryList_2>;
+
+  devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesQueryList_2>;
+
+  peerDependencies?: Maybe<SitePluginPackageJsonPeerDependenciesQueryList_2>;
+
+  keywords?: Maybe<SitePluginPackageJsonKeywordsQueryList_2>;
+}
+
+export interface SitePluginPackageJsonNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonMainQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonAuthorQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonLicenseQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonDependenciesQueryList_2 {
+  elemMatch?: Maybe<SitePluginPackageJsonDependenciesInputObject_2>;
+}
+
+export interface SitePluginPackageJsonDependenciesInputObject_2 {
+  name?: Maybe<SitePluginPackageJsonDependenciesNameQueryString_2>;
+
+  version?: Maybe<SitePluginPackageJsonDependenciesVersionQueryString_2>;
+}
+
+export interface SitePluginPackageJsonDependenciesNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonDependenciesVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonDevDependenciesQueryList_2 {
+  elemMatch?: Maybe<SitePluginPackageJsonDevDependenciesInputObject_2>;
+}
+
+export interface SitePluginPackageJsonDevDependenciesInputObject_2 {
+  name?: Maybe<SitePluginPackageJsonDevDependenciesNameQueryString_2>;
+
+  version?: Maybe<SitePluginPackageJsonDevDependenciesVersionQueryString_2>;
+}
+
+export interface SitePluginPackageJsonDevDependenciesNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonDevDependenciesVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonPeerDependenciesQueryList_2 {
+  elemMatch?: Maybe<SitePluginPackageJsonPeerDependenciesInputObject_2>;
+}
+
+export interface SitePluginPackageJsonPeerDependenciesInputObject_2 {
+  name?: Maybe<SitePluginPackageJsonPeerDependenciesNameQueryString_2>;
+
+  version?: Maybe<SitePluginPackageJsonPeerDependenciesVersionQueryString_2>;
+}
+
+export interface SitePluginPackageJsonPeerDependenciesNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonPeerDependenciesVersionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginPackageJsonKeywordsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginInternalInputObject_2 {
+  contentDigest?: Maybe<SitePluginInternalContentDigestQueryString_2>;
+
+  type?: Maybe<SitePluginInternalTypeQueryString_2>;
+
+  owner?: Maybe<SitePluginInternalOwnerQueryString_2>;
+}
+
+export interface SitePluginInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePluginInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteSiteMetadataInputObject_2 {
+  title?: Maybe<SiteSiteMetadataTitleQueryString_2>;
+
+  description?: Maybe<SiteSiteMetadataDescriptionQueryString_2>;
+
+  googleVerification?: Maybe<SiteSiteMetadataGoogleVerificationQueryString_2>;
+
+  siteUrl?: Maybe<SiteSiteMetadataSiteUrlQueryString_2>;
+}
+
+export interface SiteSiteMetadataTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteSiteMetadataDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteSiteMetadataGoogleVerificationQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteSiteMetadataSiteUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePortQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteHostQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePathPrefixQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SitePolyfillQueryBoolean_2 {
+  eq?: Maybe<boolean>;
+
+  ne?: Maybe<boolean>;
+
+  in?: Maybe<(Maybe<boolean>)[]>;
+
+  nin?: Maybe<(Maybe<boolean>)[]>;
+}
+
+export interface SiteBuildTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteInternalInputObject_2 {
+  contentDigest?: Maybe<SiteInternalContentDigestQueryString_2>;
+
+  type?: Maybe<SiteInternalTypeQueryString_2>;
+
+  owner?: Maybe<SiteInternalOwnerQueryString_2>;
+}
+
+export interface SiteInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SiteInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryInternalInputObject_2 {
+  contentDigest?: Maybe<DirectoryInternalContentDigestQueryString_2>;
+
+  type?: Maybe<DirectoryInternalTypeQueryString_2>;
+
+  description?: Maybe<DirectoryInternalDescriptionQueryString_2>;
+
+  owner?: Maybe<DirectoryInternalOwnerQueryString_2>;
+}
+
+export interface DirectoryInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryInternalDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectorySourceInstanceNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryAbsolutePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryRelativePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryExtensionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectorySizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryPrettySizeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryModifiedTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryAccessTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryChangeTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryBirthTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryRootQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryDirQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryBaseQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryExtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryRelativeDirectoryQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryDevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryModeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryNlinkQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryUidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryGidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryRdevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryBlksizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryInoQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryBlocksQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryAtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryMtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryCtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryBirthtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface DirectoryAtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryMtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryCtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DirectoryBirthtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileInternalInputObject_2 {
+  contentDigest?: Maybe<FileInternalContentDigestQueryString_2>;
+
+  type?: Maybe<FileInternalTypeQueryString_2>;
+
+  mediaType?: Maybe<FileInternalMediaTypeQueryString_2>;
+
+  description?: Maybe<FileInternalDescriptionQueryString_2>;
+
+  owner?: Maybe<FileInternalOwnerQueryString_2>;
+}
+
+export interface FileInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileInternalMediaTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileInternalDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileSourceInstanceNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileAbsolutePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileRelativePathQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileExtensionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FilePrettySizeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileModifiedTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileAccessTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileChangeTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileBirthTimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileRootQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileDirQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileBaseQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileExtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileRelativeDirectoryQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileDevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileModeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileNlinkQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileUidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileGidQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileRdevQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileBlksizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileInoQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileBlocksQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileAtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileMtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileCtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileBirthtimeMsQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FileAtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileMtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileCtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FileBirthtimeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface PublicUrlQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonInternalInputObject_2 {
+  contentDigest?: Maybe<DataJsonInternalContentDigestQueryString_2>;
+
+  type?: Maybe<DataJsonInternalTypeQueryString_2>;
+
+  owner?: Maybe<DataJsonInternalOwnerQueryString_2>;
+}
+
+export interface DataJsonInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface DataJsonInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeDisplayFieldQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeInternalInputObject_2 {
+  type?: Maybe<ContentfulContentTypeInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulContentTypeInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulContentTypeInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulContentTypeInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulContentTypeInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceSlugQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceDirectionsQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceImageInputObject_2 {
+  contentful_id?: Maybe<ContentfulServiceImageContentfulIdQueryString_2>;
+
+  id?: Maybe<ContentfulServiceImageIdQueryString_2>;
+
+  file?: Maybe<ContentfulServiceImageFileInputObject_2>;
+
+  title?: Maybe<ContentfulServiceImageTitleQueryString_2>;
+
+  description?: Maybe<ContentfulServiceImageDescriptionQueryString_2>;
+
+  node_locale?: Maybe<ContentfulServiceImageNodeLocaleQueryString_2>;
+
+  internal?: Maybe<ContentfulServiceImageInternalInputObject_2>;
+}
+
+export interface ContentfulServiceImageContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageFileInputObject_2 {
+  url?: Maybe<ContentfulServiceImageFileUrlQueryString_2>;
+
+  details?: Maybe<ContentfulServiceImageFileDetailsInputObject_2>;
+
+  fileName?: Maybe<ContentfulServiceImageFileFileNameQueryString_2>;
+
+  contentType?: Maybe<ContentfulServiceImageFileContentTypeQueryString_2>;
+}
+
+export interface ContentfulServiceImageFileUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageFileDetailsInputObject_2 {
+  size?: Maybe<ContentfulServiceImageFileDetailsSizeQueryInteger_2>;
+
+  image?: Maybe<ContentfulServiceImageFileDetailsImageInputObject_2>;
+}
+
+export interface ContentfulServiceImageFileDetailsSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceImageFileDetailsImageInputObject_2 {
+  width?: Maybe<ContentfulServiceImageFileDetailsImageWidthQueryInteger_2>;
+
+  height?: Maybe<ContentfulServiceImageFileDetailsImageHeightQueryInteger_2>;
+}
+
+export interface ContentfulServiceImageFileDetailsImageWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceImageFileDetailsImageHeightQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulServiceImageFileFileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageFileContentTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageInternalInputObject_2 {
+  type?: Maybe<ContentfulServiceImageInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulServiceImageInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulServiceImageInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulServiceImageInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceImageInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceInternalInputObject_2 {
+  type?: Maybe<ContentfulServiceInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<ContentfulServiceInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<ContentfulServiceInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulServiceInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulServiceNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionInputObject_2 {
+  id?: Maybe<ContentfulHomeDescriptionIdQueryString_2>;
+
+  parent?: Maybe<ContentfulHomeDescriptionParentQueryString_2>;
+
+  children?: Maybe<ContentfulHomeDescriptionChildrenQueryList_2>;
+
+  description?: Maybe<ContentfulHomeDescriptionDescriptionQueryString_2>;
+
+  internal?: Maybe<ContentfulHomeDescriptionInternalInputObject_2>;
+}
+
+export interface ContentfulHomeDescriptionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionParentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionChildrenQueryList_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionInternalInputObject_2 {
+  type?: Maybe<ContentfulHomeDescriptionInternalTypeQueryString_2>;
+
+  mediaType?: Maybe<ContentfulHomeDescriptionInternalMediaTypeQueryString_2>;
+
+  content?: Maybe<ContentfulHomeDescriptionInternalContentQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulHomeDescriptionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulHomeDescriptionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulHomeDescriptionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionInternalMediaTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionInternalContentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeInternalInputObject_2 {
+  type?: Maybe<ContentfulHomeInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<ContentfulHomeInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<ContentfulHomeInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulHomeInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeInternalInputObject_2 {
+  type?: Maybe<ContentfulHomeDescriptionTextNodeInternalTypeQueryString_2>;
+
+  mediaType?: Maybe<
+    ContentfulHomeDescriptionTextNodeInternalMediaTypeQueryString_2
+  >;
+
+  content?: Maybe<
+    ContentfulHomeDescriptionTextNodeInternalContentQueryString_2
+  >;
+
+  contentDigest?: Maybe<
+    ContentfulHomeDescriptionTextNodeInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulHomeDescriptionTextNodeInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeInternalMediaTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeInternalContentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulHomeDescriptionTextNodeInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationSlugQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulNavigationIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationInternalInputObject_2 {
+  type?: Maybe<ContentfulNavigationInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<ContentfulNavigationInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<ContentfulNavigationInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulNavigationInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulNavigationNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeSlugQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulOfficeIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeInternalInputObject_2 {
+  type?: Maybe<ContentfulOfficeInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<ContentfulOfficeInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<ContentfulOfficeInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulOfficeInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeMapInputObject_2 {
+  lon?: Maybe<ContentfulOfficeMapLonQueryFloat_2>;
+
+  lat?: Maybe<ContentfulOfficeMapLatQueryFloat_2>;
+}
+
+export interface ContentfulOfficeMapLonQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulOfficeMapLatQueryFloat_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetFileInputObject_2 {
+  url?: Maybe<ContentfulAssetFileUrlQueryString_2>;
+
+  details?: Maybe<ContentfulAssetFileDetailsInputObject_2>;
+
+  fileName?: Maybe<ContentfulAssetFileFileNameQueryString_2>;
+
+  contentType?: Maybe<ContentfulAssetFileContentTypeQueryString_2>;
+}
+
+export interface ContentfulAssetFileUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetFileDetailsInputObject_2 {
+  size?: Maybe<ContentfulAssetFileDetailsSizeQueryInteger_2>;
+
+  image?: Maybe<ContentfulAssetFileDetailsImageInputObject_2>;
+}
+
+export interface ContentfulAssetFileDetailsSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetFileDetailsImageInputObject_2 {
+  width?: Maybe<ContentfulAssetFileDetailsImageWidthQueryInteger_2>;
+
+  height?: Maybe<ContentfulAssetFileDetailsImageHeightQueryInteger_2>;
+}
+
+export interface ContentfulAssetFileDetailsImageWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetFileDetailsImageHeightQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulAssetFileFileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetFileContentTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetInternalInputObject_2 {
+  type?: Maybe<ContentfulAssetInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<ContentfulAssetInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<ContentfulAssetInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulAssetInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulAssetInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedTypeName_3 {
+  base64?: Maybe<FixedBase64QueryString_3>;
+
+  tracedSVG?: Maybe<FixedTracedSvgQueryString_3>;
+
+  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_3>;
+
+  width?: Maybe<FixedWidthQueryFloat_3>;
+
+  height?: Maybe<FixedHeightQueryFloat_3>;
+
+  src?: Maybe<FixedSrcQueryString_3>;
+
+  srcSet?: Maybe<FixedSrcSetQueryString_3>;
+
+  srcWebp?: Maybe<FixedSrcWebpQueryString_3>;
+
+  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_3>;
+}
+
+export interface FixedBase64QueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedTracedSvgQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedAspectRatioQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FixedWidthQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FixedHeightQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FixedSrcQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedSrcSetQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedSrcWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FixedSrcSetWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsTypeName_3 {
+  base64?: Maybe<ResolutionsBase64QueryString_3>;
+
+  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_3>;
+
+  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_3>;
+
+  width?: Maybe<ResolutionsWidthQueryFloat_3>;
+
+  height?: Maybe<ResolutionsHeightQueryFloat_3>;
+
+  src?: Maybe<ResolutionsSrcQueryString_3>;
+
+  srcSet?: Maybe<ResolutionsSrcSetQueryString_3>;
+
+  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_3>;
+
+  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_3>;
+}
+
+export interface ResolutionsBase64QueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsTracedSvgQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsAspectRatioQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResolutionsWidthQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResolutionsHeightQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResolutionsSrcQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsSrcSetQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsSrcWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResolutionsSrcSetWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidTypeName_3 {
+  base64?: Maybe<FluidBase64QueryString_3>;
+
+  tracedSVG?: Maybe<FluidTracedSvgQueryString_3>;
+
+  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_3>;
+
+  src?: Maybe<FluidSrcQueryString_3>;
+
+  srcSet?: Maybe<FluidSrcSetQueryString_3>;
+
+  srcWebp?: Maybe<FluidSrcWebpQueryString_3>;
+
+  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_3>;
+
+  sizes?: Maybe<FluidSizesQueryString_3>;
+}
+
+export interface FluidBase64QueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidTracedSvgQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidAspectRatioQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface FluidSrcQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSrcSetQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSrcWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSrcSetWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface FluidSizesQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesTypeName_3 {
+  base64?: Maybe<SizesBase64QueryString_3>;
+
+  tracedSVG?: Maybe<SizesTracedSvgQueryString_3>;
+
+  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_3>;
+
+  src?: Maybe<SizesSrcQueryString_3>;
+
+  srcSet?: Maybe<SizesSrcSetQueryString_3>;
+
+  srcWebp?: Maybe<SizesSrcWebpQueryString_3>;
+
+  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_3>;
+
+  sizes?: Maybe<SizesSizesQueryString_3>;
+}
+
+export interface SizesBase64QueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesTracedSvgQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesAspectRatioQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface SizesSrcQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSrcSetQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSrcWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSrcSetWebpQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface SizesSizesQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeTypeName_3 {
+  base64?: Maybe<ResizeBase64QueryString_3>;
+
+  tracedSVG?: Maybe<ResizeTracedSvgQueryString_3>;
+
+  src?: Maybe<ResizeSrcQueryString_3>;
+
+  width?: Maybe<ResizeWidthQueryInt_3>;
+
+  height?: Maybe<ResizeHeightQueryInt_3>;
+
+  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_3>;
+}
+
+export interface ResizeBase64QueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeTracedSvgQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeSrcQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ResizeWidthQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResizeHeightQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ResizeAspectRatioQueryFloat_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface MarkdownRemarkIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkInternalInputObject_2 {
+  content?: Maybe<MarkdownRemarkInternalContentQueryString_2>;
+
+  type?: Maybe<MarkdownRemarkInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<MarkdownRemarkInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<MarkdownRemarkInternalOwnerQueryString_2>;
+}
+
+export interface MarkdownRemarkInternalContentQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkFrontmatterInputObject_2 {
+  title?: Maybe<MarkdownRemarkFrontmatterTitleQueryString_2>;
+}
+
+export interface MarkdownRemarkFrontmatterTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface MarkdownRemarkRawMarkdownBodyQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface HtmlQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ExcerptQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface HeadingsQueryList_3 {
+  elemMatch?: Maybe<HeadingsListElemTypeName_3>;
+}
+
+export interface HeadingsListElemTypeName_3 {
+  value?: Maybe<HeadingsListElemValueQueryString_3>;
+
+  depth?: Maybe<HeadingsListElemDepthQueryInt_3>;
+}
+
+export interface HeadingsListElemValueQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface HeadingsListElemDepthQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface TimeToReadQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface TableOfContentsQueryString_3 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface WordCountTypeName_3 {
+  paragraphs?: Maybe<WordCountParagraphsQueryInt_3>;
+
+  sentences?: Maybe<WordCountSentencesQueryInt_3>;
+
+  words?: Maybe<WordCountWordsQueryInt_3>;
+}
+
+export interface WordCountParagraphsQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface WordCountSentencesQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface WordCountWordsQueryInt_3 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export enum SitePageConnectionSortByFieldsEnum {
+  JsonName = 'jsonName',
+  InternalComponentName = 'internalComponentName',
+  Path = 'path',
+  Component = 'component',
+  ComponentChunkName = 'componentChunkName',
+  ContextSlug = 'context___slug',
+  PluginCreatorNode = 'pluginCreator___NODE',
+  PluginCreatorId = 'pluginCreatorId',
+  ComponentPath = 'componentPath',
+  Id = 'id',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+}
+
+export enum SitePageConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum SitePageDistinctEnum {
+  JsonName = 'jsonName',
+  InternalComponentName = 'internalComponentName',
+  Path = 'path',
+  Component = 'component',
+  ComponentChunkName = 'componentChunkName',
+  ContextSlug = 'context___slug',
+  PluginCreatorNode = 'pluginCreator___NODE',
+  PluginCreatorId = 'pluginCreatorId',
+  ComponentPath = 'componentPath',
+  Id = 'id',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+}
+
+export enum SitePageGroupEnum {
+  JsonName = 'jsonName',
+  InternalComponentName = 'internalComponentName',
+  Path = 'path',
+  Component = 'component',
+  ComponentChunkName = 'componentChunkName',
+  ContextSlug = 'context___slug',
+  PluginCreatorNode = 'pluginCreator___NODE',
+  PluginCreatorId = 'pluginCreatorId',
+  ComponentPath = 'componentPath',
+  Id = 'id',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+}
+
+export enum SitePluginConnectionSortByFieldsEnum {
+  Resolve = 'resolve',
+  Id = 'id',
+  Name = 'name',
+  Version = 'version',
+  PluginOptionsPlugins = 'pluginOptions___plugins',
+  PluginOptionsName = 'pluginOptions___name',
+  PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsTrackingId = 'pluginOptions___trackingId',
+  PluginOptionsHead = 'pluginOptions___head',
+  PluginOptionsAnonymize = 'pluginOptions___anonymize',
+  PluginOptionsRespectDnt = 'pluginOptions___respectDNT',
+  PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
+  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
+  PluginOptionsPathToConfigModule = 'pluginOptions___pathToConfigModule',
+  PluginOptionsIncludePaths = 'pluginOptions___includePaths',
+  PluginOptionsSrc = 'pluginOptions___src',
+  PluginOptionsAssets = 'pluginOptions___assets',
+  PluginOptionsComponents = 'pluginOptions___components',
+  PluginOptionsPages = 'pluginOptions___pages',
+  PluginOptionsStyles = 'pluginOptions___styles',
+  PluginOptionsTemplates = 'pluginOptions___templates',
+  PluginOptionsUtils = 'pluginOptions___utils',
+  PluginOptionsColor = 'pluginOptions___color',
+  PluginOptionsSpaceId = 'pluginOptions___spaceId',
+  PluginOptionsAccessToken = 'pluginOptions___accessToken',
+  PluginOptionsHost = 'pluginOptions___host',
+  PluginOptionsEnvironment = 'pluginOptions___environment',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsIncludeFavicon = 'pluginOptions___include_favicon',
+  PluginOptionsSitemap = 'pluginOptions___sitemap',
+  PluginOptionsPolicy = 'pluginOptions___policy',
+  PluginOptionsOutput = 'pluginOptions___output',
+  PluginOptionsQuery = 'pluginOptions___query',
+  PluginOptionsPathCheck = 'pluginOptions___pathCheck',
+  NodeApIs = 'nodeAPIs',
+  BrowserApIs = 'browserAPIs',
+  SsrApIs = 'ssrAPIs',
+  PluginFilepath = 'pluginFilepath',
+  PackageJsonName = 'packageJson___name',
+  PackageJsonDescription = 'packageJson___description',
+  PackageJsonVersion = 'packageJson___version',
+  PackageJsonMain = 'packageJson___main',
+  PackageJsonAuthor = 'packageJson___author',
+  PackageJsonLicense = 'packageJson___license',
+  PackageJsonDependencies = 'packageJson___dependencies',
+  PackageJsonDevDependencies = 'packageJson___devDependencies',
+  PackageJsonPeerDependencies = 'packageJson___peerDependencies',
+  PackageJsonKeywords = 'packageJson___keywords',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalOwner = 'internal___owner',
+}
+
+export enum SitePluginConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum SitePluginDistinctEnum {
+  Resolve = 'resolve',
+  Id = 'id',
+  Name = 'name',
+  Version = 'version',
+  PluginOptionsPlugins = 'pluginOptions___plugins',
+  PluginOptionsName = 'pluginOptions___name',
+  PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsTrackingId = 'pluginOptions___trackingId',
+  PluginOptionsHead = 'pluginOptions___head',
+  PluginOptionsAnonymize = 'pluginOptions___anonymize',
+  PluginOptionsRespectDnt = 'pluginOptions___respectDNT',
+  PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
+  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
+  PluginOptionsPathToConfigModule = 'pluginOptions___pathToConfigModule',
+  PluginOptionsIncludePaths = 'pluginOptions___includePaths',
+  PluginOptionsSrc = 'pluginOptions___src',
+  PluginOptionsAssets = 'pluginOptions___assets',
+  PluginOptionsComponents = 'pluginOptions___components',
+  PluginOptionsPages = 'pluginOptions___pages',
+  PluginOptionsStyles = 'pluginOptions___styles',
+  PluginOptionsTemplates = 'pluginOptions___templates',
+  PluginOptionsUtils = 'pluginOptions___utils',
+  PluginOptionsColor = 'pluginOptions___color',
+  PluginOptionsSpaceId = 'pluginOptions___spaceId',
+  PluginOptionsAccessToken = 'pluginOptions___accessToken',
+  PluginOptionsHost = 'pluginOptions___host',
+  PluginOptionsEnvironment = 'pluginOptions___environment',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsIncludeFavicon = 'pluginOptions___include_favicon',
+  PluginOptionsSitemap = 'pluginOptions___sitemap',
+  PluginOptionsPolicy = 'pluginOptions___policy',
+  PluginOptionsOutput = 'pluginOptions___output',
+  PluginOptionsQuery = 'pluginOptions___query',
+  PluginOptionsPathCheck = 'pluginOptions___pathCheck',
+  NodeApIs = 'nodeAPIs',
+  BrowserApIs = 'browserAPIs',
+  SsrApIs = 'ssrAPIs',
+  PluginFilepath = 'pluginFilepath',
+  PackageJsonName = 'packageJson___name',
+  PackageJsonDescription = 'packageJson___description',
+  PackageJsonVersion = 'packageJson___version',
+  PackageJsonMain = 'packageJson___main',
+  PackageJsonAuthor = 'packageJson___author',
+  PackageJsonLicense = 'packageJson___license',
+  PackageJsonDependencies = 'packageJson___dependencies',
+  PackageJsonDevDependencies = 'packageJson___devDependencies',
+  PackageJsonPeerDependencies = 'packageJson___peerDependencies',
+  PackageJsonKeywords = 'packageJson___keywords',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalOwner = 'internal___owner',
+}
+
+export enum SitePluginGroupEnum {
+  Resolve = 'resolve',
+  Id = 'id',
+  Name = 'name',
+  Version = 'version',
+  PluginOptionsPlugins = 'pluginOptions___plugins',
+  PluginOptionsName = 'pluginOptions___name',
+  PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsTrackingId = 'pluginOptions___trackingId',
+  PluginOptionsHead = 'pluginOptions___head',
+  PluginOptionsAnonymize = 'pluginOptions___anonymize',
+  PluginOptionsRespectDnt = 'pluginOptions___respectDNT',
+  PluginOptionsMaxWidth = 'pluginOptions___maxWidth',
+  PluginOptionsBackgroundColor = 'pluginOptions___backgroundColor',
+  PluginOptionsPathToConfigModule = 'pluginOptions___pathToConfigModule',
+  PluginOptionsIncludePaths = 'pluginOptions___includePaths',
+  PluginOptionsSrc = 'pluginOptions___src',
+  PluginOptionsAssets = 'pluginOptions___assets',
+  PluginOptionsComponents = 'pluginOptions___components',
+  PluginOptionsPages = 'pluginOptions___pages',
+  PluginOptionsStyles = 'pluginOptions___styles',
+  PluginOptionsTemplates = 'pluginOptions___templates',
+  PluginOptionsUtils = 'pluginOptions___utils',
+  PluginOptionsColor = 'pluginOptions___color',
+  PluginOptionsSpaceId = 'pluginOptions___spaceId',
+  PluginOptionsAccessToken = 'pluginOptions___accessToken',
+  PluginOptionsHost = 'pluginOptions___host',
+  PluginOptionsEnvironment = 'pluginOptions___environment',
+  PluginOptionsShortName = 'pluginOptions___short_name',
+  PluginOptionsStartUrl = 'pluginOptions___start_url',
+  PluginOptionsThemeColor = 'pluginOptions___theme_color',
+  PluginOptionsDisplay = 'pluginOptions___display',
+  PluginOptionsIcon = 'pluginOptions___icon',
+  PluginOptionsIncludeFavicon = 'pluginOptions___include_favicon',
+  PluginOptionsSitemap = 'pluginOptions___sitemap',
+  PluginOptionsPolicy = 'pluginOptions___policy',
+  PluginOptionsOutput = 'pluginOptions___output',
+  PluginOptionsQuery = 'pluginOptions___query',
+  PluginOptionsPathCheck = 'pluginOptions___pathCheck',
+  NodeApIs = 'nodeAPIs',
+  BrowserApIs = 'browserAPIs',
+  SsrApIs = 'ssrAPIs',
+  PluginFilepath = 'pluginFilepath',
+  PackageJsonName = 'packageJson___name',
+  PackageJsonDescription = 'packageJson___description',
+  PackageJsonVersion = 'packageJson___version',
+  PackageJsonMain = 'packageJson___main',
+  PackageJsonAuthor = 'packageJson___author',
+  PackageJsonLicense = 'packageJson___license',
+  PackageJsonDependencies = 'packageJson___dependencies',
+  PackageJsonDevDependencies = 'packageJson___devDependencies',
+  PackageJsonPeerDependencies = 'packageJson___peerDependencies',
+  PackageJsonKeywords = 'packageJson___keywords',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalOwner = 'internal___owner',
+}
+
+export enum DirectoryConnectionSortByFieldsEnum {
+  Id = 'id',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Blksize = 'blksize',
+  Ino = 'ino',
+  Blocks = 'blocks',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  BirthtimeMs = 'birthtimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+}
+
+export enum DirectoryConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum DirectoryDistinctEnum {
+  Id = 'id',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Blksize = 'blksize',
+  Ino = 'ino',
+  Blocks = 'blocks',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  BirthtimeMs = 'birthtimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+}
+
+export enum DirectoryGroupEnum {
+  Id = 'id',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Blksize = 'blksize',
+  Ino = 'ino',
+  Blocks = 'blocks',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  BirthtimeMs = 'birthtimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+}
+
+export enum FileConnectionSortByFieldsEnum {
+  Id = 'id',
+  Children = 'children',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalMediaType = 'internal___mediaType',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Blksize = 'blksize',
+  Ino = 'ino',
+  Blocks = 'blocks',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  BirthtimeMs = 'birthtimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+  PublicUrl = 'publicURL',
+}
+
+export enum FileConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum FileDistinctEnum {
+  Id = 'id',
+  Children = 'children',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalMediaType = 'internal___mediaType',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Blksize = 'blksize',
+  Ino = 'ino',
+  Blocks = 'blocks',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  BirthtimeMs = 'birthtimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+}
+
+export enum FileGroupEnum {
+  Id = 'id',
+  Children = 'children',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalMediaType = 'internal___mediaType',
+  InternalDescription = 'internal___description',
+  InternalOwner = 'internal___owner',
+  SourceInstanceName = 'sourceInstanceName',
+  AbsolutePath = 'absolutePath',
+  RelativePath = 'relativePath',
+  Extension = 'extension',
+  Size = 'size',
+  PrettySize = 'prettySize',
+  ModifiedTime = 'modifiedTime',
+  AccessTime = 'accessTime',
+  ChangeTime = 'changeTime',
+  BirthTime = 'birthTime',
+  Root = 'root',
+  Dir = 'dir',
+  Base = 'base',
+  Ext = 'ext',
+  Name = 'name',
+  RelativeDirectory = 'relativeDirectory',
+  Dev = 'dev',
+  Mode = 'mode',
+  Nlink = 'nlink',
+  Uid = 'uid',
+  Gid = 'gid',
+  Rdev = 'rdev',
+  Blksize = 'blksize',
+  Ino = 'ino',
+  Blocks = 'blocks',
+  AtimeMs = 'atimeMs',
+  MtimeMs = 'mtimeMs',
+  CtimeMs = 'ctimeMs',
+  BirthtimeMs = 'birthtimeMs',
+  Atime = 'atime',
+  Mtime = 'mtime',
+  Ctime = 'ctime',
+  Birthtime = 'birthtime',
+}
+
+export enum DataJsonConnectionSortByFieldsEnum {
+  Id = 'id',
+  Parent = 'parent',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalOwner = 'internal___owner',
+}
+
+export enum DataJsonConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum DataJsonDistinctEnum {
+  Id = 'id',
+  Parent = 'parent',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalOwner = 'internal___owner',
+}
+
+export enum DataJsonGroupEnum {
+  Id = 'id',
+  Parent = 'parent',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalType = 'internal___type',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulContentTypeConnectionSortByFieldsEnum {
+  Id = 'id',
+  Name = 'name',
+  DisplayField = 'displayField',
+  Description = 'description',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulContentTypeConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulContentTypeDistinctEnum {
+  Id = 'id',
+  Name = 'name',
+  DisplayField = 'displayField',
+  Description = 'description',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulContentTypeGroupEnum {
+  Id = 'id',
+  Name = 'name',
+  DisplayField = 'displayField',
+  Description = 'description',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulServiceConnectionSortByFieldsEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Directions = 'directions',
+  Order = 'order',
+  ImageNode = 'image___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulServiceConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulImageFormat {
+  NoChange = 'NO_CHANGE',
+  Jpg = 'JPG',
+  Png = 'PNG',
+  Webp = 'WEBP',
+}
+
+export enum ImageResizingBehavior {
+  NoChange = 'NO_CHANGE',
+  Pad = 'PAD',
+  Crop = 'CROP',
+  Fill = 'FILL',
+  Thumb = 'THUMB',
+  Scale = 'SCALE',
+}
+
+export enum ContentfulImageCropFocus {
+  Top = 'TOP',
+  TopLeft = 'TOP_LEFT',
+  TopRight = 'TOP_RIGHT',
+  Bottom = 'BOTTOM',
+  BottomRight = 'BOTTOM_RIGHT',
+  BottomLeft = 'BOTTOM_LEFT',
+  Right = 'RIGHT',
+  Left = 'LEFT',
+  Faces = 'FACES',
+  Center = 'CENTER',
+}
+
+export enum ContentfulServiceDistinctEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Directions = 'directions',
+  Order = 'order',
+  ImageNode = 'image___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulServiceGroupEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Directions = 'directions',
+  Order = 'order',
+  ImageNode = 'image___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulHomeConnectionSortByFieldsEnum {
+  Title = 'title',
+  DescriptionNode = 'description___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  Children = 'children',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulHomeConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ExcerptFormats {
+  Plain = 'PLAIN',
+  Html = 'HTML',
+}
+
+export enum HeadingLevels {
+  H1 = 'h1',
+  H2 = 'h2',
+  H3 = 'h3',
+  H4 = 'h4',
+  H5 = 'h5',
+  H6 = 'h6',
+}
+
+export enum ContentfulHomeDistinctEnum {
+  Title = 'title',
+  DescriptionNode = 'description___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  Children = 'children',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulHomeGroupEnum {
+  Title = 'title',
+  DescriptionNode = 'description___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  Children = 'children',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulHomeDescriptionTextNodeConnectionSortByFieldsEnum {
+  Id = 'id',
+  Parent = 'parent',
+  Children = 'children',
+  Description = 'description',
+  InternalType = 'internal___type',
+  InternalMediaType = 'internal___mediaType',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulHomeDescriptionTextNodeConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulHomeDescriptionTextNodeDistinctEnum {
+  Id = 'id',
+  Parent = 'parent',
+  Children = 'children',
+  Description = 'description',
+  InternalType = 'internal___type',
+  InternalMediaType = 'internal___mediaType',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulHomeDescriptionTextNodeGroupEnum {
+  Id = 'id',
+  Parent = 'parent',
+  Children = 'children',
+  Description = 'description',
+  InternalType = 'internal___type',
+  InternalMediaType = 'internal___mediaType',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulNavigationConnectionSortByFieldsEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Order = 'order',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulNavigationConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulNavigationDistinctEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Order = 'order',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulNavigationGroupEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Order = 'order',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulOfficeConnectionSortByFieldsEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Order = 'order',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+  MapLon = 'map___lon',
+  MapLat = 'map___lat',
+}
+
+export enum ContentfulOfficeConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulOfficeDistinctEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Order = 'order',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+  MapLon = 'map___lon',
+  MapLat = 'map___lat',
+}
+
+export enum ContentfulOfficeGroupEnum {
+  Title = 'title',
+  Slug = 'slug',
+  Order = 'order',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+  MapLon = 'map___lon',
+  MapLat = 'map___lat',
+}
+
+export enum ContentfulAssetConnectionSortByFieldsEnum {
+  ContentfulId = 'contentful_id',
+  Id = 'id',
+  FileUrl = 'file___url',
+  FileDetailsSize = 'file___details___size',
+  FileDetailsImage = 'file___details___image',
+  FileFileName = 'file___fileName',
+  FileContentType = 'file___contentType',
+  Title = 'title',
+  Description = 'description',
+  NodeLocale = 'node_locale',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  FixedBase64 = 'fixed___base64',
+  FixedTracedSvg = 'fixed___tracedSVG',
+  FixedAspectRatio = 'fixed___aspectRatio',
+  FixedWidth = 'fixed___width',
+  FixedHeight = 'fixed___height',
+  FixedSrc = 'fixed___src',
+  FixedSrcSet = 'fixed___srcSet',
+  FixedSrcWebp = 'fixed___srcWebp',
+  FixedSrcSetWebp = 'fixed___srcSetWebp',
+  ResolutionsBase64 = 'resolutions___base64',
+  ResolutionsTracedSvg = 'resolutions___tracedSVG',
+  ResolutionsAspectRatio = 'resolutions___aspectRatio',
+  ResolutionsWidth = 'resolutions___width',
+  ResolutionsHeight = 'resolutions___height',
+  ResolutionsSrc = 'resolutions___src',
+  ResolutionsSrcSet = 'resolutions___srcSet',
+  ResolutionsSrcWebp = 'resolutions___srcWebp',
+  ResolutionsSrcSetWebp = 'resolutions___srcSetWebp',
+  FluidBase64 = 'fluid___base64',
+  FluidTracedSvg = 'fluid___tracedSVG',
+  FluidAspectRatio = 'fluid___aspectRatio',
+  FluidSrc = 'fluid___src',
+  FluidSrcSet = 'fluid___srcSet',
+  FluidSrcWebp = 'fluid___srcWebp',
+  FluidSrcSetWebp = 'fluid___srcSetWebp',
+  FluidSizes = 'fluid___sizes',
+  SizesBase64 = 'sizes___base64',
+  SizesTracedSvg = 'sizes___tracedSVG',
+  SizesAspectRatio = 'sizes___aspectRatio',
+  SizesSrc = 'sizes___src',
+  SizesSrcSet = 'sizes___srcSet',
+  SizesSrcWebp = 'sizes___srcWebp',
+  SizesSrcSetWebp = 'sizes___srcSetWebp',
+  SizesSizes = 'sizes___sizes',
+  ResizeBase64 = 'resize___base64',
+  ResizeTracedSvg = 'resize___tracedSVG',
+  ResizeSrc = 'resize___src',
+  ResizeWidth = 'resize___width',
+  ResizeHeight = 'resize___height',
+  ResizeAspectRatio = 'resize___aspectRatio',
+}
+
+export enum ContentfulAssetConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulAssetDistinctEnum {
+  ContentfulId = 'contentful_id',
+  Id = 'id',
+  FileUrl = 'file___url',
+  FileDetailsSize = 'file___details___size',
+  FileDetailsImage = 'file___details___image',
+  FileFileName = 'file___fileName',
+  FileContentType = 'file___contentType',
+  Title = 'title',
+  Description = 'description',
+  NodeLocale = 'node_locale',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum ContentfulAssetGroupEnum {
+  ContentfulId = 'contentful_id',
+  Id = 'id',
+  FileUrl = 'file___url',
+  FileDetailsSize = 'file___details___size',
+  FileDetailsImage = 'file___details___image',
+  FileFileName = 'file___fileName',
+  FileContentType = 'file___contentType',
+  Title = 'title',
+  Description = 'description',
+  NodeLocale = 'node_locale',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+}
+
+export enum MarkdownRemarkConnectionSortByFieldsEnum {
+  Id = 'id',
+  Parent = 'parent',
+  InternalContent = 'internal___content',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  FrontmatterTitle = 'frontmatter___title',
+  RawMarkdownBody = 'rawMarkdownBody',
+  Html = 'html',
+  Excerpt = 'excerpt',
+  Headings = 'headings',
+  TimeToRead = 'timeToRead',
+  TableOfContents = 'tableOfContents',
+  WordCountParagraphs = 'wordCount___paragraphs',
+  WordCountSentences = 'wordCount___sentences',
+  WordCountWords = 'wordCount___words',
+}
+
+export enum MarkdownRemarkConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum MarkdownRemarkDistinctEnum {
+  Id = 'id',
+  Parent = 'parent',
+  InternalContent = 'internal___content',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  FrontmatterTitle = 'frontmatter___title',
+  RawMarkdownBody = 'rawMarkdownBody',
+}
+
+export enum MarkdownRemarkGroupEnum {
+  Id = 'id',
+  Parent = 'parent',
+  InternalContent = 'internal___content',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  FrontmatterTitle = 'frontmatter___title',
+  RawMarkdownBody = 'rawMarkdownBody',
+}
+
+/** A date string, such as 2007-12-03, compliant with the ISO 8601 standard  for representation of dates and times using the Gregorian calendar. */
+export type Date = any;
+
+/** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
+export type Json = any;
+
+// ====================================================
+// Scalars
+// ====================================================
+
+// ====================================================
+// Interfaces
+// ====================================================
+
+/** An object with an id, parent, and children */
+export interface Node {
+  /** The id of the node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+}
+
+// ====================================================
+// Types
+// ====================================================
 
 export interface Query {
-  allSitePage: SitePageConnection | null;
-  allSitePlugin: SitePluginConnection | null;
-  allDirectory: DirectoryConnection | null;
-  allFile: FileConnection | null;
-  allImageSharp: ImageSharpConnection | null;
-  allMarkdownRemark: MarkdownRemarkConnection | null;
-  allAuthorJson: AuthorJsonConnection | null;
-  sitePage: SitePage | null;
-  sitePlugin: SitePlugin | null;
-  site: Site | null;
-  directory: Directory | null;
-  file: File | null;
-  imageSharp: ImageSharp | null;
-  markdownRemark: MarkdownRemark | null;
-  authorJson: AuthorJson | null;
-}
-
-export interface AllSitePageQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: sitePageConnectionSort | null;
-  filter: filterSitePage | null;
-}
-
-export interface AllSitePluginQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: sitePluginConnectionSort | null;
-  filter: filterSitePlugin | null;
-}
-
-export interface AllDirectoryQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: directoryConnectionSort | null;
-  filter: filterDirectory | null;
-}
-
-export interface AllFileQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: fileConnectionSort | null;
-  filter: filterFile | null;
-}
-
-export interface AllImageSharpQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: imageSharpConnectionSort | null;
-  filter: filterImageSharp | null;
-}
-
-export interface AllMarkdownRemarkQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: markdownRemarkConnectionSort | null;
-  filter: filterMarkdownRemark | null;
-}
-
-export interface AllAuthorJsonQueryArgs {
-  skip: number | null;
-  limit: number | null;
-  sort: authorJsonConnectionSort | null;
-  filter: filterAuthorJson | null;
-}
-
-export interface SitePageQueryArgs {
-  jsonName: sitePageJsonNameQueryString | null;
-  internalComponentName: sitePageInternalComponentNameQueryString | null;
-  path: sitePagePathQueryString_2 | null;
-  component: sitePageComponentQueryString | null;
-  componentChunkName: sitePageComponentChunkNameQueryString | null;
-  context: sitePageContextInputObject | null;
-  pluginCreator: sitePagePluginCreatorInputObject | null;
-  pluginCreatorId: sitePagePluginCreatorIdQueryString_2 | null;
-  componentPath: sitePageComponentPathQueryString | null;
-  id: sitePageIdQueryString_2 | null;
-  internal: sitePageInternalInputObject_2 | null;
-}
-
-export interface SitePluginQueryArgs {
-  resolve: sitePluginResolveQueryString_2 | null;
-  id: sitePluginIdQueryString_2 | null;
-  name: sitePluginNameQueryString_2 | null;
-  version: sitePluginVersionQueryString_2 | null;
-  pluginOptions: sitePluginPluginOptionsInputObject_2 | null;
-  nodeAPIs: sitePluginNodeApIsQueryList_2 | null;
-  browserAPIs: sitePluginBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginPluginFilepathQueryString_2 | null;
-  packageJson: sitePluginPackageJsonInputObject_2 | null;
-  internal: sitePluginInternalInputObject_2 | null;
-}
-
-export interface SiteQueryArgs {
-  siteMetadata: siteSiteMetadataInputObject_2 | null;
-  port: sitePortQueryString_2 | null;
-  host: siteHostQueryString_2 | null;
-  mapping: siteMappingInputObject_2 | null;
-  pathPrefix: sitePathPrefixQueryString_2 | null;
-  polyfill: sitePolyfillQueryBoolean_2 | null;
-  buildTime: siteBuildTimeQueryString_2 | null;
-  id: siteIdQueryString_2 | null;
-  internal: siteInternalInputObject_2 | null;
-}
-
-export interface DirectoryQueryArgs {
-  id: directoryIdQueryString_2 | null;
-  internal: directoryInternalInputObject_2 | null;
-  sourceInstanceName: directorySourceInstanceNameQueryString_2 | null;
-  absolutePath: directoryAbsolutePathQueryString_2 | null;
-  relativePath: directoryRelativePathQueryString_2 | null;
-  extension: directoryExtensionQueryString_2 | null;
-  size: directorySizeQueryInteger_2 | null;
-  prettySize: directoryPrettySizeQueryString_2 | null;
-  modifiedTime: directoryModifiedTimeQueryString_2 | null;
-  accessTime: directoryAccessTimeQueryString_2 | null;
-  changeTime: directoryChangeTimeQueryString_2 | null;
-  birthTime: directoryBirthTimeQueryString_2 | null;
-  root: directoryRootQueryString_2 | null;
-  dir: directoryDirQueryString_2 | null;
-  base: directoryBaseQueryString_2 | null;
-  ext: directoryExtQueryString_2 | null;
-  name: directoryNameQueryString_2 | null;
-  relativeDirectory: directoryRelativeDirectoryQueryString_2 | null;
-  dev: directoryDevQueryInteger_2 | null;
-  mode: directoryModeQueryInteger_2 | null;
-  nlink: directoryNlinkQueryInteger_2 | null;
-  uid: directoryUidQueryInteger_2 | null;
-  gid: directoryGidQueryInteger_2 | null;
-  rdev: directoryRdevQueryInteger_2 | null;
-  blksize: directoryBlksizeQueryInteger_2 | null;
-  ino: directoryInoQueryInteger_2 | null;
-  blocks: directoryBlocksQueryInteger_2 | null;
-  atimeMs: directoryAtimeMsQueryFloat_2 | null;
-  mtimeMs: directoryMtimeMsQueryFloat_2 | null;
-  ctimeMs: directoryCtimeMsQueryFloat_2 | null;
-  birthtimeMs: directoryBirthtimeMsQueryFloat_2 | null;
-  atime: directoryAtimeQueryString_2 | null;
-  mtime: directoryMtimeQueryString_2 | null;
-  ctime: directoryCtimeQueryString_2 | null;
-  birthtime: directoryBirthtimeQueryString_2 | null;
-}
-
-export interface FileQueryArgs {
-  id: fileIdQueryString_2 | null;
-  internal: fileInternalInputObject_2 | null;
-  sourceInstanceName: fileSourceInstanceNameQueryString_2 | null;
-  absolutePath: fileAbsolutePathQueryString_2 | null;
-  relativePath: fileRelativePathQueryString_2 | null;
-  extension: fileExtensionQueryString_2 | null;
-  size: fileSizeQueryInteger_2 | null;
-  prettySize: filePrettySizeQueryString_2 | null;
-  modifiedTime: fileModifiedTimeQueryString_2 | null;
-  accessTime: fileAccessTimeQueryString_2 | null;
-  changeTime: fileChangeTimeQueryString_2 | null;
-  birthTime: fileBirthTimeQueryString_2 | null;
-  root: fileRootQueryString_2 | null;
-  dir: fileDirQueryString_2 | null;
-  base: fileBaseQueryString_2 | null;
-  ext: fileExtQueryString_2 | null;
-  name: fileNameQueryString_2 | null;
-  relativeDirectory: fileRelativeDirectoryQueryString_2 | null;
-  dev: fileDevQueryInteger_2 | null;
-  mode: fileModeQueryInteger_2 | null;
-  nlink: fileNlinkQueryInteger_2 | null;
-  uid: fileUidQueryInteger_2 | null;
-  gid: fileGidQueryInteger_2 | null;
-  rdev: fileRdevQueryInteger_2 | null;
-  blksize: fileBlksizeQueryInteger_2 | null;
-  ino: fileInoQueryInteger_2 | null;
-  blocks: fileBlocksQueryInteger_2 | null;
-  atimeMs: fileAtimeMsQueryFloat_2 | null;
-  mtimeMs: fileMtimeMsQueryFloat_2 | null;
-  ctimeMs: fileCtimeMsQueryFloat_2 | null;
-  birthtimeMs: fileBirthtimeMsQueryFloat_2 | null;
-  atime: fileAtimeQueryString_2 | null;
-  mtime: fileMtimeQueryString_2 | null;
-  ctime: fileCtimeQueryString_2 | null;
-  birthtime: fileBirthtimeQueryString_2 | null;
-  publicURL: publicUrlQueryString_3 | null;
-}
-
-export interface ImageSharpQueryArgs {
-  id: imageSharpIdQueryString_2 | null;
-  internal: imageSharpInternalInputObject_2 | null;
-  fixed: fixedTypeName_3 | null;
-  resolutions: resolutionsTypeName_3 | null;
-  fluid: fluidTypeName_3 | null;
-  sizes: sizesTypeName_3 | null;
-  original: originalTypeName_3 | null;
-  resize: resizeTypeName_3 | null;
-}
-
-export interface MarkdownRemarkQueryArgs {
-  id: markdownRemarkIdQueryString_2 | null;
-  internal: markdownRemarkInternalInputObject_2 | null;
-  frontmatter: markdownRemarkFrontmatterInputObject_2 | null;
-  excerpt: excerptQueryString_3 | null;
-  rawMarkdownBody: markdownRemarkRawMarkdownBodyQueryString_2 | null;
-  fileAbsolutePath: markdownRemarkFileAbsolutePathQueryString_2 | null;
-  fields: markdownRemarkFieldsInputObject_2 | null;
-  html: htmlQueryString_3 | null;
-  headings: headingsQueryList_3 | null;
-  timeToRead: timeToReadQueryInt_3 | null;
-  tableOfContents: tableOfContentsQueryString_3 | null;
-  wordCount: wordCountTypeName_3 | null;
-}
-
-export interface AuthorJsonQueryArgs {
-  id: authorJsonIdQueryString_2 | null;
-  bio: authorJsonBioQueryString_2 | null;
-  avatar: authorJsonAvatarQueryString_2 | null;
-  twitter: authorJsonTwitterQueryString_2 | null;
-  github: authorJsonGithubQueryString_2 | null;
-  internal: authorJsonInternalInputObject_2 | null;
-}
-
-export interface sitePageConnectionSort {
-  fields: Array<SitePageConnectionSortByFieldsEnum>;
-  order: sitePageConnectionSortOrderValues | null;
-}
-
-export type SitePageConnectionSortByFieldsEnum = "jsonName" | "internalComponentName" | "path" | "component" | "componentChunkName" | "context___slug" | "context___tag" | "context___skip" | "pluginCreator___NODE" | "pluginCreatorId" | "componentPath" | "id" | "parent" | "internal___type" | "internal___contentDigest" | "internal___description" | "internal___owner";
-
-export type sitePageConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterSitePage {
-  jsonName: sitePageConnectionJsonNameQueryString | null;
-  internalComponentName: sitePageConnectionInternalComponentNameQueryString | null;
-  path: sitePageConnectionPathQueryString_2 | null;
-  component: sitePageConnectionComponentQueryString | null;
-  componentChunkName: sitePageConnectionComponentChunkNameQueryString | null;
-  context: sitePageConnectionContextInputObject | null;
-  pluginCreator: sitePageConnectionPluginCreatorInputObject | null;
-  pluginCreatorId: sitePageConnectionPluginCreatorIdQueryString_2 | null;
-  componentPath: sitePageConnectionComponentPathQueryString | null;
-  id: sitePageConnectionIdQueryString_2 | null;
-  internal: sitePageConnectionInternalInputObject_2 | null;
-}
-
-export interface sitePageConnectionJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionInternalComponentNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionComponentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionComponentChunkNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionContextInputObject {
-  slug: sitePageConnectionContextSlugQueryString | null;
-  tag: sitePageConnectionContextTagQueryString | null;
-  skip: sitePageConnectionContextSkipQueryInteger | null;
-}
-
-export interface sitePageConnectionContextSlugQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionContextTagQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionContextSkipQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePageConnectionPluginCreatorInputObject {
-  resolve: sitePageConnectionPluginCreatorResolveQueryString | null;
-  id: sitePageConnectionPluginCreatorIdQueryString | null;
-  name: sitePageConnectionPluginCreatorNameQueryString | null;
-  version: sitePageConnectionPluginCreatorVersionQueryString | null;
-  pluginOptions: sitePageConnectionPluginCreatorPluginOptionsInputObject | null;
-  nodeAPIs: sitePageConnectionPluginCreatorNodeApIsQueryList | null;
-  browserAPIs: sitePageConnectionPluginCreatorBrowserApIsQueryList | null;
-  ssrAPIs: sitePageConnectionPluginCreatorSsrApIsQueryList | null;
-  pluginFilepath: sitePageConnectionPluginCreatorPluginFilepathQueryString | null;
-  packageJson: sitePageConnectionPluginCreatorPackageJsonInputObject | null;
-  parent: sitePageConnectionPluginCreatorParentQueryString | null;
-  internal: sitePageConnectionPluginCreatorInternalInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsInputObject {
-  plugins: sitePageConnectionPluginCreatorPluginOptionsPluginsQueryList | null;
-  name: sitePageConnectionPluginCreatorPluginOptionsNameQueryString | null;
-  path: sitePageConnectionPluginCreatorPluginOptionsPathQueryString | null;
-  trackingId: sitePageConnectionPluginCreatorPluginOptionsTrackingIdQueryString | null;
-  head: sitePageConnectionPluginCreatorPluginOptionsHeadQueryBoolean | null;
-  anonymize: sitePageConnectionPluginCreatorPluginOptionsAnonymizeQueryBoolean | null;
-  respectDNT: sitePageConnectionPluginCreatorPluginOptionsRespectDntQueryBoolean | null;
-  maxWidth: sitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString | null;
-  short_name: sitePageConnectionPluginCreatorPluginOptionsShortNameQueryString | null;
-  start_url: sitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString | null;
-  background_color: sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString_2 | null;
-  theme_color: sitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString | null;
-  display: sitePageConnectionPluginCreatorPluginOptionsDisplayQueryString | null;
-  pathCheck: sitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPluginOptionsPluginsInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsInputObject {
-  resolve: sitePageConnectionPluginCreatorPluginOptionsPluginsResolveQueryString | null;
-  id: sitePageConnectionPluginCreatorPluginOptionsPluginsIdQueryString | null;
-  name: sitePageConnectionPluginCreatorPluginOptionsPluginsNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPluginOptionsPluginsVersionQueryString | null;
-  pluginOptions: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsInputObject | null;
-  browserAPIs: sitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList | null;
-  ssrAPIs: sitePageConnectionPluginCreatorPluginOptionsPluginsSsrApIsQueryList | null;
-  pluginFilepath: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginFilepathQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
-  maxWidth: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPluginsPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsTrackingIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsHeadQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsAnonymizeQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsRespectDntQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsShortNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsStartUrlQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsThemeColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsDisplayQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePageConnectionPluginCreatorNodeApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonNameQueryString | null;
-  description: sitePageConnectionPluginCreatorPackageJsonDescriptionQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonVersionQueryString | null;
-  main: sitePageConnectionPluginCreatorPackageJsonMainQueryString | null;
-  license: sitePageConnectionPluginCreatorPackageJsonLicenseQueryString | null;
-  dependencies: sitePageConnectionPluginCreatorPackageJsonDependenciesQueryList | null;
-  devDependencies: sitePageConnectionPluginCreatorPackageJsonDevDependenciesQueryList | null;
-  peerDependencies: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesQueryList | null;
-  keywords: sitePageConnectionPluginCreatorPackageJsonKeywordsQueryList | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonMainQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonLicenseQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPackageJsonDependenciesInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonDependenciesNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonDependenciesVersionQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPackageJsonDevDependenciesInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonDevDependenciesNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonDevDependenciesVersionQueryString | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonDevDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesQueryList {
-  elemMatch: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesInputObject | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesInputObject {
-  name: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesNameQueryString | null;
-  version: sitePageConnectionPluginCreatorPackageJsonPeerDependenciesVersionQueryString | null;
-}
+  /** Connection to all SitePage nodes */
+  allSitePage?: Maybe<SitePageConnection>;
+  /** Connection to all SitePlugin nodes */
+  allSitePlugin?: Maybe<SitePluginConnection>;
+  /** Connection to all Directory nodes */
+  allDirectory?: Maybe<DirectoryConnection>;
+  /** Connection to all File nodes */
+  allFile?: Maybe<FileConnection>;
+  /** Connection to all DataJson nodes */
+  allDataJson?: Maybe<DataJsonConnection>;
+  /** Connection to all ContentfulContentType nodes */
+  allContentfulContentType?: Maybe<ContentfulContentTypeConnection>;
+  /** Connection to all ContentfulService nodes */
+  allContentfulService?: Maybe<ContentfulServiceConnection>;
+  /** Connection to all ContentfulHome nodes */
+  allContentfulHome?: Maybe<ContentfulHomeConnection>;
+  /** Connection to all contentfulHomeDescriptionTextNode nodes */
+  allContentfulHomeDescriptionTextNode?: Maybe<
+    ContentfulHomeDescriptionTextNodeConnection
+  >;
+  /** Connection to all ContentfulNavigation nodes */
+  allContentfulNavigation?: Maybe<ContentfulNavigationConnection>;
+  /** Connection to all ContentfulOffice nodes */
+  allContentfulOffice?: Maybe<ContentfulOfficeConnection>;
+  /** Connection to all ContentfulAsset nodes */
+  allContentfulAsset?: Maybe<ContentfulAssetConnection>;
+  /** Connection to all MarkdownRemark nodes */
+  allMarkdownRemark?: Maybe<MarkdownRemarkConnection>;
 
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorPackageJsonPeerDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  sitePage?: Maybe<SitePage>;
 
-export interface sitePageConnectionPluginCreatorPackageJsonKeywordsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageConnectionPluginCreatorParentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  sitePlugin?: Maybe<SitePlugin>;
 
-export interface sitePageConnectionPluginCreatorInternalInputObject {
-  contentDigest: sitePageConnectionPluginCreatorInternalContentDigestQueryString | null;
-  type: sitePageConnectionPluginCreatorInternalTypeQueryString | null;
-  owner: sitePageConnectionPluginCreatorInternalOwnerQueryString | null;
-}
+  site?: Maybe<Site>;
 
-export interface sitePageConnectionPluginCreatorInternalContentDigestQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  directory?: Maybe<Directory>;
 
-export interface sitePageConnectionPluginCreatorInternalTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  file?: Maybe<File>;
 
-export interface sitePageConnectionPluginCreatorInternalOwnerQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  dataJson?: Maybe<DataJson>;
 
-export interface sitePageConnectionPluginCreatorIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  contentfulContentType?: Maybe<ContentfulContentType>;
 
-export interface sitePageConnectionComponentPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  contentfulService?: Maybe<ContentfulService>;
 
-export interface sitePageConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  contentfulHome?: Maybe<ContentfulHome>;
 
-export interface sitePageConnectionInternalInputObject_2 {
-  type: sitePageConnectionInternalTypeQueryString_2 | null;
-  contentDigest: sitePageConnectionInternalContentDigestQueryString_2 | null;
-  description: sitePageConnectionInternalDescriptionQueryString | null;
-  owner: sitePageConnectionInternalOwnerQueryString_2 | null;
-}
+  contentfulHomeDescriptionTextNode?: Maybe<ContentfulHomeDescriptionTextNode>;
 
-export interface sitePageConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  contentfulNavigation?: Maybe<ContentfulNavigation>;
 
-export interface sitePageConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  contentfulOffice?: Maybe<ContentfulOffice>;
 
-export interface sitePageConnectionInternalDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  contentfulAsset?: Maybe<ContentfulAsset>;
 
-export interface sitePageConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
+  markdownRemark?: Maybe<MarkdownRemark>;
 }
 
+/** A connection to a list of items. */
 export interface SitePageConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<SitePageEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<sitePageGroupConnectionConnection> | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<SitePageEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<SitePageGroupConnectionConnection>)[]>;
 }
 
-export interface DistinctSitePageConnectionArgs {
-  field: sitePageDistinctEnum | null;
-}
-
-export interface GroupSitePageConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: sitePageGroupEnum | null;
-}
-
+/** Information about pagination in a connection. */
 export interface PageInfo {
+  /** When paginating, are there more items? */
   hasNextPage: boolean;
 }
 
+/** An edge in a connection. */
 export interface SitePageEdge {
-  node: SitePage | null;
-  next: SitePage | null;
-  previous: SitePage | null;
+  /** The item at the end of the edge */
+  node?: Maybe<SitePage>;
+  /** The next edge in the connection */
+  next?: Maybe<SitePage>;
+  /** The previous edge in the connection */
+  previous?: Maybe<SitePage>;
 }
 
+/** Node of type SitePage */
 export interface SitePage extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  jsonName: string | null;
-  internalComponentName: string | null;
-  path: string | null;
-  component: string | null;
-  componentChunkName: string | null;
-  context: context | null;
-  pluginCreator: SitePlugin | null;
-  pluginCreatorId: string | null;
-  componentPath: string | null;
-  internal: internal_9 | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  jsonName?: Maybe<string>;
+
+  internalComponentName?: Maybe<string>;
+
+  path?: Maybe<string>;
+
+  component?: Maybe<string>;
+
+  componentChunkName?: Maybe<string>;
+
+  context?: Maybe<Context>;
+
+  pluginCreator?: Maybe<SitePlugin>;
+
+  pluginCreatorId?: Maybe<string>;
+
+  componentPath?: Maybe<string>;
+
+  internal?: Maybe<Internal_15>;
 }
 
-export interface Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
+export interface Context {
+  slug?: Maybe<string>;
 }
 
-export interface context {
-  slug: string | null;
-  tag: string | null;
-  skip: number | null;
-}
-
+/** Node of type SitePlugin */
 export interface SitePlugin extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  resolve: string | null;
-  name: string | null;
-  version: string | null;
-  pluginOptions: pluginOptions_3 | null;
-  nodeAPIs: Array<string> | null;
-  browserAPIs: Array<string> | null;
-  ssrAPIs: Array<string> | null;
-  pluginFilepath: string | null;
-  packageJson: packageJson_2 | null;
-  internal: internal_10 | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  resolve?: Maybe<string>;
+
+  name?: Maybe<string>;
+
+  version?: Maybe<string>;
+
+  pluginOptions?: Maybe<PluginOptions_3>;
+
+  nodeAPIs?: Maybe<(Maybe<string>)[]>;
+
+  browserAPIs?: Maybe<(Maybe<string>)[]>;
+
+  ssrAPIs?: Maybe<(Maybe<string>)[]>;
+
+  pluginFilepath?: Maybe<string>;
+
+  packageJson?: Maybe<PackageJson_2>;
+
+  internal?: Maybe<Internal_16>;
 }
 
-export interface pluginOptions_3 {
-  plugins: Array<plugins_2> | null;
-  name: string | null;
-  path: string | null;
-  trackingId: string | null;
-  head: boolean | null;
-  anonymize: boolean | null;
-  respectDNT: boolean | null;
-  maxWidth: number | null;
-  backgroundColor: string | null;
-  short_name: string | null;
-  start_url: string | null;
-  background_color: string | null;
-  theme_color: string | null;
-  display: string | null;
-  pathCheck: boolean | null;
+export interface PluginOptions_3 {
+  plugins?: Maybe<(Maybe<Plugins_2>)[]>;
+
+  name?: Maybe<string>;
+
+  path?: Maybe<string>;
+
+  trackingId?: Maybe<string>;
+
+  head?: Maybe<boolean>;
+
+  anonymize?: Maybe<boolean>;
+
+  respectDNT?: Maybe<boolean>;
+
+  maxWidth?: Maybe<number>;
+
+  backgroundColor?: Maybe<string>;
+
+  pathToConfigModule?: Maybe<string>;
+
+  includePaths?: Maybe<(Maybe<string>)[]>;
+
+  src?: Maybe<string>;
+
+  assets?: Maybe<string>;
+
+  components?: Maybe<string>;
+
+  pages?: Maybe<string>;
+
+  styles?: Maybe<string>;
+
+  templates?: Maybe<string>;
+
+  utils?: Maybe<string>;
+
+  color?: Maybe<string>;
+
+  spaceId?: Maybe<string>;
+
+  accessToken?: Maybe<string>;
+
+  host?: Maybe<string>;
+
+  environment?: Maybe<string>;
+
+  short_name?: Maybe<string>;
+
+  start_url?: Maybe<string>;
+
+  background_color?: Maybe<string>;
+
+  theme_color?: Maybe<string>;
+
+  display?: Maybe<string>;
+
+  icon?: Maybe<string>;
+
+  include_favicon?: Maybe<boolean>;
+
+  sitemap?: Maybe<string>;
+
+  policy?: Maybe<(Maybe<Policy_2>)[]>;
+
+  output?: Maybe<string>;
+
+  query?: Maybe<string>;
+
+  pathCheck?: Maybe<boolean>;
 }
 
-export interface plugins_2 {
-  resolve: string | null;
-  id: string | null;
-  name: string | null;
-  version: string | null;
-  pluginOptions: pluginOptions_4 | null;
-  browserAPIs: Array<string> | null;
-  ssrAPIs: Array<string> | null;
-  pluginFilepath: string | null;
+export interface Plugins_2 {
+  resolve?: Maybe<string>;
+
+  id?: Maybe<string>;
+
+  name?: Maybe<string>;
+
+  version?: Maybe<string>;
+
+  pluginOptions?: Maybe<PluginOptions_4>;
+
+  browserAPIs?: Maybe<(Maybe<string>)[]>;
+
+  ssrAPIs?: Maybe<(Maybe<string>)[]>;
+
+  pluginFilepath?: Maybe<string>;
 }
 
-export interface pluginOptions_4 {
-  maxWidth: number | null;
-  backgroundColor: string | null;
+export interface PluginOptions_4 {
+  maxWidth?: Maybe<number>;
+
+  backgroundColor?: Maybe<string>;
 }
 
-export interface packageJson_2 {
-  name: string | null;
-  description: string | null;
-  version: string | null;
-  main: string | null;
-  license: string | null;
-  dependencies: Array<dependencies_2> | null;
-  devDependencies: Array<devDependencies_2> | null;
-  peerDependencies: Array<peerDependencies_2> | null;
-  keywords: Array<string> | null;
+export interface Policy_2 {
+  userAgent?: Maybe<string>;
+
+  allow?: Maybe<string>;
 }
 
-export interface dependencies_2 {
-  name: string | null;
-  version: string | null;
+export interface PackageJson_2 {
+  name?: Maybe<string>;
+
+  description?: Maybe<string>;
+
+  version?: Maybe<string>;
+
+  main?: Maybe<string>;
+
+  author?: Maybe<string>;
+
+  license?: Maybe<string>;
+
+  dependencies?: Maybe<(Maybe<Dependencies_2>)[]>;
+
+  devDependencies?: Maybe<(Maybe<DevDependencies_2>)[]>;
+
+  peerDependencies?: Maybe<(Maybe<PeerDependencies_2>)[]>;
+
+  keywords?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface devDependencies_2 {
-  name: string | null;
-  version: string | null;
+export interface Dependencies_2 {
+  name?: Maybe<string>;
+
+  version?: Maybe<string>;
 }
 
-export interface peerDependencies_2 {
-  name: string | null;
-  version: string | null;
+export interface DevDependencies_2 {
+  name?: Maybe<string>;
+
+  version?: Maybe<string>;
 }
 
-export interface internal_10 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
+export interface PeerDependencies_2 {
+  name?: Maybe<string>;
+
+  version?: Maybe<string>;
 }
 
-export interface internal_9 {
-  type: string | null;
-  contentDigest: string | null;
-  description: string | null;
-  owner: string | null;
+export interface Internal_16 {
+  contentDigest?: Maybe<string>;
+
+  type?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export type sitePageDistinctEnum = "jsonName" | "internalComponentName" | "path" | "component" | "componentChunkName" | "context___slug" | "context___tag" | "context___skip" | "pluginCreator___NODE" | "pluginCreatorId" | "componentPath" | "id" | "parent" | "internal___type" | "internal___contentDigest" | "internal___description" | "internal___owner";
+export interface Internal_15 {
+  type?: Maybe<string>;
 
-export type sitePageGroupEnum = "jsonName" | "internalComponentName" | "path" | "component" | "componentChunkName" | "context___slug" | "context___tag" | "context___skip" | "pluginCreator___NODE" | "pluginCreatorId" | "componentPath" | "id" | "parent" | "internal___type" | "internal___contentDigest" | "internal___description" | "internal___owner";
+  contentDigest?: Maybe<string>;
 
-export interface sitePageGroupConnectionConnection {
+  description?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+/** A connection to a list of items. */
+export interface SitePageGroupConnectionConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<sitePageGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<SitePageGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
 }
 
-export interface sitePageGroupConnectionEdge {
-  node: SitePage | null;
-  next: SitePage | null;
-  previous: SitePage | null;
+/** An edge in a connection. */
+export interface SitePageGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<SitePage>;
+  /** The next edge in the connection */
+  next?: Maybe<SitePage>;
+  /** The previous edge in the connection */
+  previous?: Maybe<SitePage>;
 }
 
-export interface sitePluginConnectionSort {
-  fields: Array<SitePluginConnectionSortByFieldsEnum>;
-  order: sitePluginConnectionSortOrderValues | null;
-}
-
-export type SitePluginConnectionSortByFieldsEnum = "resolve" | "id" | "name" | "version" | "pluginOptions___plugins" | "pluginOptions___name" | "pluginOptions___path" | "pluginOptions___trackingId" | "pluginOptions___head" | "pluginOptions___anonymize" | "pluginOptions___respectDNT" | "pluginOptions___maxWidth" | "pluginOptions___backgroundColor" | "pluginOptions___short_name" | "pluginOptions___start_url" | "pluginOptions___background_color" | "pluginOptions___theme_color" | "pluginOptions___display" | "pluginOptions___pathCheck" | "nodeAPIs" | "browserAPIs" | "ssrAPIs" | "pluginFilepath" | "packageJson___name" | "packageJson___description" | "packageJson___version" | "packageJson___main" | "packageJson___author" | "packageJson___license" | "packageJson___dependencies" | "packageJson___devDependencies" | "packageJson___peerDependencies" | "packageJson___keywords" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type sitePluginConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterSitePlugin {
-  resolve: sitePluginConnectionResolveQueryString_2 | null;
-  id: sitePluginConnectionIdQueryString_2 | null;
-  name: sitePluginConnectionNameQueryString_2 | null;
-  version: sitePluginConnectionVersionQueryString_2 | null;
-  pluginOptions: sitePluginConnectionPluginOptionsInputObject_2 | null;
-  nodeAPIs: sitePluginConnectionNodeApIsQueryList_2 | null;
-  browserAPIs: sitePluginConnectionBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginConnectionSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginConnectionPluginFilepathQueryString_2 | null;
-  packageJson: sitePluginConnectionPackageJsonInputObject_2 | null;
-  internal: sitePluginConnectionInternalInputObject_2 | null;
-}
-
-export interface sitePluginConnectionResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsInputObject_2 {
-  plugins: sitePluginConnectionPluginOptionsPluginsQueryList_2 | null;
-  name: sitePluginConnectionPluginOptionsNameQueryString_2 | null;
-  path: sitePluginConnectionPluginOptionsPathQueryString_2 | null;
-  trackingId: sitePluginConnectionPluginOptionsTrackingIdQueryString_2 | null;
-  head: sitePluginConnectionPluginOptionsHeadQueryBoolean_2 | null;
-  anonymize: sitePluginConnectionPluginOptionsAnonymizeQueryBoolean_2 | null;
-  respectDNT: sitePluginConnectionPluginOptionsRespectDntQueryBoolean_2 | null;
-  maxWidth: sitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginConnectionPluginOptionsBackgroundColorQueryString_3 | null;
-  short_name: sitePluginConnectionPluginOptionsShortNameQueryString_2 | null;
-  start_url: sitePluginConnectionPluginOptionsStartUrlQueryString_2 | null;
-  background_color: sitePluginConnectionPluginOptionsBackgroundColorQueryString_4 | null;
-  theme_color: sitePluginConnectionPluginOptionsThemeColorQueryString_2 | null;
-  display: sitePluginConnectionPluginOptionsDisplayQueryString_2 | null;
-  pathCheck: sitePluginConnectionPluginOptionsPathCheckQueryBoolean_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsQueryList_2 {
-  elemMatch: sitePluginConnectionPluginOptionsPluginsInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsInputObject_2 {
-  resolve: sitePluginConnectionPluginOptionsPluginsResolveQueryString_2 | null;
-  id: sitePluginConnectionPluginOptionsPluginsIdQueryString_2 | null;
-  name: sitePluginConnectionPluginOptionsPluginsNameQueryString_2 | null;
-  version: sitePluginConnectionPluginOptionsPluginsVersionQueryString_2 | null;
-  pluginOptions: sitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2 | null;
-  browserAPIs: sitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginConnectionPluginOptionsPluginsSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginConnectionPluginOptionsPluginsPluginFilepathQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginOptionsInputObject_2 {
-  maxWidth: sitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPluginsPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsTrackingIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsHeadQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsAnonymizeQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsRespectDntQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsBackgroundColorQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsShortNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsStartUrlQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsBackgroundColorQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsThemeColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsDisplayQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginOptionsPathCheckQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginConnectionNodeApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonInputObject_2 {
-  name: sitePluginConnectionPackageJsonNameQueryString_2 | null;
-  description: sitePluginConnectionPackageJsonDescriptionQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonVersionQueryString_2 | null;
-  main: sitePluginConnectionPackageJsonMainQueryString_2 | null;
-  license: sitePluginConnectionPackageJsonLicenseQueryString_2 | null;
-  dependencies: sitePluginConnectionPackageJsonDependenciesQueryList_2 | null;
-  devDependencies: sitePluginConnectionPackageJsonDevDependenciesQueryList_2 | null;
-  peerDependencies: sitePluginConnectionPackageJsonPeerDependenciesQueryList_2 | null;
-  keywords: sitePluginConnectionPackageJsonKeywordsQueryList_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonMainQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonLicenseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesQueryList_2 {
-  elemMatch: sitePluginConnectionPackageJsonDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesInputObject_2 {
-  name: sitePluginConnectionPackageJsonDependenciesNameQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesQueryList_2 {
-  elemMatch: sitePluginConnectionPackageJsonDevDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesInputObject_2 {
-  name: sitePluginConnectionPackageJsonDevDependenciesNameQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonDevDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonDevDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesQueryList_2 {
-  elemMatch: sitePluginConnectionPackageJsonPeerDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesInputObject_2 {
-  name: sitePluginConnectionPackageJsonPeerDependenciesNameQueryString_2 | null;
-  version: sitePluginConnectionPackageJsonPeerDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonPeerDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionPackageJsonKeywordsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionInternalInputObject_2 {
-  contentDigest: sitePluginConnectionInternalContentDigestQueryString_2 | null;
-  type: sitePluginConnectionInternalTypeQueryString_2 | null;
-  owner: sitePluginConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePluginConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
+/** A connection to a list of items. */
 export interface SitePluginConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<SitePluginEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<sitePluginGroupConnectionConnection> | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<SitePluginEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<SitePluginGroupConnectionConnection>)[]>;
 }
 
-export interface DistinctSitePluginConnectionArgs {
-  field: sitePluginDistinctEnum | null;
-}
-
-export interface GroupSitePluginConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: sitePluginGroupEnum | null;
-}
-
+/** An edge in a connection. */
 export interface SitePluginEdge {
-  node: SitePlugin | null;
-  next: SitePlugin | null;
-  previous: SitePlugin | null;
+  /** The item at the end of the edge */
+  node?: Maybe<SitePlugin>;
+  /** The next edge in the connection */
+  next?: Maybe<SitePlugin>;
+  /** The previous edge in the connection */
+  previous?: Maybe<SitePlugin>;
 }
 
-export type sitePluginDistinctEnum = "resolve" | "id" | "name" | "version" | "pluginOptions___plugins" | "pluginOptions___name" | "pluginOptions___path" | "pluginOptions___trackingId" | "pluginOptions___head" | "pluginOptions___anonymize" | "pluginOptions___respectDNT" | "pluginOptions___maxWidth" | "pluginOptions___backgroundColor" | "pluginOptions___short_name" | "pluginOptions___start_url" | "pluginOptions___background_color" | "pluginOptions___theme_color" | "pluginOptions___display" | "pluginOptions___pathCheck" | "nodeAPIs" | "browserAPIs" | "ssrAPIs" | "pluginFilepath" | "packageJson___name" | "packageJson___description" | "packageJson___version" | "packageJson___main" | "packageJson___author" | "packageJson___license" | "packageJson___dependencies" | "packageJson___devDependencies" | "packageJson___peerDependencies" | "packageJson___keywords" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type sitePluginGroupEnum = "resolve" | "id" | "name" | "version" | "pluginOptions___plugins" | "pluginOptions___name" | "pluginOptions___path" | "pluginOptions___trackingId" | "pluginOptions___head" | "pluginOptions___anonymize" | "pluginOptions___respectDNT" | "pluginOptions___maxWidth" | "pluginOptions___backgroundColor" | "pluginOptions___short_name" | "pluginOptions___start_url" | "pluginOptions___background_color" | "pluginOptions___theme_color" | "pluginOptions___display" | "pluginOptions___pathCheck" | "nodeAPIs" | "browserAPIs" | "ssrAPIs" | "pluginFilepath" | "packageJson___name" | "packageJson___description" | "packageJson___version" | "packageJson___main" | "packageJson___author" | "packageJson___license" | "packageJson___dependencies" | "packageJson___devDependencies" | "packageJson___peerDependencies" | "packageJson___keywords" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export interface sitePluginGroupConnectionConnection {
+/** A connection to a list of items. */
+export interface SitePluginGroupConnectionConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<sitePluginGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<SitePluginGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
 }
 
-export interface sitePluginGroupConnectionEdge {
-  node: SitePlugin | null;
-  next: SitePlugin | null;
-  previous: SitePlugin | null;
+/** An edge in a connection. */
+export interface SitePluginGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<SitePlugin>;
+  /** The next edge in the connection */
+  next?: Maybe<SitePlugin>;
+  /** The previous edge in the connection */
+  previous?: Maybe<SitePlugin>;
 }
 
-export interface directoryConnectionSort {
-  fields: Array<DirectoryConnectionSortByFieldsEnum>;
-  order: directoryConnectionSortOrderValues | null;
-}
-
-export type DirectoryConnectionSortByFieldsEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export type directoryConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterDirectory {
-  id: directoryConnectionIdQueryString_2 | null;
-  internal: directoryConnectionInternalInputObject_2 | null;
-  sourceInstanceName: directoryConnectionSourceInstanceNameQueryString_2 | null;
-  absolutePath: directoryConnectionAbsolutePathQueryString_2 | null;
-  relativePath: directoryConnectionRelativePathQueryString_2 | null;
-  extension: directoryConnectionExtensionQueryString_2 | null;
-  size: directoryConnectionSizeQueryInteger_2 | null;
-  prettySize: directoryConnectionPrettySizeQueryString_2 | null;
-  modifiedTime: directoryConnectionModifiedTimeQueryString_2 | null;
-  accessTime: directoryConnectionAccessTimeQueryString_2 | null;
-  changeTime: directoryConnectionChangeTimeQueryString_2 | null;
-  birthTime: directoryConnectionBirthTimeQueryString_2 | null;
-  root: directoryConnectionRootQueryString_2 | null;
-  dir: directoryConnectionDirQueryString_2 | null;
-  base: directoryConnectionBaseQueryString_2 | null;
-  ext: directoryConnectionExtQueryString_2 | null;
-  name: directoryConnectionNameQueryString_2 | null;
-  relativeDirectory: directoryConnectionRelativeDirectoryQueryString_2 | null;
-  dev: directoryConnectionDevQueryInteger_2 | null;
-  mode: directoryConnectionModeQueryInteger_2 | null;
-  nlink: directoryConnectionNlinkQueryInteger_2 | null;
-  uid: directoryConnectionUidQueryInteger_2 | null;
-  gid: directoryConnectionGidQueryInteger_2 | null;
-  rdev: directoryConnectionRdevQueryInteger_2 | null;
-  blksize: directoryConnectionBlksizeQueryInteger_2 | null;
-  ino: directoryConnectionInoQueryInteger_2 | null;
-  blocks: directoryConnectionBlocksQueryInteger_2 | null;
-  atimeMs: directoryConnectionAtimeMsQueryFloat_2 | null;
-  mtimeMs: directoryConnectionMtimeMsQueryFloat_2 | null;
-  ctimeMs: directoryConnectionCtimeMsQueryFloat_2 | null;
-  birthtimeMs: directoryConnectionBirthtimeMsQueryFloat_2 | null;
-  atime: directoryConnectionAtimeQueryString_2 | null;
-  mtime: directoryConnectionMtimeQueryString_2 | null;
-  ctime: directoryConnectionCtimeQueryString_2 | null;
-  birthtime: directoryConnectionBirthtimeQueryString_2 | null;
-}
-
-export interface directoryConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionInternalInputObject_2 {
-  contentDigest: directoryConnectionInternalContentDigestQueryString_2 | null;
-  type: directoryConnectionInternalTypeQueryString_2 | null;
-  description: directoryConnectionInternalDescriptionQueryString_2 | null;
-  owner: directoryConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface directoryConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionSourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionSizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionPrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryConnectionAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryConnectionBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
+/** A connection to a list of items. */
 export interface DirectoryConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<DirectoryEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<directoryGroupConnectionConnection> | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<DirectoryEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<DirectoryGroupConnectionConnection>)[]>;
 }
 
-export interface DistinctDirectoryConnectionArgs {
-  field: directoryDistinctEnum | null;
-}
-
-export interface GroupDirectoryConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: directoryGroupEnum | null;
-}
-
+/** An edge in a connection. */
 export interface DirectoryEdge {
-  node: Directory | null;
-  next: Directory | null;
-  previous: Directory | null;
+  /** The item at the end of the edge */
+  node?: Maybe<Directory>;
+  /** The next edge in the connection */
+  next?: Maybe<Directory>;
+  /** The previous edge in the connection */
+  previous?: Maybe<Directory>;
 }
 
+/** Node of type Directory */
 export interface Directory extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_11 | null;
-  sourceInstanceName: string | null;
-  absolutePath: string | null;
-  relativePath: string | null;
-  extension: string | null;
-  size: number | null;
-  prettySize: string | null;
-  modifiedTime: Date | null;
-  accessTime: Date | null;
-  changeTime: Date | null;
-  birthTime: Date | null;
-  root: string | null;
-  dir: string | null;
-  base: string | null;
-  ext: string | null;
-  name: string | null;
-  relativeDirectory: string | null;
-  dev: number | null;
-  mode: number | null;
-  nlink: number | null;
-  uid: number | null;
-  gid: number | null;
-  rdev: number | null;
-  blksize: number | null;
-  ino: number | null;
-  blocks: number | null;
-  atimeMs: number | null;
-  mtimeMs: number | null;
-  ctimeMs: number | null;
-  birthtimeMs: number | null;
-  atime: Date | null;
-  mtime: Date | null;
-  ctime: Date | null;
-  birthtime: Date | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  internal?: Maybe<Internal_17>;
+
+  sourceInstanceName?: Maybe<string>;
+
+  absolutePath?: Maybe<string>;
+
+  relativePath?: Maybe<string>;
+
+  extension?: Maybe<string>;
+
+  size?: Maybe<number>;
+
+  prettySize?: Maybe<string>;
+
+  modifiedTime?: Maybe<Date>;
+
+  accessTime?: Maybe<Date>;
+
+  changeTime?: Maybe<Date>;
+
+  birthTime?: Maybe<Date>;
+
+  root?: Maybe<string>;
+
+  dir?: Maybe<string>;
+
+  base?: Maybe<string>;
+
+  ext?: Maybe<string>;
+
+  name?: Maybe<string>;
+
+  relativeDirectory?: Maybe<string>;
+
+  dev?: Maybe<number>;
+
+  mode?: Maybe<number>;
+
+  nlink?: Maybe<number>;
+
+  uid?: Maybe<number>;
+
+  gid?: Maybe<number>;
+
+  rdev?: Maybe<number>;
+
+  blksize?: Maybe<number>;
+
+  ino?: Maybe<number>;
+
+  blocks?: Maybe<number>;
+
+  atimeMs?: Maybe<number>;
+
+  mtimeMs?: Maybe<number>;
+
+  ctimeMs?: Maybe<number>;
+
+  birthtimeMs?: Maybe<number>;
+
+  atime?: Maybe<Date>;
+
+  mtime?: Maybe<Date>;
+
+  ctime?: Maybe<Date>;
+
+  birthtime?: Maybe<Date>;
 }
 
-export interface ModifiedTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
+export interface Internal_17 {
+  contentDigest?: Maybe<string>;
+
+  type?: Maybe<string>;
+
+  description?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export interface AccessTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface ChangeTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthTimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface MtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface CtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthtimeDirectoryArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface internal_11 {
-  contentDigest: string | null;
-  type: string | null;
-  description: string | null;
-  owner: string | null;
-}
-
-export type Date = any;
-
-export type directoryDistinctEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export type directoryGroupEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
-
-export interface directoryGroupConnectionConnection {
+/** A connection to a list of items. */
+export interface DirectoryGroupConnectionConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<directoryGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<DirectoryGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
 }
 
-export interface directoryGroupConnectionEdge {
-  node: Directory | null;
-  next: Directory | null;
-  previous: Directory | null;
+/** An edge in a connection. */
+export interface DirectoryGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<Directory>;
+  /** The next edge in the connection */
+  next?: Maybe<Directory>;
+  /** The previous edge in the connection */
+  previous?: Maybe<Directory>;
 }
 
-export interface fileConnectionSort {
-  fields: Array<FileConnectionSortByFieldsEnum>;
-  order: fileConnectionSortOrderValues | null;
-}
-
-export type FileConnectionSortByFieldsEnum = "id" | "children" | "parent" | "internal___contentDigest" | "internal___type" | "internal___mediaType" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime" | "publicURL";
-
-export type fileConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterFile {
-  id: fileConnectionIdQueryString_2 | null;
-  internal: fileConnectionInternalInputObject_2 | null;
-  sourceInstanceName: fileConnectionSourceInstanceNameQueryString_2 | null;
-  absolutePath: fileConnectionAbsolutePathQueryString_2 | null;
-  relativePath: fileConnectionRelativePathQueryString_2 | null;
-  extension: fileConnectionExtensionQueryString_2 | null;
-  size: fileConnectionSizeQueryInteger_2 | null;
-  prettySize: fileConnectionPrettySizeQueryString_2 | null;
-  modifiedTime: fileConnectionModifiedTimeQueryString_2 | null;
-  accessTime: fileConnectionAccessTimeQueryString_2 | null;
-  changeTime: fileConnectionChangeTimeQueryString_2 | null;
-  birthTime: fileConnectionBirthTimeQueryString_2 | null;
-  root: fileConnectionRootQueryString_2 | null;
-  dir: fileConnectionDirQueryString_2 | null;
-  base: fileConnectionBaseQueryString_2 | null;
-  ext: fileConnectionExtQueryString_2 | null;
-  name: fileConnectionNameQueryString_2 | null;
-  relativeDirectory: fileConnectionRelativeDirectoryQueryString_2 | null;
-  dev: fileConnectionDevQueryInteger_2 | null;
-  mode: fileConnectionModeQueryInteger_2 | null;
-  nlink: fileConnectionNlinkQueryInteger_2 | null;
-  uid: fileConnectionUidQueryInteger_2 | null;
-  gid: fileConnectionGidQueryInteger_2 | null;
-  rdev: fileConnectionRdevQueryInteger_2 | null;
-  blksize: fileConnectionBlksizeQueryInteger_2 | null;
-  ino: fileConnectionInoQueryInteger_2 | null;
-  blocks: fileConnectionBlocksQueryInteger_2 | null;
-  atimeMs: fileConnectionAtimeMsQueryFloat_2 | null;
-  mtimeMs: fileConnectionMtimeMsQueryFloat_2 | null;
-  ctimeMs: fileConnectionCtimeMsQueryFloat_2 | null;
-  birthtimeMs: fileConnectionBirthtimeMsQueryFloat_2 | null;
-  atime: fileConnectionAtimeQueryString_2 | null;
-  mtime: fileConnectionMtimeQueryString_2 | null;
-  ctime: fileConnectionCtimeQueryString_2 | null;
-  birthtime: fileConnectionBirthtimeQueryString_2 | null;
-  publicURL: publicUrlQueryString_4 | null;
-}
-
-export interface fileConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionInternalInputObject_2 {
-  contentDigest: fileConnectionInternalContentDigestQueryString_2 | null;
-  type: fileConnectionInternalTypeQueryString_2 | null;
-  mediaType: fileConnectionInternalMediaTypeQueryString_2 | null;
-  description: fileConnectionInternalDescriptionQueryString_2 | null;
-  owner: fileConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface fileConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionInternalMediaTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionSourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionSizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionPrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileConnectionAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileConnectionBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface publicUrlQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
+/** A connection to a list of items. */
 export interface FileConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<FileEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<fileGroupConnectionConnection> | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<FileEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<FileGroupConnectionConnection>)[]>;
 }
 
-export interface DistinctFileConnectionArgs {
-  field: fileDistinctEnum | null;
-}
-
-export interface GroupFileConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: fileGroupEnum | null;
-}
-
+/** An edge in a connection. */
 export interface FileEdge {
-  node: File | null;
-  next: File | null;
-  previous: File | null;
+  /** The item at the end of the edge */
+  node?: Maybe<File>;
+  /** The next edge in the connection */
+  next?: Maybe<File>;
+  /** The previous edge in the connection */
+  previous?: Maybe<File>;
 }
 
+/** Node of type File */
 export interface File extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  childAuthorJson: AuthorJson | null;
-  childImageSharp: ImageSharp | null;
-  childMarkdownRemark: MarkdownRemark | null;
-  internal: internal_12 | null;
-  sourceInstanceName: string | null;
-  absolutePath: string | null;
-  relativePath: string | null;
-  extension: string | null;
-  size: number | null;
-  prettySize: string | null;
-  modifiedTime: Date | null;
-  accessTime: Date | null;
-  changeTime: Date | null;
-  birthTime: Date | null;
-  root: string | null;
-  dir: string | null;
-  base: string | null;
-  ext: string | null;
-  name: string | null;
-  relativeDirectory: string | null;
-  dev: number | null;
-  mode: number | null;
-  nlink: number | null;
-  uid: number | null;
-  gid: number | null;
-  rdev: number | null;
-  blksize: number | null;
-  ino: number | null;
-  blocks: number | null;
-  atimeMs: number | null;
-  mtimeMs: number | null;
-  ctimeMs: number | null;
-  birthtimeMs: number | null;
-  atime: Date | null;
-  mtime: Date | null;
-  ctime: Date | null;
-  birthtime: Date | null;
-  publicURL: string | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+  /** The child of this node of type dataJson */
+  childDataJson?: Maybe<DataJson>;
+
+  internal?: Maybe<Internal_18>;
+
+  sourceInstanceName?: Maybe<string>;
+
+  absolutePath?: Maybe<string>;
+
+  relativePath?: Maybe<string>;
+
+  extension?: Maybe<string>;
+
+  size?: Maybe<number>;
+
+  prettySize?: Maybe<string>;
+
+  modifiedTime?: Maybe<Date>;
+
+  accessTime?: Maybe<Date>;
+
+  changeTime?: Maybe<Date>;
+
+  birthTime?: Maybe<Date>;
+
+  root?: Maybe<string>;
+
+  dir?: Maybe<string>;
+
+  base?: Maybe<string>;
+
+  ext?: Maybe<string>;
+
+  name?: Maybe<string>;
+
+  relativeDirectory?: Maybe<string>;
+
+  dev?: Maybe<number>;
+
+  mode?: Maybe<number>;
+
+  nlink?: Maybe<number>;
+
+  uid?: Maybe<number>;
+
+  gid?: Maybe<number>;
+
+  rdev?: Maybe<number>;
+
+  blksize?: Maybe<number>;
+
+  ino?: Maybe<number>;
+
+  blocks?: Maybe<number>;
+
+  atimeMs?: Maybe<number>;
+
+  mtimeMs?: Maybe<number>;
+
+  ctimeMs?: Maybe<number>;
+
+  birthtimeMs?: Maybe<number>;
+
+  atime?: Maybe<Date>;
+
+  mtime?: Maybe<Date>;
+
+  ctime?: Maybe<Date>;
+
+  birthtime?: Maybe<Date>;
+  /** Copy file to static directory and return public url to it */
+  publicURL?: Maybe<string>;
 }
 
-export interface ModifiedTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AccessTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface ChangeTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthTimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface MtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface CtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface BirthtimeFileArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface AuthorJson extends Node {
+/** Node of type DataJson */
+export interface DataJson extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  bio: string | null;
-  avatar: File | null;
-  twitter: string | null;
-  github: string | null;
-  internal: internal_13 | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  internal?: Maybe<Internal_19>;
 }
 
-export interface internal_13 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
+export interface Internal_19 {
+  contentDigest?: Maybe<string>;
+
+  type?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export interface ImageSharp extends Node {
+export interface Internal_18 {
+  contentDigest?: Maybe<string>;
+
+  type?: Maybe<string>;
+
+  mediaType?: Maybe<string>;
+
+  description?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+/** A connection to a list of items. */
+export interface FileGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<FileGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface FileGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<File>;
+  /** The next edge in the connection */
+  next?: Maybe<File>;
+  /** The previous edge in the connection */
+  previous?: Maybe<File>;
+}
+
+/** A connection to a list of items. */
+export interface DataJsonConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<DataJsonEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<DataJsonGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface DataJsonEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<DataJson>;
+  /** The next edge in the connection */
+  next?: Maybe<DataJson>;
+  /** The previous edge in the connection */
+  previous?: Maybe<DataJson>;
+}
+
+/** A connection to a list of items. */
+export interface DataJsonGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<DataJsonGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface DataJsonGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<DataJson>;
+  /** The next edge in the connection */
+  next?: Maybe<DataJson>;
+  /** The previous edge in the connection */
+  previous?: Maybe<DataJson>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulContentTypeConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulContentTypeEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<ContentfulContentTypeGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulContentTypeEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulContentType>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulContentType>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulContentType>;
+}
+
+/** Node of type ContentfulContentType */
+export interface ContentfulContentType extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_14 | null;
-  fixed: ImageSharpFixed | null;
-  resolutions: ImageSharpResolutions | null;
-  fluid: ImageSharpFluid | null;
-  sizes: ImageSharpSizes | null;
-  original: ImageSharpOriginal | null;
-  resize: ImageSharpResize | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  name?: Maybe<string>;
+
+  displayField?: Maybe<string>;
+
+  description?: Maybe<string>;
+
+  internal?: Maybe<Internal_20>;
 }
 
-export interface FixedImageSharpArgs {
-  width: number | null;
-  height: number | null;
-  jpegProgressive: boolean | null;
-  grayscale: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
+export interface Internal_20 {
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export interface ResolutionsImageSharpArgs {
-  width: number | null;
-  height: number | null;
-  jpegProgressive: boolean | null;
-  grayscale: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
+/** A connection to a list of items. */
+export interface ContentfulContentTypeGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulContentTypeGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
 }
 
-export interface FluidImageSharpArgs {
-  maxWidth: number | null;
-  maxHeight: number | null;
-  grayscale: boolean | null;
-  jpegProgressive: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
+/** An edge in a connection. */
+export interface ContentfulContentTypeGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulContentType>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulContentType>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulContentType>;
 }
 
-export interface SizesImageSharpArgs {
-  maxWidth: number | null;
-  maxHeight: number | null;
-  grayscale: boolean | null;
-  jpegProgressive: boolean | null;
-  duotone: DuotoneGradient | null;
-  traceSVG: Potrace | null;
-  quality: number | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
+/** A connection to a list of items. */
+export interface ContentfulServiceConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulServiceEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<ContentfulServiceGroupConnectionConnection>)[]>;
 }
 
-export interface ResizeImageSharpArgs {
-  width: number | null;
-  height: number | null;
-  quality: number | null;
-  jpegProgressive: boolean | null;
-  pngCompressionLevel: number | null;
-  grayscale: boolean | null;
-  duotone: DuotoneGradient | null;
-  base64: boolean | null;
-  traceSVG: Potrace | null;
-  toFormat: ImageFormat | null;
-  cropFocus: ImageCropFocus | null;
-  rotate: number | null;
+/** An edge in a connection. */
+export interface ContentfulServiceEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulService>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulService>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulService>;
 }
 
-export interface internal_14 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
+/** Node of type ContentfulService */
+export interface ContentfulService extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  title?: Maybe<string>;
+
+  slug?: Maybe<string>;
+
+  directions?: Maybe<(Maybe<string>)[]>;
+
+  order?: Maybe<number>;
+
+  image?: Maybe<ContentfulAsset>;
+
+  contentful_id?: Maybe<string>;
+
+  createdAt?: Maybe<Date>;
+
+  updatedAt?: Maybe<Date>;
+
+  internal?: Maybe<Internal_21>;
+
+  node_locale?: Maybe<string>;
 }
 
-export interface DuotoneGradient {
-  highlight: string | null;
-  shadow: string | null;
-  opacity: number | null;
+/** Node of type ContentfulAsset */
+export interface ContentfulAsset extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  contentful_id?: Maybe<string>;
+
+  file?: Maybe<File_2>;
+
+  title?: Maybe<string>;
+
+  description?: Maybe<string>;
+
+  node_locale?: Maybe<string>;
+
+  internal?: Maybe<Internal_22>;
+
+  fixed?: Maybe<ContentfulFixed>;
+
+  resolutions?: Maybe<ContentfulResolutions>;
+
+  fluid?: Maybe<ContentfulFluid>;
+
+  sizes?: Maybe<ContentfulSizes>;
+
+  resize?: Maybe<ContentfulResize>;
 }
 
-export interface Potrace {
-  turnPolicy: PotraceTurnPolicy | null;
-  turdSize: number | null;
-  alphaMax: number | null;
-  optCurve: boolean | null;
-  optTolerance: number | null;
-  threshold: number | null;
-  blackOnWhite: boolean | null;
-  color: string | null;
-  background: string | null;
+export interface File_2 {
+  url?: Maybe<string>;
+
+  details?: Maybe<Details_2>;
+
+  fileName?: Maybe<string>;
+
+  contentType?: Maybe<string>;
 }
 
-export type PotraceTurnPolicy = "TURNPOLICY_BLACK" | "TURNPOLICY_WHITE" | "TURNPOLICY_LEFT" | "TURNPOLICY_RIGHT" | "TURNPOLICY_MINORITY" | "TURNPOLICY_MAJORITY";
+export interface Details_2 {
+  size?: Maybe<number>;
 
-export type ImageFormat = "NO_CHANGE" | "JPG" | "PNG" | "WEBP";
-
-export type ImageCropFocus = "CENTER" | "NORTH" | "NORTHEAST" | "EAST" | "SOUTHEAST" | "SOUTH" | "SOUTHWEST" | "WEST" | "NORTHWEST" | "ENTROPY" | "ATTENTION";
-
-export interface ImageSharpFixed {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  originalName: string | null;
+  image?: Maybe<Image_2>;
 }
 
-export interface ImageSharpResolutions {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  originalName: string | null;
+export interface Image_2 {
+  width?: Maybe<number>;
+
+  height?: Maybe<number>;
 }
 
-export interface ImageSharpFluid {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  sizes: string | null;
-  originalImg: string | null;
-  originalName: string | null;
+export interface Internal_22 {
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export interface ImageSharpSizes {
-  base64: string | null;
-  tracedSVG: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
-  sizes: string | null;
-  originalImg: string | null;
-  originalName: string | null;
+export interface ContentfulFixed {
+  base64?: Maybe<string>;
+
+  tracedSVG?: Maybe<string>;
+
+  aspectRatio: Maybe<number>;
+
+  width: Maybe<number>;
+
+  height: Maybe<number>;
+
+  src: Maybe<string>;
+
+  srcSet: Maybe<string>;
+
+  srcWebp?: Maybe<string>;
+
+  srcSetWebp?: Maybe<string>;
 }
 
-export interface ImageSharpOriginal {
-  width: number | null;
-  height: number | null;
-  src: string | null;
+export interface ContentfulResolutions {
+  base64?: Maybe<string>;
+
+  tracedSVG?: Maybe<string>;
+
+  aspectRatio?: Maybe<number>;
+
+  width?: Maybe<number>;
+
+  height?: Maybe<number>;
+
+  src?: Maybe<string>;
+
+  srcSet?: Maybe<string>;
+
+  srcWebp?: Maybe<string>;
+
+  srcSetWebp?: Maybe<string>;
 }
 
-export interface ImageSharpResize {
-  src: string | null;
-  tracedSVG: string | null;
-  width: number | null;
-  height: number | null;
-  aspectRatio: number | null;
-  originalName: string | null;
+export interface ContentfulFluid {
+  base64?: Maybe<string>;
+
+  tracedSVG?: Maybe<string>;
+
+  aspectRatio: Maybe<number>;
+
+  src: Maybe<string>;
+
+  srcSet: Maybe<string>;
+
+  srcWebp?: Maybe<string>;
+
+  srcSetWebp?: Maybe<string>;
+
+  sizes: Maybe<string>;
 }
 
+export interface ContentfulSizes {
+  base64?: Maybe<string>;
+
+  tracedSVG?: Maybe<string>;
+
+  aspectRatio?: Maybe<number>;
+
+  src?: Maybe<string>;
+
+  srcSet?: Maybe<string>;
+
+  srcWebp?: Maybe<string>;
+
+  srcSetWebp?: Maybe<string>;
+
+  sizes?: Maybe<string>;
+}
+
+export interface ContentfulResize {
+  base64?: Maybe<string>;
+
+  tracedSVG?: Maybe<string>;
+
+  src?: Maybe<string>;
+
+  width?: Maybe<number>;
+
+  height?: Maybe<number>;
+
+  aspectRatio?: Maybe<number>;
+}
+
+export interface Internal_21 {
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulServiceGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulServiceGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulServiceGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulService>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulService>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulService>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulHomeConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulHomeEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<ContentfulHomeGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulHomeEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulHome>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulHome>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulHome>;
+}
+
+/** Node of type ContentfulHome */
+export interface ContentfulHome extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+  /** The child of this node of type contentfulHomeDescriptionTextNode */
+  childContentfulHomeDescriptionTextNode?: Maybe<
+    ContentfulHomeDescriptionTextNode
+  >;
+
+  title?: Maybe<string>;
+
+  description?: Maybe<ContentfulHomeDescriptionTextNode>;
+
+  contentful_id?: Maybe<string>;
+
+  createdAt?: Maybe<Date>;
+
+  updatedAt?: Maybe<Date>;
+
+  internal?: Maybe<Internal_23>;
+
+  node_locale?: Maybe<string>;
+}
+
+/** Node of type contentfulHomeDescriptionTextNode */
+export interface ContentfulHomeDescriptionTextNode extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+  /** The child of this node of type markdownRemark */
+  childMarkdownRemark?: Maybe<MarkdownRemark>;
+
+  description?: Maybe<string>;
+
+  internal?: Maybe<Internal_24>;
+}
+
+/** Node of type MarkdownRemark */
 export interface MarkdownRemark extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_15 | null;
-  frontmatter: frontmatter_2 | null;
-  rawMarkdownBody: string | null;
-  fileAbsolutePath: string | null;
-  fields: fields_2 | null;
-  html: string | null;
-  htmlAst: JSON | null;
-  excerpt: string | null;
-  headings: Array<MarkdownHeading> | null;
-  timeToRead: number | null;
-  tableOfContents: string | null;
-  wordCount: wordCount | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  internal?: Maybe<Internal_25>;
+
+  frontmatter?: Maybe<Frontmatter_2>;
+
+  rawMarkdownBody?: Maybe<string>;
+
+  html?: Maybe<string>;
+
+  htmlAst?: Maybe<Json>;
+
+  excerpt?: Maybe<string>;
+
+  headings?: Maybe<(Maybe<MarkdownHeading>)[]>;
+
+  timeToRead?: Maybe<number>;
+
+  tableOfContents?: Maybe<string>;
+
+  wordCount?: Maybe<WordCount>;
 }
 
-export interface ExcerptMarkdownRemarkArgs {
-  pruneLength: number | null;
-  truncate: boolean | null;
+export interface Internal_25 {
+  content?: Maybe<string>;
+
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export interface HeadingsMarkdownRemarkArgs {
-  depth: HeadingLevels | null;
+export interface Frontmatter_2 {
+  title?: Maybe<string>;
 }
-
-export interface internal_15 {
-  content: string | null;
-  type: string | null;
-  contentDigest: string | null;
-  owner: string | null;
-  fieldOwners: fieldOwners_2 | null;
-}
-
-export interface fieldOwners_2 {
-  slug: string | null;
-}
-
-export interface frontmatter_2 {
-  title: string | null;
-  createdDate: Date | null;
-  updatedDate: Date | null;
-  author: AuthorJson | null;
-  tags: Array<string> | null;
-  image: File | null;
-  draft: boolean | null;
-  _PARENT: string | null;
-}
-
-export interface CreatedDatefrontmatter_2Args {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface UpdatedDatefrontmatter_2Args {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface fields_2 {
-  slug: string | null;
-}
-
-export type JSON = any;
-
-export type HeadingLevels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export interface MarkdownHeading {
-  value: string | null;
-  depth: number | null;
+  value?: Maybe<string>;
+
+  depth?: Maybe<number>;
 }
 
-export interface wordCount {
-  paragraphs: number | null;
-  sentences: number | null;
-  words: number | null;
+export interface WordCount {
+  paragraphs?: Maybe<number>;
+
+  sentences?: Maybe<number>;
+
+  words?: Maybe<number>;
 }
 
-export interface internal_12 {
-  contentDigest: string | null;
-  type: string | null;
-  mediaType: string | null;
-  description: string | null;
-  owner: string | null;
+export interface Internal_24 {
+  type?: Maybe<string>;
+
+  mediaType?: Maybe<string>;
+
+  content?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
 }
 
-export type fileDistinctEnum = "id" | "children" | "parent" | "internal___contentDigest" | "internal___type" | "internal___mediaType" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
+export interface Internal_23 {
+  type?: Maybe<string>;
 
-export type fileGroupEnum = "id" | "children" | "parent" | "internal___contentDigest" | "internal___type" | "internal___mediaType" | "internal___description" | "internal___owner" | "sourceInstanceName" | "absolutePath" | "relativePath" | "extension" | "size" | "prettySize" | "modifiedTime" | "accessTime" | "changeTime" | "birthTime" | "root" | "dir" | "base" | "ext" | "name" | "relativeDirectory" | "dev" | "mode" | "nlink" | "uid" | "gid" | "rdev" | "blksize" | "ino" | "blocks" | "atimeMs" | "mtimeMs" | "ctimeMs" | "birthtimeMs" | "atime" | "mtime" | "ctime" | "birthtime";
+  contentDigest?: Maybe<string>;
 
-export interface fileGroupConnectionConnection {
+  owner?: Maybe<string>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulHomeGroupConnectionConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<fileGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface fileGroupConnectionEdge {
-  node: File | null;
-  next: File | null;
-  previous: File | null;
-}
-
-export interface imageSharpConnectionSort {
-  fields: Array<ImageSharpConnectionSortByFieldsEnum>;
-  order: imageSharpConnectionSortOrderValues | null;
-}
-
-export type ImageSharpConnectionSortByFieldsEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner" | "fixed___base64" | "fixed___tracedSVG" | "fixed___aspectRatio" | "fixed___width" | "fixed___height" | "fixed___src" | "fixed___srcSet" | "fixed___srcWebp" | "fixed___srcSetWebp" | "fixed___originalName" | "resolutions___base64" | "resolutions___tracedSVG" | "resolutions___aspectRatio" | "resolutions___width" | "resolutions___height" | "resolutions___src" | "resolutions___srcSet" | "resolutions___srcWebp" | "resolutions___srcSetWebp" | "resolutions___originalName" | "fluid___base64" | "fluid___tracedSVG" | "fluid___aspectRatio" | "fluid___src" | "fluid___srcSet" | "fluid___srcWebp" | "fluid___srcSetWebp" | "fluid___sizes" | "fluid___originalImg" | "fluid___originalName" | "sizes___base64" | "sizes___tracedSVG" | "sizes___aspectRatio" | "sizes___src" | "sizes___srcSet" | "sizes___srcWebp" | "sizes___srcSetWebp" | "sizes___sizes" | "sizes___originalImg" | "sizes___originalName" | "original___width" | "original___height" | "original___src" | "resize___src" | "resize___tracedSVG" | "resize___width" | "resize___height" | "resize___aspectRatio" | "resize___originalName";
-
-export type imageSharpConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterImageSharp {
-  id: imageSharpConnectionIdQueryString_2 | null;
-  internal: imageSharpConnectionInternalInputObject_2 | null;
-  fixed: fixedTypeName_4 | null;
-  resolutions: resolutionsTypeName_4 | null;
-  fluid: fluidTypeName_4 | null;
-  sizes: sizesTypeName_4 | null;
-  original: originalTypeName_4 | null;
-  resize: resizeTypeName_4 | null;
-}
-
-export interface imageSharpConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpConnectionInternalInputObject_2 {
-  contentDigest: imageSharpConnectionInternalContentDigestQueryString_2 | null;
-  type: imageSharpConnectionInternalTypeQueryString_2 | null;
-  owner: imageSharpConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface imageSharpConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTypeName_4 {
-  base64: fixedBase64QueryString_4 | null;
-  tracedSVG: fixedTracedSvgQueryString_4 | null;
-  aspectRatio: fixedAspectRatioQueryFloat_4 | null;
-  width: fixedWidthQueryFloat_4 | null;
-  height: fixedHeightQueryFloat_4 | null;
-  src: fixedSrcQueryString_4 | null;
-  srcSet: fixedSrcSetQueryString_4 | null;
-  srcWebp: fixedSrcWebpQueryString_4 | null;
-  srcSetWebp: fixedSrcSetWebpQueryString_4 | null;
-  originalName: fixedOriginalNameQueryString_4 | null;
-}
-
-export interface fixedBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedWidthQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedHeightQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTypeName_4 {
-  base64: resolutionsBase64QueryString_4 | null;
-  tracedSVG: resolutionsTracedSvgQueryString_4 | null;
-  aspectRatio: resolutionsAspectRatioQueryFloat_4 | null;
-  width: resolutionsWidthQueryFloat_4 | null;
-  height: resolutionsHeightQueryFloat_4 | null;
-  src: resolutionsSrcQueryString_4 | null;
-  srcSet: resolutionsSrcSetQueryString_4 | null;
-  srcWebp: resolutionsSrcWebpQueryString_4 | null;
-  srcSetWebp: resolutionsSrcSetWebpQueryString_4 | null;
-  originalName: resolutionsOriginalNameQueryString_4 | null;
-}
-
-export interface resolutionsBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsWidthQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsHeightQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulHomeGroupConnectionEdge>)[]>;
 
-export interface resolutionsOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTypeName_4 {
-  base64: fluidBase64QueryString_4 | null;
-  tracedSVG: fluidTracedSvgQueryString_4 | null;
-  aspectRatio: fluidAspectRatioQueryFloat_4 | null;
-  src: fluidSrcQueryString_4 | null;
-  srcSet: fluidSrcSetQueryString_4 | null;
-  srcWebp: fluidSrcWebpQueryString_4 | null;
-  srcSetWebp: fluidSrcSetWebpQueryString_4 | null;
-  sizes: fluidSizesQueryString_4 | null;
-  originalImg: fluidOriginalImgQueryString_4 | null;
-  originalName: fluidOriginalNameQueryString_4 | null;
-}
-
-export interface fluidBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fluidSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSizesQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalImgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTypeName_4 {
-  base64: sizesBase64QueryString_4 | null;
-  tracedSVG: sizesTracedSvgQueryString_4 | null;
-  aspectRatio: sizesAspectRatioQueryFloat_4 | null;
-  src: sizesSrcQueryString_4 | null;
-  srcSet: sizesSrcSetQueryString_4 | null;
-  srcWebp: sizesSrcWebpQueryString_4 | null;
-  srcSetWebp: sizesSrcSetWebpQueryString_4 | null;
-  sizes: sizesSizesQueryString_4 | null;
-  originalImg: sizesOriginalImgQueryString_4 | null;
-  originalName: sizesOriginalNameQueryString_4 | null;
-}
-
-export interface sizesBase64QueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
+  field?: Maybe<string>;
 
-export interface sizesSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetWebpQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSizesQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalImgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface originalTypeName_4 {
-  width: originalWidthQueryFloat_4 | null;
-  height: originalHeightQueryFloat_4 | null;
-  src: originalSrcQueryString_4 | null;
-}
-
-export interface originalWidthQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalHeightQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTypeName_4 {
-  src: resizeSrcQueryString_4 | null;
-  tracedSVG: resizeTracedSvgQueryString_4 | null;
-  width: resizeWidthQueryInt_4 | null;
-  height: resizeHeightQueryInt_4 | null;
-  aspectRatio: resizeAspectRatioQueryFloat_4 | null;
-  originalName: resizeOriginalNameQueryString_4 | null;
-}
-
-export interface resizeSrcQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTracedSvgQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeWidthQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeHeightQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
+  fieldValue?: Maybe<string>;
 
-export interface resizeAspectRatioQueryFloat_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
+  totalCount?: Maybe<number>;
 }
 
-export interface resizeOriginalNameQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
+/** An edge in a connection. */
+export interface ContentfulHomeGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulHome>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulHome>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulHome>;
 }
 
-export interface ImageSharpConnection {
+/** A connection to a list of items. */
+export interface ContentfulHomeDescriptionTextNodeConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<ImageSharpEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<imageSharpGroupConnectionConnection> | null;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulHomeDescriptionTextNodeEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<
+    (Maybe<ContentfulHomeDescriptionTextNodeGroupConnectionConnection>)[]
+  >;
 }
 
-export interface DistinctImageSharpConnectionArgs {
-  field: imageSharpDistinctEnum | null;
+/** An edge in a connection. */
+export interface ContentfulHomeDescriptionTextNodeEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulHomeDescriptionTextNode>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulHomeDescriptionTextNode>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulHomeDescriptionTextNode>;
 }
 
-export interface GroupImageSharpConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: imageSharpGroupEnum | null;
-}
-
-export interface ImageSharpEdge {
-  node: ImageSharp | null;
-  next: ImageSharp | null;
-  previous: ImageSharp | null;
-}
-
-export type imageSharpDistinctEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type imageSharpGroupEnum = "id" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export interface imageSharpGroupConnectionConnection {
+/** A connection to a list of items. */
+export interface ContentfulHomeDescriptionTextNodeGroupConnectionConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<imageSharpGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
+  /** A list of edges. */
+  edges?: Maybe<
+    (Maybe<ContentfulHomeDescriptionTextNodeGroupConnectionEdge>)[]
+  >;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
 }
 
-export interface imageSharpGroupConnectionEdge {
-  node: ImageSharp | null;
-  next: ImageSharp | null;
-  previous: ImageSharp | null;
+/** An edge in a connection. */
+export interface ContentfulHomeDescriptionTextNodeGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulHomeDescriptionTextNode>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulHomeDescriptionTextNode>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulHomeDescriptionTextNode>;
 }
 
-export interface markdownRemarkConnectionSort {
-  fields: Array<MarkdownRemarkConnectionSortByFieldsEnum>;
-  order: markdownRemarkConnectionSortOrderValues | null;
-}
-
-export type MarkdownRemarkConnectionSortByFieldsEnum = "id" | "parent" | "internal___content" | "internal___type" | "internal___contentDigest" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter____PARENT" | "excerpt" | "rawMarkdownBody" | "fileAbsolutePath" | "fields___slug" | "html" | "headings" | "timeToRead" | "tableOfContents" | "wordCount___paragraphs" | "wordCount___sentences" | "wordCount___words";
-
-export type markdownRemarkConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterMarkdownRemark {
-  id: markdownRemarkConnectionIdQueryString_2 | null;
-  internal: markdownRemarkConnectionInternalInputObject_2 | null;
-  frontmatter: markdownRemarkConnectionFrontmatterInputObject_2 | null;
-  excerpt: excerptQueryString_4 | null;
-  rawMarkdownBody: markdownRemarkConnectionRawMarkdownBodyQueryString_2 | null;
-  fileAbsolutePath: markdownRemarkConnectionFileAbsolutePathQueryString_2 | null;
-  fields: markdownRemarkConnectionFieldsInputObject_2 | null;
-  html: htmlQueryString_4 | null;
-  headings: headingsQueryList_4 | null;
-  timeToRead: timeToReadQueryInt_4 | null;
-  tableOfContents: tableOfContentsQueryString_4 | null;
-  wordCount: wordCountTypeName_4 | null;
-}
-
-export interface markdownRemarkConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionInternalInputObject_2 {
-  content: markdownRemarkConnectionInternalContentQueryString_2 | null;
-  type: markdownRemarkConnectionInternalTypeQueryString_2 | null;
-  contentDigest: markdownRemarkConnectionInternalContentDigestQueryString_2 | null;
-  owner: markdownRemarkConnectionInternalOwnerQueryString_2 | null;
-  fieldOwners: markdownRemarkConnectionInternalFieldOwnersInputObject_2 | null;
-}
-
-export interface markdownRemarkConnectionInternalContentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionInternalFieldOwnersInputObject_2 {
-  slug: markdownRemarkConnectionInternalFieldOwnersSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkConnectionInternalFieldOwnersSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterInputObject_2 {
-  title: markdownRemarkConnectionFrontmatterTitleQueryString_2 | null;
-  createdDate: markdownRemarkConnectionFrontmatterCreatedDateQueryString_2 | null;
-  updatedDate: markdownRemarkConnectionFrontmatterUpdatedDateQueryString_2 | null;
-  author: markdownRemarkConnectionFrontmatterAuthorQueryString_2 | null;
-  tags: markdownRemarkConnectionFrontmatterTagsQueryList_2 | null;
-  image: markdownRemarkConnectionFrontmatterImageQueryString_2 | null;
-  draft: markdownRemarkConnectionFrontmatterDraftQueryBoolean_2 | null;
-  _PARENT: markdownRemarkConnectionFrontmatterParentQueryString_2 | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterTitleQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterCreatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterUpdatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterAuthorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterTagsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterImageQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterDraftQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface markdownRemarkConnectionFrontmatterParentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface excerptQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionRawMarkdownBodyQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFileAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkConnectionFieldsInputObject_2 {
-  slug: markdownRemarkConnectionFieldsSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkConnectionFieldsSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface htmlQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsQueryList_4 {
-  elemMatch: headingsListElemTypeName_4 | null;
-}
-
-export interface headingsListElemTypeName_4 {
-  value: headingsListElemValueQueryString_4 | null;
-  depth: headingsListElemDepthQueryInt_4 | null;
-}
-
-export interface headingsListElemValueQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsListElemDepthQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface timeToReadQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface tableOfContentsQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface wordCountTypeName_4 {
-  paragraphs: wordCountParagraphsQueryInt_4 | null;
-  sentences: wordCountSentencesQueryInt_4 | null;
-  words: wordCountWordsQueryInt_4 | null;
-}
-
-export interface wordCountParagraphsQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountSentencesQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountWordsQueryInt_4 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface MarkdownRemarkConnection {
+/** A connection to a list of items. */
+export interface ContentfulNavigationConnection {
+  /** Information to aid in pagination. */
   pageInfo: PageInfo;
-  edges: Array<MarkdownRemarkEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<markdownRemarkGroupConnectionConnection> | null;
-}
-
-export interface DistinctMarkdownRemarkConnectionArgs {
-  field: markdownRemarkDistinctEnum | null;
-}
-
-export interface GroupMarkdownRemarkConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: markdownRemarkGroupEnum | null;
-}
-
-export interface MarkdownRemarkEdge {
-  node: MarkdownRemark | null;
-  next: MarkdownRemark | null;
-  previous: MarkdownRemark | null;
-}
-
-export type markdownRemarkDistinctEnum = "id" | "parent" | "internal___content" | "internal___type" | "internal___contentDigest" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter____PARENT" | "excerpt" | "rawMarkdownBody" | "fileAbsolutePath" | "fields___slug";
-
-export type markdownRemarkGroupEnum = "id" | "parent" | "internal___content" | "internal___type" | "internal___contentDigest" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___image" | "frontmatter___draft" | "frontmatter____PARENT" | "excerpt" | "rawMarkdownBody" | "fileAbsolutePath" | "fields___slug";
-
-export interface markdownRemarkGroupConnectionConnection {
-  pageInfo: PageInfo;
-  edges: Array<markdownRemarkGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface markdownRemarkGroupConnectionEdge {
-  node: MarkdownRemark | null;
-  next: MarkdownRemark | null;
-  previous: MarkdownRemark | null;
-}
-
-export interface authorJsonConnectionSort {
-  fields: Array<AuthorJsonConnectionSortByFieldsEnum>;
-  order: authorJsonConnectionSortOrderValues | null;
-}
-
-export type AuthorJsonConnectionSortByFieldsEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type authorJsonConnectionSortOrderValues = "ASC" | "DESC";
-
-export interface filterAuthorJson {
-  id: authorJsonConnectionIdQueryString_2 | null;
-  bio: authorJsonConnectionBioQueryString_2 | null;
-  avatar: authorJsonConnectionAvatarQueryString_2 | null;
-  twitter: authorJsonConnectionTwitterQueryString_2 | null;
-  github: authorJsonConnectionGithubQueryString_2 | null;
-  internal: authorJsonConnectionInternalInputObject_2 | null;
-}
-
-export interface authorJsonConnectionIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionBioQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionAvatarQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionTwitterQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionGithubQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionInternalInputObject_2 {
-  contentDigest: authorJsonConnectionInternalContentDigestQueryString_2 | null;
-  type: authorJsonConnectionInternalTypeQueryString_2 | null;
-  owner: authorJsonConnectionInternalOwnerQueryString_2 | null;
-}
-
-export interface authorJsonConnectionInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonConnectionInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface AuthorJsonConnection {
-  pageInfo: PageInfo;
-  edges: Array<AuthorJsonEdge> | null;
-  totalCount: number | null;
-  distinct: Array<string> | null;
-  group: Array<authorJsonGroupConnectionConnection> | null;
-}
-
-export interface DistinctAuthorJsonConnectionArgs {
-  field: authorJsonDistinctEnum | null;
-}
-
-export interface GroupAuthorJsonConnectionArgs {
-  skip: number | null;
-  limit: number | null;
-  field: authorJsonGroupEnum | null;
-}
-
-export interface AuthorJsonEdge {
-  node: AuthorJson | null;
-  next: AuthorJson | null;
-  previous: AuthorJson | null;
-}
-
-export type authorJsonDistinctEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export type authorJsonGroupEnum = "id" | "bio" | "avatar" | "twitter" | "github" | "parent" | "internal___contentDigest" | "internal___type" | "internal___owner";
-
-export interface authorJsonGroupConnectionConnection {
-  pageInfo: PageInfo;
-  edges: Array<authorJsonGroupConnectionEdge> | null;
-  field: string | null;
-  fieldValue: string | null;
-  totalCount: number | null;
-}
-
-export interface authorJsonGroupConnectionEdge {
-  node: AuthorJson | null;
-  next: AuthorJson | null;
-  previous: AuthorJson | null;
-}
-
-export interface sitePageJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalComponentNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageComponentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageComponentChunkNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageContextInputObject {
-  slug: sitePageContextSlugQueryString | null;
-  tag: sitePageContextTagQueryString | null;
-  skip: sitePageContextSkipQueryInteger | null;
-}
-
-export interface sitePageContextSlugQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageContextTagQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageContextSkipQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePagePluginCreatorInputObject {
-  resolve: sitePagePluginCreatorResolveQueryString | null;
-  id: sitePagePluginCreatorIdQueryString | null;
-  name: sitePagePluginCreatorNameQueryString | null;
-  version: sitePagePluginCreatorVersionQueryString | null;
-  pluginOptions: sitePagePluginCreatorPluginOptionsInputObject | null;
-  nodeAPIs: sitePagePluginCreatorNodeApIsQueryList | null;
-  browserAPIs: sitePagePluginCreatorBrowserApIsQueryList | null;
-  ssrAPIs: sitePagePluginCreatorSsrApIsQueryList | null;
-  pluginFilepath: sitePagePluginCreatorPluginFilepathQueryString | null;
-  packageJson: sitePagePluginCreatorPackageJsonInputObject | null;
-  parent: sitePagePluginCreatorParentQueryString | null;
-  internal: sitePagePluginCreatorInternalInputObject | null;
-}
-
-export interface sitePagePluginCreatorResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsInputObject {
-  plugins: sitePagePluginCreatorPluginOptionsPluginsQueryList | null;
-  name: sitePagePluginCreatorPluginOptionsNameQueryString | null;
-  path: sitePagePluginCreatorPluginOptionsPathQueryString | null;
-  trackingId: sitePagePluginCreatorPluginOptionsTrackingIdQueryString | null;
-  head: sitePagePluginCreatorPluginOptionsHeadQueryBoolean | null;
-  anonymize: sitePagePluginCreatorPluginOptionsAnonymizeQueryBoolean | null;
-  respectDNT: sitePagePluginCreatorPluginOptionsRespectDntQueryBoolean | null;
-  maxWidth: sitePagePluginCreatorPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePagePluginCreatorPluginOptionsBackgroundColorQueryString | null;
-  short_name: sitePagePluginCreatorPluginOptionsShortNameQueryString | null;
-  start_url: sitePagePluginCreatorPluginOptionsStartUrlQueryString | null;
-  background_color: sitePagePluginCreatorPluginOptionsBackgroundColorQueryString_2 | null;
-  theme_color: sitePagePluginCreatorPluginOptionsThemeColorQueryString | null;
-  display: sitePagePluginCreatorPluginOptionsDisplayQueryString | null;
-  pathCheck: sitePagePluginCreatorPluginOptionsPathCheckQueryBoolean | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsQueryList {
-  elemMatch: sitePagePluginCreatorPluginOptionsPluginsInputObject | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsInputObject {
-  resolve: sitePagePluginCreatorPluginOptionsPluginsResolveQueryString | null;
-  id: sitePagePluginCreatorPluginOptionsPluginsIdQueryString | null;
-  name: sitePagePluginCreatorPluginOptionsPluginsNameQueryString | null;
-  version: sitePagePluginCreatorPluginOptionsPluginsVersionQueryString | null;
-  pluginOptions: sitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject | null;
-  browserAPIs: sitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList | null;
-  ssrAPIs: sitePagePluginCreatorPluginOptionsPluginsSsrApIsQueryList | null;
-  pluginFilepath: sitePagePluginCreatorPluginOptionsPluginsPluginFilepathQueryString | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsResolveQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginOptionsInputObject {
-  maxWidth: sitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger | null;
-  backgroundColor: sitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPluginsPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsTrackingIdQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsHeadQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsAnonymizeQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsRespectDntQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsMaxWidthQueryInteger {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsBackgroundColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsShortNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsStartUrlQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsThemeColorQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsDisplayQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginOptionsPathCheckQueryBoolean {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePagePluginCreatorNodeApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorBrowserApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorSsrApIsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPluginFilepathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonInputObject {
-  name: sitePagePluginCreatorPackageJsonNameQueryString | null;
-  description: sitePagePluginCreatorPackageJsonDescriptionQueryString | null;
-  version: sitePagePluginCreatorPackageJsonVersionQueryString | null;
-  main: sitePagePluginCreatorPackageJsonMainQueryString | null;
-  license: sitePagePluginCreatorPackageJsonLicenseQueryString | null;
-  dependencies: sitePagePluginCreatorPackageJsonDependenciesQueryList | null;
-  devDependencies: sitePagePluginCreatorPackageJsonDevDependenciesQueryList | null;
-  peerDependencies: sitePagePluginCreatorPackageJsonPeerDependenciesQueryList | null;
-  keywords: sitePagePluginCreatorPackageJsonKeywordsQueryList | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonMainQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonLicenseQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesQueryList {
-  elemMatch: sitePagePluginCreatorPackageJsonDependenciesInputObject | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesInputObject {
-  name: sitePagePluginCreatorPackageJsonDependenciesNameQueryString | null;
-  version: sitePagePluginCreatorPackageJsonDependenciesVersionQueryString | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesQueryList {
-  elemMatch: sitePagePluginCreatorPackageJsonDevDependenciesInputObject | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesInputObject {
-  name: sitePagePluginCreatorPackageJsonDevDependenciesNameQueryString | null;
-  version: sitePagePluginCreatorPackageJsonDevDependenciesVersionQueryString | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonDevDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesQueryList {
-  elemMatch: sitePagePluginCreatorPackageJsonPeerDependenciesInputObject | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesInputObject {
-  name: sitePagePluginCreatorPackageJsonPeerDependenciesNameQueryString | null;
-  version: sitePagePluginCreatorPackageJsonPeerDependenciesVersionQueryString | null;
-}
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulNavigationEdge>)[]>;
 
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesNameQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonPeerDependenciesVersionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorPackageJsonKeywordsQueryList {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorParentQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorInternalInputObject {
-  contentDigest: sitePagePluginCreatorInternalContentDigestQueryString | null;
-  type: sitePagePluginCreatorInternalTypeQueryString | null;
-  owner: sitePagePluginCreatorInternalOwnerQueryString | null;
-}
-
-export interface sitePagePluginCreatorInternalContentDigestQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorInternalTypeQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorInternalOwnerQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePagePluginCreatorIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageComponentPathQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalInputObject_2 {
-  type: sitePageInternalTypeQueryString_2 | null;
-  contentDigest: sitePageInternalContentDigestQueryString_2 | null;
-  description: sitePageInternalDescriptionQueryString | null;
-  owner: sitePageInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePageInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalDescriptionQueryString {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePageInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsInputObject_2 {
-  plugins: sitePluginPluginOptionsPluginsQueryList_2 | null;
-  name: sitePluginPluginOptionsNameQueryString_2 | null;
-  path: sitePluginPluginOptionsPathQueryString_2 | null;
-  trackingId: sitePluginPluginOptionsTrackingIdQueryString_2 | null;
-  head: sitePluginPluginOptionsHeadQueryBoolean_2 | null;
-  anonymize: sitePluginPluginOptionsAnonymizeQueryBoolean_2 | null;
-  respectDNT: sitePluginPluginOptionsRespectDntQueryBoolean_2 | null;
-  maxWidth: sitePluginPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginPluginOptionsBackgroundColorQueryString_3 | null;
-  short_name: sitePluginPluginOptionsShortNameQueryString_2 | null;
-  start_url: sitePluginPluginOptionsStartUrlQueryString_2 | null;
-  background_color: sitePluginPluginOptionsBackgroundColorQueryString_4 | null;
-  theme_color: sitePluginPluginOptionsThemeColorQueryString_2 | null;
-  display: sitePluginPluginOptionsDisplayQueryString_2 | null;
-  pathCheck: sitePluginPluginOptionsPathCheckQueryBoolean_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsQueryList_2 {
-  elemMatch: sitePluginPluginOptionsPluginsInputObject_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsInputObject_2 {
-  resolve: sitePluginPluginOptionsPluginsResolveQueryString_2 | null;
-  id: sitePluginPluginOptionsPluginsIdQueryString_2 | null;
-  name: sitePluginPluginOptionsPluginsNameQueryString_2 | null;
-  version: sitePluginPluginOptionsPluginsVersionQueryString_2 | null;
-  pluginOptions: sitePluginPluginOptionsPluginsPluginOptionsInputObject_2 | null;
-  browserAPIs: sitePluginPluginOptionsPluginsBrowserApIsQueryList_2 | null;
-  ssrAPIs: sitePluginPluginOptionsPluginsSsrApIsQueryList_2 | null;
-  pluginFilepath: sitePluginPluginOptionsPluginsPluginFilepathQueryString_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsResolveQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginOptionsInputObject_2 {
-  maxWidth: sitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 | null;
-  backgroundColor: sitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginOptionsBackgroundColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPluginsPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsTrackingIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsHeadQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginPluginOptionsAnonymizeQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginPluginOptionsRespectDntQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginPluginOptionsMaxWidthQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sitePluginPluginOptionsBackgroundColorQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsShortNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsStartUrlQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsBackgroundColorQueryString_4 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  totalCount?: Maybe<number>;
 
-export interface sitePluginPluginOptionsThemeColorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsDisplayQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginOptionsPathCheckQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface sitePluginNodeApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginBrowserApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginSsrApIsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPluginFilepathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonInputObject_2 {
-  name: sitePluginPackageJsonNameQueryString_2 | null;
-  description: sitePluginPackageJsonDescriptionQueryString_2 | null;
-  version: sitePluginPackageJsonVersionQueryString_2 | null;
-  main: sitePluginPackageJsonMainQueryString_2 | null;
-  license: sitePluginPackageJsonLicenseQueryString_2 | null;
-  dependencies: sitePluginPackageJsonDependenciesQueryList_2 | null;
-  devDependencies: sitePluginPackageJsonDevDependenciesQueryList_2 | null;
-  peerDependencies: sitePluginPackageJsonPeerDependenciesQueryList_2 | null;
-  keywords: sitePluginPackageJsonKeywordsQueryList_2 | null;
-}
-
-export interface sitePluginPackageJsonNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonMainQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonLicenseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDependenciesQueryList_2 {
-  elemMatch: sitePluginPackageJsonDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginPackageJsonDependenciesInputObject_2 {
-  name: sitePluginPackageJsonDependenciesNameQueryString_2 | null;
-  version: sitePluginPackageJsonDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginPackageJsonDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesQueryList_2 {
-  elemMatch: sitePluginPackageJsonDevDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesInputObject_2 {
-  name: sitePluginPackageJsonDevDependenciesNameQueryString_2 | null;
-  version: sitePluginPackageJsonDevDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonDevDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesQueryList_2 {
-  elemMatch: sitePluginPackageJsonPeerDependenciesInputObject_2 | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesInputObject_2 {
-  name: sitePluginPackageJsonPeerDependenciesNameQueryString_2 | null;
-  version: sitePluginPackageJsonPeerDependenciesVersionQueryString_2 | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonPeerDependenciesVersionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginPackageJsonKeywordsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginInternalInputObject_2 {
-  contentDigest: sitePluginInternalContentDigestQueryString_2 | null;
-  type: sitePluginInternalTypeQueryString_2 | null;
-  owner: sitePluginInternalOwnerQueryString_2 | null;
-}
-
-export interface sitePluginInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePluginInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteSiteMetadataInputObject_2 {
-  title: siteSiteMetadataTitleQueryString_2 | null;
-  googleVerification: siteSiteMetadataGoogleVerificationQueryString_2 | null;
-  disqus: siteSiteMetadataDisqusQueryString_2 | null;
-}
-
-export interface siteSiteMetadataTitleQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteSiteMetadataGoogleVerificationQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteSiteMetadataDisqusQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePortQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteHostQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteMappingInputObject_2 {
-  MarkdownRemark_frontmatter_author: siteMappingMarkdownRemarkFrontmatterAuthorQueryString_2 | null;
-}
-
-export interface siteMappingMarkdownRemarkFrontmatterAuthorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePathPrefixQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sitePolyfillQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface siteBuildTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface siteInternalInputObject_2 {
-  contentDigest: siteInternalContentDigestQueryString_2 | null;
-  type: siteInternalTypeQueryString_2 | null;
-  owner: siteInternalOwnerQueryString_2 | null;
-}
-
-export interface siteInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
+  distinct?: Maybe<(Maybe<string>)[]>;
 
-export interface siteInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
+  group?: Maybe<(Maybe<ContentfulNavigationGroupConnectionConnection>)[]>;
 }
 
-export interface siteInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
+/** An edge in a connection. */
+export interface ContentfulNavigationEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulNavigation>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulNavigation>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulNavigation>;
 }
 
-export interface Site extends Node {
+/** Node of type ContentfulNavigation */
+export interface ContentfulNavigation extends Node {
+  /** The id of this node. */
   id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  siteMetadata: siteMetadata_2 | null;
-  port: Date | null;
-  host: string | null;
-  mapping: mapping_2 | null;
-  pathPrefix: string | null;
-  polyfill: boolean | null;
-  buildTime: Date | null;
-  internal: internal_16 | null;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  title?: Maybe<string>;
+
+  slug?: Maybe<string>;
+
+  order?: Maybe<number>;
+
+  contentful_id?: Maybe<string>;
+
+  createdAt?: Maybe<Date>;
+
+  updatedAt?: Maybe<Date>;
+
+  internal?: Maybe<Internal_26>;
+
+  node_locale?: Maybe<string>;
 }
 
+export interface Internal_26 {
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulNavigationGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulNavigationGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulNavigationGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulNavigation>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulNavigation>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulNavigation>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulOfficeConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulOfficeEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<ContentfulOfficeGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulOfficeEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulOffice>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulOffice>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulOffice>;
+}
+
+/** Node of type ContentfulOffice */
+export interface ContentfulOffice extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  title?: Maybe<string>;
+
+  slug?: Maybe<string>;
+
+  order?: Maybe<number>;
+
+  contentful_id?: Maybe<string>;
+
+  createdAt?: Maybe<Date>;
+
+  updatedAt?: Maybe<Date>;
+
+  internal?: Maybe<Internal_27>;
+
+  node_locale?: Maybe<string>;
+
+  map?: Maybe<Map_2>;
+}
+
+export interface Internal_27 {
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+export interface Map_2 {
+  lon?: Maybe<number>;
+
+  lat?: Maybe<number>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulOfficeGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulOfficeGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulOfficeGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulOffice>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulOffice>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulOffice>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulAssetConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulAssetEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<ContentfulAssetGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulAssetEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulAsset>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulAsset>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulAsset>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulAssetGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulAssetGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulAssetGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulAsset>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulAsset>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulAsset>;
+}
+
+/** A connection to a list of items. */
+export interface MarkdownRemarkConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<MarkdownRemarkEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<MarkdownRemarkGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface MarkdownRemarkEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<MarkdownRemark>;
+  /** The next edge in the connection */
+  next?: Maybe<MarkdownRemark>;
+  /** The previous edge in the connection */
+  previous?: Maybe<MarkdownRemark>;
+}
+
+/** A connection to a list of items. */
+export interface MarkdownRemarkGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<MarkdownRemarkGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface MarkdownRemarkGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<MarkdownRemark>;
+  /** The next edge in the connection */
+  next?: Maybe<MarkdownRemark>;
+  /** The previous edge in the connection */
+  previous?: Maybe<MarkdownRemark>;
+}
+
+/** Node of type Site */
+export interface Site extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  siteMetadata?: Maybe<SiteMetadata_2>;
+
+  port?: Maybe<Date>;
+
+  host?: Maybe<string>;
+
+  pathPrefix?: Maybe<string>;
+
+  polyfill?: Maybe<boolean>;
+
+  buildTime?: Maybe<Date>;
+
+  internal?: Maybe<Internal_28>;
+}
+
+export interface SiteMetadata_2 {
+  title?: Maybe<string>;
+
+  description?: Maybe<string>;
+
+  googleVerification?: Maybe<string>;
+
+  siteUrl?: Maybe<string>;
+}
+
+export interface Internal_28 {
+  contentDigest?: Maybe<string>;
+
+  type?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+// ====================================================
+// Arguments
+// ====================================================
+
+export interface AllSitePageQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<SitePageConnectionSort>;
+
+  filter?: Maybe<FilterSitePage>;
+}
+export interface AllSitePluginQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<SitePluginConnectionSort>;
+
+  filter?: Maybe<FilterSitePlugin>;
+}
+export interface AllDirectoryQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<DirectoryConnectionSort>;
+
+  filter?: Maybe<FilterDirectory>;
+}
+export interface AllFileQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<FileConnectionSort>;
+
+  filter?: Maybe<FilterFile>;
+}
+export interface AllDataJsonQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<DataJsonConnectionSort>;
+
+  filter?: Maybe<FilterDataJson>;
+}
+export interface AllContentfulContentTypeQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulContentTypeConnectionSort>;
+
+  filter?: Maybe<FilterContentfulContentType>;
+}
+export interface AllContentfulServiceQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulServiceConnectionSort>;
+
+  filter?: Maybe<FilterContentfulService>;
+}
+export interface AllContentfulHomeQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulHomeConnectionSort>;
+
+  filter?: Maybe<FilterContentfulHome>;
+}
+export interface AllContentfulHomeDescriptionTextNodeQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulHomeDescriptionTextNodeConnectionSort>;
+
+  filter?: Maybe<FilterContentfulHomeDescriptionTextNode>;
+}
+export interface AllContentfulNavigationQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulNavigationConnectionSort>;
+
+  filter?: Maybe<FilterContentfulNavigation>;
+}
+export interface AllContentfulOfficeQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulOfficeConnectionSort>;
+
+  filter?: Maybe<FilterContentfulOffice>;
+}
+export interface AllContentfulAssetQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulAssetConnectionSort>;
+
+  filter?: Maybe<FilterContentfulAsset>;
+}
+export interface AllMarkdownRemarkQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<MarkdownRemarkConnectionSort>;
+
+  filter?: Maybe<FilterMarkdownRemark>;
+}
+export interface SitePageQueryArgs {
+  jsonName?: Maybe<SitePageJsonNameQueryString>;
+
+  internalComponentName?: Maybe<SitePageInternalComponentNameQueryString>;
+
+  path?: Maybe<SitePagePathQueryString_2>;
+
+  component?: Maybe<SitePageComponentQueryString>;
+
+  componentChunkName?: Maybe<SitePageComponentChunkNameQueryString>;
+
+  context?: Maybe<SitePageContextInputObject>;
+
+  pluginCreator?: Maybe<SitePagePluginCreatorInputObject>;
+
+  pluginCreatorId?: Maybe<SitePagePluginCreatorIdQueryString_2>;
+
+  componentPath?: Maybe<SitePageComponentPathQueryString>;
+
+  id?: Maybe<SitePageIdQueryString_2>;
+
+  internal?: Maybe<SitePageInternalInputObject_2>;
+}
+export interface SitePluginQueryArgs {
+  resolve?: Maybe<SitePluginResolveQueryString_2>;
+
+  id?: Maybe<SitePluginIdQueryString_2>;
+
+  name?: Maybe<SitePluginNameQueryString_2>;
+
+  version?: Maybe<SitePluginVersionQueryString_2>;
+
+  pluginOptions?: Maybe<SitePluginPluginOptionsInputObject_2>;
+
+  nodeAPIs?: Maybe<SitePluginNodeApIsQueryList_2>;
+
+  browserAPIs?: Maybe<SitePluginBrowserApIsQueryList_2>;
+
+  ssrAPIs?: Maybe<SitePluginSsrApIsQueryList_2>;
+
+  pluginFilepath?: Maybe<SitePluginPluginFilepathQueryString_2>;
+
+  packageJson?: Maybe<SitePluginPackageJsonInputObject_2>;
+
+  internal?: Maybe<SitePluginInternalInputObject_2>;
+}
+export interface SiteQueryArgs {
+  siteMetadata?: Maybe<SiteSiteMetadataInputObject_2>;
+
+  port?: Maybe<SitePortQueryString_2>;
+
+  host?: Maybe<SiteHostQueryString_2>;
+
+  pathPrefix?: Maybe<SitePathPrefixQueryString_2>;
+
+  polyfill?: Maybe<SitePolyfillQueryBoolean_2>;
+
+  buildTime?: Maybe<SiteBuildTimeQueryString_2>;
+
+  id?: Maybe<SiteIdQueryString_2>;
+
+  internal?: Maybe<SiteInternalInputObject_2>;
+}
+export interface DirectoryQueryArgs {
+  id?: Maybe<DirectoryIdQueryString_2>;
+
+  internal?: Maybe<DirectoryInternalInputObject_2>;
+
+  sourceInstanceName?: Maybe<DirectorySourceInstanceNameQueryString_2>;
+
+  absolutePath?: Maybe<DirectoryAbsolutePathQueryString_2>;
+
+  relativePath?: Maybe<DirectoryRelativePathQueryString_2>;
+
+  extension?: Maybe<DirectoryExtensionQueryString_2>;
+
+  size?: Maybe<DirectorySizeQueryInteger_2>;
+
+  prettySize?: Maybe<DirectoryPrettySizeQueryString_2>;
+
+  modifiedTime?: Maybe<DirectoryModifiedTimeQueryString_2>;
+
+  accessTime?: Maybe<DirectoryAccessTimeQueryString_2>;
+
+  changeTime?: Maybe<DirectoryChangeTimeQueryString_2>;
+
+  birthTime?: Maybe<DirectoryBirthTimeQueryString_2>;
+
+  root?: Maybe<DirectoryRootQueryString_2>;
+
+  dir?: Maybe<DirectoryDirQueryString_2>;
+
+  base?: Maybe<DirectoryBaseQueryString_2>;
+
+  ext?: Maybe<DirectoryExtQueryString_2>;
+
+  name?: Maybe<DirectoryNameQueryString_2>;
+
+  relativeDirectory?: Maybe<DirectoryRelativeDirectoryQueryString_2>;
+
+  dev?: Maybe<DirectoryDevQueryInteger_2>;
+
+  mode?: Maybe<DirectoryModeQueryInteger_2>;
+
+  nlink?: Maybe<DirectoryNlinkQueryInteger_2>;
+
+  uid?: Maybe<DirectoryUidQueryInteger_2>;
+
+  gid?: Maybe<DirectoryGidQueryInteger_2>;
+
+  rdev?: Maybe<DirectoryRdevQueryInteger_2>;
+
+  blksize?: Maybe<DirectoryBlksizeQueryInteger_2>;
+
+  ino?: Maybe<DirectoryInoQueryInteger_2>;
+
+  blocks?: Maybe<DirectoryBlocksQueryInteger_2>;
+
+  atimeMs?: Maybe<DirectoryAtimeMsQueryFloat_2>;
+
+  mtimeMs?: Maybe<DirectoryMtimeMsQueryFloat_2>;
+
+  ctimeMs?: Maybe<DirectoryCtimeMsQueryFloat_2>;
+
+  birthtimeMs?: Maybe<DirectoryBirthtimeMsQueryFloat_2>;
+
+  atime?: Maybe<DirectoryAtimeQueryString_2>;
+
+  mtime?: Maybe<DirectoryMtimeQueryString_2>;
+
+  ctime?: Maybe<DirectoryCtimeQueryString_2>;
+
+  birthtime?: Maybe<DirectoryBirthtimeQueryString_2>;
+}
+export interface FileQueryArgs {
+  id?: Maybe<FileIdQueryString_2>;
+
+  internal?: Maybe<FileInternalInputObject_2>;
+
+  sourceInstanceName?: Maybe<FileSourceInstanceNameQueryString_2>;
+
+  absolutePath?: Maybe<FileAbsolutePathQueryString_2>;
+
+  relativePath?: Maybe<FileRelativePathQueryString_2>;
+
+  extension?: Maybe<FileExtensionQueryString_2>;
+
+  size?: Maybe<FileSizeQueryInteger_2>;
+
+  prettySize?: Maybe<FilePrettySizeQueryString_2>;
+
+  modifiedTime?: Maybe<FileModifiedTimeQueryString_2>;
+
+  accessTime?: Maybe<FileAccessTimeQueryString_2>;
+
+  changeTime?: Maybe<FileChangeTimeQueryString_2>;
+
+  birthTime?: Maybe<FileBirthTimeQueryString_2>;
+
+  root?: Maybe<FileRootQueryString_2>;
+
+  dir?: Maybe<FileDirQueryString_2>;
+
+  base?: Maybe<FileBaseQueryString_2>;
+
+  ext?: Maybe<FileExtQueryString_2>;
+
+  name?: Maybe<FileNameQueryString_2>;
+
+  relativeDirectory?: Maybe<FileRelativeDirectoryQueryString_2>;
+
+  dev?: Maybe<FileDevQueryInteger_2>;
+
+  mode?: Maybe<FileModeQueryInteger_2>;
+
+  nlink?: Maybe<FileNlinkQueryInteger_2>;
+
+  uid?: Maybe<FileUidQueryInteger_2>;
+
+  gid?: Maybe<FileGidQueryInteger_2>;
+
+  rdev?: Maybe<FileRdevQueryInteger_2>;
+
+  blksize?: Maybe<FileBlksizeQueryInteger_2>;
+
+  ino?: Maybe<FileInoQueryInteger_2>;
+
+  blocks?: Maybe<FileBlocksQueryInteger_2>;
+
+  atimeMs?: Maybe<FileAtimeMsQueryFloat_2>;
+
+  mtimeMs?: Maybe<FileMtimeMsQueryFloat_2>;
+
+  ctimeMs?: Maybe<FileCtimeMsQueryFloat_2>;
+
+  birthtimeMs?: Maybe<FileBirthtimeMsQueryFloat_2>;
+
+  atime?: Maybe<FileAtimeQueryString_2>;
+
+  mtime?: Maybe<FileMtimeQueryString_2>;
+
+  ctime?: Maybe<FileCtimeQueryString_2>;
+
+  birthtime?: Maybe<FileBirthtimeQueryString_2>;
+
+  publicURL?: Maybe<PublicUrlQueryString_3>;
+}
+export interface DataJsonQueryArgs {
+  id?: Maybe<DataJsonIdQueryString_2>;
+
+  internal?: Maybe<DataJsonInternalInputObject_2>;
+}
+export interface ContentfulContentTypeQueryArgs {
+  id?: Maybe<ContentfulContentTypeIdQueryString_2>;
+
+  name?: Maybe<ContentfulContentTypeNameQueryString_2>;
+
+  displayField?: Maybe<ContentfulContentTypeDisplayFieldQueryString_2>;
+
+  description?: Maybe<ContentfulContentTypeDescriptionQueryString_2>;
+
+  internal?: Maybe<ContentfulContentTypeInternalInputObject_2>;
+}
+export interface ContentfulServiceQueryArgs {
+  title?: Maybe<ContentfulServiceTitleQueryString_2>;
+
+  slug?: Maybe<ContentfulServiceSlugQueryString_2>;
+
+  directions?: Maybe<ContentfulServiceDirectionsQueryList_2>;
+
+  order?: Maybe<ContentfulServiceOrderQueryInteger_2>;
+
+  image?: Maybe<ContentfulServiceImageInputObject_2>;
+
+  id?: Maybe<ContentfulServiceIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulServiceContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulServiceCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulServiceUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulServiceInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulServiceNodeLocaleQueryString_2>;
+}
+export interface ContentfulHomeQueryArgs {
+  title?: Maybe<ContentfulHomeTitleQueryString_2>;
+
+  description?: Maybe<ContentfulHomeDescriptionInputObject_2>;
+
+  id?: Maybe<ContentfulHomeIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulHomeContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulHomeCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulHomeUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulHomeInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulHomeNodeLocaleQueryString_2>;
+}
+export interface ContentfulHomeDescriptionTextNodeQueryArgs {
+  id?: Maybe<ContentfulHomeDescriptionTextNodeIdQueryString_2>;
+
+  description?: Maybe<
+    ContentfulHomeDescriptionTextNodeDescriptionQueryString_2
+  >;
+
+  internal?: Maybe<ContentfulHomeDescriptionTextNodeInternalInputObject_2>;
+}
+export interface ContentfulNavigationQueryArgs {
+  title?: Maybe<ContentfulNavigationTitleQueryString_2>;
+
+  slug?: Maybe<ContentfulNavigationSlugQueryString_2>;
+
+  order?: Maybe<ContentfulNavigationOrderQueryInteger_2>;
+
+  id?: Maybe<ContentfulNavigationIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulNavigationContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulNavigationCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulNavigationUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulNavigationInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulNavigationNodeLocaleQueryString_2>;
+}
+export interface ContentfulOfficeQueryArgs {
+  title?: Maybe<ContentfulOfficeTitleQueryString_2>;
+
+  slug?: Maybe<ContentfulOfficeSlugQueryString_2>;
+
+  order?: Maybe<ContentfulOfficeOrderQueryInteger_2>;
+
+  id?: Maybe<ContentfulOfficeIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulOfficeContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulOfficeCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulOfficeUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulOfficeInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulOfficeNodeLocaleQueryString_2>;
+
+  map?: Maybe<ContentfulOfficeMapInputObject_2>;
+}
+export interface ContentfulAssetQueryArgs {
+  contentful_id?: Maybe<ContentfulAssetContentfulIdQueryString_2>;
+
+  id?: Maybe<ContentfulAssetIdQueryString_2>;
+
+  file?: Maybe<ContentfulAssetFileInputObject_2>;
+
+  title?: Maybe<ContentfulAssetTitleQueryString_2>;
+
+  description?: Maybe<ContentfulAssetDescriptionQueryString_2>;
+
+  node_locale?: Maybe<ContentfulAssetNodeLocaleQueryString_2>;
+
+  internal?: Maybe<ContentfulAssetInternalInputObject_2>;
+
+  fixed?: Maybe<FixedTypeName_3>;
+
+  resolutions?: Maybe<ResolutionsTypeName_3>;
+
+  fluid?: Maybe<FluidTypeName_3>;
+
+  sizes?: Maybe<SizesTypeName_3>;
+
+  resize?: Maybe<ResizeTypeName_3>;
+}
+export interface MarkdownRemarkQueryArgs {
+  id?: Maybe<MarkdownRemarkIdQueryString_2>;
+
+  internal?: Maybe<MarkdownRemarkInternalInputObject_2>;
+
+  frontmatter?: Maybe<MarkdownRemarkFrontmatterInputObject_2>;
+
+  rawMarkdownBody?: Maybe<MarkdownRemarkRawMarkdownBodyQueryString_2>;
+
+  html?: Maybe<HtmlQueryString_3>;
+
+  excerpt?: Maybe<ExcerptQueryString_3>;
+
+  headings?: Maybe<HeadingsQueryList_3>;
+
+  timeToRead?: Maybe<TimeToReadQueryInt_3>;
+
+  tableOfContents?: Maybe<TableOfContentsQueryString_3>;
+
+  wordCount?: Maybe<WordCountTypeName_3>;
+}
+export interface DistinctSitePageConnectionArgs {
+  field?: Maybe<SitePageDistinctEnum>;
+}
+export interface GroupSitePageConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<SitePageGroupEnum>;
+}
+export interface DistinctSitePluginConnectionArgs {
+  field?: Maybe<SitePluginDistinctEnum>;
+}
+export interface GroupSitePluginConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<SitePluginGroupEnum>;
+}
+export interface DistinctDirectoryConnectionArgs {
+  field?: Maybe<DirectoryDistinctEnum>;
+}
+export interface GroupDirectoryConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<DirectoryGroupEnum>;
+}
+export interface ModifiedTimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface AccessTimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface ChangeTimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface BirthTimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface AtimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface MtimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface CtimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface BirthtimeDirectoryArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface DistinctFileConnectionArgs {
+  field?: Maybe<FileDistinctEnum>;
+}
+export interface GroupFileConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<FileGroupEnum>;
+}
+export interface ModifiedTimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface AccessTimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface ChangeTimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface BirthTimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface AtimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface MtimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface CtimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface BirthtimeFileArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface DistinctDataJsonConnectionArgs {
+  field?: Maybe<DataJsonDistinctEnum>;
+}
+export interface GroupDataJsonConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<DataJsonGroupEnum>;
+}
+export interface DistinctContentfulContentTypeConnectionArgs {
+  field?: Maybe<ContentfulContentTypeDistinctEnum>;
+}
+export interface GroupContentfulContentTypeConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulContentTypeGroupEnum>;
+}
+export interface DistinctContentfulServiceConnectionArgs {
+  field?: Maybe<ContentfulServiceDistinctEnum>;
+}
+export interface GroupContentfulServiceConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulServiceGroupEnum>;
+}
+export interface CreatedAtContentfulServiceArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface UpdatedAtContentfulServiceArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface FixedContentfulAssetArgs {
+  width?: number;
+
+  height?: Maybe<number>;
+
+  quality?: number;
+
+  toFormat?: Maybe<ContentfulImageFormat>;
+
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+
+  background?: Maybe<string>;
+}
+export interface ResolutionsContentfulAssetArgs {
+  width?: number;
+
+  height?: Maybe<number>;
+
+  quality?: number;
+
+  toFormat?: Maybe<ContentfulImageFormat>;
+
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+
+  background?: Maybe<string>;
+}
+export interface FluidContentfulAssetArgs {
+  maxWidth?: number;
+
+  maxHeight?: Maybe<number>;
+
+  quality?: number;
+
+  toFormat?: Maybe<ContentfulImageFormat>;
+
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+
+  background?: Maybe<string>;
+
+  sizes?: Maybe<string>;
+}
+export interface SizesContentfulAssetArgs {
+  maxWidth?: number;
+
+  maxHeight?: Maybe<number>;
+
+  quality?: number;
+
+  toFormat?: Maybe<ContentfulImageFormat>;
+
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+
+  background?: Maybe<string>;
+
+  sizes?: Maybe<string>;
+}
+export interface ResizeContentfulAssetArgs {
+  width?: number;
+
+  height?: Maybe<number>;
+
+  quality?: number;
+
+  jpegProgressive?: boolean;
+
+  resizingBehavior?: Maybe<ImageResizingBehavior>;
+
+  toFormat?: Maybe<ContentfulImageFormat>;
+
+  cropFocus?: Maybe<ContentfulImageCropFocus>;
+
+  background?: Maybe<string>;
+}
+export interface DistinctContentfulHomeConnectionArgs {
+  field?: Maybe<ContentfulHomeDistinctEnum>;
+}
+export interface GroupContentfulHomeConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulHomeGroupEnum>;
+}
+export interface CreatedAtContentfulHomeArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface UpdatedAtContentfulHomeArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface ExcerptMarkdownRemarkArgs {
+  pruneLength?: number;
+
+  truncate?: Maybe<boolean>;
+
+  format?: Maybe<ExcerptFormats>;
+}
+export interface HeadingsMarkdownRemarkArgs {
+  depth?: Maybe<HeadingLevels>;
+}
+export interface TableOfContentsMarkdownRemarkArgs {
+  pathToSlugField?: string;
+
+  maxDepth?: Maybe<number>;
+
+  heading?: Maybe<string>;
+}
+export interface DistinctContentfulHomeDescriptionTextNodeConnectionArgs {
+  field?: Maybe<ContentfulHomeDescriptionTextNodeDistinctEnum>;
+}
+export interface GroupContentfulHomeDescriptionTextNodeConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulHomeDescriptionTextNodeGroupEnum>;
+}
+export interface DistinctContentfulNavigationConnectionArgs {
+  field?: Maybe<ContentfulNavigationDistinctEnum>;
+}
+export interface GroupContentfulNavigationConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulNavigationGroupEnum>;
+}
+export interface CreatedAtContentfulNavigationArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface UpdatedAtContentfulNavigationArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface DistinctContentfulOfficeConnectionArgs {
+  field?: Maybe<ContentfulOfficeDistinctEnum>;
+}
+export interface GroupContentfulOfficeConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulOfficeGroupEnum>;
+}
+export interface CreatedAtContentfulOfficeArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface UpdatedAtContentfulOfficeArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface DistinctContentfulAssetConnectionArgs {
+  field?: Maybe<ContentfulAssetDistinctEnum>;
+}
+export interface GroupContentfulAssetConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulAssetGroupEnum>;
+}
+export interface DistinctMarkdownRemarkConnectionArgs {
+  field?: Maybe<MarkdownRemarkDistinctEnum>;
+}
+export interface GroupMarkdownRemarkConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<MarkdownRemarkGroupEnum>;
+}
 export interface PortSiteArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
 }
-
 export interface BuildTimeSiteArgs {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface siteMetadata_2 {
-  title: string | null;
-  googleVerification: string | null;
-  disqus: string | null;
-}
-
-export interface mapping_2 {
-  MarkdownRemark_frontmatter_author: string | null;
-}
-
-export interface internal_16 {
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
-}
-
-export interface directoryIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalInputObject_2 {
-  contentDigest: directoryInternalContentDigestQueryString_2 | null;
-  type: directoryInternalTypeQueryString_2 | null;
-  description: directoryInternalDescriptionQueryString_2 | null;
-  owner: directoryInternalOwnerQueryString_2 | null;
-}
-
-export interface directoryInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directorySourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directorySizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryPrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface directoryAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface directoryBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalInputObject_2 {
-  contentDigest: fileInternalContentDigestQueryString_2 | null;
-  type: fileInternalTypeQueryString_2 | null;
-  mediaType: fileInternalMediaTypeQueryString_2 | null;
-  description: fileInternalDescriptionQueryString_2 | null;
-  owner: fileInternalOwnerQueryString_2 | null;
-}
-
-export interface fileInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalMediaTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalDescriptionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileSourceInstanceNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileRelativePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileExtensionQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileSizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface filePrettySizeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileModifiedTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileAccessTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileChangeTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileBirthTimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileRootQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileDirQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileBaseQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileExtQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileNameQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileRelativeDirectoryQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileDevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileModeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileNlinkQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileUidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileGidQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileRdevQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileBlksizeQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileInoQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileBlocksQueryInteger_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileAtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileMtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileCtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileBirthtimeMsQueryFloat_2 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fileAtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileMtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileCtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fileBirthtimeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface publicUrlQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpInternalInputObject_2 {
-  contentDigest: imageSharpInternalContentDigestQueryString_2 | null;
-  type: imageSharpInternalTypeQueryString_2 | null;
-  owner: imageSharpInternalOwnerQueryString_2 | null;
-}
-
-export interface imageSharpInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface imageSharpInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTypeName_3 {
-  base64: fixedBase64QueryString_3 | null;
-  tracedSVG: fixedTracedSvgQueryString_3 | null;
-  aspectRatio: fixedAspectRatioQueryFloat_3 | null;
-  width: fixedWidthQueryFloat_3 | null;
-  height: fixedHeightQueryFloat_3 | null;
-  src: fixedSrcQueryString_3 | null;
-  srcSet: fixedSrcSetQueryString_3 | null;
-  srcWebp: fixedSrcWebpQueryString_3 | null;
-  srcSetWebp: fixedSrcSetWebpQueryString_3 | null;
-  originalName: fixedOriginalNameQueryString_3 | null;
-}
-
-export interface fixedBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedWidthQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedHeightQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fixedSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fixedOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTypeName_3 {
-  base64: resolutionsBase64QueryString_3 | null;
-  tracedSVG: resolutionsTracedSvgQueryString_3 | null;
-  aspectRatio: resolutionsAspectRatioQueryFloat_3 | null;
-  width: resolutionsWidthQueryFloat_3 | null;
-  height: resolutionsHeightQueryFloat_3 | null;
-  src: resolutionsSrcQueryString_3 | null;
-  srcSet: resolutionsSrcSetQueryString_3 | null;
-  srcWebp: resolutionsSrcWebpQueryString_3 | null;
-  srcSetWebp: resolutionsSrcSetWebpQueryString_3 | null;
-  originalName: resolutionsOriginalNameQueryString_3 | null;
-}
-
-export interface resolutionsBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsWidthQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsHeightQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resolutionsSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resolutionsOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTypeName_3 {
-  base64: fluidBase64QueryString_3 | null;
-  tracedSVG: fluidTracedSvgQueryString_3 | null;
-  aspectRatio: fluidAspectRatioQueryFloat_3 | null;
-  src: fluidSrcQueryString_3 | null;
-  srcSet: fluidSrcSetQueryString_3 | null;
-  srcWebp: fluidSrcWebpQueryString_3 | null;
-  srcSetWebp: fluidSrcSetWebpQueryString_3 | null;
-  sizes: fluidSizesQueryString_3 | null;
-  originalImg: fluidOriginalImgQueryString_3 | null;
-  originalName: fluidOriginalNameQueryString_3 | null;
-}
-
-export interface fluidBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface fluidSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidSizesQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalImgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface fluidOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTypeName_3 {
-  base64: sizesBase64QueryString_3 | null;
-  tracedSVG: sizesTracedSvgQueryString_3 | null;
-  aspectRatio: sizesAspectRatioQueryFloat_3 | null;
-  src: sizesSrcQueryString_3 | null;
-  srcSet: sizesSrcSetQueryString_3 | null;
-  srcWebp: sizesSrcWebpQueryString_3 | null;
-  srcSetWebp: sizesSrcSetWebpQueryString_3 | null;
-  sizes: sizesSizesQueryString_3 | null;
-  originalImg: sizesOriginalImgQueryString_3 | null;
-  originalName: sizesOriginalNameQueryString_3 | null;
-}
-
-export interface sizesBase64QueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface sizesSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSrcSetWebpQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesSizesQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalImgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface sizesOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface originalTypeName_3 {
-  width: originalWidthQueryFloat_3 | null;
-  height: originalHeightQueryFloat_3 | null;
-  src: originalSrcQueryString_3 | null;
-}
-
-export interface originalWidthQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalHeightQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface originalSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTypeName_3 {
-  src: resizeSrcQueryString_3 | null;
-  tracedSVG: resizeTracedSvgQueryString_3 | null;
-  width: resizeWidthQueryInt_3 | null;
-  height: resizeHeightQueryInt_3 | null;
-  aspectRatio: resizeAspectRatioQueryFloat_3 | null;
-  originalName: resizeOriginalNameQueryString_3 | null;
-}
-
-export interface resizeSrcQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeTracedSvgQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface resizeWidthQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeHeightQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeAspectRatioQueryFloat_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface resizeOriginalNameQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalInputObject_2 {
-  content: markdownRemarkInternalContentQueryString_2 | null;
-  type: markdownRemarkInternalTypeQueryString_2 | null;
-  contentDigest: markdownRemarkInternalContentDigestQueryString_2 | null;
-  owner: markdownRemarkInternalOwnerQueryString_2 | null;
-  fieldOwners: markdownRemarkInternalFieldOwnersInputObject_2 | null;
-}
-
-export interface markdownRemarkInternalContentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkInternalFieldOwnersInputObject_2 {
-  slug: markdownRemarkInternalFieldOwnersSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkInternalFieldOwnersSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterInputObject_2 {
-  title: markdownRemarkFrontmatterTitleQueryString_2 | null;
-  createdDate: markdownRemarkFrontmatterCreatedDateQueryString_2 | null;
-  updatedDate: markdownRemarkFrontmatterUpdatedDateQueryString_2 | null;
-  author: markdownRemarkFrontmatterAuthorQueryString_2 | null;
-  tags: markdownRemarkFrontmatterTagsQueryList_2 | null;
-  image: markdownRemarkFrontmatterImageQueryString_2 | null;
-  draft: markdownRemarkFrontmatterDraftQueryBoolean_2 | null;
-  _PARENT: markdownRemarkFrontmatterParentQueryString_2 | null;
-}
-
-export interface markdownRemarkFrontmatterTitleQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterCreatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterUpdatedDateQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterAuthorQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterTagsQueryList_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterImageQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFrontmatterDraftQueryBoolean_2 {
-  eq: boolean | null;
-  ne: boolean | null;
-  in: Array<boolean> | null;
-}
-
-export interface markdownRemarkFrontmatterParentQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface excerptQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkRawMarkdownBodyQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFileAbsolutePathQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface markdownRemarkFieldsInputObject_2 {
-  slug: markdownRemarkFieldsSlugQueryString_2 | null;
-}
-
-export interface markdownRemarkFieldsSlugQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface htmlQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsQueryList_3 {
-  elemMatch: headingsListElemTypeName_3 | null;
-}
-
-export interface headingsListElemTypeName_3 {
-  value: headingsListElemValueQueryString_3 | null;
-  depth: headingsListElemDepthQueryInt_3 | null;
-}
-
-export interface headingsListElemValueQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface headingsListElemDepthQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface timeToReadQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface tableOfContentsQueryString_3 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface wordCountTypeName_3 {
-  paragraphs: wordCountParagraphsQueryInt_3 | null;
-  sentences: wordCountSentencesQueryInt_3 | null;
-  words: wordCountWordsQueryInt_3 | null;
-}
-
-export interface wordCountParagraphsQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountSentencesQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface wordCountWordsQueryInt_3 {
-  eq: number | null;
-  ne: number | null;
-  gt: number | null;
-  gte: number | null;
-  lt: number | null;
-  lte: number | null;
-  in: Array<number> | null;
-}
-
-export interface authorJsonIdQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonBioQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonAvatarQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonTwitterQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonGithubQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonInternalInputObject_2 {
-  contentDigest: authorJsonInternalContentDigestQueryString_2 | null;
-  type: authorJsonInternalTypeQueryString_2 | null;
-  owner: authorJsonInternalOwnerQueryString_2 | null;
-}
-
-export interface authorJsonInternalContentDigestQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonInternalTypeQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
-}
-
-export interface authorJsonInternalOwnerQueryString_2 {
-  eq: string | null;
-  ne: string | null;
-  regex: string | null;
-  glob: string | null;
-  in: Array<string> | null;
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
 }

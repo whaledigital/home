@@ -2,103 +2,106 @@ import { Link, navigate } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 
-import { ImageSharp } from 'src/graphql-types';
+import {
+  ContentfulServiceEdge,
+} from 'src/graphql-types';
 import Segment from 'components/segment/Segment';
 import Box3D from 'components/box3d/Box3D';
 
 import s from './Expertise.module.scss';
 
-interface ExpertiseNode {
-  node: {
-    title: string;
-    slug: string;
-    directions: string[];
-    image: ImageSharp;
-  };
-}
-
 interface ExpertiseProps {
-  items: ExpertiseNode[];
+  items: ContentfulServiceEdge[];
 }
 
 interface ExpertiseState {
   active: string;
-  item: ExpertiseNode;
   height: number;
   width: number;
-  opacity: number;
 }
 
 class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
   state = {
-    active: this.props.items[0].node.slug,
-    item: this.props.items[0],
-
+    active: '',
     height: 0,
     width: 0,
-
-    opacity: 1,
   };
 
   expertiseRef: HTMLElement;
+  listRef: HTMLElement;
 
   componentDidMount () {
     this.setState({
-      height: this.expertiseRef.offsetWidth,
+      height: this.listRef.offsetHeight,
       width: this.expertiseRef.offsetWidth,
     });
   }
 
+  renderMenu = () => (
+    <ul ref={ref => this.listRef = ref} className={s.expertise__list}>
+      {this.props.items.map(({ node }: ContentfulServiceEdge, i: number) => {
+        const onClick = () => navigate(`/${node.slug}`);
+        const onMouseOver = () => this.setState({ active: node.id });
+
+        return (
+          <li
+            key={node.id}
+            className={s.expertise__list__item}
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-duration="200"
+            data-aos-delay={(i + 1) * 50}
+          >
+            <a onClick={onClick} onMouseOver={onMouseOver}>
+              {node.title}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   render () {
     const { items } = this.props;
-    const { active, item, opacity } = this.state;
+    const { active, height, width } = this.state;
     if (!items) return null;
 
     return (
       <Segment title="Services">
         <div className={s.expertise}>
-          <ul className={s.expertise__list}>
-            {items.map(({ node }: ExpertiseNode) => {
-              const activeClass = active === node.slug ? s.expertise__list__itemActive : undefined;
-              const onClick = () => {
-                if (node.slug === this.state.active) return navigate(`/${node.slug}`);
-                this.setState({ opacity: 0 }, () => {
-                  setTimeout(
-                    () => this.setState({ active: node.slug, item: { node }, opacity: 1 }),
-                    200);
-                });
-              };
-
+          {this.renderMenu()}
+          {/* <div
+            className={s.expertise__frame}
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          /> */}
+          <div
+            ref={ref => this.expertiseRef = ref}
+            className={s.expertise__showcase}
+            data-aos="fade-left"
+            data-aos-offset="500"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-sine"
+          >
+            {items.map(({ node }: ContentfulServiceEdge, i: number) => {
+              const classContainer = !active && i === 0 || active === node.id
+                ? [s.expertise__showcase__container, s.expertise__showcase__containerActive]
+                  .join(' ')
+                : s.expertise__showcase__container;
               return (
-                <li key={node.slug} className={s.expertise__list__item}>
-                  <a onClick={onClick} className={activeClass}>{node.title}</a>
-                </li>
+                <div key={node.id} className={classContainer}>
+                  <Box3D height={height} width={width}>
+                    <Link to={`/${node.slug}`} className={s.expertise__showcase__item}>
+                      <Img fluid={node.image.fluid} className={s.expertise__showcase__itemImage} />
+                      <div className={s.expertise__showcase__itemShadow} />
+                      <h4 className={s.expertise__showcase__itemTitle}>
+                        {node.directions.join(' / ')}
+                      </h4>
+                    </Link>
+                  </Box3D>
+                </div>
               );
             })}
-          </ul>
-          <div className={s.expertise__frame} />
-          <div
-            className={s.expertise__showcase}
-            ref={ref => this.expertiseRef = ref}
-            style={{ opacity }}
-          >
-            <Box3D
-              height={this.state.height}
-              width={this.state.width}
-            >
-              <Link
-                to={`/${item.node.slug}`}
-                className={s.expertise__showcase__item}
-              >
-                <Img
-                  fluid={item.node.image.fluid}
-                  className={s.expertise__showcase__itemImage}
-                  fadeIn={true}
-                />
-                <div className={s.expertise__showcase__itemShadow} />
-                <h4>{item.node.directions.join(' / ')}</h4>
-              </Link>
-            </Box3D>
           </div>
         </div>
       </Segment>

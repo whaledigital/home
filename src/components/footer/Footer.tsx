@@ -5,7 +5,7 @@ import Logo from 'components/logo/Logo';
 
 import s from './Footer.module.scss';
 
-export const Footer = () => (
+export const Footer = (props: any) => (
   <footer className={s.footer}>
     <div className={s.footer__grid}>
       <div className={s.footer__gridLogo}>
@@ -13,39 +13,25 @@ export const Footer = () => (
       </div>
       <div className={s.footer__gridCountries}>
         <ol className={s.footer__countriesList}>
-          <li>
-            <Link to="/">Russia</Link>
-          </li>
-          <li>
-            <Link to="/">Germany</Link>
-          </li>
-          <li>
-            <Link to="/">Poland</Link>
-          </li>
-          <li>
-            <Link to="/">India</Link>
-          </li>
+          {props.offices.map(({ node }: any) => {
+            const slug = node.slug ? `/${node.slug}` : '';
+            return (
+              <li key={slug}>
+                <Link to={slug}>{node.title}</Link>
+              </li>
+            );
+          })}
         </ol>
       </div>
       <div className={s.footer__gridServices}>
         <div className={s.footer__servicesBlock}>
           <h6>Expertise</h6>
           <ul>
-            <li>
-              <Link to="/">One</Link>
-            </li>
-            <li>
-              <Link to="/">Two</Link>
-            </li>
-            <li>
-              <Link to="/">Three</Link>
-            </li>
-            <li>
-              <Link to="/">Four</Link>
-            </li>
-            <li>
-              <Link to="/">Five</Link>
-            </li>
+            {props.services.map(({ node }: any) => (
+              <li key={node.slug}>
+                <Link to={`/${node.slug}`}>{node.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -54,10 +40,19 @@ export const Footer = () => (
           <h6>Company</h6>
           <ul>
             <li>
-              <Link to="/">One</Link>
+              <Link to="/">About</Link>
             </li>
             <li>
-              <Link to="/">Two</Link>
+              <Link to="/">Contacts</Link>
+            </li>
+            <li>
+              <Link to="/">Case studies</Link>
+            </li>
+            <li>
+              <Link to="/">Careers</Link>
+            </li>
+            <li>
+              <Link to="/">Partnership</Link>
             </li>
           </ul>
         </div>
