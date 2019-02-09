@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="101" height="107" viewBox="0 0 101 107">
+  <g fill-rule="evenodd" transform="matrix(1 0 0 -1 0 107)">
+    <circle cx="51.5" cy="54.5" r="7.5"/>
+    <circle cx="51.5" cy="99.5" r="5.5"/>
+    <circle cx="7.5" cy="99.5" r="7.5"/>
+    <circle cx="7" cy="54" r="6"/>
+    <circle cx="50" cy="7" r="6"/>
+    <circle cx="93.5" cy="7.5" r="7.5"/>
+    <circle cx="93" cy="54" r="6"/>
+  </g>
+</svg>
