@@ -8,12 +8,12 @@ interface ContainerProps {
 }
 
 export const Container = ({ children, title }: ContainerProps) => {
-  const heading = title ? <h2 className={s.container__title}>{title}</h2> : null;
+  const heading = title ? <h2 className={s.container__title} data-aos="fade-up">{title}</h2> : null;
 
   return (
-    <section className={s.container}>
+    <div className={s.container}>
       {heading}
       {children}
-    </section>
+    </div>
   );
 };

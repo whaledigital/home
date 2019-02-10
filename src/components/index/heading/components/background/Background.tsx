@@ -170,6 +170,7 @@ class Background extends React.Component<BackgroundProps> {
   render () {
     return (
       <div
+        data-aos="fade"
         className={s.container}
         ref={mount => this.mount = mount}
       />
