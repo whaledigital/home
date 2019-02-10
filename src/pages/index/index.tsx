@@ -8,6 +8,7 @@ import Expertise from 'components/index/expertise/Expertise';
 import Cases from 'components/index/cases/Cases';
 import Experts from 'components/experts/Experts';
 import Heading from 'components/index/heading/Heading';
+import Contacts from 'components/contacts/Contacts';
 
 interface HomeProps extends LayoutProps {
   data: {
@@ -31,6 +32,7 @@ class HomePage extends React.Component<HomeProps> {
         <Expertise items={services} />
         <Cases items={cases} />
         <Experts items={experts} />
+        <Contacts />
       </>
     );
   }
