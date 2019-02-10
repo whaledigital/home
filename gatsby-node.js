@@ -9,9 +9,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   switch (node.internal.type) {
     case `MarkdownRemark`:
       const fileNode = getNode(node.parent);
-      const [basePath, name] = fileNode.relativePath.split('/');
-      const slug = `/${basePath}/${name}/`;
-      createNodeField({ node, name: `slug`, value: slug });
+      if (fileNode.relativePath) {
+        const [basePath, name] = fileNode.relativePath.split('/');
+        const slug = `/${basePath}/${name}/`;
+        createNodeField({ node, name: `slug`, value: slug });
+      }
+
       break;
   }
 };
