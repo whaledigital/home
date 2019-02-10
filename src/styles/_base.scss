@@ -92,3 +92,7 @@ select {
     color: $color-placeholder;
   }
 }
+
+.slick-list {
+  overflow: initial !important;
+}

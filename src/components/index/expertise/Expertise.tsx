@@ -41,7 +41,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
   }
 
   renderMenu = () => (
-    <ul ref={ref => this.listRef = ref} className={s.expertise__list}>
+    <ul ref={ref => this.listRef = ref} className={s.expertise__list} data-aos="fade">
       {this.props.items.map(({ node }: ContentfulServiceEdge, i: number) => {
         const onMouseOver = () => this.setState({ active: node.id });
         return (
