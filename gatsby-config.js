@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config();
+}
+
 module.exports = {
   siteMetadata: {
     title: `Whale Digital`,
@@ -93,8 +97,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `ly79s3d7arc5`,
-        accessToken: `bdfcb39636c7b590f4150d8e18c2f0bafbce5988f64176e7d464a9829a766b09`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
 
