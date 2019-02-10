@@ -61,7 +61,7 @@ export const Footer = (props: any) => (
         <ul className={s.footer__socialUl}>
           {props.socialLinks.map((link: any) => (
             <li key={link.name}>
-              <a href={link.url} aria-label={link.name} target="_blank">
+              <a href={link.url} aria-label={link.name} target="_blank" rel="noreferrer">
                 {React.createElement(require(`assets/svg/${link.name}.svg`))}
               </a>
             </li>
