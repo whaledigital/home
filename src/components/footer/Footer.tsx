@@ -25,7 +25,7 @@ export const Footer = (props: any) => (
       </div>
       <div className={s.footer__gridServices}>
         <div className={s.footer__servicesBlock}>
-          <h6>Expertise</h6>
+          <h6 className={s.footer__title}>Expertise</h6>
           <ul>
             {props.services.map(({ node }: any) => (
               <li key={node.slug}>
@@ -37,7 +37,7 @@ export const Footer = (props: any) => (
       </div>
       <div className={s.footer__gridCompany}>
         <div className={s.footer__companyBlock}>
-          <h6>Company</h6>
+          <h6 className={s.footer__title}>Company</h6>
           <ul>
             <li>
               <Link to="/">About</Link>

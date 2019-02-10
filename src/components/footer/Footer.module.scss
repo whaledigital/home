@@ -16,6 +16,10 @@
     }
   }
 
+  &__title {
+    color: $color-grey;
+  }
+
   &__countriesList {
     @include reset-list;
 
@@ -98,5 +102,9 @@
     font-size: 0.8rem;
     border-top: 1px solid rgba($color-light, 0.15);
     padding: $gutter*2 0;
+
+    &Copyright {
+      color: $color-grey;
+    }
   }
 }
