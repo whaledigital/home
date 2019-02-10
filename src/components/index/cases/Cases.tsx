@@ -65,7 +65,7 @@ class Cases extends React.Component<CaseProps> {
                   data-aos-duration="500"
                   data-aos-delay={(i + 1) * 100}
                 >
-                  <Box3D height="100%" width="100%" perspective={60}>
+                  <Box3D perspective={60}>
                     <Img
                       className={s.cases__itemThumbnail}
                       fluid={node.thumbnail.fluid}

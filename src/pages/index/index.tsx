@@ -88,8 +88,8 @@ export const pageQuery = graphql`
           title
           position
           photo {
-            fixed(width: 280) {
-              ...GatsbyContentfulFixed_noBase64
+            fluid(maxWidth: 280) {
+              ...GatsbyContentfulFluid_noBase64
             }
           }
         }

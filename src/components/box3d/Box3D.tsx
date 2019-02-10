@@ -15,7 +15,9 @@ interface Box3DState {
 
 class Box3D extends React.Component<Box3DProps, Box3DState> {
   static defaultProps = {
+    height: 'auto',
     perspective: 40,
+    width: 'auto',
   };
 
   state = {
