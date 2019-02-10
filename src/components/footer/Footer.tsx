@@ -3,11 +3,6 @@ import React from 'react';
 
 import Logo from 'components/logo/Logo';
 
-import Facebook from 'assets/svg/facebook.svg';
-import Twitter from 'assets/svg/twitter.svg';
-import Linkedin from 'assets/svg/linkedin.svg';
-import Instagram from 'assets/svg/instagram.svg';
-
 import s from './Footer.module.scss';
 
 export const Footer = (props: any) => (
@@ -64,32 +59,19 @@ export const Footer = (props: any) => (
       </div>
       <div className={s.footer__gridSocial}>
         <ul className={s.footer__socialUl}>
-          <li>
-            <a href="/" aria-label="Facebook">
-              <Facebook />
-            </a>
-          </li>
-          <li>
-            <a href="/" aria-label="Twitter">
-              <Twitter />
-            </a>
-          </li>
-          <li>
-            <a href="/" aria-label="Linkedin">
-              <Linkedin />
-            </a>
-          </li>
-          <li>
-            <a href="/" aria-label="Instagram">
-              <Instagram />
-            </a>
-          </li>
+          {props.socialLinks.map((link: any) => (
+            <li key={link.name}>
+              <a href={link.url} aria-label={link.name} target="_blank">
+                {React.createElement(require(`assets/svg/${link.name}.svg`))}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
     <div className={s.footer__bottom}>
       <div className={s.footer__bottomCopyright}>
-        © WhaleDigital 2017-2019. All rights reserved
+        © {props.title} 2017-{(new Date()).getFullYear()}. All rights reserved
       </div>
       <div className={s.footer__bottomTerms}>Terms & Privacy</div>
     </div>

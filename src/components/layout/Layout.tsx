@@ -17,10 +17,21 @@ export interface LayoutProps {
   children: any;
 }
 
+export interface SocialLink {
+  url: string;
+  name: string;
+}
+
 interface GQLData {
   services: GQL.ContentfulServiceConnection;
   offices: GQL.ContentfulOfficeConnection;
   navigation: GQL.ContentfulNavigationConnection;
+  site: {
+    siteMetadata: {
+      title: string;
+      socialLinks: SocialLink[];
+    };
+  };
 }
 
 class Layout extends React.Component<LayoutProps> {
@@ -43,8 +54,10 @@ class Layout extends React.Component<LayoutProps> {
           </Header>
           {this.props.children}
           <Footer
+            title={data.site.siteMetadata.title}
             offices={data.offices.edges}
             services={data.services.edges}
+            socialLinks={data.site.siteMetadata.socialLinks}
           />
           <DevTools />
         </div>
@@ -64,6 +77,15 @@ class Layout extends React.Component<LayoutProps> {
 
 const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+        socialLinks {
+          name
+          url
+        }
+      }
+    }
     navigation: allContentfulNavigation(sort: { fields: order }) {
       edges {
         node {

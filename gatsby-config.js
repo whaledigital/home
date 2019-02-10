@@ -8,6 +8,12 @@ module.exports = {
     description: `Inspiring businesses to bring innovative ideas to life`,
     googleVerification: `abcdefz`,
     siteUrl: `https://www.whale.digital`,
+    socialLinks: [
+      { url: 'https://www.facebook.com/', name: 'facebook' },
+      { url: 'https://www.twitter.com/', name: 'twitter' },
+      { url: 'https://www.linkedin.com/', name: 'linkedin' },
+      { url: 'https://www.instagram.com/', name: 'instagram' },
+    ],
   },
   plugins: [
     // Expose `/data` to graphQL layer
