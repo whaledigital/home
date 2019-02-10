@@ -65,22 +65,22 @@ export const Footer = (props: any) => (
       <div className={s.footer__gridSocial}>
         <ul className={s.footer__socialUl}>
           <li>
-            <a href="/">
+            <a href="/" aria-label="Facebook">
               <Facebook />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/" aria-label="Twitter">
               <Twitter />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/" aria-label="Linkedin">
               <Linkedin />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/" aria-label="Instagram">
               <Instagram />
             </a>
           </li>
