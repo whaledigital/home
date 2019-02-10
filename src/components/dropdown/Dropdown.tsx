@@ -96,7 +96,6 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
         ref={el => this.rootRef = el}
         data-value={label}
         onClick={this.showList}
-        tabIndex={1}
       >
         <ul className={s.dropdown__list}>
           {options.map(this.renderOption)}
