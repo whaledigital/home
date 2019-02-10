@@ -6047,6 +6047,466 @@ export interface ContentfulCaseConnectionNodeLocaleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
+export interface ContentfulExpertConnectionSort {
+  fields: (Maybe<ContentfulExpertConnectionSortByFieldsEnum>)[];
+
+  order?: (Maybe<ContentfulExpertConnectionSortOrderValues>)[];
+}
+/** Filter connection on its fields */
+export interface FilterContentfulExpert {
+  title?: Maybe<ContentfulExpertConnectionTitleQueryString_2>;
+
+  position?: Maybe<ContentfulExpertConnectionPositionQueryString_2>;
+
+  order?: Maybe<ContentfulExpertConnectionOrderQueryInteger_2>;
+
+  photo?: Maybe<ContentfulExpertConnectionPhotoInputObject_2>;
+
+  id?: Maybe<ContentfulExpertConnectionIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulExpertConnectionContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulExpertConnectionCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulExpertConnectionUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulExpertConnectionInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulExpertConnectionNodeLocaleQueryString_2>;
+}
+
+export interface ContentfulExpertConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPositionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoInputObject_2 {
+  contentful_id?: Maybe<
+    ContentfulExpertConnectionPhotoContentfulIdQueryString_2
+  >;
+
+  id?: Maybe<ContentfulExpertConnectionPhotoIdQueryString_2>;
+
+  file?: Maybe<ContentfulExpertConnectionPhotoFileInputObject_2>;
+
+  title?: Maybe<ContentfulExpertConnectionPhotoTitleQueryString_2>;
+
+  description?: Maybe<ContentfulExpertConnectionPhotoDescriptionQueryString_2>;
+
+  node_locale?: Maybe<ContentfulExpertConnectionPhotoNodeLocaleQueryString_2>;
+
+  internal?: Maybe<ContentfulExpertConnectionPhotoInternalInputObject_2>;
+}
+
+export interface ContentfulExpertConnectionPhotoContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileInputObject_2 {
+  url?: Maybe<ContentfulExpertConnectionPhotoFileUrlQueryString_2>;
+
+  details?: Maybe<ContentfulExpertConnectionPhotoFileDetailsInputObject_2>;
+
+  fileName?: Maybe<ContentfulExpertConnectionPhotoFileFileNameQueryString_2>;
+
+  contentType?: Maybe<
+    ContentfulExpertConnectionPhotoFileContentTypeQueryString_2
+  >;
+}
+
+export interface ContentfulExpertConnectionPhotoFileUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileDetailsInputObject_2 {
+  size?: Maybe<ContentfulExpertConnectionPhotoFileDetailsSizeQueryInteger_2>;
+
+  image?: Maybe<ContentfulExpertConnectionPhotoFileDetailsImageInputObject_2>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileDetailsSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileDetailsImageInputObject_2 {
+  width?: Maybe<
+    ContentfulExpertConnectionPhotoFileDetailsImageWidthQueryInteger_2
+  >;
+
+  height?: Maybe<
+    ContentfulExpertConnectionPhotoFileDetailsImageHeightQueryInteger_2
+  >;
+}
+
+export interface ContentfulExpertConnectionPhotoFileDetailsImageWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileDetailsImageHeightQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileFileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoFileContentTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoInternalInputObject_2 {
+  type?: Maybe<ContentfulExpertConnectionPhotoInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulExpertConnectionPhotoInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulExpertConnectionPhotoInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulExpertConnectionPhotoInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionPhotoInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionInternalInputObject_2 {
+  type?: Maybe<ContentfulExpertConnectionInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulExpertConnectionInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulExpertConnectionInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulExpertConnectionInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertConnectionNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
 export interface ContentfulAssetConnectionSort {
   fields: (Maybe<ContentfulAssetConnectionSortByFieldsEnum>)[];
 
@@ -13011,6 +13471,428 @@ export interface ContentfulCaseNodeLocaleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
+export interface ContentfulExpertTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPositionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertOrderQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertPhotoInputObject_2 {
+  contentful_id?: Maybe<ContentfulExpertPhotoContentfulIdQueryString_2>;
+
+  id?: Maybe<ContentfulExpertPhotoIdQueryString_2>;
+
+  file?: Maybe<ContentfulExpertPhotoFileInputObject_2>;
+
+  title?: Maybe<ContentfulExpertPhotoTitleQueryString_2>;
+
+  description?: Maybe<ContentfulExpertPhotoDescriptionQueryString_2>;
+
+  node_locale?: Maybe<ContentfulExpertPhotoNodeLocaleQueryString_2>;
+
+  internal?: Maybe<ContentfulExpertPhotoInternalInputObject_2>;
+}
+
+export interface ContentfulExpertPhotoContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoFileInputObject_2 {
+  url?: Maybe<ContentfulExpertPhotoFileUrlQueryString_2>;
+
+  details?: Maybe<ContentfulExpertPhotoFileDetailsInputObject_2>;
+
+  fileName?: Maybe<ContentfulExpertPhotoFileFileNameQueryString_2>;
+
+  contentType?: Maybe<ContentfulExpertPhotoFileContentTypeQueryString_2>;
+}
+
+export interface ContentfulExpertPhotoFileUrlQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoFileDetailsInputObject_2 {
+  size?: Maybe<ContentfulExpertPhotoFileDetailsSizeQueryInteger_2>;
+
+  image?: Maybe<ContentfulExpertPhotoFileDetailsImageInputObject_2>;
+}
+
+export interface ContentfulExpertPhotoFileDetailsSizeQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertPhotoFileDetailsImageInputObject_2 {
+  width?: Maybe<ContentfulExpertPhotoFileDetailsImageWidthQueryInteger_2>;
+
+  height?: Maybe<ContentfulExpertPhotoFileDetailsImageHeightQueryInteger_2>;
+}
+
+export interface ContentfulExpertPhotoFileDetailsImageWidthQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertPhotoFileDetailsImageHeightQueryInteger_2 {
+  eq?: Maybe<number>;
+
+  ne?: Maybe<number>;
+
+  gt?: Maybe<number>;
+
+  gte?: Maybe<number>;
+
+  lt?: Maybe<number>;
+
+  lte?: Maybe<number>;
+
+  in?: Maybe<(Maybe<number>)[]>;
+
+  nin?: Maybe<(Maybe<number>)[]>;
+}
+
+export interface ContentfulExpertPhotoFileFileNameQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoFileContentTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoDescriptionQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoInternalInputObject_2 {
+  type?: Maybe<ContentfulExpertPhotoInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<
+    ContentfulExpertPhotoInternalContentDigestQueryString_2
+  >;
+
+  owner?: Maybe<ContentfulExpertPhotoInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulExpertPhotoInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertPhotoInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertContentfulIdQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertCreatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertUpdatedAtQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertInternalInputObject_2 {
+  type?: Maybe<ContentfulExpertInternalTypeQueryString_2>;
+
+  contentDigest?: Maybe<ContentfulExpertInternalContentDigestQueryString_2>;
+
+  owner?: Maybe<ContentfulExpertInternalOwnerQueryString_2>;
+}
+
+export interface ContentfulExpertInternalTypeQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertInternalContentDigestQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertInternalOwnerQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulExpertNodeLocaleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
 export interface ContentfulAssetContentfulIdQueryString_2 {
   eq?: Maybe<string>;
 
@@ -15130,6 +16012,59 @@ export enum ContentfulCaseGroupEnum {
   NodeLocale = 'node_locale',
 }
 
+export enum ContentfulExpertConnectionSortByFieldsEnum {
+  Title = 'title',
+  Position = 'position',
+  Order = 'order',
+  PhotoNode = 'photo___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulExpertConnectionSortOrderValues {
+  Asc = 'ASC',
+  Desc = 'DESC',
+}
+
+export enum ContentfulExpertDistinctEnum {
+  Title = 'title',
+  Position = 'position',
+  Order = 'order',
+  PhotoNode = 'photo___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
+export enum ContentfulExpertGroupEnum {
+  Title = 'title',
+  Position = 'position',
+  Order = 'order',
+  PhotoNode = 'photo___NODE',
+  Id = 'id',
+  ContentfulId = 'contentful_id',
+  CreatedAt = 'createdAt',
+  UpdatedAt = 'updatedAt',
+  Parent = 'parent',
+  InternalType = 'internal___type',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalOwner = 'internal___owner',
+  NodeLocale = 'node_locale',
+}
+
 export enum ContentfulAssetConnectionSortByFieldsEnum {
   ContentfulId = 'contentful_id',
   Id = 'id',
@@ -15324,6 +16259,8 @@ export interface Query {
   allContentfulOffice?: Maybe<ContentfulOfficeConnection>;
   /** Connection to all ContentfulCase nodes */
   allContentfulCase?: Maybe<ContentfulCaseConnection>;
+  /** Connection to all ContentfulExpert nodes */
+  allContentfulExpert?: Maybe<ContentfulExpertConnection>;
   /** Connection to all ContentfulAsset nodes */
   allContentfulAsset?: Maybe<ContentfulAssetConnection>;
   /** Connection to all MarkdownRemark nodes */
@@ -15354,6 +16291,8 @@ export interface Query {
   contentfulOffice?: Maybe<ContentfulOffice>;
 
   contentfulCase?: Maybe<ContentfulCase>;
+
+  contentfulExpert?: Maybe<ContentfulExpert>;
 
   contentfulAsset?: Maybe<ContentfulAsset>;
 
@@ -15417,7 +16356,7 @@ export interface SitePage extends Node {
 
   componentPath?: Maybe<string>;
 
-  internal?: Maybe<Internal_16>;
+  internal?: Maybe<Internal_17>;
 }
 
 export interface Context {
@@ -15451,7 +16390,7 @@ export interface SitePlugin extends Node {
 
   packageJson?: Maybe<PackageJson_2>;
 
-  internal?: Maybe<Internal_17>;
+  internal?: Maybe<Internal_18>;
 }
 
 export interface PluginOptions_3 {
@@ -15594,7 +16533,7 @@ export interface PeerDependencies_2 {
   version?: Maybe<string>;
 }
 
-export interface Internal_17 {
+export interface Internal_18 {
   contentDigest?: Maybe<string>;
 
   type?: Maybe<string>;
@@ -15602,7 +16541,7 @@ export interface Internal_17 {
   owner?: Maybe<string>;
 }
 
-export interface Internal_16 {
+export interface Internal_17 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -15717,7 +16656,7 @@ export interface Directory extends Node {
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>;
 
-  internal?: Maybe<Internal_18>;
+  internal?: Maybe<Internal_19>;
 
   sourceInstanceName?: Maybe<string>;
 
@@ -15786,7 +16725,7 @@ export interface Directory extends Node {
   birthtime?: Maybe<Date>;
 }
 
-export interface Internal_18 {
+export interface Internal_19 {
   contentDigest?: Maybe<string>;
 
   type?: Maybe<string>;
@@ -15855,7 +16794,7 @@ export interface File extends Node {
   /** The child of this node of type dataJson */
   childDataJson?: Maybe<DataJson>;
 
-  internal?: Maybe<Internal_19>;
+  internal?: Maybe<Internal_20>;
 
   sourceInstanceName?: Maybe<string>;
 
@@ -15935,10 +16874,10 @@ export interface DataJson extends Node {
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>;
 
-  internal?: Maybe<Internal_20>;
+  internal?: Maybe<Internal_21>;
 }
 
-export interface Internal_20 {
+export interface Internal_21 {
   contentDigest?: Maybe<string>;
 
   type?: Maybe<string>;
@@ -15946,7 +16885,7 @@ export interface Internal_20 {
   owner?: Maybe<string>;
 }
 
-export interface Internal_19 {
+export interface Internal_20 {
   contentDigest?: Maybe<string>;
 
   type?: Maybe<string>;
@@ -16069,10 +17008,10 @@ export interface ContentfulContentType extends Node {
 
   description?: Maybe<string>;
 
-  internal?: Maybe<Internal_21>;
+  internal?: Maybe<Internal_22>;
 }
 
-export interface Internal_21 {
+export interface Internal_22 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16153,7 +17092,7 @@ export interface ContentfulService extends Node {
 
   updatedAt?: Maybe<Date>;
 
-  internal?: Maybe<Internal_22>;
+  internal?: Maybe<Internal_23>;
 
   node_locale?: Maybe<string>;
 }
@@ -16177,7 +17116,7 @@ export interface ContentfulAsset extends Node {
 
   node_locale?: Maybe<string>;
 
-  internal?: Maybe<Internal_23>;
+  internal?: Maybe<Internal_24>;
 
   fixed?: Maybe<ContentfulFixed>;
 
@@ -16212,7 +17151,7 @@ export interface Image_2 {
   height?: Maybe<number>;
 }
 
-export interface Internal_23 {
+export interface Internal_24 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16310,7 +17249,7 @@ export interface ContentfulResize {
   aspectRatio?: Maybe<number>;
 }
 
-export interface Internal_22 {
+export interface Internal_23 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16389,7 +17328,7 @@ export interface ContentfulHome extends Node {
 
   updatedAt?: Maybe<Date>;
 
-  internal?: Maybe<Internal_24>;
+  internal?: Maybe<Internal_25>;
 
   node_locale?: Maybe<string>;
 }
@@ -16407,7 +17346,7 @@ export interface ContentfulHomeDescriptionTextNode extends Node {
 
   description?: Maybe<string>;
 
-  internal?: Maybe<Internal_25>;
+  internal?: Maybe<Internal_26>;
 }
 
 /** Node of type MarkdownRemark */
@@ -16419,7 +17358,7 @@ export interface MarkdownRemark extends Node {
   /** The children of this node. */
   children?: Maybe<(Maybe<Node>)[]>;
 
-  internal?: Maybe<Internal_26>;
+  internal?: Maybe<Internal_27>;
 
   frontmatter?: Maybe<Frontmatter_2>;
 
@@ -16440,7 +17379,7 @@ export interface MarkdownRemark extends Node {
   wordCount?: Maybe<WordCount>;
 }
 
-export interface Internal_26 {
+export interface Internal_27 {
   content?: Maybe<string>;
 
   type?: Maybe<string>;
@@ -16468,7 +17407,7 @@ export interface WordCount {
   words?: Maybe<number>;
 }
 
-export interface Internal_25 {
+export interface Internal_26 {
   type?: Maybe<string>;
 
   mediaType?: Maybe<string>;
@@ -16480,7 +17419,7 @@ export interface Internal_25 {
   owner?: Maybe<string>;
 }
 
-export interface Internal_24 {
+export interface Internal_25 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16609,12 +17548,12 @@ export interface ContentfulNavigation extends Node {
 
   updatedAt?: Maybe<Date>;
 
-  internal?: Maybe<Internal_27>;
+  internal?: Maybe<Internal_28>;
 
   node_locale?: Maybe<string>;
 }
 
-export interface Internal_27 {
+export interface Internal_28 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16691,14 +17630,14 @@ export interface ContentfulOffice extends Node {
 
   updatedAt?: Maybe<Date>;
 
-  internal?: Maybe<Internal_28>;
+  internal?: Maybe<Internal_29>;
 
   node_locale?: Maybe<string>;
 
   map?: Maybe<Map_2>;
 }
 
-export interface Internal_28 {
+export interface Internal_29 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16785,12 +17724,12 @@ export interface ContentfulCase extends Node {
 
   updatedAt?: Maybe<Date>;
 
-  internal?: Maybe<Internal_29>;
+  internal?: Maybe<Internal_30>;
 
   node_locale?: Maybe<string>;
 }
 
-export interface Internal_29 {
+export interface Internal_30 {
   type?: Maybe<string>;
 
   contentDigest?: Maybe<string>;
@@ -16820,6 +17759,90 @@ export interface ContentfulCaseGroupConnectionEdge {
   next?: Maybe<ContentfulCase>;
   /** The previous edge in the connection */
   previous?: Maybe<ContentfulCase>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulExpertConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulExpertEdge>)[]>;
+
+  totalCount?: Maybe<number>;
+
+  distinct?: Maybe<(Maybe<string>)[]>;
+
+  group?: Maybe<(Maybe<ContentfulExpertGroupConnectionConnection>)[]>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulExpertEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulExpert>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulExpert>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulExpert>;
+}
+
+/** Node of type ContentfulExpert */
+export interface ContentfulExpert extends Node {
+  /** The id of this node. */
+  id: string;
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<(Maybe<Node>)[]>;
+
+  title?: Maybe<string>;
+
+  position?: Maybe<string>;
+
+  order?: Maybe<number>;
+
+  photo?: Maybe<ContentfulAsset>;
+
+  contentful_id?: Maybe<string>;
+
+  createdAt?: Maybe<Date>;
+
+  updatedAt?: Maybe<Date>;
+
+  internal?: Maybe<Internal_31>;
+
+  node_locale?: Maybe<string>;
+}
+
+export interface Internal_31 {
+  type?: Maybe<string>;
+
+  contentDigest?: Maybe<string>;
+
+  owner?: Maybe<string>;
+}
+
+/** A connection to a list of items. */
+export interface ContentfulExpertGroupConnectionConnection {
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<(Maybe<ContentfulExpertGroupConnectionEdge>)[]>;
+
+  field?: Maybe<string>;
+
+  fieldValue?: Maybe<string>;
+
+  totalCount?: Maybe<number>;
+}
+
+/** An edge in a connection. */
+export interface ContentfulExpertGroupConnectionEdge {
+  /** The item at the end of the edge */
+  node?: Maybe<ContentfulExpert>;
+  /** The next edge in the connection */
+  next?: Maybe<ContentfulExpert>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ContentfulExpert>;
 }
 
 /** A connection to a list of items. */
@@ -16939,7 +17962,7 @@ export interface Site extends Node {
 
   buildTime?: Maybe<Date>;
 
-  internal?: Maybe<Internal_30>;
+  internal?: Maybe<Internal_32>;
 }
 
 export interface SiteMetadata_2 {
@@ -16952,7 +17975,7 @@ export interface SiteMetadata_2 {
   siteUrl?: Maybe<string>;
 }
 
-export interface Internal_30 {
+export interface Internal_32 {
   contentDigest?: Maybe<string>;
 
   type?: Maybe<string>;
@@ -17071,6 +18094,15 @@ export interface AllContentfulCaseQueryArgs {
   sort?: Maybe<ContentfulCaseConnectionSort>;
 
   filter?: Maybe<FilterContentfulCase>;
+}
+export interface AllContentfulExpertQueryArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  sort?: Maybe<ContentfulExpertConnectionSort>;
+
+  filter?: Maybe<FilterContentfulExpert>;
 }
 export interface AllContentfulAssetQueryArgs {
   skip?: Maybe<number>;
@@ -17424,6 +18456,27 @@ export interface ContentfulCaseQueryArgs {
   internal?: Maybe<ContentfulCaseInternalInputObject_2>;
 
   node_locale?: Maybe<ContentfulCaseNodeLocaleQueryString_2>;
+}
+export interface ContentfulExpertQueryArgs {
+  title?: Maybe<ContentfulExpertTitleQueryString_2>;
+
+  position?: Maybe<ContentfulExpertPositionQueryString_2>;
+
+  order?: Maybe<ContentfulExpertOrderQueryInteger_2>;
+
+  photo?: Maybe<ContentfulExpertPhotoInputObject_2>;
+
+  id?: Maybe<ContentfulExpertIdQueryString_2>;
+
+  contentful_id?: Maybe<ContentfulExpertContentfulIdQueryString_2>;
+
+  createdAt?: Maybe<ContentfulExpertCreatedAtQueryString_2>;
+
+  updatedAt?: Maybe<ContentfulExpertUpdatedAtQueryString_2>;
+
+  internal?: Maybe<ContentfulExpertInternalInputObject_2>;
+
+  node_locale?: Maybe<ContentfulExpertNodeLocaleQueryString_2>;
 }
 export interface ContentfulAssetQueryArgs {
   contentful_id?: Maybe<ContentfulAssetContentfulIdQueryString_2>;
@@ -17940,6 +18993,36 @@ export interface CreatedAtContentfulCaseArgs {
   locale?: Maybe<string>;
 }
 export interface UpdatedAtContentfulCaseArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface DistinctContentfulExpertConnectionArgs {
+  field?: Maybe<ContentfulExpertDistinctEnum>;
+}
+export interface GroupContentfulExpertConnectionArgs {
+  skip?: Maybe<number>;
+
+  limit?: Maybe<number>;
+
+  field?: Maybe<ContentfulExpertGroupEnum>;
+}
+export interface CreatedAtContentfulExpertArgs {
+  /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
+  formatString?: Maybe<string>;
+  /** Returns a string generated with Moment.js' fromNow function */
+  fromNow?: Maybe<boolean>;
+  /** Returns the difference between this date and the current time. Defaults to miliseconds but you can also pass in as the measurement years, months, weeks, days, hours, minutes, and seconds. */
+  difference?: Maybe<string>;
+  /** Configures the locale Moment.js will use to format the date. */
+  locale?: Maybe<string>;
+}
+export interface UpdatedAtContentfulExpertArgs {
   /** Format the date using Moment.js' date tokens e.g. "date(formatString: "YYYY MMMM DD)" See https://momentjs.com/docs/#/displaying/format/ for documentation for different tokens */
   formatString?: Maybe<string>;
   /** Returns a string generated with Moment.js' fromNow function */

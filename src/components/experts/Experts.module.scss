@@ -1,0 +1,33 @@
+@import 'config';
+
+.experts {
+  @include grid-row;
+
+  &__item {
+    margin-right: 30px;
+    margin-bottom: 50px;
+    width: 280px;
+
+    &Photo {
+      border-radius: 2px;
+      box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    &Title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: 0.6s ease;
+      margin-bottom: 5px;
+    }
+
+    &Position {
+      font-size: 0.7rem;
+      color: rgba($color-light, 0.5);
+      text-transform: uppercase;
+      // margin-top: 30px;
+      // margin-bottom: 0;
+      transition: 0.6s ease;
+    }
+  }
+}

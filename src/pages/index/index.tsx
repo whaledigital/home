@@ -6,6 +6,7 @@ import { withLayout, LayoutProps } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Expertise from 'components/index/expertise/Expertise';
 import Cases from 'components/index/cases/Cases';
+import Experts from 'components/experts/Experts';
 import Heading from 'components/index/heading/Heading';
 
 interface HomeProps extends LayoutProps {
@@ -13,6 +14,7 @@ interface HomeProps extends LayoutProps {
     home: GQL.ContentfulHomeConnection;
     services: GQL.ContentfulServiceConnection;
     cases: GQL.ContentfulCaseConnection;
+    experts: GQL.ContentfulExpertConnection;
   };
 }
 
@@ -21,12 +23,14 @@ class HomePage extends React.Component<HomeProps> {
     const [home] = this.props.data.home.edges;
     const services = this.props.data.services.edges;
     const cases = this.props.data.cases.edges;
+    const experts = this.props.data.experts.edges;
     return (
       <>
         <SEO title={home.node.title} keywords={[`development`]} />
         <Heading description={home.node.description.description} />
         <Expertise items={services} />
         <Cases items={cases} />
+        <Experts items={experts} />
       </>
     );
   }
@@ -69,11 +73,25 @@ export const pageQuery = graphql`
           title
           slug
           thumbnail {
-            fluid(maxHeight: 320) {
+            fluid(maxHeight: 400) {
               ...GatsbyContentfulFluid_noBase64
             }
           }
           description
+        }
+      }
+    }
+    experts: allContentfulExpert(sort: { fields: order }) {
+      edges {
+        node {
+          id
+          title
+          position
+          photo {
+            fixed(width: 280) {
+              ...GatsbyContentfulFixed_noBase64
+            }
+          }
         }
       }
     }
