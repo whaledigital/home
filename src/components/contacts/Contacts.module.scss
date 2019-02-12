@@ -1,6 +1,55 @@
 @import 'config';
 
 .contacts {
+  display: flex;
   background: #151733;
   padding: $gutter * 4;
+}
+
+.form {
+  &Container {
+    width: 870px;
+    padding-bottom: $gutter * 2;
+  }
+
+  &Item {
+    &__grid {
+      &Container {
+        display: flex;
+        flex: 0 0 auto;
+        width: calc(100% + 30px);
+        margin-left: -$gutter;
+        margin-right: -$gutter;
+      }
+
+      &Item {
+        flex: 1 1 100%;
+        padding-left: $gutter;
+        padding-right: $gutter;
+        margin-top: $gutter * 3;
+      }
+    }
+  }
+
+  &Label {
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  &Text {
+    padding: 6px 0;
+    display: block;
+    width: 100%;
+    outline: 0;
+    resize: none;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #54566a;
+    color: #fff;
+  }
+
+  &Footer {
+    display: flex;
+    margin: 20px 0;
+  }
 }
