@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Container } from 'components/container/Container';
 
@@ -14,10 +15,9 @@ interface SegmentProps {
 const Segment = (props: SegmentProps) => {
   const { children, container, title, inverted } = props;
   const content = container ? <Container title={title}>{children}</Container> : children;
-  const className = inverted ? [s.segment, s.segment__inverted].join(' ') : s.segment;
 
   return (
-    <section className={className}>
+    <section className={classNames(s.segment, { [s.segment__inverted]: inverted })}>
       {content}
     </section>
   );

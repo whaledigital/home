@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import classNames from 'classnames';
 
 import Bubbles1 from 'assets/svg/bubbles-1.svg';
 import Bubbles2 from 'assets/svg/bubbles-2.svg';
@@ -72,12 +73,15 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
       data-aos-easing="ease-in-sine"
     >
       {this.props.items.map(({ node }: ContentfulServiceEdge, i: number) => {
-        const classContainer = !this.state.active && i === 0 || this.state.active === node.id
-          ? [s.expertise__showcase__container, s.expertise__showcase__containerActive]
-            .join(' ')
-          : s.expertise__showcase__container;
+        const active = !this.state.active && i === 0 || this.state.active === node.id;
         return (
-          <div key={node.id} className={classContainer}>
+          <div
+            key={node.id}
+            className={classNames(
+              s.expertise__showcase__container,
+              { [s.expertise__showcase__containerActive]: active },
+            )}
+          >
             <div
               className={s.expertise__frame}
               data-aos="zoom-in"

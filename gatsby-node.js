@@ -1,6 +1,6 @@
 const path = require('path');
 const slash = require('slash');
-const { kebabCase } = require('lodash');
+const changeCase = require('change-case');
 
 // Create slugs for files.
 // Slug will used for blog page path.
@@ -49,7 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
       (mem, templateName) => ({
         ...mem,
         [templateName]: path.resolve(
-          `src/templates/${kebabCase(templateName)}.tsx`
+          `src/templates/${changeCase.snakeCase(templateName)}.tsx`
         ),
       }),
       {}

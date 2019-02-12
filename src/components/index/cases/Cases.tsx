@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
+import classNames from 'classnames';
 
 import 'slick-carousel/slick/slick.scss';
 
@@ -18,7 +19,7 @@ import s from './Cases.module.scss';
 
 const NextArrow = (props: CustomArrowProps) => (
   <div
-    className={[s.cases__arrow, s.cases__arrowNext].join(' ')}
+    className={classNames(s.cases__arrow, s.cases__arrowNext)}
     onClick={props.onClick}
   >
     <IconNext />
@@ -27,7 +28,7 @@ const NextArrow = (props: CustomArrowProps) => (
 
 const PrevArrow = (props: CustomArrowProps) => (
   <div
-    className={[s.cases__arrow, s.cases__arrowPrev].join(' ')}
+    className={classNames(s.cases__arrow, s.cases__arrowPrev)}
     onClick={props.onClick}
   >
     <IconPrev />
@@ -56,24 +57,24 @@ class Cases extends React.Component<CaseProps> {
         <Slider {...settings}>
           {this.props.items.map(({ node }: ContentfulCaseEdge, i: number) => {
             return (
-                <Link
-                  key={node.id}
-                  className={s.cases__item}
-                  to={`/${node.slug}`}
-                  data-aos="fade-left"
-                  data-aos-offset="200"
-                  data-aos-duration="500"
-                  data-aos-delay={(i + 1) * 100}
-                >
-                  <Box3D perspective={60}>
-                    <Img
-                      className={s.cases__itemThumbnail}
-                      fluid={node.thumbnail.fluid}
-                    />
-                  </Box3D>
-                  <p className={s.cases__itemTitle}>{node.title}</p>
-                  <p className={s.cases__itemDescription}>{node.description}</p>
-                </Link>
+              <Link
+                key={node.id}
+                className={s.cases__item}
+                to={`/${node.slug}`}
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-duration="500"
+                data-aos-delay={(i + 1) * 100}
+              >
+                <Box3D perspective={60}>
+                  <Img
+                    className={s.cases__itemThumbnail}
+                    fluid={node.thumbnail.fluid}
+                  />
+                </Box3D>
+                <p className={s.cases__itemTitle}>{node.title}</p>
+                <p className={s.cases__itemDescription}>{node.description}</p>
+              </Link>
             );
           })}
         </Slider>
