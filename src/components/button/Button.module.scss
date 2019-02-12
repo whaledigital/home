@@ -11,12 +11,16 @@
   white-space: nowrap;
   transition: 0.4s ease;
 
+  &:hover {
+    background: rgba($color-primary, 0.8);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
   &__large {
     font-size: 1.1rem;
     padding: 14px $gutter*4;
-  }
-
-  &:hover {
-    background: rgba($color-primary, 0.8);
   }
 }
