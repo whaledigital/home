@@ -22,10 +22,13 @@ interface ContactsState {
 }
 
 class Contacts extends React.Component<{}, ContactsState> {
-  state = {};
+  state = {
+    agreement: false,
+  };
 
-  handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = (event: React.ChangeEvent<HTMLTextAreaElement & HTMLInputElement>) => {
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    this.setState({ [event.target.name]: value });
   };
 
   handleDrop = (files: File[]) => {
@@ -35,15 +38,18 @@ class Contacts extends React.Component<{}, ContactsState> {
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    fetch('/', {
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...this.state,
-      }),
-      method: 'POST',
-    })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch(error => alert(error));
+    const { agreement, ...props } = this.state;
+    if (agreement) {
+      fetch('/', {
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...props,
+        }),
+        method: 'POST',
+      })
+        .then(() => navigate(form.getAttribute('action')))
+        .catch(error => alert(error));
+    }
   };
 
   render () {
@@ -160,6 +166,19 @@ class Contacts extends React.Component<{}, ContactsState> {
               </div>
             </div>
             <div className={s.formFooter}>
+
+              <div className={s.formFooter__agreement}>
+                <input
+                  type="checkbox"
+                  name="agreement"
+                  id="agreement"
+                  className={s.checkbox}
+                  onChange={this.handleChange}
+                  checked={this.state.agreement}
+                />
+                {/* tslint:disable-next-line:max-line-length */}
+                <label htmlFor="agreement">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla <a href="#">sed consectetur</a>.</label>
+              </div>
 
               <Button
                 title="Submit"
