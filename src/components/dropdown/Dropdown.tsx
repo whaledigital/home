@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import s from './Dropdown.module.scss';
 
@@ -92,7 +93,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     return (
       <div
-        className={[s.dropdown, active ? s.dropdownActive : ''].join(' ')}
+        className={classNames(s.dropdown, { [s.dropdownActive]: active })}
         ref={el => this.rootRef = el}
         data-value={label}
         onClick={this.showList}
@@ -118,10 +119,10 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
         key={item.value}
         data-key={item.value}
         data-index={index}
-        className={[
+        className={classNames(
           s.dropdown__list__item,
-          activeIndex === index ? s.dropdown__list__itemActive : ''].join(' ')
-        }
+          { [s.dropdown__list__itemActive]: activeIndex === index },
+        )}
         onClick={onClick}
       >
         {item.label}

@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import classNames from 'classnames';
 
 import s from './GridOverlay.module.scss';
 
@@ -76,7 +77,7 @@ export const GridOverlay = ({
   return (
     <div
       ref={gridOverlayRef}
-      className={[s.grid, isHorizontalVisible ? s.gridIsHorizontalIsVisible : ''].join(' ')}
+      className={classNames(s.grid, { [s.gridIsHorizontalIsVisible]: isHorizontalVisible })}
       style={{ isVerticalVisible } as CSSProperties}
     >
       <div className={s.grid__container}>
