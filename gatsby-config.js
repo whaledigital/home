@@ -7,7 +7,7 @@ module.exports = {
     title: `Whale Digital`,
     description: `Inspiring businesses to bring innovative ideas to life`,
     googleVerification: `abcdefz`,
-    siteUrl: `https://www.whale.digital`,
+    siteUrl: `https://whale.digital`,
     socialLinks: [
       { url: 'https://www.facebook.com/', name: 'facebook' },
       { url: 'https://www.twitter.com/', name: 'twitter' },
@@ -130,8 +130,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.whale.digital',
-        sitemap: 'https://www.whale.digital/sitemap.xml',
+        host: 'https://whale.digital',
+        sitemap: 'https://whale.digital/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
