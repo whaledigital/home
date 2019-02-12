@@ -1,4 +1,4 @@
-import { navigateTo } from 'gatsby';
+import { navigate } from 'gatsby';
 import React from 'react';
 
 import Segment from 'components/segment/Segment';
@@ -43,7 +43,7 @@ class Contacts extends React.Component<{}, ContactsState> {
       }),
       method: 'POST',
     })
-      .then(() => navigateTo(form.getAttribute('action')))
+      .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error));
   };
 
