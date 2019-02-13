@@ -86,14 +86,14 @@ class Contacts extends React.Component<{}, ContactsState> {
     event.preventDefault();
     const form = event.currentTarget;
     const formErrors = validate(this.state.fields, constraints);
-    console.log(this.state.fields);
+    const { attachment, ...body } = this.state.fields; // Temporary remove file sending
 
     if (formErrors) return this.setState({ showErrors: true });
 
     fetch('/', {
       body: encode({
         'form-name': form.getAttribute('name'),
-        ...this.state.fields,
+        ...body,
       }),
       method: 'POST',
     })
@@ -104,7 +104,7 @@ class Contacts extends React.Component<{}, ContactsState> {
   render () {
     return (
       <Segment title="Let’s make your progress together">
-        <div className={s.contacts}>
+        <div className={s.contacts} data-aos="fade-up">
           <form
             name="contact"
             method="POST"
