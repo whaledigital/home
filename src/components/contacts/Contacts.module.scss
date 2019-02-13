@@ -2,9 +2,42 @@
 
 .contacts {
   display: flex;
+  position: relative;
   justify-content: center;
   background: #151733;
   padding: $gutter * 4;
+
+  &__bubbles {
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__bubbles3 {
+    left: -30px;
+    top: -30px;
+
+    & > * {
+      fill: $color-light;
+    }
+  }
+
+  &__bubbles4 {
+    right: -30px;
+    top: -30px;
+
+    & > * {
+      fill: $color-primary;
+    }
+  }
+
+  &__bubbles5 {
+    left: 10px;
+    bottom: 10px;
+
+    & > * {
+      fill: $color-dark;
+    }
+  }
 }
 
 .form {

@@ -125,11 +125,14 @@
     }
   }
 
-  &__bubbles1 {
+  &__bubbles {
     position: absolute;
+    z-index: 1;
+  }
+
+  &__bubbles1 {
     left: -30px;
     bottom: -30px;
-    z-index: 1;
 
     & > * {
       fill: $color-light;
@@ -137,10 +140,8 @@
   }
 
   &__bubbles2 {
-    position: absolute;
     right: -30px;
     top: -90px;
-    z-index: 1;
 
     & > * {
       fill: $color-primary;

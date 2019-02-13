@@ -3,6 +3,10 @@ import { navigate } from 'gatsby';
 import React from 'react';
 import Dropzone from 'react-dropzone';
 
+import Bubbles3 from 'assets/svg/bubbles-3.svg';
+import Bubbles4 from 'assets/svg/bubbles-4.svg';
+import Bubbles5 from 'assets/svg/bubbles-5.svg';
+
 import Segment from 'components/segment/Segment';
 import Button from 'components/button/Button';
 
@@ -188,6 +192,23 @@ class Contacts extends React.Component<{}, ContactsState> {
 
             </div>
           </form>
+          <div
+            className={classNames(s.contacts__bubbles, s.contacts__bubbles3)}
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <Bubbles3 />
+          </div>
+          <div
+            className={classNames(s.contacts__bubbles, s.contacts__bubbles4)}
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <Bubbles4 />
+          </div>
+          <div className={classNames(s.contacts__bubbles, s.contacts__bubbles5)}>
+            <Bubbles5 />
+          </div>
         </div>
       </Segment>
     );

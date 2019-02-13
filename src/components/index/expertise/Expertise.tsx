@@ -109,10 +109,18 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
         <div className={s.expertise}>
           {this.renderMenu()}
           {this.renderBoxes()}
-          <div className={s.expertise__bubbles1} data-aos="zoom-in" data-aos-delay="500">
+          <div
+            className={classNames(s.expertise__bubbles, s.expertise__bubbles1)}
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
             <Bubbles1 />
           </div>
-          <div className={s.expertise__bubbles2} data-aos="zoom-in" data-aos-delay="500">
+          <div
+            className={classNames(s.expertise__bubbles, s.expertise__bubbles2)}
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
             <Bubbles2 />
           </div>
         </div>
