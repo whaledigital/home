@@ -50,11 +50,10 @@
     "gatsby-transformer-remark": "^2.2.3",
     "gatsby-transformer-sharp": "^2.1.13",
     "graphql-code-generator": "^0.16.0",
-    "gsap": "^2.0.2",
-    "gsap-tools": "^1.0.3",
     "node-sass": "^4.11.0",
     "react": "16.8.0-alpha.0",
     "react-dom": "16.8.0-alpha.0",
+    "react-dropzone": "^8.1.0",
     "react-helmet": "5.2.0",
     "react-redux": "^6.0.0",
     "react-slick": "^0.23.2",
@@ -64,7 +63,8 @@
     "three": "^0.101.1",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
-    "typography": "^0.16.18"
+    "typography": "^0.16.18",
+    "validate.js": "^0.12.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^4.1.11",

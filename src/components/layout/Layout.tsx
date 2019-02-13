@@ -7,7 +7,6 @@ import GQL from 'src/graphql-types';
 import { Header } from 'components/header/Header';
 import { Footer } from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
-import { DevTools } from 'components/devtools/DevTools';
 import { store } from 'src/store';
 
 import s from './Layout.module.scss';
@@ -59,7 +58,6 @@ class Layout extends React.Component<LayoutProps> {
             services={data.services.edges}
             socialLinks={data.site.siteMetadata.socialLinks}
           />
-          <DevTools />
         </div>
       </Provider>
     );

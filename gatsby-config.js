@@ -140,6 +140,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
+        exclude: ['/thank-you'],
         query: `
           {
             site {
@@ -158,7 +159,14 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-netlify`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          '/sw.js': ['Cache-Control: no-cache'],
+        },
+      },
+    },
 
     // This plugin generates a service worker and AppShell
     // html file so the site works offline and is otherwise
