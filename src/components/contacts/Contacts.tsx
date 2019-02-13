@@ -21,6 +21,32 @@ function encode (data: { [key: string]: any }) {
   return formData;
 }
 
+const constraints = {
+  email: {
+    email: {
+      message: 'Email is not valid',
+    },
+  },
+  message: {
+    presence: {
+      allowEmpty: false,
+      message: 'Message is required',
+    },
+  },
+  name: {
+    presence: {
+      allowEmpty: false,
+      message: 'Name is required',
+    },
+  },
+  phone: {
+    presence: {
+      allowEmpty: false,
+      message: 'Phone is required',
+    },
+  },
+};
+
 interface ContactsState {
   [key: string]: any;
 }
@@ -67,6 +93,7 @@ class Contacts extends React.Component<{}, ContactsState> {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
+            noValidate
           >
             <input type="hidden" name="form-name" value="contact" />
             <div hidden>
@@ -85,6 +112,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     name="name"
                     onChange={this.handleChange}
                     required
+                    constraints={constraints.name}
                   />
                 </div>
 
@@ -106,6 +134,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     name="email"
                     onChange={this.handleChange}
                     required
+                    constraints={constraints.email}
                   />
                 </div>
 
@@ -116,6 +145,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     name="phone"
                     onChange={this.handleChange}
                     required
+                    constraints={constraints.phone}
                   />
                 </div>
 
@@ -129,6 +159,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     onChange={this.handleChange}
                     required
                     multiline
+                    constraints={constraints.message}
                   />
                 </div>
 

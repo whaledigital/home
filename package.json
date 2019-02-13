@@ -63,7 +63,8 @@
     "three": "^0.101.1",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
-    "typography": "^0.16.18"
+    "typography": "^0.16.18",
+    "validate.js": "^0.12.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^4.1.11",

@@ -53,4 +53,50 @@
       border-bottom-color: $color-light;
     }
   }
+
+  &Errors {
+    & > label {
+      color: #ff0050 !important;
+
+      &::before {
+        color: #ff0050 !important;
+      }
+    }
+
+    & > input,
+    & > textarea {
+      color: #ff0050 !important;
+      border-bottom: 1px solid #ff0050 !important;
+    }
+
+    &__message {
+      &::before {
+        content: '';
+        position: absolute;
+        border-bottom: 4px solid #ff0050;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        margin: 4px 7px;
+      }
+
+      &Text {
+        position: absolute;
+        color: $color-light;
+        z-index: 1;
+        transition: all 0.2s ease-in-out 0s;
+        background: #ff0050;
+        padding: 3px 10px;
+        margin: 8px 0 0;
+
+        & > span {
+          font-size: 11px;
+          line-height: 1.2;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: block;
+          overflow: hidden;
+        }
+      }
+    }
+  }
 }

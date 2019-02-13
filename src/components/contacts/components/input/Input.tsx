@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import validate from 'validate.js';
 
 import s from './Input.module.scss';
 
@@ -10,9 +11,11 @@ interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   required: boolean;
   multiline: boolean;
+  constraints: any;
 }
 
 interface InputState {
+  errors: string[];
   focused: boolean;
   value: string;
   maxRows: number;
@@ -22,12 +25,14 @@ interface InputState {
 
 class Input extends React.Component<InputProps, InputState> {
   static defaultProps = {
+    constraints: {},
     multiline: false,
     required: false,
     type: 'text',
   };
 
   state = {
+    errors: [] as string[],
     focused: false,
     maxRows: 6,
     minRows: 2,
@@ -36,7 +41,7 @@ class Input extends React.Component<InputProps, InputState> {
   };
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement & HTMLTextAreaElement>) => {
-    console.log(event.target.value);
+    const errors = validate.single(event.target.value, this.props.constraints) || [];
 
     if (this.props.multiline) {
       const textareaLineHeight = 24;
@@ -56,11 +61,15 @@ class Input extends React.Component<InputProps, InputState> {
       }
 
       this.setState({
+        errors,
         rows: currentRows < this.state.maxRows ? currentRows : this.state.maxRows,
         value: event.target.value,
       });
     } else {
-      this.setState({ value: event.target.value });
+      this.setState({
+        errors,
+        value: event.target.value,
+      });
     }
     this.props.onChange(event);
   };
@@ -89,7 +98,7 @@ class Input extends React.Component<InputProps, InputState> {
 
   render () {
     return (
-      <div className={s.input}>
+      <div className={classNames(s.input, { [s.inputErrors]: this.state.errors.length })}>
         <label
           className={classNames(s.inputLabel, s.inputLabel__scalable, {
             [s.inputLabel__scalableScaled]: this.state.focused,
@@ -99,6 +108,14 @@ class Input extends React.Component<InputProps, InputState> {
           {this.props.label}
         </label>
         {this.renderText()}
+        {
+          !this.state.errors.length ? null :
+          <div className={s.inputErrors__message}>
+            <div className={s.inputErrors__messageText}>
+              {this.state.errors.map((error: string, i: number) => <span key={i}>{error}</span>)}
+            </div>
+          </div>
+        }
       </div>
     );
   }
