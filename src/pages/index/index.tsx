@@ -4,10 +4,10 @@ import React from 'react';
 import GQL from 'src/graphql-types';
 import { withLayout, LayoutProps } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Expertise from 'components/index/expertise/Expertise';
-import Cases from 'components/index/cases/Cases';
+import Expertise from 'components/_index/expertise/Expertise';
+import Cases from 'components/_index/cases/Cases';
 import Experts from 'components/experts/Experts';
-import Heading from 'components/index/heading/Heading';
+import Heading from 'components/_index/heading/Heading';
 import Contacts from 'components/contacts/Contacts';
 
 interface HomeProps extends LayoutProps {

@@ -23,7 +23,7 @@ const options = [
 ];
 
 export const Header = ({ children }: HeaderProps) => (
-  <header className={s.header}>
+  <header className={s.header} data-aos="fade-bottom">
     <div className={s.header__container}>
       <div className={s.header__content}>
         <Link to="/" className={s.header__logo}>
