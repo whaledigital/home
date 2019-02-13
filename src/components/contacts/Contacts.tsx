@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { navigate } from 'gatsby';
 import React from 'react';
 import Dropzone from 'react-dropzone';
+import validate from 'validate.js';
 
 import Bubbles3 from 'assets/svg/bubbles-3.svg';
 import Bubbles4 from 'assets/svg/bubbles-4.svg';
@@ -22,6 +23,16 @@ function encode (data: { [key: string]: any }) {
 }
 
 const constraints = {
+  agreement: {
+    inclusion: {
+      message: 'You should agree with our terms',
+      within: [true],
+    },
+    presence: {
+      allowEmpty: false,
+      message: 'You should agree with our terms',
+    },
+  },
   email: {
     email: {
       message: 'Email is not valid',
@@ -48,38 +59,46 @@ const constraints = {
 };
 
 interface ContactsState {
-  [key: string]: any;
+  fields: {
+    [key: string]: any;
+  };
+  showErrors: boolean;
 }
 
 class Contacts extends React.Component<{}, ContactsState> {
-  state = {
-    agreement: false,
+  state: ContactsState = {
+    fields: {
+      agreement: false,
+    },
+    showErrors: false,
   };
 
   handleChange = (event: React.ChangeEvent<HTMLTextAreaElement & HTMLInputElement>) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
-    this.setState({ [event.target.name]: value });
+    this.setState({ fields: { ...this.state.fields, [event.target.name]: value } });
   };
 
   handleDrop = (files: File[]) => {
-    this.setState({ attachment: files[0] });
+    this.setState({ fields: { ...this.state.fields, attachment: files[0] } });
   }
 
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const { agreement, ...props } = this.state;
-    if (agreement) {
-      fetch('/', {
-        body: encode({
-          'form-name': form.getAttribute('name'),
-          ...props,
-        }),
-        method: 'POST',
-      })
-        .then(() => navigate(form.getAttribute('action')))
-        .catch(error => alert(error));
-    }
+    const formErrors = validate(this.state.fields, constraints);
+    console.log(this.state.fields);
+
+    if (formErrors) return this.setState({ showErrors: true });
+
+    fetch('/', {
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...this.state.fields,
+      }),
+      method: 'POST',
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch(error => alert(error));
   };
 
   render () {
@@ -113,6 +132,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     onChange={this.handleChange}
                     required
                     constraints={constraints.name}
+                    showErrors={this.state.showErrors}
                   />
                 </div>
 
@@ -121,6 +141,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     label="Name of your company"
                     name="company"
                     onChange={this.handleChange}
+                    showErrors={this.state.showErrors}
                   />
                 </div>
 
@@ -135,6 +156,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     onChange={this.handleChange}
                     required
                     constraints={constraints.email}
+                    showErrors={this.state.showErrors}
                   />
                 </div>
 
@@ -146,6 +168,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     onChange={this.handleChange}
                     required
                     constraints={constraints.phone}
+                    showErrors={this.state.showErrors}
                   />
                 </div>
 
@@ -160,6 +183,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                     required
                     multiline
                     constraints={constraints.message}
+                    showErrors={this.state.showErrors}
                   />
                 </div>
 
@@ -203,16 +227,16 @@ class Contacts extends React.Component<{}, ContactsState> {
             <div className={s.formFooter}>
 
               <div className={s.formFooter__agreement}>
-                <input
+                <Input
                   type="checkbox"
+                  // tslint:disable-next-line:max-line-length
+                  label={`Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.`}
                   name="agreement"
-                  id="agreement"
-                  className={s.checkbox}
                   onChange={this.handleChange}
-                  checked={this.state.agreement}
+                  checked={this.state.fields.agreement.value}
+                  constraints={constraints.agreement}
+                  showErrors={this.state.showErrors}
                 />
-                {/* tslint:disable-next-line:max-line-length */}
-                <label htmlFor="agreement">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla <a href="#">sed consectetur</a>.</label>
               </div>
 
               <Button

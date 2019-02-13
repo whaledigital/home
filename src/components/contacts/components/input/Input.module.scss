@@ -99,4 +99,59 @@
       }
     }
   }
+
+  &Checkbox {
+    margin: 0 $gutter * 2;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: $color-grey;
+
+    &__check {
+      position: absolute;
+      opacity: 0;
+
+      & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      & + label::before {
+        margin-left: -$gutter * 2;
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-grey;
+      }
+
+      &:checked + label::before {
+        background: $color-light;
+        border-color: $color-light;
+      }
+
+      &:checked + label::after {
+        margin-left: -$gutter * 2;
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 8px;
+        background: $color-light;
+        width: 2px;
+        height: 2px;
+        box-shadow:
+          2px 0 0 #151733,
+          4px 0 0 #151733,
+          6px 0 0 #151733,
+          6px -2px 0 #151733,
+          6px -4px 0 #151733,
+          6px -6px 0 #151733,
+          6px -8px 0 #151733,
+          6px -10px 0 #151733;
+        transform: rotate(45deg);
+      }
+    }
+  }
 }
