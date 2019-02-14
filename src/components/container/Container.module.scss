@@ -4,8 +4,13 @@
   @include container;
 
   &__title {
-    font-size: 3rem;
-    margin-bottom: 50px;
+    font-size: 2rem;
+    margin-bottom: $gutter * 2;
+
+    @media (min-width: $min-tablet) {
+      font-size: 3rem;
+      margin-bottom: $gutter * 4;
+    }
   }
 
   .full {

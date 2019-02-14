@@ -76,8 +76,8 @@
     top: -30vh;
     height: 60vh;
     z-index: 0;
-    background: -webkit-radial-gradient(center, ellipse cover, $color-dark-lighter 20%, $color-dark 80%);
-    background: radial-gradient($color-dark-lighter 20%, $color-dark 80%);
+    background: -webkit-radial-gradient(center, ellipse cover, $color-dark-light 20%, $color-dark 80%);
+    background: radial-gradient($color-dark-light 20%, $color-dark 80%);
   }
 
   &__shadow {
