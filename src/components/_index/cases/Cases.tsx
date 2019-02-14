@@ -39,28 +39,7 @@ interface CasesProps {
   items: ContentfulCaseEdge[];
 }
 
-interface CasesState {
-  slidesToShow: number;
-}
-
-class Cases extends React.Component<CasesProps, CasesState> {
-  state = {
-    slidesToShow: 1.1,
-  };
-
-  componentDidMount () {
-    window.addEventListener('resize', this.onWindowResize);
-    this.onWindowResize();
-  }
-
-  componentWillUnmount () {
-    window.removeEventListener('resize', this.onWindowResize);
-  }
-
-  onWindowResize = () => {
-    this.setState({ slidesToShow: window.innerWidth > 720 ? 1.5 : 1.1 });
-  }
-
+class Cases extends React.Component<CasesProps> {
   render () {
     if (!this.props.items) return null;
 
@@ -69,7 +48,21 @@ class Cases extends React.Component<CasesProps, CasesState> {
       infinite: false,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
-      slidesToShow: this.state.slidesToShow,
+      responsive: [
+        {
+          breakpoint: 720,
+          settings: {
+            slidesToShow: 1.5,
+          },
+        },
+        {
+          breakpoint: 420,
+          settings: {
+            slidesToShow: 1.1,
+          },
+        },
+      ],
+      slidesToShow: 1.5,
       speed: 500,
     };
 
