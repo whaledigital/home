@@ -27,6 +27,7 @@
     &Menu {
       @include fit;
 
+      position: fixed;
       background: $color-dark;
       height: 100vh;
       z-index: 9;
