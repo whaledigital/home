@@ -35,11 +35,28 @@ const PrevArrow = (props: CustomArrowProps) => (
   </div>
 );
 
-interface CaseProps {
+interface CasesProps {
   items: ContentfulCaseEdge[];
 }
 
-class Cases extends React.Component<CaseProps> {
+interface CasesState {
+  slidesToShow: number;
+}
+
+class Cases extends React.Component<CasesProps, CasesState> {
+  state = {
+    slidesToShow: 1.1,
+  };
+
+  componentDidMount () {
+    window.addEventListener('resize', this.resize.bind(this));
+    this.resize();
+  }
+
+  resize () {
+    this.setState({ slidesToShow: window.innerWidth > 720 ? 1.5 : 1.1 });
+  }
+
   render () {
     if (!this.props.items) return null;
 
@@ -48,7 +65,7 @@ class Cases extends React.Component<CaseProps> {
       infinite: false,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
-      slidesToShow: 1.5,
+      slidesToShow: this.state.slidesToShow,
       speed: 500,
     };
 
