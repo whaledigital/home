@@ -119,7 +119,13 @@ class Input extends React.Component<InputProps, InputState> {
     };
 
     if (this.props.multiline) {
-      return <textarea {...params} rows={this.state.rows} />;
+      return (
+        <textarea
+          {...params}
+          rows={this.state.rows}
+          aria-label={this.props.name}
+        />
+      );
     }
 
     if (this.props.type === 'checkbox') {
@@ -131,13 +137,21 @@ class Input extends React.Component<InputProps, InputState> {
             className={s.inputCheckbox__check}
             type={this.props.type}
             checked={this.props.checked}
+            aria-label={this.props.name}
           />
           <label htmlFor={this.props.name}>{this.props.label}</label>
         </div>
       );
     }
 
-    return <input {...params} type={this.props.type} autoComplete="off" />;
+    return (
+      <input
+        {...params}
+        type={this.props.type}
+        autoComplete="off"
+        aria-label={this.props.name}
+      />
+    );
   }
 
   renderErrors = () => {
