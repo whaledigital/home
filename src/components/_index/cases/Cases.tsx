@@ -49,11 +49,15 @@ class Cases extends React.Component<CasesProps, CasesState> {
   };
 
   componentDidMount () {
-    window.addEventListener('resize', this.resize.bind(this));
-    this.resize();
+    window.addEventListener('resize', this.onWindowResize);
+    this.onWindowResize();
   }
 
-  resize () {
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.onWindowResize);
+  }
+
+  onWindowResize = () => {
     this.setState({ slidesToShow: window.innerWidth > 720 ? 1.5 : 1.1 });
   }
 
