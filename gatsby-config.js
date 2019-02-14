@@ -6,7 +6,6 @@ module.exports = {
   siteMetadata: {
     title: `Whale Digital`,
     description: `Inspiring businesses to bring innovative ideas to life`,
-    googleVerification: `abcdefz`,
     siteUrl: `https://whale.digital`,
     socialLinks: [
       { url: 'https://www.facebook.com/', name: 'facebook' },
@@ -28,13 +27,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       },
     },
 
