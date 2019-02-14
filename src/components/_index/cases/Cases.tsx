@@ -64,6 +64,7 @@ class Cases extends React.Component<CasesProps> {
       ],
       slidesToShow: 1.5,
       speed: 500,
+      swipeToSlide: true,
     };
 
     return (
