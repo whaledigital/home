@@ -13,14 +13,11 @@ export const Footer = (props: any) => (
       </div>
       <div className={s.footer__gridCountries}>
         <ol className={s.footer__countriesList}>
-          {props.offices.map(({ node }: any) => {
-            const slug = node.slug ? `/${node.slug}` : '';
-            return (
-              <li key={slug}>
-                <Link to={slug}>{node.title}</Link>
-              </li>
-            );
-          })}
+          {props.offices.map(({ node }: any) => (
+            <li key={node.id}>
+              <Link to={node.slug ? `/${node.slug}` : `/`}>{node.title}</Link>
+            </li>
+          ))}
         </ol>
       </div>
       <div className={s.footer__gridServices}>
@@ -28,7 +25,7 @@ export const Footer = (props: any) => (
           <h6 className={s.footer__title}>Expertise</h6>
           <ul>
             {props.services.map(({ node }: any) => (
-              <li key={node.slug}>
+              <li key={node.id}>
                 <Link to={`/${node.slug}`}>{node.title}</Link>
               </li>
             ))}
@@ -57,11 +54,37 @@ export const Footer = (props: any) => (
           </ul>
         </div>
       </div>
+      <div className={s.footer__gridMobileMenu}>
+        <ul className={s.footer__mobileMenuBlock}>
+          <li>
+            <Link to="/">About</Link>
+          </li>
+          <li>
+            <Link to="/">Contacts</Link>
+          </li>
+          <li>
+            <Link to="/">Case studies</Link>
+          </li>
+        </ul>
+        <ul className={s.footer__mobileMenuBlock}>
+          <li>
+            <Link to="/">Careers</Link>
+          </li>
+          <li>
+            <Link to="/">Partnership</Link>
+          </li>
+        </ul>
+      </div>
       <div className={s.footer__gridSocial}>
         <ul className={s.footer__socialUl}>
           {props.socialLinks.map((link: any) => (
             <li key={link.name}>
-              <a href={link.url} aria-label={link.name} target="_blank" rel="noreferrer">
+              <a
+                href={link.url}
+                aria-label={link.name}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {React.createElement(require(`assets/svg/${link.name}.svg`))}
               </a>
             </li>
@@ -71,9 +94,11 @@ export const Footer = (props: any) => (
     </div>
     <div className={s.footer__bottom}>
       <div className={s.footer__bottomCopyright}>
-        © {props.title} 2017-{(new Date()).getFullYear()}. All rights reserved
+        © {props.title} 2017-{new Date().getFullYear()}. All rights reserved
       </div>
-      <div className={s.footer__bottomTerms}>Terms & Privacy</div>
+      <div className={s.footer__bottomTerms}>
+        <Link to={'/'}>Terms & Privacy</Link>
+      </div>
     </div>
   </footer>
 );
