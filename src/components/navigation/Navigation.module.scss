@@ -2,13 +2,32 @@
 
 .navigation {
   @include reset-list;
-  @include grid-row($justify: space-between);
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+
+  @media (min-width: $page-limit) {
+    @include grid-row($justify: space-between);
+
+    flex-direction: row;
+    margin-top: 0;
+  }
 
   &__item {
     margin: 0;
-    margin-right: 2rem;
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 700;
+
+    @media (min-width: $min-tablet) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: $page-limit) {
+      margin-right: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
 
     & > a {
       color: $color-light;

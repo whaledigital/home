@@ -118,7 +118,7 @@ module.exports = {
         name: `Whale Digital`,
         short_name: `Whale`,
         start_url: `/`,
-        background_color: `#01022a`,
+        background_color: `#101229`,
         theme_color: `#0062ff`,
         display: `standalone`,
         icon: `./src/assets/icon.png`,

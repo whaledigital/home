@@ -6,8 +6,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 2;
-  background: rgba($color-dark, 0.6);
+  z-index: 10;
 
   &__container {
     @include container;
@@ -16,6 +15,7 @@
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: $gutter 0;
   }
 
@@ -23,24 +23,100 @@
     @include reset-anchor;
   }
 
-  &__navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: auto;
-    width: 100%;
-
+  &__mobile {
     &Menu {
+      @include fit;
+
+      position: fixed;
+      background: $color-dark;
+      height: 100vh;
+      z-index: 9;
+      transition: all 0.6s ease-in-out;
+      transform: translateY(-100vh);
       display: flex;
-      margin-left: $gutter * 4;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      @media (min-width: $page-limit) {
+        display: none;
+      }
+
+      &__opened {
+        transform: translateY(0);
+      }
     }
 
     &Buttons {
       display: flex;
-      margin-left: auto;
+      flex-direction: column;
+
+      & > * {
+        margin-top: 2 * $gutter;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: calc(100% - 180px);
+
+    @media (min-width: $page-limit) {
+      width: calc(100% - 300px);
+    }
+
+    &Menu {
+      display: none;
+
+      @media (min-width: $page-limit) {
+        @include grid-row($justify: space-between);
+      }
+    }
+
+    &Buttons {
+      display: none;
+
+      @media (min-width: $page-limit) {
+        display: flex;
+      }
 
       & > * {
         margin-left: $gutter;
+      }
+    }
+
+    &Burger {
+      margin: 0;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.6s;
+      cursor: pointer;
+      height: 40px;
+      padding: 8px;
+
+      @media (min-width: $page-limit) {
+        display: none;
+      }
+
+      .bar {
+        transition: all 0.6s;
+        height: 2px;
+        width: 100%;
+        display: block;
+        margin: 3px 0;
+        background-color: $color-light;
+      }
+
+      &__opened {
+        .bar {
+          background-color: $color-primary;
+        }
       }
     }
   }

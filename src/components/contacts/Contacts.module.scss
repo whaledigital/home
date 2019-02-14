@@ -1,11 +1,16 @@
 @import 'config';
 
 .contacts {
-  display: flex;
   position: relative;
-  justify-content: center;
-  background: #151733;
-  padding: $gutter * 4;
+  background: $color-dark-lighter;
+  padding: $gutter 0 0;
+  margin: 0 -15px;
+
+  @media (min-width: $page-limit) {
+    display: flex;
+    justify-content: center;
+    padding: $gutter * 4;
+  }
 
   &__bubbles {
     position: absolute;
@@ -13,8 +18,21 @@
   }
 
   &__bubbles3 {
-    left: -30px;
-    top: -30px;
+    right: 10px;
+    top: 10px;
+    transform: scaleX(-1) !important;
+
+    @media (min-width: $min-tablet) {
+      left: 10px;
+      top: -30px;
+      right: auto;
+      transform: scaleX(1) !important;
+    }
+
+    @media (min-width: $page-limit) {
+      left: -30px;
+      top: -30px;
+    }
 
     & > * {
       fill: $color-light;
@@ -22,8 +40,18 @@
   }
 
   &__bubbles4 {
-    right: -30px;
-    top: -30px;
+    display: none;
+
+    @media (min-width: $min-tablet) {
+      display: block;
+      right: 10px;
+      top: -30px;
+    }
+
+    @media (min-width: $page-limit) {
+      right: -30px;
+      top: -30px;
+    }
 
     & > * {
       fill: $color-primary;
@@ -31,8 +59,13 @@
   }
 
   &__bubbles5 {
-    left: 10px;
-    bottom: 10px;
+    display: none;
+
+    @media (min-width: $min-tablet) {
+      display: block;
+      left: 10px;
+      bottom: 10px;
+    }
 
     & > * {
       fill: $color-dark;
@@ -42,38 +75,80 @@
 
 .form {
   &Container {
-    width: 870px;
-    padding-bottom: $gutter * 2;
+    margin: 0;
+
+    @media (min-width: $min-tablet) {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $page-limit) {
+      width: 870px;
+      max-width: none;
+    }
   }
 
   &Item {
     &__grid {
       &Container {
-        display: flex;
-        flex: 0 0 auto;
-        width: calc(100% + 30px);
-        margin-left: -$gutter;
-        margin-right: -$gutter;
+        // @media (min-width: $min-tablet) {
+        // }
+
+        @media (min-width: $page-limit) {
+          display: flex;
+          flex: 0 0 auto;
+          width: calc(100% + 30px);
+          margin-left: -$gutter;
+          margin-right: -$gutter;
+        }
       }
 
       &Item {
-        flex: 1 1 100%;
-        padding-left: $gutter;
-        padding-right: $gutter;
-        margin-top: $gutter * 3;
+        margin: $gutter * 3 $gutter 0;
+
+        @media (min-width: $page-limit) {
+          flex: 1 1 100%;
+        }
       }
     }
   }
 
   &Footer {
-    width: 870px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px 0;
+    margin: $gutter * 3 $gutter 0;
+
+    @media (min-width: $min-tablet) {
+      max-width: 570px;
+      margin: $gutter * 3 auto 0;
+      padding-bottom: $gutter * 4;
+    }
+
+    @media (min-width: $page-limit) {
+      width: 870px;
+      max-width: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    & > * {
+      padding-bottom: $gutter * 2;
+      width: 100%;
+
+      @media (min-width: $page-limit) {
+        width: auto;
+      }
+    }
 
     &__agreement {
-      margin-right: $gutter * 2;
+      @media (min-width: $page-limit) {
+        margin-right: $gutter * 2;
+      }
+    }
+
+    &__submit {
+      & > button {
+        width: 100%;
+      }
     }
 
     a {

@@ -4,6 +4,7 @@
   @include segment;
 
   color: $color-light;
+  overflow: hidden;
 
   &__inverted {
     background: $color-light;

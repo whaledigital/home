@@ -35,11 +35,11 @@ const PrevArrow = (props: CustomArrowProps) => (
   </div>
 );
 
-interface CaseProps {
+interface CasesProps {
   items: ContentfulCaseEdge[];
 }
 
-class Cases extends React.Component<CaseProps> {
+class Cases extends React.Component<CasesProps> {
   render () {
     if (!this.props.items) return null;
 
@@ -48,8 +48,23 @@ class Cases extends React.Component<CaseProps> {
       infinite: false,
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
+      responsive: [
+        {
+          breakpoint: 720,
+          settings: {
+            slidesToShow: 1.5,
+          },
+        },
+        {
+          breakpoint: 420,
+          settings: {
+            slidesToShow: 1.1,
+          },
+        },
+      ],
       slidesToShow: 1.5,
       speed: 500,
+      swipeToSlide: true,
     };
 
     return (

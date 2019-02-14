@@ -34,12 +34,12 @@ class Background extends React.Component<BackgroundProps> {
 
   width: number;
   height: number;
-  separation = 80;
+  separation = 60;
   amountX = 60;
   amountY = 30;
   positionX = 450;
   positionY = 450;
-  positionZ = 900;
+  positionZ = 700;
   count = 0;
 
   componentDidMount () {

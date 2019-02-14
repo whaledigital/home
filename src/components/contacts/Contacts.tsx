@@ -239,11 +239,13 @@ class Contacts extends React.Component<{}, ContactsState> {
                 />
               </div>
 
-              <Button
-                title="Submit"
-                type="submit"
-                size="large"
-              />
+              <div className={s.formFooter__submit}>
+                <Button
+                  title="Submit"
+                  type="submit"
+                  size="large"
+                />
+              </div>
 
             </div>
           </form>

@@ -2,23 +2,37 @@
 
 .expertise {
   position: relative;
-  margin-top: $gutter * 4;
+  display: flex;
+  justify-content: space-between;
+  // margin-top: $gutter * 4;
 
   &__frame {
-    border: 1px solid rgba($color-light, 0.6);
-    position: absolute;
-    height: 400px;
-    bottom: -30px;
-    left: -30px;
-    width: 400px;
+    @media (min-width: $page-limit) {
+      border: 1px solid rgba($color-light, 0.6);
+      position: absolute;
+      height: 400px;
+      bottom: -30px;
+      left: -30px;
+      width: 400px;
+    }
   }
 
   &__showcase {
-    width: 60%;
-    position: absolute;
-    right: 0;
-    top: -$gutter * 4;
-    transition: opacity 0.3s;
+    display: none;
+
+    @media (min-width: $min-tablet) {
+      display: block;
+      width: 50%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.3s;
+    }
+
+    @media (min-width: $page-limit) {
+      top: -$gutter * 4;
+      width: 60%;
+    }
 
     &__item {
       display: block;
@@ -43,7 +57,7 @@
         color: $color-light;
         position: absolute;
         left: $gutter * 2;
-        right: $gutter * 2;
+        right: $gutter * 4;
         bottom: $gutter * 2;
         font-size: 1.5rem;
         line-height: 1.4;
@@ -82,10 +96,20 @@
   &__list {
     @include reset-list;
 
-    background: #151733;
-    padding: $gutter * 4;
-    max-width: 50%;
+    padding: $gutter;
+    margin: 0 -15px;
     border-radius: 2px;
+
+    @media (min-width: $min-tablet) {
+      width: 50%;
+      background: $color-dark-lighter;
+      margin: 0;
+      padding: $gutter * 2;
+    }
+
+    @media (min-width: $page-limit) {
+      padding: $gutter * 4;
+    }
 
     &__item {
       font-size: 1.2rem;
@@ -93,8 +117,16 @@
       font-weight: 500;
       margin: 0;
       position: relative;
-      padding: $gutter;
-      padding-right: $gutter * 8;
+      padding: $gutter $gutter * 4 $gutter 0;
+
+      @media (min-width: $min-tablet) {
+        padding-right: $gutter;
+        // padding-left: $gutter * 2;
+      }
+
+      @media (min-width: $page-limit) {
+        padding-right: $gutter * 8;
+      }
 
       & > a {
         color: $color-light;
@@ -107,10 +139,20 @@
           background: $color-light;
           top: calc(50% + 2px);
           position: absolute;
-          left: -$gutter * 4;
+          right: 0;
           content: '';
           width: 0;
           transition: width 250ms linear, background 0.6s ease;
+
+          @media (min-width: $min-tablet) {
+            // left: -$gutter * 2;
+            right: -$gutter * 2;
+          }
+
+          @media (min-width: $page-limit) {
+            left: -$gutter * 4;
+            right: 0;
+          }
         }
 
         &:hover {
@@ -126,8 +168,13 @@
   }
 
   &__bubbles {
+    display: none;
     position: absolute;
     z-index: 1;
+
+    @media (min-width: $page-limit) {
+      display: block;
+    }
   }
 
   &__bubbles1 {
