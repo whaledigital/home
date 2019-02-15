@@ -36,7 +36,7 @@ export const Header = ({ children }: HeaderProps) => {
       const { prevScrollpos } = visibility;
 
       const currentScrollPos = window.pageYOffset;
-      const visible = prevScrollpos > currentScrollPos && prevScrollpos >= 0;
+      const visible = prevScrollpos > currentScrollPos || currentScrollPos === 0;
       const background = currentScrollPos > window.innerHeight / 3;
 
       setVisibility({
