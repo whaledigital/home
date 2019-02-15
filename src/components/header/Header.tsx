@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 
 import Logo from 'components/logo/Logo';
@@ -25,11 +25,41 @@ const options = [
 
 export const Header = ({ children }: HeaderProps) => {
   const [menu, toggleMenu] = useState(false);
+  const [visibility, setVisibility] = useState({
+    background: false,
+    prevScrollpos: window.pageYOffset,
+    visible: true,
+  });
+
+  useEffect(() => {
+    function handleScroll () {
+      const { prevScrollpos } = visibility;
+
+      const currentScrollPos = window.pageYOffset;
+      const visible = prevScrollpos > currentScrollPos;
+      const background = currentScrollPos > window.innerHeight / 3;
+
+      setVisibility({
+        background,
+        visible,
+        prevScrollpos: currentScrollPos,
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
   const onMenuClick = () => toggleMenu(!menu);
 
   return (
     <>
-      <header className={s.header} data-aos="fade-bottom">
+      <header
+        className={classNames(s.header, {
+          [s.headerHidden]: !visibility.visible && !menu,
+          [s.headerBackground]: visibility.background,
+        })}
+      >
         <div className={s.header__container}>
           <div className={s.header__content}>
             <Link to="/" className={s.header__logo}>
@@ -42,7 +72,13 @@ export const Header = ({ children }: HeaderProps) => {
                   options={options}
                   value="ru"
                 />
-                <Button title="Start a project" />
+                <div
+                  className={classNames({
+                    [s.header__navigationButtons_hidden]: !visibility.background },
+                  )}
+                >
+                  <Button title="Start a project" />
+                </div>
               </div>
               <div
                 className={classNames(s.header__navigationBurger, {

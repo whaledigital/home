@@ -49,8 +49,6 @@
     }
 
     &Button {
-      width: 100%;
-
       @media (min-width: $page-limit) {
         width: auto;
       }

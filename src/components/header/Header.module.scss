@@ -7,6 +7,15 @@
   left: 0;
   right: 0;
   z-index: 10;
+  transition: 0.6s;
+
+  &Hidden {
+    transform: translateY(-70px);
+  }
+
+  &Background {
+    background: $color-dark;
+  }
 
   &__container {
     @include container;
@@ -81,6 +90,10 @@
 
       @media (min-width: $page-limit) {
         display: flex;
+      }
+
+      &_hidden {
+        display: none;
       }
 
       & > * {

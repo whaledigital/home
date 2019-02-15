@@ -22,5 +22,9 @@
   &__large {
     font-size: 1.1rem;
     padding: 20px 60px;
+
+    @media (min-width: $page-limit) {
+      font-size: 1.6rem;
+    }
   }
 }
