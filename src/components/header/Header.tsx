@@ -27,7 +27,7 @@ export const Header = ({ children }: HeaderProps) => {
   const [menu, toggleMenu] = useState(false);
   const [visibility, setVisibility] = useState({
     background: false,
-    prevScrollpos: window.pageYOffset,
+    prevScrollpos: 0,
     visible: true,
   });
 
