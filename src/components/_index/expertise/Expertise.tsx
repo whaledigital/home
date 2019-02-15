@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import classNames from 'classnames';
@@ -35,16 +35,29 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
   listRef: HTMLElement;
 
   componentDidMount () {
-    this.setState({
-      height: this.listRef.offsetHeight,
-      width: this.expertiseRef.offsetWidth,
-    });
+    this.updateDimensions();
+    window.addEventListener('resize', this.updateDimensions, false);
   }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+
+  updateDimensions = () => this.setState({
+    height: this.expertiseRef.offsetHeight,
+    width: this.expertiseRef.offsetWidth,
+  });
 
   renderMenu = () => (
     <ul ref={ref => this.listRef = ref} className={s.expertise__list} data-aos="fade">
       {this.props.items.map(({ node }: ContentfulServiceEdge, i: number) => {
         const onMouseOver = () => this.setState({ active: node.id });
+        const onClick = () => {
+          if (this.state.active !== node.id) {
+            return this.setState({ active: node.id });
+          }
+          navigate(`/${node.slug}`);
+        };
         return (
           <li
             key={node.id}
@@ -54,9 +67,19 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
             data-aos-duration="200"
             data-aos-delay={(i + 1) * 50}
           >
-            <Link to={`/${node.slug}`} onMouseOver={onMouseOver}>
+            <Link
+              to={`/${node.slug}`}
+              onMouseOver={onMouseOver}
+              className={s.expertise__list__itemLink}
+            >
               {node.title}
             </Link>
+            <a
+              onClick={onClick}
+              className={s.expertise__list__itemTab}
+            >
+              {node.title}
+            </a>
           </li>
         );
       })}
