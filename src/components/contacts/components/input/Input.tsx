@@ -37,8 +37,8 @@ class Input extends React.Component<InputProps, InputState> {
     errors: [] as string[],
     focused: false,
     maxRows: 6,
-    minRows: 2,
-    rows: 2,
+    minRows: 1,
+    rows: 1,
     value: '',
   };
 

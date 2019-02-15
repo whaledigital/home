@@ -21,6 +21,7 @@ const NextArrow = (props: CustomArrowProps) => (
   <div
     className={classNames(s.cases__arrow, s.cases__arrowNext)}
     onClick={props.onClick}
+    data-aos="fade-left"
   >
     <IconNext />
   </div>
@@ -30,6 +31,7 @@ const PrevArrow = (props: CustomArrowProps) => (
   <div
     className={classNames(s.cases__arrow, s.cases__arrowPrev)}
     onClick={props.onClick}
+    data-aos="fade-right"
   >
     <IconPrev />
   </div>
@@ -64,7 +66,6 @@ class Cases extends React.Component<CasesProps> {
       ],
       slidesToShow: 1.5,
       speed: 500,
-      swipeToSlide: true,
     };
 
     return (

@@ -1,5 +1,6 @@
 import Img from 'gatsby-image';
 import React from 'react';
+import Slider from 'react-slick';
 
 import {
   ContentfulExpertEdge,
@@ -16,9 +17,32 @@ interface ExpertsProps {
 class Experts extends React.Component<ExpertsProps> {
   render () {
     if (!this.props.items) return null;
+
+    const settings = {
+      arrows: false,
+      className: s.experts,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 900,
+          settings: {
+            slidesToShow: 3.2,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2.2,
+          },
+        },
+      ],
+      slidesToShow: 4,
+      speed: 500,
+    };
+
     return (
       <Segment title="Experts">
-        <div className={s.experts}>
+        <Slider {...settings}>
           {this.props.items.map(({ node }: ContentfulExpertEdge) => {
             return (
               <div key={node.id} className={s.experts__item} data-aos="fade-up">
@@ -30,7 +54,7 @@ class Experts extends React.Component<ExpertsProps> {
               </div>
             );
           })}
-        </div>
+        </Slider>
       </Segment>
     );
   }
