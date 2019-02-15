@@ -99,7 +99,7 @@ class Background extends React.Component<BackgroundProps> {
 
     const material = new THREE.ShaderMaterial({
       fragmentShader: this.shaderParse(fragmentShader),
-      uniforms: { color: { value: new THREE.Color(0xffffff) } },
+      uniforms: { color: { value: new THREE.Color(0xcfd0d4) } },
       vertexShader: this.shaderParse(vertexShader),
     });
 

@@ -2,7 +2,11 @@
 
 .heading {
   position: relative;
-  height: 100vh;
+  height: 92vh;
+
+  @media (min-width: $min-tablet) {
+    height: 100vh;
+  }
 
   &__background {
     @include fit;
