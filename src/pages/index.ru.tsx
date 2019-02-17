@@ -41,7 +41,7 @@ class HomePage extends React.Component<HomeProps> {
 export default withLayout(HomePage);
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query RuHomeQuery {
     home: allContentfulHome {
       edges {
         node {
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    services: allContentfulService(sort: { fields: order }) {
+    services: allContentfulService(sort: { fields: order }, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -68,7 +68,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    cases: allContentfulCase(sort: { fields: order }) {
+    cases: allContentfulCase(sort: { fields: order }, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id
@@ -83,7 +83,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    experts: allContentfulExpert(sort: { fields: order }) {
+    experts: allContentfulExpert(sort: { fields: order }, filter: { node_locale: { eq: "ru" } }) {
       edges {
         node {
           id

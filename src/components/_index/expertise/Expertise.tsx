@@ -115,7 +115,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
                 <Img fluid={node.image.fluid} className={s.expertise__showcase__itemImage} />
                 <div className={s.expertise__showcase__itemShadow} />
                 <h4 className={s.expertise__showcase__itemTitle}>
-                  {node.directions.join(' / ')}
+                  {node.directions && node.directions.join(' / ')}
                 </h4>
               </Link>
             </Box3D>

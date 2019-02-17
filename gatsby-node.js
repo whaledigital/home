@@ -87,16 +87,3 @@ exports.createPages = ({ graphql, actions }) => {
     });
   });
 };
-
-exports.onCreatePage = ({ page, actions }) => {
-  const { deletePage, createPage } = actions;
-  return new Promise(resolve => {
-    // If the page component is the index page component create a new page but with '/' as path
-    if (page.componentPath === `${__dirname}/src/pages/index/index.tsx`) {
-      deletePage(page);
-      createPage({ ...page, path: '/' });
-    }
-
-    resolve();
-  });
-};

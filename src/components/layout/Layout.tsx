@@ -2,6 +2,9 @@ import { StaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import { Provider } from 'react-redux';
 import AOS from 'aos';
+import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { IntlProvider } from 'react-intl';
+import 'intl';
 
 import GQL from 'src/graphql-types';
 import { Header } from 'components/header/Header';
@@ -29,11 +32,23 @@ interface GQLData {
     siteMetadata: {
       title: string;
       socialLinks: SocialLink[];
+      languages: {
+        langs: string[];
+        defaultLangKey: string;
+      };
     };
   };
 }
 
 class Layout extends React.Component<LayoutProps> {
+  langKey: string;
+  homeLink: string;
+  langsMenu: {
+    link: string;
+    langKey: string;
+    selected: boolean;
+  }[];
+
   componentDidMount () {
     AOS.init({
       duration: 1000,
@@ -41,24 +56,37 @@ class Layout extends React.Component<LayoutProps> {
     });
   }
 
+  getLangsMenu = (data: GQLData) => {
+    const { location } = this.props;
+    const url = location.pathname;
+    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+    const langsMenu = getLangs(langs, this.langKey, getUrlForLang(`/${this.langKey}/`, url));
+    return { langKey, langsMenu };
+  }
+
   renderLayout = (data: GQLData) => {
+    console.log(data);
+    const { langKey, langsMenu } = this.getLangsMenu(data);
     return (
       <Provider store={store}>
-        <div className={s.wrapper}>
-          <Header>
-            <Navigation
-              pathname={this.props.location.pathname}
-              items={data.navigation.edges}
+        <IntlProvider locale={langKey}>
+          <div className={s.wrapper}>
+            <Header langs={langsMenu}>
+              <Navigation
+                pathname={this.props.location.pathname}
+                items={data.navigation.edges}
+              />
+            </Header>
+            {this.props.children}
+            <Footer
+              title={data.site.siteMetadata.title}
+              offices={data.offices.edges}
+              services={data.services.edges}
+              socialLinks={data.site.siteMetadata.socialLinks}
             />
-          </Header>
-          {this.props.children}
-          <Footer
-            title={data.site.siteMetadata.title}
-            offices={data.offices.edges}
-            services={data.services.edges}
-            socialLinks={data.site.siteMetadata.socialLinks}
-          />
-        </div>
+          </div>
+        </IntlProvider>
       </Provider>
     );
   }
@@ -81,6 +109,10 @@ const query = graphql`
         socialLinks {
           name
           url
+        }
+        languages {
+          langs
+          defaultLangKey
         }
       }
     }

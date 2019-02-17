@@ -13,6 +13,10 @@ module.exports = {
       { url: 'https://www.linkedin.com/', name: 'linkedin' },
       { url: 'https://www.instagram.com/', name: 'instagram' },
     ],
+    languages: {
+      defaultLangKey: 'en',
+      langs: ['en', 'ru'],
+    },
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -20,7 +24,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/data`,
+        path: `${__dirname}/src/data`,
       },
     },
 
@@ -90,6 +94,16 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         include: /assets\/svg/,
+      },
+    },
+
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'en',
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
+        prefixDefault: false,
       },
     },
 

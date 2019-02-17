@@ -36,6 +36,7 @@ class Experts extends React.Component<ExpertsProps> {
           },
         },
       ],
+      slidesToScroll: 4,
       slidesToShow: 4,
       speed: 500,
     };

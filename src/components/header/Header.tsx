@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 
@@ -8,22 +8,18 @@ import Button from 'components/button/Button';
 
 import s from './Header.module.scss';
 
-interface HeaderProps {
-  children?: React.ReactNode;
+interface Lang {
+  link: string;
+  langKey: string;
+  selected: boolean;
 }
 
-const options = [
-  {
-    label: 'Ru',
-    value: 'ru',
-  },
-  {
-    label: 'En',
-    value: 'en',
-  },
-];
+interface HeaderProps {
+  children?: React.ReactNode;
+  langs: Lang[];
+}
 
-export const Header = ({ children }: HeaderProps) => {
+export const Header = ({ children, langs }: HeaderProps) => {
   const [menu, toggleMenu] = useState(false);
   const [visibility, setVisibility] = useState({
     background: false,
@@ -67,11 +63,7 @@ export const Header = ({ children }: HeaderProps) => {
             </Link>
             <div className={s.header__navigation}>
               <div className={s.header__navigationButtons}>
-                <Dropdown
-                  onChange={console.log}
-                  options={options}
-                  value="ru"
-                />
+                {renderLangs(langs)}
                 <div
                   className={classNames({
                     [s.header__navigationButtons_hidden]: !visibility.background },
@@ -104,14 +96,28 @@ export const Header = ({ children }: HeaderProps) => {
       >
         {children}
         <div className={s.header__mobileButtons}>
-          <Dropdown
-            onChange={console.log}
-            options={options}
-            value="ru"
-          />
+          {renderLangs(langs)}
           <Button title="Start a project" size="large" />
         </div>
       </nav>
     </>
+  );
+};
+
+const renderLangs = (langs: Lang[]) => {
+  let selected = '';
+  const options = langs.map((item) => {
+    if (item.selected) selected = item.langKey;
+    return {
+      label: item.langKey,
+      value: item.link,
+    };
+  });
+  return (
+    <Dropdown
+      onChange={navigate}
+      options={options}
+      value={selected}
+    />
   );
 };
