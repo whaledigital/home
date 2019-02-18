@@ -98,16 +98,6 @@ module.exports = {
     },
 
     {
-      resolve: 'gatsby-plugin-i18n',
-      options: {
-        langKeyForNull: 'en',
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
-        prefixDefault: false,
-      },
-    },
-
-    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

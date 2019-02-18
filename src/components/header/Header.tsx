@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Logo from 'components/logo/Logo';
 import Dropdown from 'components/dropdown/Dropdown';
 import Button from 'components/button/Button';
+import LangSelect from 'components/LangSelect';
 
 import s from './Header.module.scss';
 
@@ -16,10 +17,9 @@ interface Lang {
 
 interface HeaderProps {
   children?: React.ReactNode;
-  langs: Lang[];
 }
 
-export const Header = ({ children, langs }: HeaderProps) => {
+export const Header = ({ children }: HeaderProps) => {
   const [menu, toggleMenu] = useState(false);
   const [visibility, setVisibility] = useState({
     background: false,
@@ -63,7 +63,7 @@ export const Header = ({ children, langs }: HeaderProps) => {
             </Link>
             <div className={s.header__navigation}>
               <div className={s.header__navigationButtons}>
-                {renderLangs(langs)}
+                <LangSelect />
                 <div
                   className={classNames({
                     [s.header__navigationButtons_hidden]: !visibility.background },
@@ -96,7 +96,7 @@ export const Header = ({ children, langs }: HeaderProps) => {
       >
         {children}
         <div className={s.header__mobileButtons}>
-          {renderLangs(langs)}
+          <LangSelect />
           <Button title="Start a project" size="large" />
         </div>
       </nav>

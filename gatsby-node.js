@@ -2,6 +2,8 @@ const path = require('path');
 const slash = require('slash');
 const changeCase = require('change-case');
 
+const locales = require('./src/constants/locales');
+
 // Create slugs for files.
 // Slug will used for blog page path.
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -61,6 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               slug
+              node_locale
             }
           }
         }
@@ -74,16 +77,45 @@ exports.createPages = ({ graphql, actions }) => {
 
       // Create services pages
       services.forEach(service => {
+        const localizedPath = locales[service.node_locale].default
+          ? service.slug
+          : `${locales[service.node_locale].path}/${service.slug}`;
+
         createPage({
-          path: service.slug,
+          path: localizedPath,
           component: slash(templates.service),
           context: {
             slug: service.slug,
+            lang: service.node_locale,
           },
         });
       });
 
       resolve();
     });
+  });
+};
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+
+  return new Promise(resolve => {
+    deletePage(page);
+
+    Object.keys(locales).map(lang => {
+      const localizedPath = locales[lang].default
+        ? page.path
+        : locales[lang].path + page.path;
+
+      return createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          lang,
+        },
+      });
+    });
+
+    resolve();
   });
 };

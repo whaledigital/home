@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import Slider from 'react-slick';
@@ -62,3 +63,16 @@ class Experts extends React.Component<ExpertsProps> {
 }
 
 export default Experts;
+
+export const expertQuery = graphql`
+  fragment ExpertFragment on ContentfulExpert {
+    id
+    title
+    position
+    photo {
+      fluid(maxWidth: 280) {
+        ...GatsbyContentfulFluid_noBase64
+      }
+    }
+  }
+`;

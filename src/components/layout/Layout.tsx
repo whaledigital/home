@@ -1,20 +1,37 @@
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import AOS from 'aos';
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
-import { IntlProvider } from 'react-intl';
-import 'intl';
 
 import GQL from 'src/graphql-types';
 import { Header } from 'components/header/Header';
-import { Footer } from 'components/footer/Footer';
+import Footer from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
+import { LangProvider } from 'components/LangContext';
 
 import s from './Layout.module.scss';
 
+export interface LayoutData {
+  footerOffices: GQL.ContentfulOfficeConnection;
+  footerServices: GQL.ContentfulServiceConnection;
+  navigation: GQL.ContentfulNavigationConnection;
+  site: {
+    siteMetadata: {
+      title: string;
+      socialLinks: SocialLink[];
+      languages: Languages;
+    };
+  };
+}
+
 export interface LayoutProps {
+  data: LayoutData;
   location: { pathname: string; };
   children: any;
+}
+
+export interface Languages {
+  langs: string[];
+  defaultLangKey: string;
 }
 
 export interface SocialLink {
@@ -25,36 +42,48 @@ export interface SocialLink {
 const Layout: React.SFC<LayoutProps> = (props) => {
   AOS.init({ duration: 1000, once: true });
 
-  const data: GQLData = useStaticQuery(layoutQuery);
-
-  const { langKey, langsMenu } = getLangsMenu(data, props.location.pathname);
-
   return (
-    <IntlProvider locale={langKey}>
+    <LangProvider
+      pathname={props.location.pathname}
+      languages={props.data.site.siteMetadata.languages}
+    >
       <div className={s.wrapper}>
-        <Header langs={langsMenu}>
+        <Header>
           <Navigation
-            pathname={props.location.pathname}
-            items={data.navigation.edges}
+            pathname={location.pathname}
+            items={props.data.navigation.edges}
           />
         </Header>
         {props.children}
         <Footer
-          langKey={langKey}
-          title={data.site.siteMetadata.title}
-          offices={data.offices.edges}
-          services={data.services.edges}
-          socialLinks={data.site.siteMetadata.socialLinks}
+          title={props.data.site.siteMetadata.title}
+          offices={props.data.footerOffices.edges}
+          services={props.data.footerServices.edges}
+          socialLinks={props.data.site.siteMetadata.socialLinks}
         />
       </div>
-    </IntlProvider>
+    </LangProvider>
   );
 };
 
 export default Layout;
 
-const layoutQuery = graphql`
-  query {
+export const withLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) => {
+  class WithLayout extends React.Component<P & LayoutProps> {
+    render () {
+      return (
+        <Layout location={this.props.location} data={this.props.data}>
+          <WrappedComponent {...this.props} />
+        </Layout>
+      );
+    }
+  }
+
+  return WithLayout;
+};
+
+export const expertiseQuery = graphql`
+  fragment LayoutFragment on Query {
     site {
       siteMetadata {
         title
@@ -68,69 +97,23 @@ const layoutQuery = graphql`
         }
       }
     }
-    navigation: allContentfulNavigation(sort: { fields: order }) {
-      edges {
-        node {
-          id
-          title
-          slug
-        }
-      }
+    navigation: allContentfulNavigation(
+      sort: { fields: order },
+      filter: { node_locale: { eq: $lang } }
+    ) {
+      edges { node { ...NavigationFragment }}
     }
-    services: allContentfulService(sort: { fields: order }) {
-      edges {
-        node {
-          id
-          title
-          slug
-        }
-      }
+    footerServices: allContentfulService(
+      sort: { fields: order },
+      filter: { node_locale: { eq: $lang } }
+    ) {
+      edges { node { ...FooterServiceFragment }}
     }
-    offices: allContentfulOffice(sort: { fields: order }) {
-      edges {
-        node {
-          id
-          title
-          slug
-        }
-      }
+    footerOffices: allContentfulOffice(
+      sort: { fields: order },
+      filter: { node_locale: { eq: $lang } }
+    ) {
+      edges { node { ...FooterOfficeFragment }}
     }
   }
 `;
-
-const getLangsMenu = (data: GQLData, pathname: string) => {
-  const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
-  const langsMenu = getLangs(langs, langKey, getUrlForLang(`/${langKey}/`, pathname));
-  return { langKey, langsMenu };
-};
-
-interface GQLData {
-  services: GQL.ContentfulServiceConnection;
-  offices: GQL.ContentfulOfficeConnection;
-  navigation: GQL.ContentfulNavigationConnection;
-  site: {
-    siteMetadata: {
-      title: string;
-      socialLinks: SocialLink[];
-      languages: {
-        langs: string[];
-        defaultLangKey: string;
-      };
-    };
-  };
-}
-
-export const withLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) => {
-  class WithLayout extends React.Component<P & LayoutProps> {
-    render () {
-      return (
-        <Layout location={this.props.location}>
-          <WrappedComponent {...this.props} />
-        </Layout>
-      );
-    }
-  }
-
-  return WithLayout;
-};

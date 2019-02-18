@@ -2,17 +2,10 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import * as React from 'react';
 
-import { ContentfulService } from 'src/graphql-types';
 import Segment from 'components/segment/Segment';
-import { withLayout, LayoutProps } from 'components/layout/Layout';
+import { withLayout } from 'components/layout/Layout';
 
-interface ServiceProps extends LayoutProps {
-  data: {
-    service: ContentfulService;
-  };
-}
-
-const BlogPostPage = (props: ServiceProps) => {
+const ServicePage = (props: any) => {
   const service = props.data.service;
   return (
     <Segment inverted>
@@ -25,11 +18,12 @@ const BlogPostPage = (props: ServiceProps) => {
   );
 };
 
-export default withLayout(BlogPostPage);
+export default withLayout(ServicePage);
 
 export const pageQuery = graphql`
-  query TemplateBlogPost($slug: String!) {
-    service: contentfulService(slug: { eq: $slug}) {
+  query TemplateService($slug: String!, $lang: String) {
+    ...LayoutFragment
+    service: contentfulService(slug: { eq: $slug}, node_locale: { eq: $lang}) {
       id
       title
       image {

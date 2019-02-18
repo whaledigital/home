@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import React from 'react';
 
 import { ContentfulNavigationEdge } from 'src/graphql-types';
@@ -21,3 +21,11 @@ export const Navigation = ({ items }: MenuProps) => (
       ))}
   </ul>
 );
+
+export const navigationQuery = graphql`
+  fragment NavigationFragment on ContentfulNavigation {
+    id
+    title
+    slug
+  }
+`;

@@ -1,11 +1,11 @@
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import React from 'react';
 
 import Logo from 'components/logo/Logo';
 
 import s from './Footer.module.scss';
 
-export const Footer = (props: any) => (
+const Footer = (props: any) => (
   <footer className={s.footer}>
     <div className={s.footer__grid}>
       <div className={s.footer__gridLogo}>
@@ -102,3 +102,21 @@ export const Footer = (props: any) => (
     </div>
   </footer>
 );
+
+export default Footer;
+
+export const officeMenuQuery = graphql`
+  fragment FooterOfficeFragment on ContentfulOffice {
+    id
+    title
+    slug
+  }
+`;
+
+export const serviceMenuQuery = graphql`
+  fragment FooterServiceFragment on ContentfulService {
+    id
+    title
+    slug
+  }
+`;
