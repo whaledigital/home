@@ -1,6 +1,5 @@
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
-import { Provider } from 'react-redux';
 import AOS from 'aos';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
@@ -10,7 +9,6 @@ import GQL from 'src/graphql-types';
 import { Header } from 'components/header/Header';
 import { Footer } from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
-import { store } from 'src/store';
 
 import s from './Layout.module.scss';
 
@@ -24,84 +22,38 @@ export interface SocialLink {
   name: string;
 }
 
-interface GQLData {
-  services: GQL.ContentfulServiceConnection;
-  offices: GQL.ContentfulOfficeConnection;
-  navigation: GQL.ContentfulNavigationConnection;
-  site: {
-    siteMetadata: {
-      title: string;
-      socialLinks: SocialLink[];
-      languages: {
-        langs: string[];
-        defaultLangKey: string;
-      };
-    };
-  };
-}
+const Layout: React.SFC<LayoutProps> = (props) => {
+  AOS.init({ duration: 1000, once: true });
 
-class Layout extends React.Component<LayoutProps> {
-  langKey: string;
-  homeLink: string;
-  langsMenu: {
-    link: string;
-    langKey: string;
-    selected: boolean;
-  }[];
+  const data: GQLData = useStaticQuery(layoutQuery);
 
-  componentDidMount () {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }
+  const { langKey, langsMenu } = getLangsMenu(data, props.location.pathname);
 
-  getLangsMenu = (data: GQLData) => {
-    const { location } = this.props;
-    const url = location.pathname;
-    const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-    const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-    const langsMenu = getLangs(langs, this.langKey, getUrlForLang(`/${this.langKey}/`, url));
-    return { langKey, langsMenu };
-  }
+  return (
+    <IntlProvider locale={langKey}>
+      <div className={s.wrapper}>
+        <Header langs={langsMenu}>
+          <Navigation
+            pathname={props.location.pathname}
+            items={data.navigation.edges}
+          />
+        </Header>
+        {props.children}
+        <Footer
+          langKey={langKey}
+          title={data.site.siteMetadata.title}
+          offices={data.offices.edges}
+          services={data.services.edges}
+          socialLinks={data.site.siteMetadata.socialLinks}
+        />
+      </div>
+    </IntlProvider>
+  );
+};
 
-  renderLayout = (data: GQLData) => {
-    console.log(data);
-    const { langKey, langsMenu } = this.getLangsMenu(data);
-    return (
-      <Provider store={store}>
-        <IntlProvider locale={langKey}>
-          <div className={s.wrapper}>
-            <Header langs={langsMenu}>
-              <Navigation
-                pathname={this.props.location.pathname}
-                items={data.navigation.edges}
-              />
-            </Header>
-            {this.props.children}
-            <Footer
-              title={data.site.siteMetadata.title}
-              offices={data.offices.edges}
-              services={data.services.edges}
-              socialLinks={data.site.siteMetadata.socialLinks}
-            />
-          </div>
-        </IntlProvider>
-      </Provider>
-    );
-  }
+export default Layout;
 
-  render () {
-    return (
-      <StaticQuery
-        query={query}
-        render={this.renderLayout}
-      />
-    );
-  }
-}
-
-const query = graphql`
+const layoutQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -146,10 +98,30 @@ const query = graphql`
   }
 `;
 
-export default Layout;
+const getLangsMenu = (data: GQLData, pathname: string) => {
+  const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
+  const langsMenu = getLangs(langs, langKey, getUrlForLang(`/${langKey}/`, pathname));
+  return { langKey, langsMenu };
+};
+
+interface GQLData {
+  services: GQL.ContentfulServiceConnection;
+  offices: GQL.ContentfulOfficeConnection;
+  navigation: GQL.ContentfulNavigationConnection;
+  site: {
+    siteMetadata: {
+      title: string;
+      socialLinks: SocialLink[];
+      languages: {
+        langs: string[];
+        defaultLangKey: string;
+      };
+    };
+  };
+}
 
 export const withLayout = <P extends object>(WrappedComponent: React.ComponentType<P>) => {
-  // tslint:disable:max-classes-per-file
   class WithLayout extends React.Component<P & LayoutProps> {
     render () {
       return (
