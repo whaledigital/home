@@ -45,7 +45,7 @@ const Layout: React.SFC<LayoutProps> = (props) => {
       <div className={s.wrapper}>
         <Header>
           <Navigation
-            pathname={location.pathname}
+            pathname={props.location.pathname}
             items={props.data.navigation.edges}
           />
         </Header>
