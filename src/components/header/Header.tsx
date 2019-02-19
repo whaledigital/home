@@ -1,19 +1,12 @@
-import { Link, navigate } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 
 import Logo from 'components/logo/Logo';
-import Dropdown from 'components/dropdown/Dropdown';
 import Button from 'components/button/Button';
 import LangSelect from 'components/LangSelect';
+import Link from 'components/Link';
 
 import s from './Header.module.scss';
-
-interface Lang {
-  link: string;
-  langKey: string;
-  selected: boolean;
-}
 
 interface HeaderProps {
   children?: React.ReactNode;
@@ -101,23 +94,5 @@ export const Header = ({ children }: HeaderProps) => {
         </div>
       </nav>
     </>
-  );
-};
-
-const renderLangs = (langs: Lang[]) => {
-  let selected = '';
-  const options = langs.map((item) => {
-    if (item.selected) selected = item.langKey;
-    return {
-      label: item.langKey,
-      value: item.link,
-    };
-  });
-  return (
-    <Dropdown
-      onChange={navigate}
-      options={options}
-      value={selected}
-    />
   );
 };

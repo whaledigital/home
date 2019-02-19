@@ -12,7 +12,7 @@ const AboutPage = () => {
         title="About"
         keywords={[`development`]}
       />
-      <Segment inverted>
+      <Segment>
         <h1>About</h1>
       </Segment>
     </>

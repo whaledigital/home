@@ -1,7 +1,14 @@
+import { navigate } from 'gatsby';
 import React, { createContext, useEffect, useState } from 'react';
 import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
-import { IntlProvider } from 'react-intl';
 import 'intl';
+
+export type LangKey = 'en' | 'ru';
+
+export interface Languages {
+  langs: LangKey[];
+  defaultLangKey: LangKey;
+}
 
 export const LangContext = createContext(undefined);
 
@@ -11,9 +18,16 @@ export interface LangProviderProps {
   children: any;
 }
 
-export interface Languages {
-  langs: string[];
-  defaultLangKey: string;
+export interface LangConsumerProps {
+  defaultLangKey?: string;
+  langKey?: string;
+  langsList?: {
+    langKey: string;
+    link: string;
+    selected: boolean;
+  }[];
+  pathname?: string;
+  toggleLanguage?: (value: string) => void;
 }
 
 export const LangProvider: React.SFC<LangProviderProps> = (props) => {
@@ -27,31 +41,41 @@ export const LangProvider: React.SFC<LangProviderProps> = (props) => {
   const currentLangKey = getCurrentLangKey(langs, defaultLangKey, pathname);
   const langsList = getLangs(langs, currentLangKey, getUrlForLang(`/${currentLangKey}/`, pathname));
 
-  const [lang, setLang] = useState(currentLangKey);
+  const [langKey, setLang] = useState(currentLangKey);
 
   useEffect(() => {
     const localLang = localStorage.getItem('lang');
-    if (localLang) {
-      setLang(localLang);
-    } else {
-      setLang(navigator.language.split('-')[0]);
+    let lang = localLang ? localLang : navigator.language.split('-')[0];
+    const isSupportedLang = langs.filter(l => lang === l)[0];
+    if (!isSupportedLang) lang = defaultLangKey;
+    setLang(lang);
+
+    if (langKey !== lang) {
+      const prefix = lang === defaultLangKey ? '/' : `/${lang}/`;
+      const splitKey = langKey === defaultLangKey ? '/' : `/${langKey}/`;
+      const pathArray = pathname.split(splitKey);
+      let to = '';
+
+      if (pathArray[1]) to = pathArray[1];
+      else if (pathArray[0] !== '/') to = pathArray[0];
+      navigate(`${prefix}${to}`);
     }
   });
 
   return (
     <LangContext.Provider
       value={{
-        lang,
+        defaultLangKey,
+        langKey,
         langsList,
+        pathname,
         toggleLanguage: (value: string) => {
           setLang(value);
           localStorage.setItem('lang', value);
         },
       }}
     >
-      <IntlProvider locale={lang}>
-        {children}
-      </IntlProvider>
+      {children}
     </LangContext.Provider>
   );
 };

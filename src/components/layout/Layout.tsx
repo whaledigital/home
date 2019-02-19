@@ -6,7 +6,7 @@ import GQL from 'src/graphql-types';
 import { Header } from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
-import { LangProvider } from 'components/LangContext';
+import { LangProvider, Languages } from 'components/LangContext';
 
 import s from './Layout.module.scss';
 
@@ -27,11 +27,6 @@ export interface LayoutProps {
   data: LayoutData;
   location: { pathname: string; };
   children: any;
-}
-
-export interface Languages {
-  langs: string[];
-  defaultLangKey: string;
 }
 
 export interface SocialLink {

@@ -1,31 +1,36 @@
 import { navigate } from 'gatsby';
 import React from 'react';
-const changeCase = require('change-case');
 
 import Dropdown from 'components/dropdown/Dropdown';
-import { LangConsumer } from 'components/LangContext';
-
-interface Lang {
-  link: string;
-  langKey: string;
-  selected: boolean;
-}
+import { LangConsumer, LangConsumerProps } from 'components/LangContext';
 
 const LangSelect = () => {
   return (
     <LangConsumer>
-      {({ langsList }: { langsList: Lang[]}) => {
-        let selected = '';
+      {({ langKey, langsList, toggleLanguage, defaultLangKey, pathname }: LangConsumerProps) => {
+        const selected = langsList.filter(item => item.langKey === langKey)[0].langKey;
         const options = langsList.map((item) => {
-          if (item.selected) selected = item.langKey;
           return {
-            label: changeCase.upperCaseFirst(item.langKey),
-            value: item.langKey === 'en' ? '/' : item.link,
+            label: item.langKey,
+            value: item.langKey,
           };
         });
+        const onChange = (lang: string) => {
+          const selectedLang = langsList.filter(item => item.langKey === lang)[0];
+          const prefix = selectedLang.langKey === defaultLangKey ? '/' : selectedLang.link;
+          const splitKey = selected === defaultLangKey ? '/' : `/${selected}/`;
+          const pathArray = pathname.split(splitKey);
+          let to = '';
+
+          if (pathArray[1]) to = pathArray[1];
+          else if (pathArray[0] !== '/') to = pathArray[0];
+
+          toggleLanguage(selectedLang.langKey);
+          navigate(`${prefix}${to}`);
+        };
         return (
           <Dropdown
-            onChange={navigate}
+            onChange={onChange}
             options={options}
             value={selected}
           />

@@ -8,7 +8,7 @@ import { withLayout } from 'components/layout/Layout';
 const ServicePage = (props: any) => {
   const service = props.data.service;
   return (
-    <Segment inverted>
+    <Segment>
       <h1>{service.title}</h1>
       <div>
         <Img fixed={service.image.fixed} />

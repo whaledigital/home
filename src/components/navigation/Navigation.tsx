@@ -1,6 +1,7 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 
+import Link from 'components/Link';
 import { ContentfulNavigationEdge } from 'src/graphql-types';
 
 import * as s from './Navigation.module.scss';
