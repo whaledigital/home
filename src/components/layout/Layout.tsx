@@ -35,7 +35,9 @@ export interface SocialLink {
 }
 
 const Layout: React.SFC<LayoutProps> = (props) => {
-  useEffect(() => AOS.init({ duration: 1000, once: true }));
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  });
 
   return (
     <LangProvider
