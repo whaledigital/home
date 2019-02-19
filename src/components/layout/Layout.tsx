@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 
 import GQL from 'src/graphql-types';
@@ -35,7 +35,7 @@ export interface SocialLink {
 }
 
 const Layout: React.SFC<LayoutProps> = (props) => {
-  AOS.init({ duration: 1000, once: true });
+  useEffect(() => AOS.init({ duration: 1000, once: true }));
 
   return (
     <LangProvider
