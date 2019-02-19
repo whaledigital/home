@@ -23,42 +23,6 @@ function encode (data: { [key: string]: any }) {
   return formData;
 }
 
-const constraints = {
-  agreement: {
-    inclusion: {
-      message: 'You should agree with our terms',
-      within: [true],
-    },
-    presence: {
-      allowEmpty: false,
-      message: 'You should agree with our terms',
-    },
-  },
-  email: {
-    email: {
-      message: 'Email is not valid',
-    },
-  },
-  message: {
-    presence: {
-      allowEmpty: false,
-      message: 'Message is required',
-    },
-  },
-  name: {
-    presence: {
-      allowEmpty: false,
-      message: 'Name is required',
-    },
-  },
-  phone: {
-    presence: {
-      allowEmpty: false,
-      message: 'Phone is required',
-    },
-  },
-};
-
 interface ContactsProps {
   dictionary: Dictionary;
 }
@@ -78,6 +42,42 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
     showErrors: false,
   };
 
+  constraints = {
+    agreement: {
+      inclusion: {
+        message: this.props.dictionary.contactsAgreementRequired,
+        within: [true],
+      },
+      presence: {
+        allowEmpty: false,
+        message: this.props.dictionary.contactsAgreementRequired,
+      },
+    },
+    email: {
+      email: {
+        message: this.props.dictionary.contactsEmailRequired,
+      },
+    },
+    message: {
+      presence: {
+        allowEmpty: false,
+        message: this.props.dictionary.contactsMessageRequired,
+      },
+    },
+    name: {
+      presence: {
+        allowEmpty: false,
+        message: this.props.dictionary.contactsNameRequired,
+      },
+    },
+    phone: {
+      presence: {
+        allowEmpty: false,
+        message: this.props.dictionary.contactsPhoneRequired,
+      },
+    },
+  };
+
   handleChange = (event: React.ChangeEvent<HTMLTextAreaElement & HTMLInputElement>) => {
     const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
     this.setState({ fields: { ...this.state.fields, [event.target.name]: value } });
@@ -90,7 +90,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const formErrors = validate(this.state.fields, constraints);
+    const formErrors = validate(this.state.fields, this.constraints);
     const { attachment, ...body } = this.state.fields; // Temporary remove file sending
 
     if (formErrors) return this.setState({ showErrors: true });
@@ -137,7 +137,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
                     name="name"
                     onChange={this.handleChange}
                     required
-                    constraints={constraints.name}
+                    constraints={this.constraints.name}
                     showErrors={this.state.showErrors}
                   />
                 </div>
@@ -161,7 +161,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
                     name="email"
                     onChange={this.handleChange}
                     required
-                    constraints={constraints.email}
+                    constraints={this.constraints.email}
                     showErrors={this.state.showErrors}
                   />
                 </div>
@@ -173,7 +173,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
                     name="phone"
                     onChange={this.handleChange}
                     required
-                    constraints={constraints.phone}
+                    constraints={this.constraints.phone}
                     showErrors={this.state.showErrors}
                   />
                 </div>
@@ -188,7 +188,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
                     onChange={this.handleChange}
                     required
                     multiline
-                    constraints={constraints.message}
+                    constraints={this.constraints.message}
                     showErrors={this.state.showErrors}
                   />
                 </div>
@@ -241,7 +241,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
                   name="agreement"
                   onChange={this.handleChange}
                   checked={this.state.fields.agreement.value}
-                  constraints={constraints.agreement}
+                  constraints={this.constraints.agreement}
                   showErrors={this.state.showErrors}
                 />
               </div>
