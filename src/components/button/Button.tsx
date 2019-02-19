@@ -28,7 +28,7 @@ const Button = (props: ButtonProps) => {
 };
 
 Button.defaultProps = {
-  onClick: (): any => undefined,
+  onClick: (): void => undefined,
   size: 'normal',
   type: 'button',
 };

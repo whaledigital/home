@@ -8,6 +8,7 @@ import Bubbles3 from 'assets/svg/bubbles-3.svg';
 import Bubbles4 from 'assets/svg/bubbles-4.svg';
 import Bubbles5 from 'assets/svg/bubbles-5.svg';
 
+import { Dictionary } from 'utils/dictionary';
 import Segment from 'components/segment/Segment';
 import Button from 'components/button/Button';
 
@@ -58,6 +59,10 @@ const constraints = {
   },
 };
 
+interface ContactsProps {
+  dictionary: Dictionary;
+}
+
 interface ContactsState {
   fields: {
     [key: string]: any;
@@ -65,7 +70,7 @@ interface ContactsState {
   showErrors: boolean;
 }
 
-class Contacts extends React.Component<{ dictionary: any }, ContactsState> {
+class Contacts extends React.Component<ContactsProps, ContactsState> {
   state: ContactsState = {
     fields: {
       agreement: false,

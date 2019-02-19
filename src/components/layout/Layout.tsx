@@ -5,7 +5,7 @@ import AOS from 'aos';
 import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { Header } from 'components/header/Header';
-import Footer from 'components/footer/Footer';
+import Footer, { SocialLink } from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
 import { LangProvider, Languages } from 'components/LangContext';
 
@@ -14,7 +14,8 @@ import s from './Layout.module.scss';
 export interface LayoutData {
   footerOffices: GQL.ContentfulOfficeConnection;
   footerServices: GQL.ContentfulServiceConnection;
-  navigation: GQL.ContentfulNavigationConnection;
+  navigationHeader: GQL.ContentfulNavigationConnection;
+  navigationFooter: GQL.ContentfulNavigationConnection;
   dictionaryLayout: GQL.ContentfulDictionaryConnection;
   site: {
     siteMetadata: {
@@ -28,12 +29,7 @@ export interface LayoutData {
 export interface LayoutProps {
   data: LayoutData;
   location: { pathname: string; };
-  children: any;
-}
-
-export interface SocialLink {
-  url: string;
-  name: string;
+  children: React.ReactNode;
 }
 
 const Layout: React.SFC<LayoutProps> = (props) => {
@@ -52,13 +48,15 @@ const Layout: React.SFC<LayoutProps> = (props) => {
         <Header button={dictionaryLayout.startProject}>
           <Navigation
             pathname={props.location.pathname}
-            items={props.data.navigation.edges}
+            items={props.data.navigationHeader.edges}
           />
         </Header>
         {props.children}
         <Footer
           title={props.data.site.siteMetadata.title}
+          dictionary={dictionaryLayout}
           offices={props.data.footerOffices.edges}
+          company={props.data.navigationFooter.edges}
           services={props.data.footerServices.edges}
           socialLinks={props.data.site.siteMetadata.socialLinks}
         />
@@ -112,15 +110,31 @@ export const expertiseQuery = graphql`
       filter: {
         node_locale: { eq: $lang },
         slug: { in: [
-          "startProject"
+          "startProject",
+          "expertise",
+          "company",
+          "copyright",
+          "terms"
         ]
       }}
     ) {
       edges { node { slug title } }
     }
-    navigation: allContentfulNavigation(
+    navigationHeader: allContentfulNavigation(
       sort: { fields: order },
-      filter: { node_locale: { eq: $lang } }
+      filter: {
+        node_locale: { eq: $lang },
+        header: { eq: true },
+      }
+    ) {
+      edges { node { ...NavigationFragment }}
+    }
+    navigationFooter: allContentfulNavigation(
+      sort: { fields: order },
+      filter: {
+        node_locale: { eq: $lang },
+        footer: { eq: true },
+      }
     ) {
       edges { node { ...NavigationFragment }}
     }

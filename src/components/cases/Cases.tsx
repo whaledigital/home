@@ -1,4 +1,4 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
@@ -14,6 +14,7 @@ import {
 } from 'src/graphql-types';
 import Segment from 'components/segment/Segment';
 import Box3D from 'components/box3d/Box3D';
+import Link from 'components/Link';
 
 import s from './Cases.module.scss';
 

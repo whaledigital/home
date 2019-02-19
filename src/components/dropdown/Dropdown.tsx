@@ -43,7 +43,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
     if (option) this.setState({ option });
   };
 
-  handleBlur = (event: any) => {
+  handleBlur = (event: MouseEvent) => {
     if (event.target === this.rootRef) {
       return false;
     }

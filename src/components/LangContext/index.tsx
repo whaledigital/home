@@ -15,7 +15,7 @@ export const LangContext = createContext(undefined);
 export interface LangProviderProps {
   languages: Languages;
   pathname: string;
-  children: any;
+  children: React.ReactNode;
 }
 
 export interface LangConsumerProps {
