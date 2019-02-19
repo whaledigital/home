@@ -43,7 +43,7 @@ const Footer = (props: FooterProps) => {
         </div>
         <div className={s.footer__gridServices}>
           <div className={s.footer__servicesBlock}>
-            <h6 className={s.footer__title}>{props.dictionary.servicesTitle}</h6>
+            <h6 className={s.footer__title}>{props.dictionary.expertise}</h6>
             <ul>
               {props.services.map(({ node }: GQL.ContentfulOfficeEdge) => (
                 <li key={node.id}>
@@ -55,7 +55,7 @@ const Footer = (props: FooterProps) => {
         </div>
         <div className={s.footer__gridCompany}>
           <div className={s.footer__companyBlock}>
-            <h6 className={s.footer__title}>{props.dictionary.companyTitle}</h6>
+            <h6 className={s.footer__title}>{props.dictionary.company}</h6>
             <ul>
               {props.company.map(({ node }: GQL.ContentfulNavigationEdge) => (
                 <li key={node.id}>
