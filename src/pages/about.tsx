@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 
 import { withLayout } from 'components/layout/Layout';
@@ -11,7 +12,7 @@ const AboutPage = () => {
         title="About"
         keywords={[`development`]}
       />
-      <Segment inverted>
+      <Segment>
         <h1>About</h1>
       </Segment>
     </>
@@ -19,3 +20,9 @@ const AboutPage = () => {
 };
 
 export default withLayout(AboutPage);
+
+export const pageQuery = graphql`
+  query ($lang: String) {
+    ...LayoutFragment
+  }
+`;

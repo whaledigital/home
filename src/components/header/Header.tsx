@@ -1,27 +1,16 @@
-import { Link } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 
 import Logo from 'components/logo/Logo';
-import Dropdown from 'components/dropdown/Dropdown';
 import Button from 'components/button/Button';
+import LangSelect from 'components/LangSelect';
+import Link from 'components/Link';
 
 import s from './Header.module.scss';
 
 interface HeaderProps {
   children?: React.ReactNode;
 }
-
-const options = [
-  {
-    label: 'Ru',
-    value: 'ru',
-  },
-  {
-    label: 'En',
-    value: 'en',
-  },
-];
 
 export const Header = ({ children }: HeaderProps) => {
   const [menu, toggleMenu] = useState(false);
@@ -67,11 +56,7 @@ export const Header = ({ children }: HeaderProps) => {
             </Link>
             <div className={s.header__navigation}>
               <div className={s.header__navigationButtons}>
-                <Dropdown
-                  onChange={console.log}
-                  options={options}
-                  value="ru"
-                />
+                <LangSelect />
                 <div
                   className={classNames({
                     [s.header__navigationButtons_hidden]: !visibility.background },
@@ -104,11 +89,7 @@ export const Header = ({ children }: HeaderProps) => {
       >
         {children}
         <div className={s.header__mobileButtons}>
-          <Dropdown
-            onChange={console.log}
-            options={options}
-            value="ru"
-          />
+          <LangSelect />
           <Button title="Start a project" size="large" />
         </div>
       </nav>

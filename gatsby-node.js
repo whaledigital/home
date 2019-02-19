@@ -2,6 +2,8 @@ const path = require('path');
 const slash = require('slash');
 const changeCase = require('change-case');
 
+const languages = require('./src/constants/locales');
+
 // Create slugs for files.
 // Slug will used for blog page path.
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -61,6 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               slug
+              node_locale
             }
           }
         }
@@ -71,14 +74,21 @@ exports.createPages = ({ graphql, actions }) => {
       }
 
       const services = result.data.services.edges.map(p => p.node);
+      const { defaultLangKey } = languages;
 
       // Create services pages
       services.forEach(service => {
+        const localizedPath =
+          service.node_locale === defaultLangKey
+            ? service.slug
+            : `${service.node_locale}/${service.slug}`;
+
         createPage({
-          path: service.slug,
+          path: localizedPath,
           component: slash(templates.service),
           context: {
             slug: service.slug,
+            lang: service.node_locale,
           },
         });
       });
@@ -89,13 +99,25 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { deletePage, createPage } = actions;
+  const { createPage, deletePage } = actions;
+
   return new Promise(resolve => {
-    // If the page component is the index page component create a new page but with '/' as path
-    if (page.componentPath === `${__dirname}/src/pages/index/index.tsx`) {
-      deletePage(page);
-      createPage({ ...page, path: '/' });
-    }
+    deletePage(page);
+
+    const { langs, defaultLangKey } = languages;
+
+    langs.forEach(lang => {
+      const localizedPath =
+        lang === defaultLangKey ? page.path : lang + page.path;
+
+      return createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          lang,
+        },
+      });
+    });
 
     resolve();
   });

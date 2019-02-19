@@ -87,9 +87,9 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
   };
 
   render () {
-    const { options, placeholder } = this.props;
+    const { value, options, placeholder } = this.props;
     const { active, option } = this.state;
-    const label = option.label || placeholder;
+    const label = value || option.label || placeholder;
 
     return (
       <div
@@ -119,10 +119,7 @@ class Dropdown extends React.Component<DropdownProps, DropdownState> {
         key={item.value}
         data-key={item.value}
         data-index={index}
-        className={classNames(
-          s.dropdown__list__item,
-          { [s.dropdown__list__itemActive]: activeIndex === index },
-        )}
+        className={s.dropdown__list__item}
         onClick={onClick}
       >
         {item.label}

@@ -1,3 +1,5 @@
+const languages = require('./src/constants/locales');
+
 if (process.env.NODE_ENV === 'development') {
   require('dotenv').config();
 }
@@ -13,6 +15,7 @@ module.exports = {
       { url: 'https://www.linkedin.com/', name: 'linkedin' },
       { url: 'https://www.instagram.com/', name: 'instagram' },
     ],
+    languages,
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -20,7 +23,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/data`,
+        path: `${__dirname}/src/data`,
       },
     },
 
@@ -133,7 +136,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: ['/thank-you'],
+        exclude: ['/thank-you', '/ru/thank-you'],
         query: `
           {
             site {

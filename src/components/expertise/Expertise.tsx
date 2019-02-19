@@ -1,4 +1,4 @@
-import { Link, navigate } from 'gatsby';
+import { Link, navigate, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import classNames from 'classnames';
@@ -115,7 +115,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
                 <Img fluid={node.image.fluid} className={s.expertise__showcase__itemImage} />
                 <div className={s.expertise__showcase__itemShadow} />
                 <h4 className={s.expertise__showcase__itemTitle}>
-                  {node.directions.join(' / ')}
+                  {node.directions && node.directions.join(' / ')}
                 </h4>
               </Link>
             </Box3D>
@@ -153,3 +153,17 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
 }
 
 export default Expertise;
+
+export const expertiseQuery = graphql`
+  fragment ServiceFragment on ContentfulService {
+    id
+    title
+    slug
+    image {
+      fluid(maxWidth: 700) {
+        ...GatsbyContentfulFluid_noBase64
+      }
+    }
+    directions
+  }
+`;

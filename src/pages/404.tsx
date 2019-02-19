@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import React from 'react';
 
 import { withLayout } from 'components/layout/Layout';
@@ -15,3 +16,9 @@ const NotFoundPage = () => (
 );
 
 export default withLayout(NotFoundPage);
+
+export const pageQuery = graphql`
+  query ($lang: String) {
+    ...LayoutFragment
+  }
+`;

@@ -25,7 +25,7 @@ interface BackgroundProps {
 }
 
 class Background extends React.Component<BackgroundProps> {
-  mount: HTMLElement;
+  container: HTMLElement;
   scene: THREE.Scene;
   camera: THREE.PerspectiveCamera;
   renderer: THREE.WebGLRenderer;
@@ -52,13 +52,13 @@ class Background extends React.Component<BackgroundProps> {
 
   componentWillUnmount () {
     this.stop();
-    this.mount.removeChild(this.renderer.domElement);
+    this.container.removeChild(this.renderer.domElement);
     window.removeEventListener('resize', this.onWindowResize);
   }
 
   buildCamera = () => {
-    this.width = this.mount.clientWidth;
-    this.height = this.mount.clientHeight;
+    this.width = this.container.clientWidth;
+    this.height = this.container.clientHeight;
 
     this.camera = new THREE.PerspectiveCamera(50, this.width / this.height, 1, 1400);
     this.camera.position.z = this.positionZ;
@@ -68,9 +68,10 @@ class Background extends React.Component<BackgroundProps> {
 
   buildRenderer = () => {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
+    // this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setClearColor(this.props.fill);
     this.renderer.setSize(this.width, this.height);
-    this.mount.appendChild(this.renderer.domElement);
+    this.container.appendChild(this.renderer.domElement);
   }
 
   buildScene = () => {
@@ -108,8 +109,8 @@ class Background extends React.Component<BackgroundProps> {
   }
 
   onWindowResize = () => {
-    this.width = this.mount.clientWidth;
-    this.height = this.mount.clientHeight;
+    this.width = this.container.clientWidth;
+    this.height = this.container.clientHeight;
 
     this.camera.aspect = this.width / this.height;
     this.camera.updateProjectionMatrix();
@@ -172,7 +173,7 @@ class Background extends React.Component<BackgroundProps> {
       <div
         data-aos="fade"
         className={s.container}
-        ref={mount => this.mount = mount}
+        ref={ref => this.container = ref}
       />
     );
   }

@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
@@ -100,3 +100,17 @@ class Cases extends React.Component<CasesProps> {
 }
 
 export default Cases;
+
+export const caseQuery = graphql`
+  fragment CaseFragment on ContentfulCase {
+    id
+    title
+    slug
+    thumbnail {
+      fluid(maxHeight: 400) {
+        ...GatsbyContentfulFluid_noBase64
+      }
+    }
+    description
+  }
+`;
