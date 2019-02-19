@@ -65,7 +65,7 @@ interface ContactsState {
   showErrors: boolean;
 }
 
-class Contacts extends React.Component<{}, ContactsState> {
+class Contacts extends React.Component<{ dictionary: any }, ContactsState> {
   state: ContactsState = {
     fields: {
       agreement: false,
@@ -102,8 +102,9 @@ class Contacts extends React.Component<{}, ContactsState> {
   };
 
   render () {
+    const { dictionary } = this.props;
     return (
-      <Segment title="Let’s make your progress together">
+      <Segment title={dictionary.contacts}>
         <div className={s.contacts} data-aos="fade-up">
           <form
             name="contact"
@@ -127,7 +128,7 @@ class Contacts extends React.Component<{}, ContactsState> {
 
                 <div className={s.formItem__gridItem}>
                   <Input
-                    label="Name"
+                    label={dictionary.contactsName}
                     name="name"
                     onChange={this.handleChange}
                     required
@@ -138,7 +139,7 @@ class Contacts extends React.Component<{}, ContactsState> {
 
                 <div className={s.formItem__gridItem}>
                   <Input
-                    label="Name of your company"
+                    label={dictionary.contactsCompany}
                     name="company"
                     onChange={this.handleChange}
                     showErrors={this.state.showErrors}
@@ -151,7 +152,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                 <div className={s.formItem__gridItem}>
                   <Input
                     type="email"
-                    label="Email"
+                    label={dictionary.contactsEmail}
                     name="email"
                     onChange={this.handleChange}
                     required
@@ -163,7 +164,7 @@ class Contacts extends React.Component<{}, ContactsState> {
                 <div className={s.formItem__gridItem}>
                   <Input
                     type="phone"
-                    label="Phone"
+                    label={dictionary.contactsPhone}
                     name="phone"
                     onChange={this.handleChange}
                     required
@@ -177,7 +178,7 @@ class Contacts extends React.Component<{}, ContactsState> {
 
                 <div className={s.formItem__gridItem}>
                   <Input
-                    label="Message"
+                    label={dictionary.contactsMessage}
                     name="message"
                     onChange={this.handleChange}
                     required
@@ -208,8 +209,10 @@ class Contacts extends React.Component<{}, ContactsState> {
                       >
                         <input {...getInputProps()} />
                         {isDragAccept
-                          ? `Drop files here...`
-                          : acceptedFiles.length ? acceptedFiles[0].name : `Drag files here...`
+                          ? dictionary.contactsFileDrop
+                          : acceptedFiles.length
+                            ? acceptedFiles[0].name
+                            : dictionary.contactsFileDrag
                         }
                         {
                           !acceptedFiles.length &&
@@ -229,8 +232,7 @@ class Contacts extends React.Component<{}, ContactsState> {
               <div className={s.formFooter__agreement}>
                 <Input
                   type="checkbox"
-                  // tslint:disable-next-line:max-line-length
-                  label={`Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.`}
+                  label={dictionary.contactsAgreement}
                   name="agreement"
                   onChange={this.handleChange}
                   checked={this.state.fields.agreement.value}
@@ -241,7 +243,7 @@ class Contacts extends React.Component<{}, ContactsState> {
 
               <div className={s.formFooter__submit}>
                 <Button
-                  title="Submit"
+                  title={dictionary.contactsSubmit}
                   type="submit"
                   size="large"
                 />

@@ -39,6 +39,7 @@ const PrevArrow = (props: CustomArrowProps) => (
 
 interface CasesProps {
   items: ContentfulCaseEdge[];
+  title: string;
 }
 
 class Cases extends React.Component<CasesProps> {
@@ -69,7 +70,7 @@ class Cases extends React.Component<CasesProps> {
     };
 
     return (
-      <Segment title="Cases">
+      <Segment title={this.props.title}>
         <Slider {...settings}>
           {this.props.items.map(({ node }: ContentfulCaseEdge, i: number) => {
             return (

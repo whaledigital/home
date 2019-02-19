@@ -15,6 +15,7 @@ import Box3D from 'components/box3d/Box3D';
 import s from './Expertise.module.scss';
 
 interface ExpertiseProps {
+  title: string;
   items: ContentfulServiceEdge[];
 }
 
@@ -128,7 +129,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
   render () {
     if (!this.props.items) return null;
     return (
-      <Segment title="Expertise">
+      <Segment title={this.props.title}>
         <div className={s.expertise}>
           {this.renderMenu()}
           {this.renderBoxes()}

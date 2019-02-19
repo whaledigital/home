@@ -13,6 +13,7 @@ import s from './Experts.module.scss';
 
 interface ExpertsProps {
   items: ContentfulExpertEdge[];
+  title: string;
 }
 
 class Experts extends React.Component<ExpertsProps> {
@@ -43,7 +44,7 @@ class Experts extends React.Component<ExpertsProps> {
     };
 
     return (
-      <Segment title="Experts">
+      <Segment title={this.props.title}>
         <Slider {...settings}>
           {this.props.items.map(({ node }: ContentfulExpertEdge) => {
             return (

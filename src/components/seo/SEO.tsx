@@ -50,7 +50,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: SEOProps) => {
         },
       ]
         .concat(
-          keywords.length > 0
+          keywords && keywords.length > 0
             ? {
               content: keywords.join(`, `),
               name: `keywords`,
@@ -64,7 +64,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: SEOProps) => {
 
 SEO.defaultProps = {
   keywords: [],
-  lang: `ru`,
+  lang: 'en',
   meta: [],
 };
 

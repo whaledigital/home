@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 
 import GQL from 'src/graphql-types';
+import { getDictionary } from 'utils/dictionary';
 import { Header } from 'components/header/Header';
 import Footer from 'components/footer/Footer';
 import { Navigation } from 'components/navigation/Navigation';
@@ -14,6 +15,7 @@ export interface LayoutData {
   footerOffices: GQL.ContentfulOfficeConnection;
   footerServices: GQL.ContentfulServiceConnection;
   navigation: GQL.ContentfulNavigationConnection;
+  dictionaryLayout: GQL.ContentfulDictionaryConnection;
   site: {
     siteMetadata: {
       title: string;
@@ -39,13 +41,15 @@ const Layout: React.SFC<LayoutProps> = (props) => {
     AOS.init({ duration: 1000, once: true });
   });
 
+  const dictionaryLayout = getDictionary(props.data.dictionaryLayout.edges);
+
   return (
     <LangProvider
       pathname={props.location.pathname}
       languages={props.data.site.siteMetadata.languages}
     >
       <div className={s.wrapper}>
-        <Header>
+        <Header button={dictionaryLayout.startProject}>
           <Navigation
             pathname={props.location.pathname}
             items={props.data.navigation.edges}
@@ -80,6 +84,16 @@ export const withLayout = <P extends object>(WrappedComponent: React.ComponentTy
 };
 
 export const expertiseQuery = graphql`
+  fragment PageFragment on ContentfulPage {
+    pageTitle
+    pageKeywords
+    pageDescription
+    headerTitle
+    headerDescription {
+      headerDescription
+    }
+    node_locale
+  }
   fragment LayoutFragment on Query {
     site {
       siteMetadata {
@@ -93,6 +107,16 @@ export const expertiseQuery = graphql`
           defaultLangKey
         }
       }
+    }
+    dictionaryLayout: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        slug: { in: [
+          "startProject"
+        ]
+      }}
+    ) {
+      edges { node { slug title } }
     }
     navigation: allContentfulNavigation(
       sort: { fields: order },

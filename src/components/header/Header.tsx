@@ -10,9 +10,10 @@ import s from './Header.module.scss';
 
 interface HeaderProps {
   children?: React.ReactNode;
+  button: string;
 }
 
-export const Header = ({ children }: HeaderProps) => {
+export const Header = ({ children, button }: HeaderProps) => {
   const [menu, toggleMenu] = useState(false);
   const [visibility, setVisibility] = useState({
     background: false,
@@ -62,7 +63,7 @@ export const Header = ({ children }: HeaderProps) => {
                     [s.header__navigationButtons_hidden]: !visibility.background },
                   )}
                 >
-                  <Button title="Start a project" />
+                  <Button title={button} />
                 </div>
               </div>
               <div
@@ -90,7 +91,7 @@ export const Header = ({ children }: HeaderProps) => {
         {children}
         <div className={s.header__mobileButtons}>
           <LangSelect />
-          <Button title="Start a project" size="large" />
+          <Button title={button} size="large" />
         </div>
       </nav>
     </>

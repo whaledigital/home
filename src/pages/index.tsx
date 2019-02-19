@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import GQL from 'src/graphql-types';
+import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Expertise from 'components/expertise/Expertise';
@@ -13,8 +14,10 @@ import Contacts from 'components/contacts/Contacts';
 interface HomeData extends LayoutData {
   cases: GQL.ContentfulCaseConnection;
   experts: GQL.ContentfulExpertConnection;
-  home: GQL.ContentfulHomeConnection;
   services: GQL.ContentfulServiceConnection;
+  page: GQL.ContentfulPage;
+  dictionaryHome: GQL.ContentfulDictionaryConnection;
+  dictionaryContacts: GQL.ContentfulDictionaryConnection;
 }
 
 export interface HomeProps extends LayoutProps {
@@ -22,18 +25,29 @@ export interface HomeProps extends LayoutProps {
 }
 
 const Home: React.SFC<HomeProps> = ({ data }) => {
-  const [home] = data.home.edges;
+  const { page } = data;
   const services = data.services.edges;
   const cases = data.cases.edges;
   const experts = data.experts.edges;
+  const dictionaryHome = getDictionary(data.dictionaryHome.edges);
+  const dictionaryContacts = getDictionary(data.dictionaryContacts.edges);
+  const seo = {
+    description: page.pageDescription,
+    keywords: page.pageKeywords,
+    lang: page.node_locale,
+    title: page.pageTitle,
+  };
   return (
     <>
-      <SEO title={home.node.title} keywords={[`development`]} />
-      <Heading description={home.node.description.description} />
-      <Expertise items={services} />
-      <Cases items={cases} />
-      <Experts items={experts} />
-      <Contacts />
+      <SEO {...seo} />
+      <Heading
+        description={page.headerDescription.headerDescription}
+        button={dictionaryHome.startProject}
+      />
+      <Expertise title={dictionaryHome.expertise} items={services} />
+      <Cases title={dictionaryHome.cases} items={cases} />
+      <Experts title={dictionaryHome.experts} items={experts} />
+      <Contacts dictionary={dictionaryContacts} />
     </>
   );
 };
@@ -43,16 +57,33 @@ export default withLayout<HomeProps>(Home);
 export const pageQuery = graphql`
   query HomeQuery($lang: String) {
     ...LayoutFragment
-    home: allContentfulHome {
-      edges {
-        node {
-          id
-          title
-          description {
-            description
-          }
-        }
+    page: contentfulPage(
+      slug: { eq: "home" },
+      node_locale: { eq: $lang }
+    ) {
+      ...PageFragment
+    }
+    dictionaryHome: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        slug: { in: [
+          "expertise",
+          "cases",
+          "experts",
+          "contacts",
+          "startProject"
+        ]
+      }}
+    ) {
+      edges { node { slug title } }
+    }
+    dictionaryContacts: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        category: { eq: "contacts" }
       }
+    ) {
+      edges { node { slug title } }
     }
     services: allContentfulService(
       sort: { fields: order },

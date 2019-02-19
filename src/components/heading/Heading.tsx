@@ -7,9 +7,10 @@ import s from './Heading.module.scss';
 
 interface HeadingProps {
   description: string;
+  button: string;
 }
 
-const Heading = ({ description }: HeadingProps) => (
+const Heading = ({ description, button }: HeadingProps) => (
   <div className={s.heading}>
     <div className={s.heading__gradient} />
     <div className={s.heading__background}>
@@ -19,7 +20,7 @@ const Heading = ({ description }: HeadingProps) => (
     <div className={s.heading__container}>
       <h1 className={s.heading__containerDescription} data-aos="fade-right">{description}</h1>
       <div className={s.heading__containerButton} data-aos="fade-left">
-        <Button title="Start a project" size="large" />
+        <Button title={button} size="large" />
       </div>
     </div>
   </div>
