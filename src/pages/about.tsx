@@ -7,6 +7,7 @@ import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Segment from 'components/segment/Segment';
 import Contacts from 'components/contacts/Contacts';
+import Heading from 'components/Heading';
 
 interface AboutData extends LayoutData {
   page: GQL.ContentfulPage;
@@ -30,10 +31,11 @@ const AboutPage = ({ data }: AboutProps) => {
   return (
     <>
       <SEO {...seo} />
-      <Segment>
-        <h1>{page.headerTitle}</h1>
-        <p>{page.headerDescription.headerDescription}</p>
-      </Segment>
+      <Heading
+        type="page"
+        title={page.headerTitle}
+        description={page.headerDescription.headerDescription}
+      />
       <Segment title={'segment title'}>
         <p>description</p>
       </Segment>

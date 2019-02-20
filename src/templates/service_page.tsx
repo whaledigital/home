@@ -4,17 +4,21 @@ import * as React from 'react';
 
 import Segment from 'components/segment/Segment';
 import { withLayout } from 'components/layout/Layout';
+import Heading from 'components/Heading';
 
 const ServicePage = (props: any) => {
   const { service } = props.data;
   return (
-    <Segment>
-      <h1>{service.title}</h1>
-      <div>
+    <>
+      <Heading
+        type="service"
+        title={service.title}
+        description={service.directions && service.directions.join(' / ')}
+      />
+      <Segment>
         <Img fixed={service.image.fixed} />
-        <p>{service.directions && service.directions.join(' / ')}</p>
-      </div>
-    </Segment>
+      </Segment>
+    </>
   );
 };
 
