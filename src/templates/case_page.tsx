@@ -5,33 +5,33 @@ import * as React from 'react';
 import Segment from 'components/segment/Segment';
 import { withLayout } from 'components/layout/Layout';
 
-const ServicePage = (props: any) => {
-  const service = props.data.service;
+const CasePage = (props: any) => {
+  const { caseItem } = props.data;
   return (
     <Segment>
-      <h1>{service.title}</h1>
+      <h1>{caseItem.title}</h1>
       <div>
-        <Img fixed={service.image.fixed} />
-        <p>{service.directions.join(' / ')}</p>
+        <Img fixed={caseItem.thumbnail.fixed} />
+        <p>{caseItem.description}</p>
       </div>
     </Segment>
   );
 };
 
-export default withLayout(ServicePage);
+export default withLayout(CasePage);
 
 export const pageQuery = graphql`
-  query TemplateService($slug: String!, $lang: String) {
+  query TemplateCase($slug: String!, $lang: String) {
     ...LayoutFragment
-    service: contentfulService(slug: { eq: $slug}, node_locale: { eq: $lang}) {
+    caseItem: contentfulCase(slug: { eq: $slug}, node_locale: { eq: $lang}) {
       id
       title
-      image {
+      description
+      thumbnail {
         fixed(width: 700, height: 300) {
           ...GatsbyContentfulFixed_noBase64
         }
       }
-      directions
     }
   }
 `;

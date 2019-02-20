@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const templates = ['service'].reduce(
+    const templates = ['servicePage', 'casePage'].reduce(
       (mem, templateName) => ({
         ...mem,
         [templateName]: path.resolve(
@@ -67,6 +67,14 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        cases: allContentfulCase {
+          edges {
+            node {
+              slug
+              node_locale
+            }
+          }
+        }
       }
     `).then(result => {
       if (result.errors) {
@@ -74,6 +82,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
 
       const services = result.data.services.edges.map(p => p.node);
+      const cases = result.data.cases.edges.map(p => p.node);
       const { defaultLangKey } = languages;
 
       // Create services pages
@@ -85,10 +94,27 @@ exports.createPages = ({ graphql, actions }) => {
 
         createPage({
           path: localizedPath,
-          component: slash(templates.service),
+          component: slash(templates.servicePage),
           context: {
             slug: service.slug,
             lang: service.node_locale,
+          },
+        });
+      });
+
+      // Create cases pages
+      cases.forEach(caseItem => {
+        const localizedPath =
+          caseItem.node_locale === defaultLangKey
+            ? caseItem.slug
+            : `${caseItem.node_locale}/${caseItem.slug}`;
+
+        createPage({
+          path: localizedPath,
+          component: slash(templates.casePage),
+          context: {
+            slug: caseItem.slug,
+            lang: caseItem.node_locale,
           },
         });
       });
