@@ -58,7 +58,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
           if (this.state.active !== node.id) {
             return this.setState({ active: node.id });
           }
-          navigate(`/${node.slug}`);
+          navigate(`/${node.slug}/`);
         };
         return (
           <li
@@ -70,7 +70,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
             data-aos-delay={(i + 1) * 50}
           >
             <Link
-              to={`/${node.slug}`}
+              to={`/${node.slug}/`}
               onMouseOver={onMouseOver}
               className={s.expertise__list__itemLink}
             >
@@ -113,7 +113,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
               data-aos-delay="500"
             />
             <Box3D height={this.state.height} width={this.state.width}>
-              <Link to={`/${node.slug}`} className={s.expertise__showcase__item}>
+              <Link to={`/${node.slug}/`} className={s.expertise__showcase__item}>
                 <Img fluid={node.image.fluid} className={s.expertise__showcase__itemImage} />
                 <div className={s.expertise__showcase__itemShadow} />
                 <h4 className={s.expertise__showcase__itemTitle}>

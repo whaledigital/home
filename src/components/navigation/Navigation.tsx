@@ -15,7 +15,7 @@ export const Navigation = ({ items }: MenuProps) => (
   <ul className={s.navigation}>
     {items.map(({ node }) => (
         <li key={node.id} className={s.navigation__item}>
-          <Link to={node.slug ? `/${node.slug}` : '/'} activeClassName={s.navigation__itemActive}>
+          <Link to={node.slug ? `/${node.slug}/` : '/'} activeClassName={s.navigation__itemActive}>
             {node.title}
           </Link>
         </li>

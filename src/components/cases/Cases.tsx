@@ -78,7 +78,7 @@ class Cases extends React.Component<CasesProps> {
               <Link
                 key={node.id}
                 className={s.cases__item}
-                to={`/${node.slug}`}
+                to={`/${node.slug}/`}
                 data-aos="fade-left"
                 data-aos-offset="200"
                 data-aos-duration="500"
