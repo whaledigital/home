@@ -3,18 +3,22 @@ import Img from 'gatsby-image';
 import * as React from 'react';
 
 import Section from 'components/Section';
+import Head from 'components/Head';
 import { withLayout } from 'components/layout/Layout';
 
 const CasePage = (props: any) => {
   const { caseItem } = props.data;
   return (
-    <Section>
-      <h1>{caseItem.title}</h1>
-      <div>
+    <>
+      <Head
+        type="page"
+        title={caseItem.title}
+        description={caseItem.description}
+      />
+      <Section fill="dark">
         <Img fixed={caseItem.thumbnail.fixed} />
-        <p>{caseItem.description}</p>
-      </div>
-    </Section>
+      </Section>
+    </>
   );
 };
 
