@@ -70,8 +70,6 @@ class Background extends React.Component<BackgroundProps> {
     this.renderer = new THREE.WebGLRenderer({
       alpha: false,
       antialias: true,
-      clearColor: 0x101229,
-      devicePixelRatio: window.devicePixelRatio,
       logarithmicDepthBuffer: true,
       precision: 'highp',
       preserveDrawingBuffer: true,
