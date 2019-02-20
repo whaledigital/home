@@ -9,7 +9,7 @@ import Bubbles4 from 'assets/svg/bubbles-4.svg';
 import Bubbles5 from 'assets/svg/bubbles-5.svg';
 
 import { Dictionary } from 'utils/dictionary';
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import Button from 'components/button/Button';
 
 import Input from './components/input/Input';
@@ -109,7 +109,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
   render () {
     const { dictionary } = this.props;
     return (
-      <Segment title={dictionary.contacts}>
+      <Section title={dictionary.contacts}>
         <div className={s.contacts} data-aos="fade-up">
           <form
             name="contact"
@@ -274,7 +274,7 @@ class Contacts extends React.Component<ContactsProps, ContactsState> {
             <Bubbles5 />
           </div>
         </div>
-      </Segment>
+      </Section>
     );
   }
 }

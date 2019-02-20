@@ -2,7 +2,7 @@ import { navigate, graphql } from 'gatsby';
 import React from 'react';
 
 import { withLayout } from 'components/layout/Layout';
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import Button from 'components/button/Button';
 import { SEO } from 'components/seo/SEO';
 
@@ -11,11 +11,11 @@ const ThankYouPage = () => {
   return (
     <>
       <SEO title="Thank you" />
-      <Segment>
+      <Section>
         <h1>Thank you</h1>
         <h2>for contacting us!</h2>
         <Button title="Go to homepage" onClick={navigateToHome} />
-      </Segment>
+      </Section>
     </>
   );
 };

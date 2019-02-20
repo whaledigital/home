@@ -8,7 +8,7 @@ import { SEO } from 'components/seo/SEO';
 import Expertise from 'components/expertise/Expertise';
 import Cases from 'components/cases/Cases';
 import Experts from 'components/experts/Experts';
-import Heading from 'components/Heading';
+import Head from 'components/Head';
 import Contacts from 'components/contacts/Contacts';
 
 interface HomeData extends LayoutData {
@@ -40,7 +40,7 @@ const Home: React.SFC<HomeProps> = ({ data }) => {
   return (
     <>
       <SEO {...seo} />
-      <Heading
+      <Head
         type="home"
         title={page.headerDescription.headerDescription}
         button={dictionaryHome.startProject}

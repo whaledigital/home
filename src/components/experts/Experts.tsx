@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 import {
   ContentfulExpertEdge,
 } from 'src/graphql-types';
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import Box3D from 'components/box3d/Box3D';
 
 import s from './Experts.module.scss';
@@ -44,7 +44,7 @@ class Experts extends React.Component<ExpertsProps> {
     };
 
     return (
-      <Segment title={this.props.title}>
+      <Section title={this.props.title}>
         <Slider {...settings}>
           {this.props.items.map(({ node }: ContentfulExpertEdge) => {
             return (
@@ -58,7 +58,7 @@ class Experts extends React.Component<ExpertsProps> {
             );
           })}
         </Slider>
-      </Segment>
+      </Section>
     );
   }
 }

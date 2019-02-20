@@ -4,18 +4,18 @@ import classNames from 'classnames';
 import Background from './components/Background';
 import Button from 'components/button/Button';
 
-import s from './Heading.module.scss';
+import s from './Head.module.scss';
 
-type HeadingType = 'home' | 'service' | 'page';
+type HeadType = 'home' | 'service' | 'page';
 
-interface HeadingProps {
-  type: HeadingType;
+interface HeadProps {
+  type: HeadType;
   title: string;
   description?: string;
   button?: string;
 }
 
-const renderBackground = (type: HeadingType) => {
+const renderBackground = (type: HeadType) => {
   if (type === 'home') {
     return (
       <>
@@ -39,7 +39,7 @@ const renderBackground = (type: HeadingType) => {
   }
 };
 
-const Heading = ({ type, title, description, button }: HeadingProps) => (
+const Head = ({ type, title, description, button }: HeadProps) => (
   <div
     className={classNames(s.heading, {
       [s.heading__home]: type === 'home',
@@ -68,8 +68,8 @@ const Heading = ({ type, title, description, button }: HeadingProps) => (
   </div>
 );
 
-Heading.defaultProps = {
+Head.defaultProps = {
   type: 'page',
 };
 
-export default Heading;
+export default Head;

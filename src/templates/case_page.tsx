@@ -2,19 +2,19 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import * as React from 'react';
 
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import { withLayout } from 'components/layout/Layout';
 
 const CasePage = (props: any) => {
   const { caseItem } = props.data;
   return (
-    <Segment>
+    <Section>
       <h1>{caseItem.title}</h1>
       <div>
         <Img fixed={caseItem.thumbnail.fixed} />
         <p>{caseItem.description}</p>
       </div>
-    </Segment>
+    </Section>
   );
 };
 
