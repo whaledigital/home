@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import * as React from 'react';
 
-import Segment from 'components/segment/Segment';
+import Segment from 'components/Segment';
 import { withLayout } from 'components/layout/Layout';
 
 const CasePage = (props: any) => {

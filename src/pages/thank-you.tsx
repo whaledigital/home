@@ -2,7 +2,7 @@ import { navigate, graphql } from 'gatsby';
 import React from 'react';
 
 import { withLayout } from 'components/layout/Layout';
-import Segment from 'components/segment/Segment';
+import Segment from 'components/Segment';
 import Button from 'components/button/Button';
 import { SEO } from 'components/seo/SEO';
 

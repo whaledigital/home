@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import classNames from 'classnames';
 
 import GQL from 'src/graphql-types';
-import Segment from 'components/segment/Segment';
+import Segment from 'components/Segment';
 import Box3D from 'components/box3d/Box3D';
 
 import s from './ServiceSection.module.scss';

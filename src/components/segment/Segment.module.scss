@@ -6,8 +6,13 @@
   color: $color-light;
   overflow: hidden;
 
-  &__inverted {
-    background: $color-light;
-    color: $color-dark;
+  &__fill {
+    &Dark {
+      background: $color-dark-darker;
+    }
+
+    &Light {
+      background: $color-dark-lighter;
+    }
   }
 }

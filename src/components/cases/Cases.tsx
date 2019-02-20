@@ -12,7 +12,7 @@ import IconNext from 'assets/svg/arrow_next.svg';
 import {
   ContentfulCaseEdge,
 } from 'src/graphql-types';
-import Segment from 'components/segment/Segment';
+import Segment from 'components/Segment';
 import Box3D from 'components/box3d/Box3D';
 import Link from 'components/Link';
 

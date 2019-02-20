@@ -9,7 +9,7 @@ import Bubbles2 from 'assets/svg/bubbles-2.svg';
 import {
   ContentfulServiceEdge,
 } from 'src/graphql-types';
-import Segment from 'components/segment/Segment';
+import Segment from 'components/Segment';
 import Box3D from 'components/box3d/Box3D';
 import Link from 'components/Link';
 

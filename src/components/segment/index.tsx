@@ -1,23 +1,30 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { Container } from 'components/container/Container';
+import Container from './components/Container';
 
 import s from './Segment.module.scss';
+
+type FillType = 'dark' | 'light';
 
 interface SegmentProps {
   children: React.ReactNode;
   container?: boolean;
   title?: string;
-  inverted?: boolean;
+  fill?: FillType;
 }
 
 const Segment = (props: SegmentProps) => {
-  const { children, container, title, inverted } = props;
+  const { children, container, title, fill } = props;
   const content = container ? <Container title={title}>{children}</Container> : children;
 
   return (
-    <section className={classNames(s.segment, { [s.segment__inverted]: inverted })}>
+    <section
+      className={classNames(s.segment, {
+        [s.segment__fillDark]: fill === 'dark',
+        [s.segment__fillLight]: fill === 'light',
+      })}
+    >
       {content}
     </section>
   );
@@ -25,7 +32,6 @@ const Segment = (props: SegmentProps) => {
 
 Segment.defaultProps = {
   container: true,
-  inverted: false,
 };
 
 export default Segment;

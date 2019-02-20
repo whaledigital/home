@@ -5,7 +5,7 @@ import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Segment from 'components/segment/Segment';
+import Segment from 'components/Segment';
 import Contacts from 'components/contacts/Contacts';
 import Heading from 'components/Heading';
 
@@ -36,7 +36,7 @@ const AboutPage = ({ data }: AboutProps) => {
         title={page.headerTitle}
         description={page.headerDescription.headerDescription}
       />
-      <Segment title={'segment title'}>
+      <Segment fill="dark">
         <p>description</p>
       </Segment>
       <Contacts dictionary={dictionaryContacts} />
