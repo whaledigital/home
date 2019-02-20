@@ -1,0 +1,120 @@
+@import 'config';
+
+.section {
+  @include grid-row;
+
+  align-self: flex-start;
+
+  @media (min-width: $min-tablet) {
+    @include grid-row($grid-gutter: $gutter * 2);
+  }
+
+  @media (min-width: $page-limit) {
+    @include grid-row($grid-gutter: $gutter * 8);
+  }
+
+  &__col {
+    @include grid-col;
+
+    margin-top: $gutter * 4;
+
+    @media (min-width: $min-tablet) {
+      @include grid-col($width: 50%, $grid-gutter: $gutter * 2);
+
+      align-self: flex-start;
+      margin-top: inherit;
+    }
+
+    @media (min-width: $page-limit) {
+      @include grid-col($width: 50%, $grid-gutter: $gutter * 8);
+    }
+  }
+
+  &Subtitle {
+    color: $color-primary;
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  &Title {
+    font-size: 2rem;
+    font-weight: 800;
+
+    @media (min-width: $min-tablet) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: $page-limit) {
+      font-size: 3rem;
+    }
+  }
+
+  &Description {
+    font-size: 0.9rem;
+  }
+
+  &ListTitle {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  &List {
+    @include reset-list;
+
+    font-size: 0.9rem;
+
+    &Item {
+      margin-left: 30px;
+
+      &::before {
+        color: $color-primary;
+        content: "●";
+        margin-left: -20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &Thumb {
+    position: relative;
+    max-height: calc(100vw - 30px);
+
+    @media (min-width: $min-tablet) {
+      margin-top: $gutter * 6;
+      max-height: none;
+    }
+
+    @media (min-width: $page-limit) {
+      margin-top: 0;
+    }
+
+    &__shadow {
+      display: none;
+
+      @media (min-width: $page-limit) {
+        @include fit;
+
+        display: block;
+        top: 60px;
+        right: 80px;
+        bottom: -30px;
+        left: 10px;
+        z-index: 0;
+        background: $color-dark-lighter;
+      }
+    }
+  }
+
+  &__reverse {
+    flex-direction: row-reverse;
+
+    & .sectionThumb__shadow {
+      @media (min-width: $page-limit) {
+        left: 390px;
+        right: 10px;
+        top: 350px;
+        bottom: -30px;
+      }
+    }
+  }
+}
