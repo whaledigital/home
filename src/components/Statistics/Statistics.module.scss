@@ -1,0 +1,46 @@
+@import 'config';
+
+.statistics {
+  @include grid-row($grid-gutter: $gutter * 2);
+
+  @media (min-width: $min-tablet) {
+    @include grid-row($grid-gutter: $gutter * 8);
+  }
+
+  &__item {
+    @include grid-col($width: 50%, $grid-gutter: $gutter * 2);
+
+    margin: $gutter * 2 0;
+
+    @media (min-width: $min-tablet) {
+      @include grid-col($width: 33.3%, $grid-gutter: $gutter * 8);
+    }
+
+    &Title {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+      white-space: nowrap;
+
+      @media (min-width: $min-tablet) {
+        font-size: 2.5rem;
+      }
+
+      @media (min-width: $page-limit) {
+        font-size: 4rem;
+      }
+    }
+
+    &Description {
+      font-size: 0.9rem;
+      line-height: 1.2;
+      color: $color-grey;
+      margin: 0;
+
+      @media (min-width: $min-tablet) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -5,12 +5,13 @@ import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Segment from 'components/Segment';
 import Contacts from 'components/contacts/Contacts';
 import Heading from 'components/Heading';
+import Statistics from 'components/Statistics';
 
 interface AboutData extends LayoutData {
   page: GQL.ContentfulPage;
+  statistics: GQL.ContentfulStatisticsConnection;
   dictionaryContacts: GQL.ContentfulDictionaryConnection;
 }
 
@@ -36,9 +37,7 @@ const AboutPage = ({ data }: AboutProps) => {
         title={page.headerTitle}
         description={page.headerDescription.headerDescription}
       />
-      <Segment fill="dark">
-        <p>description</p>
-      </Segment>
+      <Statistics items={data.statistics.edges} />
       <Contacts dictionary={dictionaryContacts} />
     </>
   );
@@ -54,6 +53,13 @@ export const pageQuery = graphql`
       node_locale: { eq: $lang }
     ) {
       ...PageFragment
+    }
+    statistics: allContentfulStatistics(
+      filter: {
+        node_locale: { eq: $lang }
+      }
+    ) {
+      edges { node { id title description } }
     }
     dictionaryContacts: allContentfulDictionary(
       filter: {
