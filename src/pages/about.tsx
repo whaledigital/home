@@ -6,7 +6,7 @@ import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Contacts from 'components/contacts/Contacts';
-import Heading from 'components/Heading';
+import Head from 'components/Head';
 import Statistics from 'components/Statistics';
 
 interface AboutData extends LayoutData {
@@ -32,7 +32,7 @@ const AboutPage = ({ data }: AboutProps) => {
   return (
     <>
       <SEO {...seo} />
-      <Heading
+      <Head
         type="page"
         title={page.headerTitle}
         description={page.headerDescription.headerDescription}

@@ -5,7 +5,7 @@ import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import Contacts from 'components/contacts/Contacts';
-import Heading from 'components/Heading';
+import Head from 'components/Head';
 import ServiceSection from 'components/ServiceSection';
 
 interface ServiceData extends LayoutData {
@@ -25,7 +25,7 @@ const ServicePage = (props: ServiceProps) => {
 
   return (
     <>
-      <Heading
+      <Head
         type="service"
         title={service.title}
         description={service.directions && service.directions.join(' / ')}
