@@ -36,7 +36,7 @@ const Footer = (props: FooterProps) => {
           <ol className={s.footer__countriesList}>
             {props.offices.map(({ node }: GQL.ContentfulOfficeEdge) => (
               <li key={node.id}>
-                <Link to={node.slug ? `/${node.slug}` : `/`}>{node.title}</Link>
+                <Link to={node.slug ? `/${node.slug}/` : `/`}>{node.title}</Link>
               </li>
             ))}
           </ol>
@@ -47,7 +47,7 @@ const Footer = (props: FooterProps) => {
             <ul>
               {props.services.map(({ node }: GQL.ContentfulOfficeEdge) => (
                 <li key={node.id}>
-                  <Link to={`/${node.slug}`}>{node.title}</Link>
+                  <Link to={`/${node.slug}/`}>{node.title}</Link>
                 </li>
               ))}
             </ul>
@@ -59,7 +59,7 @@ const Footer = (props: FooterProps) => {
             <ul>
               {props.company.map(({ node }: GQL.ContentfulNavigationEdge) => (
                 <li key={node.id}>
-                  <Link to={`/${node.slug}`}>{node.title}</Link>
+                  <Link to={`/${node.slug}/`}>{node.title}</Link>
                 </li>
               ))}
             </ul>
@@ -69,14 +69,14 @@ const Footer = (props: FooterProps) => {
           <ul className={s.footer__mobileMenuBlock}>
             {companyFirstHalf.map(({ node }: GQL.ContentfulNavigationEdge) => (
               <li key={node.id}>
-                <Link to={`/${node.slug}`}>{node.title}</Link>
+                <Link to={`/${node.slug}/`}>{node.title}</Link>
               </li>
             ))}
           </ul>
           <ul className={s.footer__mobileMenuBlock}>
             {companySecondHalf.map(({ node }: GQL.ContentfulNavigationEdge) => (
               <li key={node.id}>
-                <Link to={`/${node.slug}`}>{node.title}</Link>
+                <Link to={`/${node.slug}/`}>{node.title}</Link>
               </li>
             ))}
           </ul>
