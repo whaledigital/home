@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import classNames from 'classnames';
 
 import GQL from 'src/graphql-types';
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import Box3D from 'components/box3d/Box3D';
 
 import s from './ServiceSection.module.scss';
@@ -20,7 +20,7 @@ interface ServiceSectionProps {
 
 const ServiceSection = (props: ServiceSectionProps) => {
   return (
-    <Segment>
+    <Section>
       <div
         className={classNames(s.section, {
           [s.section__reverse]: props.reverse,
@@ -46,7 +46,7 @@ const ServiceSection = (props: ServiceSectionProps) => {
           </div>
         </div>
       </div>
-    </Segment>
+    </Section>
   );
 };
 

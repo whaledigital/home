@@ -3,26 +3,26 @@ import classNames from 'classnames';
 
 import Container from './components/Container';
 
-import s from './Segment.module.scss';
+import s from './Section.module.scss';
 
 type FillType = 'dark' | 'light';
 
-interface SegmentProps {
+interface SectionProps {
   children: React.ReactNode;
   container?: boolean;
   title?: string;
   fill?: FillType;
 }
 
-const Segment = (props: SegmentProps) => {
+const Section = (props: SectionProps) => {
   const { children, container, title, fill } = props;
   const content = container ? <Container title={title}>{children}</Container> : children;
 
   return (
     <section
-      className={classNames(s.segment, {
-        [s.segment__fillDark]: fill === 'dark',
-        [s.segment__fillLight]: fill === 'light',
+      className={classNames(s.section, {
+        [s.section__fillDark]: fill === 'dark',
+        [s.section__fillLight]: fill === 'light',
       })}
     >
       {content}
@@ -30,8 +30,8 @@ const Segment = (props: SegmentProps) => {
   );
 };
 
-Segment.defaultProps = {
+Section.defaultProps = {
   container: true,
 };
 
-export default Segment;
+export default Section;

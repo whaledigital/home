@@ -9,7 +9,7 @@ import Bubbles2 from 'assets/svg/bubbles-2.svg';
 import {
   ContentfulServiceEdge,
 } from 'src/graphql-types';
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import Box3D from 'components/box3d/Box3D';
 import Link from 'components/Link';
 
@@ -130,7 +130,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
   render () {
     if (!this.props.items) return null;
     return (
-      <Segment title={this.props.title}>
+      <Section title={this.props.title}>
         <div className={s.expertise}>
           {this.renderMenu()}
           {this.renderBoxes()}
@@ -149,7 +149,7 @@ class Expertise extends React.Component<ExpertiseProps, ExpertiseState> {
             <Bubbles2 />
           </div>
         </div>
-      </Segment>
+      </Section>
     );
   }
 }

@@ -12,7 +12,7 @@ import IconNext from 'assets/svg/arrow_next.svg';
 import {
   ContentfulCaseEdge,
 } from 'src/graphql-types';
-import Segment from 'components/Segment';
+import Section from 'components/Section';
 import Box3D from 'components/box3d/Box3D';
 import Link from 'components/Link';
 
@@ -71,7 +71,7 @@ class Cases extends React.Component<CasesProps> {
     };
 
     return (
-      <Segment title={this.props.title}>
+      <Section title={this.props.title}>
         <Slider {...settings}>
           {this.props.items.map(({ node }: ContentfulCaseEdge, i: number) => {
             return (
@@ -96,7 +96,7 @@ class Cases extends React.Component<CasesProps> {
             );
           })}
         </Slider>
-      </Segment>
+      </Section>
     );
   }
 }
