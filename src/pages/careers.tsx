@@ -6,15 +6,15 @@ import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Head from 'components/Head';
 
-interface ThankYouData extends LayoutData {
+interface CareersData extends LayoutData {
   page: GQL.ContentfulPage;
 }
 
-export interface ThankYouProps extends LayoutProps {
-  data: ThankYouData;
+export interface CareersProps extends LayoutProps {
+  data: CareersData;
 }
 
-const ThankYouPage = ({ data }: ThankYouProps) => {
+const CareersPage = ({ data }: CareersProps) => {
   const { page } = data;
   const seo = {
     description: page.pageDescription,
@@ -29,19 +29,18 @@ const ThankYouPage = ({ data }: ThankYouProps) => {
       <Head
         type="page"
         title={page.headerTitle}
-        description={page.headerDescription.headerDescription}
       />
     </>
   );
 };
 
-export default withLayout(ThankYouPage);
+export default withLayout(CareersPage);
 
 export const pageQuery = graphql`
   query ($lang: String) {
     ...LayoutFragment
     page: contentfulPage(
-      slug: { eq: "thank-you" },
+      slug: { eq: "careers" },
       node_locale: { eq: $lang }
     ) {
       ...PageFragment

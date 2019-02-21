@@ -103,7 +103,7 @@ const Footer = (props: FooterProps) => {
           © {props.title} 2017-{new Date().getFullYear()}. {props.dictionary.copyright}
         </div>
         <div className={s.footer__bottomTerms}>
-          <Link to={'/'}>{props.dictionary.terms}</Link>
+          <Link to="/terms-of-use/">{props.dictionary.terms}</Link>
         </div>
       </div>
     </footer>
