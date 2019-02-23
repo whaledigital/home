@@ -28,7 +28,7 @@ const ServicePage = (props: ServiceProps) => {
       <Head
         type="service"
         title={service.title}
-        description={service.directions && service.directions.join(' / ')}
+        description={service.description && service.description.description}
       />
       {
         service.sections &&
@@ -66,7 +66,9 @@ export const pageQuery = graphql`
     service: contentfulService(slug: { eq: $slug}, node_locale: { eq: $lang}) {
       id
       title
-      directions
+      description {
+        description
+      }
       sections {
         id
         title
