@@ -1,0 +1,42 @@
+@import 'config';
+
+.list {
+  @include grid-row($grid-gutter: $gutter * 2);
+
+  @media (min-width: $min-tablet) {
+    @include grid-row($grid-gutter: $gutter * 4);
+  }
+
+  &Item {
+    @include grid-col($grid-gutter: $gutter * 2);
+
+    @media (min-width: $min-tablet) {
+      @include grid-col($width: 50%, $grid-gutter: $gutter * 4);
+    }
+
+    @media (min-width: $page-limit) {
+      @include grid-col($width: 25%, $grid-gutter: $gutter * 4);
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 600;
+      border-bottom: 2px solid $color-grey;
+      min-height: 70px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 10px;
+      line-height: 1.4;
+      font-size: 0.9rem;
+    }
+
+    &__list {
+      @include reset-list;
+
+      &Item {
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

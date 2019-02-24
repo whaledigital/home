@@ -7,6 +7,7 @@ import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import Contacts from 'components/contacts/Contacts';
 import Head from 'components/Head';
 import ServiceSection from 'components/ServiceSection';
+import TechMap from 'components/TechMap';
 
 interface ServiceData extends LayoutData {
   service: GQL.ContentfulService;
@@ -45,9 +46,21 @@ const ServicePage = (props: ServiceProps) => {
           />
         ))
       }
+      {renderPlugins(service.plugins)}
       <Contacts dictionary={dictionaryContacts} />
     </>
   );
+};
+
+const renderPlugins = (plugins: GQL.ContentfulPlugin[]) => {
+  if (!plugins) return null;
+  const items: any = [];
+  plugins.forEach((plugin) => {
+    if (plugin.type[0] === 'list') {
+      items.push(<TechMap items={plugin.items} title={plugin.title} />);
+    }
+  });
+  return items;
 };
 
 export default withLayout(ServicePage);
@@ -81,6 +94,15 @@ export const pageQuery = graphql`
           fixed(width: 500, height: 500) {
             ...GatsbyContentfulFixed_noBase64
           }
+        }
+      }
+      plugins {
+        type
+        title
+        items {
+          id
+          title
+          items
         }
       }
     }
