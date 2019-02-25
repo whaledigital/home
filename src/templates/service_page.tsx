@@ -56,7 +56,7 @@ const renderPlugins = (plugins: GQL.ContentfulPlugin[]) => {
   if (!plugins) return null;
   const items: any = [];
   plugins.forEach((plugin) => {
-    if (plugin.type[0] === 'list') {
+    if (plugin.type === 'list') {
       items.push(<TechMap items={plugin.items} title={plugin.title} />);
     }
   });

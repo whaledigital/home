@@ -3618,7 +3618,7 @@ export interface ContentfulServiceConnectionPluginsQueryList_2 {
 export interface ContentfulServiceConnectionPluginsInputObject_2 {
   title?: Maybe<ContentfulServiceConnectionPluginsTitleQueryString_2>;
 
-  type?: Maybe<ContentfulServiceConnectionPluginsTypeQueryList_2>;
+  type?: Maybe<ContentfulServiceConnectionPluginsTypeQueryString_2>;
 
   id?: Maybe<ContentfulServiceConnectionPluginsIdQueryString_2>;
 
@@ -3653,7 +3653,7 @@ export interface ContentfulServiceConnectionPluginsTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface ContentfulServiceConnectionPluginsTypeQueryList_2 {
+export interface ContentfulServiceConnectionPluginsTypeQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -7538,7 +7538,7 @@ export interface ContentfulListConnectionPluginQueryList_2 {
 export interface ContentfulListConnectionPluginInputObject_2 {
   title?: Maybe<ContentfulListConnectionPluginTitleQueryString_2>;
 
-  type?: Maybe<ContentfulListConnectionPluginTypeQueryList_2>;
+  type?: Maybe<ContentfulListConnectionPluginTypeQueryString_2>;
 
   id?: Maybe<ContentfulListConnectionPluginIdQueryString_2>;
 
@@ -7571,7 +7571,7 @@ export interface ContentfulListConnectionPluginTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface ContentfulListConnectionPluginTypeQueryList_2 {
+export interface ContentfulListConnectionPluginTypeQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -9002,11 +9002,9 @@ export interface ContentfulPluginConnectionSort {
 export interface FilterContentfulPlugin {
   title?: Maybe<ContentfulPluginConnectionTitleQueryString_2>;
 
-  type?: Maybe<ContentfulPluginConnectionTypeQueryList_2>;
+  type?: Maybe<ContentfulPluginConnectionTypeQueryString_2>;
 
   items?: Maybe<ContentfulPluginConnectionItemsQueryList_2>;
-
-  service?: Maybe<ContentfulPluginConnectionServiceQueryList_2>;
 
   id?: Maybe<ContentfulPluginConnectionIdQueryString_2>;
 
@@ -9035,7 +9033,7 @@ export interface ContentfulPluginConnectionTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface ContentfulPluginConnectionTypeQueryList_2 {
+export interface ContentfulPluginConnectionTypeQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -9262,232 +9260,6 @@ export interface ContentfulPluginConnectionItemsInternalOwnerQueryString_2 {
 }
 
 export interface ContentfulPluginConnectionItemsNodeLocaleQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceQueryList_2 {
-  elemMatch?: Maybe<ContentfulPluginConnectionServiceInputObject_2>;
-}
-
-export interface ContentfulPluginConnectionServiceInputObject_2 {
-  title?: Maybe<ContentfulPluginConnectionServiceTitleQueryString_2>;
-
-  slug?: Maybe<ContentfulPluginConnectionServiceSlugQueryString_2>;
-
-  order?: Maybe<ContentfulPluginConnectionServiceOrderQueryInteger_2>;
-
-  id?: Maybe<ContentfulPluginConnectionServiceIdQueryString_2>;
-
-  contentful_id?: Maybe<
-    ContentfulPluginConnectionServiceContentfulIdQueryString_2
-  >;
-
-  createdAt?: Maybe<ContentfulPluginConnectionServiceCreatedAtQueryString_2>;
-
-  updatedAt?: Maybe<ContentfulPluginConnectionServiceUpdatedAtQueryString_2>;
-
-  parent?: Maybe<ContentfulPluginConnectionServiceParentQueryString_2>;
-
-  children?: Maybe<ContentfulPluginConnectionServiceChildrenQueryList_2>;
-
-  internal?: Maybe<ContentfulPluginConnectionServiceInternalInputObject_2>;
-
-  node_locale?: Maybe<ContentfulPluginConnectionServiceNodeLocaleQueryString_2>;
-}
-
-export interface ContentfulPluginConnectionServiceTitleQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceSlugQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceOrderQueryInteger_2 {
-  eq?: Maybe<number>;
-
-  ne?: Maybe<number>;
-
-  gt?: Maybe<number>;
-
-  gte?: Maybe<number>;
-
-  lt?: Maybe<number>;
-
-  lte?: Maybe<number>;
-
-  in?: Maybe<(Maybe<number>)[]>;
-
-  nin?: Maybe<(Maybe<number>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceIdQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceContentfulIdQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceCreatedAtQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceUpdatedAtQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceParentQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceChildrenQueryList_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceInternalInputObject_2 {
-  type?: Maybe<ContentfulPluginConnectionServiceInternalTypeQueryString_2>;
-
-  contentDigest?: Maybe<
-    ContentfulPluginConnectionServiceInternalContentDigestQueryString_2
-  >;
-
-  owner?: Maybe<ContentfulPluginConnectionServiceInternalOwnerQueryString_2>;
-}
-
-export interface ContentfulPluginConnectionServiceInternalTypeQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceInternalContentDigestQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceInternalOwnerQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginConnectionServiceNodeLocaleQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -14628,7 +14400,7 @@ export interface ContentfulServicePluginsQueryList_2 {
 export interface ContentfulServicePluginsInputObject_2 {
   title?: Maybe<ContentfulServicePluginsTitleQueryString_2>;
 
-  type?: Maybe<ContentfulServicePluginsTypeQueryList_2>;
+  type?: Maybe<ContentfulServicePluginsTypeQueryString_2>;
 
   id?: Maybe<ContentfulServicePluginsIdQueryString_2>;
 
@@ -14659,7 +14431,7 @@ export interface ContentfulServicePluginsTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface ContentfulServicePluginsTypeQueryList_2 {
+export interface ContentfulServicePluginsTypeQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -18110,7 +17882,7 @@ export interface ContentfulListPluginQueryList_2 {
 export interface ContentfulListPluginInputObject_2 {
   title?: Maybe<ContentfulListPluginTitleQueryString_2>;
 
-  type?: Maybe<ContentfulListPluginTypeQueryList_2>;
+  type?: Maybe<ContentfulListPluginTypeQueryString_2>;
 
   id?: Maybe<ContentfulListPluginIdQueryString_2>;
 
@@ -18141,7 +17913,7 @@ export interface ContentfulListPluginTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface ContentfulListPluginTypeQueryList_2 {
+export interface ContentfulListPluginTypeQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -19511,7 +19283,7 @@ export interface ContentfulPluginTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
-export interface ContentfulPluginTypeQueryList_2 {
+export interface ContentfulPluginTypeQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -19736,230 +19508,6 @@ export interface ContentfulPluginItemsInternalOwnerQueryString_2 {
 }
 
 export interface ContentfulPluginItemsNodeLocaleQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceQueryList_2 {
-  elemMatch?: Maybe<ContentfulPluginServiceInputObject_2>;
-}
-
-export interface ContentfulPluginServiceInputObject_2 {
-  title?: Maybe<ContentfulPluginServiceTitleQueryString_2>;
-
-  slug?: Maybe<ContentfulPluginServiceSlugQueryString_2>;
-
-  order?: Maybe<ContentfulPluginServiceOrderQueryInteger_2>;
-
-  id?: Maybe<ContentfulPluginServiceIdQueryString_2>;
-
-  contentful_id?: Maybe<ContentfulPluginServiceContentfulIdQueryString_2>;
-
-  createdAt?: Maybe<ContentfulPluginServiceCreatedAtQueryString_2>;
-
-  updatedAt?: Maybe<ContentfulPluginServiceUpdatedAtQueryString_2>;
-
-  parent?: Maybe<ContentfulPluginServiceParentQueryString_2>;
-
-  children?: Maybe<ContentfulPluginServiceChildrenQueryList_2>;
-
-  internal?: Maybe<ContentfulPluginServiceInternalInputObject_2>;
-
-  node_locale?: Maybe<ContentfulPluginServiceNodeLocaleQueryString_2>;
-}
-
-export interface ContentfulPluginServiceTitleQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceSlugQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceOrderQueryInteger_2 {
-  eq?: Maybe<number>;
-
-  ne?: Maybe<number>;
-
-  gt?: Maybe<number>;
-
-  gte?: Maybe<number>;
-
-  lt?: Maybe<number>;
-
-  lte?: Maybe<number>;
-
-  in?: Maybe<(Maybe<number>)[]>;
-
-  nin?: Maybe<(Maybe<number>)[]>;
-}
-
-export interface ContentfulPluginServiceIdQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceContentfulIdQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceCreatedAtQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceUpdatedAtQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceParentQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceChildrenQueryList_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceInternalInputObject_2 {
-  type?: Maybe<ContentfulPluginServiceInternalTypeQueryString_2>;
-
-  contentDigest?: Maybe<
-    ContentfulPluginServiceInternalContentDigestQueryString_2
-  >;
-
-  owner?: Maybe<ContentfulPluginServiceInternalOwnerQueryString_2>;
-}
-
-export interface ContentfulPluginServiceInternalTypeQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceInternalContentDigestQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceInternalOwnerQueryString_2 {
-  eq?: Maybe<string>;
-
-  ne?: Maybe<string>;
-
-  regex?: Maybe<string>;
-
-  glob?: Maybe<string>;
-
-  in?: Maybe<(Maybe<string>)[]>;
-
-  nin?: Maybe<(Maybe<string>)[]>;
-}
-
-export interface ContentfulPluginServiceNodeLocaleQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -22814,7 +22362,6 @@ export enum ContentfulPluginConnectionSortByFieldsEnum {
   Title = 'title',
   Type = 'type',
   ItemsNode = 'items___NODE',
-  ServiceNode = 'service___NODE',
   Id = 'id',
   ContentfulId = 'contentful_id',
   CreatedAt = 'createdAt',
@@ -22835,7 +22382,6 @@ export enum ContentfulPluginDistinctEnum {
   Title = 'title',
   Type = 'type',
   ItemsNode = 'items___NODE',
-  ServiceNode = 'service___NODE',
   Id = 'id',
   ContentfulId = 'contentful_id',
   CreatedAt = 'createdAt',
@@ -22851,7 +22397,6 @@ export enum ContentfulPluginGroupEnum {
   Title = 'title',
   Type = 'type',
   ItemsNode = 'items___NODE',
-  ServiceNode = 'service___NODE',
   Id = 'id',
   ContentfulId = 'contentful_id',
   CreatedAt = 'createdAt',
@@ -24100,11 +23645,9 @@ export interface ContentfulPlugin extends Node {
 
   title?: Maybe<string>;
 
-  type?: Maybe<(Maybe<string>)[]>;
+  type?: Maybe<string>;
 
   items?: Maybe<(Maybe<ContentfulList>)[]>;
-
-  service?: Maybe<(Maybe<ContentfulService>)[]>;
 
   contentful_id?: Maybe<string>;
 
@@ -26075,11 +25618,9 @@ export interface MarkdownRemarkQueryArgs {
 export interface ContentfulPluginQueryArgs {
   title?: Maybe<ContentfulPluginTitleQueryString_2>;
 
-  type?: Maybe<ContentfulPluginTypeQueryList_2>;
+  type?: Maybe<ContentfulPluginTypeQueryString_2>;
 
   items?: Maybe<ContentfulPluginItemsQueryList_2>;
-
-  service?: Maybe<ContentfulPluginServiceQueryList_2>;
 
   id?: Maybe<ContentfulPluginIdQueryString_2>;
 
