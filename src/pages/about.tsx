@@ -8,11 +8,14 @@ import { SEO } from 'components/seo/SEO';
 import Contacts from 'components/contacts/Contacts';
 import Head from 'components/Head';
 import Statistics from 'components/Statistics';
+import Experts from 'components/experts/Experts';
 
 interface AboutData extends LayoutData {
   page: GQL.ContentfulPage;
   statistics: GQL.ContentfulStatisticsConnection;
   dictionaryContacts: GQL.ContentfulDictionaryConnection;
+  dictionaryAbout: GQL.ContentfulDictionaryConnection;
+  experts: GQL.ContentfulExpertConnection;
 }
 
 export interface AboutProps extends LayoutProps {
@@ -28,6 +31,8 @@ const AboutPage = ({ data }: AboutProps) => {
     title: page.pageTitle,
   };
   const dictionaryContacts = getDictionary(data.dictionaryContacts.edges);
+  const dictionaryAbout = getDictionary(data.dictionaryAbout.edges);
+  const experts = data.experts.edges;
 
   return (
     <>
@@ -38,6 +43,7 @@ const AboutPage = ({ data }: AboutProps) => {
         description={page.headerDescription.headerDescription}
       />
       <Statistics items={data.statistics.edges} />
+      <Experts title={dictionaryAbout.experts} items={experts} />
       <Contacts dictionary={dictionaryContacts} />
     </>
   );
@@ -60,11 +66,27 @@ export const pageQuery = graphql`
     ) {
       edges { node { id title description } }
     }
+    experts: allContentfulExpert(
+      sort: { fields: order },
+      filter: { node_locale: { eq: $lang } }
+    ) {
+      edges { node { ...ExpertFragment } }
+    }
     dictionaryContacts: allContentfulDictionary(
       filter: {
         node_locale: { eq: $lang },
         category: { eq: "contacts" }
       }
+    ) {
+      edges { node { slug title } }
+    }
+    dictionaryAbout: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        slug: { in: [
+          "experts",
+        ]
+      }}
     ) {
       edges { node { slug title } }
     }

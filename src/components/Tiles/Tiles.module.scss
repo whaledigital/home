@@ -1,0 +1,30 @@
+@import 'config';
+
+.tiles {
+  @include grid-row($grid-gutter: $gutter * 2);
+
+  @media (min-width: $min-tablet) {
+    @include grid-row($grid-gutter: $gutter * 4);
+  }
+
+  &__item {
+    @include grid-col($width: calc(50% - 20px), $grid-gutter: $gutter * 2);
+
+    margin: 10px;
+    position: relative;
+    background: $color-dark-lighter;
+    padding: $gutter * 2;
+
+    @media (min-width: $min-tablet) {
+      @include grid-col($width: calc(33.3% - 20px), $grid-gutter: $gutter * 4);
+
+      padding: $gutter * 3;
+    }
+
+    @media (min-width: $page-limit) {
+      @include grid-col($width: calc(25% - 20px), $grid-gutter: $gutter * 4);
+
+      padding: $gutter * 4;
+    }
+  }
+}
