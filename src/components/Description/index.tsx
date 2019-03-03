@@ -15,7 +15,11 @@ class Description extends React.Component<DescriptionProps> {
 
     return (
       <Section title={this.props.title}>
-        <div className={s.description} dangerouslySetInnerHTML={{ __html: this.props.children }} />
+        <div
+          data-aos="fade-right"
+          className={s.description}
+          dangerouslySetInnerHTML={{ __html: this.props.children }}
+        />
       </Section>
     );
   }

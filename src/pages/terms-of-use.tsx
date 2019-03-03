@@ -4,7 +4,6 @@ import React from 'react';
 import GQL from 'src/graphql-types';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Head from 'components/Head';
 import Description from 'components/Description';
 
 interface TermsOfUseData extends LayoutData {
@@ -27,11 +26,7 @@ const TermsOfUsePage = ({ data }: TermsOfUseProps) => {
   return (
     <>
       <SEO {...seo} />
-      <Head
-        type="page"
-        title={page.headerTitle}
-      />
-      <Description>
+      <Description title={page.headerTitle}>
         {page.content && page.content.childMarkdownRemark.html}
       </Description>
     </>
