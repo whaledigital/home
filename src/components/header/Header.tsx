@@ -59,11 +59,11 @@ export const Header = ({ children, button }: HeaderProps) => {
               <div className={s.header__navigationButtons}>
                 <LangSelect />
                 <div
-                  className={classNames({
-                    [s.header__navigationButtons_hidden]: !visibility.background },
-                  )}
+                  // className={classNames({
+                  //   [s.header__navigationButtons_hidden]: !visibility.background },
+                  // )}
                 >
-                  <Button title={button} />
+                  <Button title={button} type="link" to="/contacts" />
                 </div>
               </div>
               <div
@@ -91,7 +91,7 @@ export const Header = ({ children, button }: HeaderProps) => {
         {children}
         <div className={s.header__mobileButtons}>
           <LangSelect />
-          <Button title={button} size="large" />
+          <Button title={button} size="large" type="link" to="/contacts" />
         </div>
       </nav>
     </>

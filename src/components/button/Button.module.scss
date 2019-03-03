@@ -10,6 +10,8 @@
   cursor: pointer;
   white-space: nowrap;
   transition: 0.4s ease;
+  display: block;
+  text-decoration: none;
 
   &:hover {
     background: rgba($color-primary, 0.8);
