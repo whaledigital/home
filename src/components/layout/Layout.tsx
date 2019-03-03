@@ -90,6 +90,11 @@ export const expertiseQuery = graphql`
     headerDescription {
       headerDescription
     }
+    content {
+      childMarkdownRemark {
+        html
+      }
+    }
     node_locale
   }
   fragment LayoutFragment on Query {

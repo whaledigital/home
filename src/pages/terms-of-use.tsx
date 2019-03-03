@@ -5,6 +5,7 @@ import GQL from 'src/graphql-types';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Head from 'components/Head';
+import Description from 'components/Description';
 
 interface TermsOfUseData extends LayoutData {
   page: GQL.ContentfulPage;
@@ -30,6 +31,9 @@ const TermsOfUsePage = ({ data }: TermsOfUseProps) => {
         type="page"
         title={page.headerTitle}
       />
+      <Description>
+        {page.content && page.content.childMarkdownRemark.html}
+      </Description>
     </>
   );
 };

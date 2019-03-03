@@ -1,0 +1,19 @@
+@import 'config';
+
+.description {
+  background: $color-dark-lighter;
+  padding: $gutter * 3 $gutter;
+
+  @media (min-width: $min-tablet) {
+    padding: $gutter * 4;
+  }
+
+  & > p,
+  & > ul li {
+    font-size: 0.8rem;
+
+    @media (min-width: $min-tablet) {
+      font-size: 0.9rem;
+    }
+  }
+}
