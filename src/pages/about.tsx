@@ -8,11 +8,13 @@ import { SEO } from 'components/seo/SEO';
 import Contacts from 'components/contacts/Contacts';
 import Head from 'components/Head';
 import Statistics from 'components/Statistics';
+import Gallery from 'components/Gallery';
 import Experts from 'components/experts/Experts';
 
 interface AboutData extends LayoutData {
   page: GQL.ContentfulPage;
   statistics: GQL.ContentfulStatisticsConnection;
+  gallery: GQL.ContentfulGalleryConnection;
   dictionaryContacts: GQL.ContentfulDictionaryConnection;
   dictionaryAbout: GQL.ContentfulDictionaryConnection;
   experts: GQL.ContentfulExpertConnection;
@@ -33,6 +35,7 @@ const AboutPage = ({ data }: AboutProps) => {
   const dictionaryContacts = getDictionary(data.dictionaryContacts.edges);
   const dictionaryAbout = getDictionary(data.dictionaryAbout.edges);
   const experts = data.experts.edges;
+  const gallery = data.gallery.edges.map(({ node }) => node)[0];
 
   return (
     <>
@@ -43,6 +46,7 @@ const AboutPage = ({ data }: AboutProps) => {
         description={page.headerDescription.headerDescription}
       />
       <Statistics items={data.statistics.edges} />
+      <Gallery gallery={gallery} />
       <Experts title={dictionaryAbout.experts} items={experts} />
       <Contacts dictionary={dictionaryContacts} />
     </>
@@ -65,6 +69,24 @@ export const pageQuery = graphql`
       filter: { node_locale: { eq: $lang } }
     ) {
       edges { node { id title description } }
+    }
+    gallery: allContentfulGallery(
+      filter: {
+        node_locale: { eq: $lang },
+        slug: { eq: "office" }
+      }
+    ) {
+      edges {
+        node {
+          id
+          title
+          media {
+            fluid(maxWidth: 1280) {
+              ...GatsbyContentfulFluid_noBase64
+            }
+          }
+        }
+      }
     }
     experts: allContentfulExpert(
       sort: { fields: order },
