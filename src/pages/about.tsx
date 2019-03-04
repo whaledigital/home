@@ -81,6 +81,7 @@ export const pageQuery = graphql`
           id
           title
           media {
+            id
             fluid(maxWidth: 1280) {
               ...GatsbyContentfulFluid_noBase64
             }

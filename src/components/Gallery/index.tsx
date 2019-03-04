@@ -1,3 +1,4 @@
+import Img from 'gatsby-image';
 import React from 'react';
 
 import {
@@ -16,11 +17,8 @@ const Gallery = (props: GalleryProps) => (
       <div className={s.gallery__areaContainer}>
         <div className={s.gallery__areaGrid}>
           {props.gallery.media.map(media => (
-            <div className={s.gallery__areaGridCell}>
-              <div
-                className={s.gallery__areaGridCellImage}
-                style={{ backgroundImage: `url(${media.fluid.src})` }}
-              />
+            <div key={media.id} className={s.gallery__areaGridCell}>
+              <Img fluid={media.fluid} className={s.gallery__areaGridCellImage} />
             </div>
           ))}
         </div>
