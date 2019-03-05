@@ -4362,6 +4362,8 @@ export interface ContentfulOfficeConnectionSort {
 export interface FilterContentfulOffice {
   title?: Maybe<ContentfulOfficeConnectionTitleQueryString_2>;
 
+  address?: Maybe<ContentfulOfficeConnectionAddressQueryString_2>;
+
   slug?: Maybe<ContentfulOfficeConnectionSlugQueryString_2>;
 
   order?: Maybe<ContentfulOfficeConnectionOrderQueryInteger_2>;
@@ -4382,6 +4384,20 @@ export interface FilterContentfulOffice {
 }
 
 export interface ContentfulOfficeConnectionTitleQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
+export interface ContentfulOfficeConnectionAddressQueryString_2 {
   eq?: Maybe<string>;
 
   ne?: Maybe<string>;
@@ -16885,6 +16901,20 @@ export interface ContentfulOfficeTitleQueryString_2 {
   nin?: Maybe<(Maybe<string>)[]>;
 }
 
+export interface ContentfulOfficeAddressQueryString_2 {
+  eq?: Maybe<string>;
+
+  ne?: Maybe<string>;
+
+  regex?: Maybe<string>;
+
+  glob?: Maybe<string>;
+
+  in?: Maybe<(Maybe<string>)[]>;
+
+  nin?: Maybe<(Maybe<string>)[]>;
+}
+
 export interface ContentfulOfficeSlugQueryString_2 {
   eq?: Maybe<string>;
 
@@ -25203,6 +25233,7 @@ export enum ContentfulNavigationGroupEnum {
 
 export enum ContentfulOfficeConnectionSortByFieldsEnum {
   Title = 'title',
+  Address = 'address',
   Slug = 'slug',
   Order = 'order',
   MapLon = 'map___lon',
@@ -25225,6 +25256,7 @@ export enum ContentfulOfficeConnectionSortOrderValues {
 
 export enum ContentfulOfficeDistinctEnum {
   Title = 'title',
+  Address = 'address',
   Slug = 'slug',
   Order = 'order',
   MapLon = 'map___lon',
@@ -25242,6 +25274,7 @@ export enum ContentfulOfficeDistinctEnum {
 
 export enum ContentfulOfficeGroupEnum {
   Title = 'title',
+  Address = 'address',
   Slug = 'slug',
   Order = 'order',
   MapLon = 'map___lon',
@@ -27605,6 +27638,8 @@ export interface ContentfulOffice extends Node {
 
   title?: Maybe<string>;
 
+  address?: Maybe<string>;
+
   slug?: Maybe<string>;
 
   order?: Maybe<number>;
@@ -29348,6 +29383,8 @@ export interface ContentfulNavigationQueryArgs {
 }
 export interface ContentfulOfficeQueryArgs {
   title?: Maybe<ContentfulOfficeTitleQueryString_2>;
+
+  address?: Maybe<ContentfulOfficeAddressQueryString_2>;
 
   slug?: Maybe<ContentfulOfficeSlugQueryString_2>;
 
