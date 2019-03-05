@@ -6,9 +6,11 @@ import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Contacts from 'components/contacts/Contacts';
+import OfficeMap from 'components/OfficeMap';
 
 interface ContactsData extends LayoutData {
   page: GQL.ContentfulPage;
+  offices: GQL.ContentfulOfficeConnection;
   dictionaryContacts: GQL.ContentfulDictionaryConnection;
 }
 
@@ -25,11 +27,13 @@ const ContactsPage = ({ data }: ContactsProps) => {
     title: page.pageTitle,
   };
   const dictionaryContacts = getDictionary(data.dictionaryContacts.edges);
+  const offices = data.offices.edges.map(({ node }) => node);
 
   return (
     <>
       <SEO {...seo} />
       <Contacts dictionary={dictionaryContacts} />
+      <OfficeMap items={offices} />
     </>
   );
 };
@@ -52,6 +56,12 @@ export const pageQuery = graphql`
       }
     ) {
       edges { node { slug title } }
+    }
+    offices: allContentfulOffice(
+      sort: { fields: order },
+      filter: { node_locale: { eq: $lang } }
+    ) {
+      edges { node { ...OfficeFragment } }
     }
   }
 `;

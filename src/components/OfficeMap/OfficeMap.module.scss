@@ -1,0 +1,108 @@
+@import 'config';
+
+.map {
+  display: block;
+
+  @media (min-width: $min-tablet) {
+    display: flex;
+  }
+
+  &__holder {
+    position: relative;
+    flex: 0 0 50%;
+
+    &Sticky {
+      width: 100%;
+      height: 100vh;
+      min-height: 200px;
+      max-height: 50vh;
+      position: sticky;
+      top: 0;
+      background: $color-dark;
+
+      @media (min-width: $min-tablet) {
+        min-height: 500px;
+        max-height: inherit;
+      }
+    }
+  }
+
+  &__offices {
+    flex: 0 0 50%;
+    padding: $gutter * 3 $gutter * 2;
+    overflow: hidden;
+    background: $color-dark-darker;
+
+    @media (min-width: $min-tablet) {
+      padding: $gutter * 6 $gutter * 4;
+    }
+
+    &__list {
+      padding-top: 2px;
+      margin-left: 0;
+      margin-bottom: $gutter * 3;
+
+      @media (min-width: $min-tablet) {
+        margin-left: $gutter * 2;
+      }
+
+      & > li {
+        display: flex;
+        margin-top: $gutter;
+      }
+
+      &Point {
+        display: flex;
+        width: 21px;
+        height: 21px;
+        flex: 0 0 auto;
+        border: 1px solid $color-grey;
+        border-radius: 100%;
+        margin-right: 15px;
+        margin-top: 10px;
+
+        &::before {
+          content: '';
+          display: block;
+          border-radius: 100%;
+          margin: auto;
+          background: $color-primary;
+          width: 7px;
+          height: 7px;
+        }
+      }
+
+      &Item {
+        flex: 1 1 auto;
+        cursor: pointer;
+
+        &Title {
+          display: block;
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.25;
+          padding: 9px 0;
+          transition: color 0.3s ease 0s;
+          color: $color-light;
+          text-decoration: none;
+        }
+
+        &Address {
+          font-size: 0.9rem;
+          line-height: 1.75;
+          color: $color-grey;
+          max-width: 230px;
+          transition: color 0.3s ease 0s;
+        }
+
+        &:hover &Title {
+          color: $color-primary;
+        }
+
+        &:hover &Address {
+          color: $color-light;
+        }
+      }
+    }
+  }
+}
