@@ -22,6 +22,7 @@ export interface LayoutData {
       title: string;
       socialLinks: SocialLink[];
       languages: Languages;
+      mapKey: string;
     };
   };
 }
@@ -38,7 +39,6 @@ const Layout: React.SFC<LayoutProps> = (props) => {
   });
 
   const dictionaryLayout = getDictionary(props.data.dictionaryLayout.edges);
-
   return (
     <LangProvider
       pathname={props.location.pathname}
@@ -109,6 +109,7 @@ export const expertiseQuery = graphql`
           langs
           defaultLangKey
         }
+        mapKey
       }
     }
     dictionaryLayout: allContentfulDictionary(

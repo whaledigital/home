@@ -15,6 +15,7 @@ module.exports = {
       { url: 'https://www.linkedin.com/', name: 'linkedin' },
       { url: 'https://www.instagram.com/', name: 'instagram' },
     ],
+    mapKey: process.env.GOOGLE_MAPS_API_KEY,
     languages,
   },
   plugins: [

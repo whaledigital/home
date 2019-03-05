@@ -33,7 +33,7 @@ const ContactsPage = ({ data }: ContactsProps) => {
     <>
       <SEO {...seo} />
       <Contacts dictionary={dictionaryContacts} />
-      <OfficeMap items={offices} />
+      <OfficeMap items={offices} mapKey={data.site.siteMetadata.mapKey} />
     </>
   );
 };

@@ -138,8 +138,6 @@ const defaultProps = {
   ],
 };
 
-const key = process.env.GOOGLE_MAPS_API_KEY;
-
 const Pin = (props: any) => (
   <div>
     {React.createElement(require(`assets/svg/pin.svg`))}
@@ -148,6 +146,7 @@ const Pin = (props: any) => (
 
 interface MapProps {
   items: ContentfulOffice[];
+  mapKey: string;
 }
 
 const OfficeMap = (props: MapProps) => {
@@ -160,7 +159,7 @@ const OfficeMap = (props: MapProps) => {
       <div className={s.map__holder}>
         <div className={s.map__holderSticky}>
           <GoogleMapReact
-            bootstrapURLKeys={{ key }}
+            bootstrapURLKeys={{ key: props.mapKey }}
             center={map}
             zoom={14}
             options={{
