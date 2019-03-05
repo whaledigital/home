@@ -57,7 +57,7 @@ const renderPlugins = (plugins: GQL.ContentfulPlugin[]) => {
   const items: any = [];
   plugins.forEach((plugin) => {
     if (plugin.type === 'list') {
-      items.push(<TechMap items={plugin.items} title={plugin.title} />);
+      items.push(<TechMap key={plugin.id} items={plugin.items} title={plugin.title} />);
     }
   });
   return items;
@@ -97,6 +97,7 @@ export const pageQuery = graphql`
         }
       }
       plugins {
+        id
         type
         title
         items {

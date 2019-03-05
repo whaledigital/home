@@ -36,7 +36,7 @@ const Footer = (props: FooterProps) => {
           <ol className={s.footer__countriesList}>
             {props.offices.map(({ node }: GQL.ContentfulOfficeEdge) => (
               <li key={node.id}>
-                <Link to={node.slug ? `/${node.slug}/` : `/`}>{node.title}</Link>
+                <Link to={`/contacts`}>{node.title}</Link>
               </li>
             ))}
           </ol>
