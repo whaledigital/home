@@ -6,7 +6,7 @@ import Button from 'components/button/Button';
 
 import s from './Head.module.scss';
 
-type HeadType = 'home' | 'service' | 'page';
+type HeadType = 'home' | 'service' | 'page' | 'small';
 
 interface HeadProps {
   type: HeadType;
@@ -34,7 +34,7 @@ const renderBackground = (type: HeadType) => {
       </svg>
     );
   }
-  if (type === 'page') {
+  if (type === 'page' || type === 'small') {
     return null;
   }
 };
@@ -45,6 +45,7 @@ const Head = ({ type, title, description, button }: HeadProps) => (
       [s.heading__home]: type === 'home',
       [s.heading__service]: type === 'service',
       [s.heading__page]: type === 'page',
+      [s.heading__small]: type === 'small',
     })}
   >
     {renderBackground(type)}

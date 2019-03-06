@@ -2,17 +2,14 @@
 
 .heading {
   position: relative;
-  min-height: 500px;
-
-  @media (min-width: $min-tablet) {
-    min-height: 600px;
-  }
 
   &__home {
     height: 90vh;
+    min-height: 500px;
 
     @media (min-width: $min-tablet) {
       height: 100vh;
+      min-height: 600px;
     }
 
     &Background {
@@ -47,6 +44,7 @@
     background: $color-dark-lighter;
     top: 70px;
     height: 70vh;
+    min-height: 500px;
 
     &Background {
       @include fit;
@@ -63,6 +61,12 @@
 
   &__page {
     height: 80vh;
+    min-height: 400px;
+  }
+
+  &__small {
+    height: 40vh;
+    min-height: 400px;
   }
 
   &__container {
@@ -129,6 +133,10 @@
         font-size: 1.5rem;
       }
     }
+  }
+
+  &__small &__baseTitle {
+    margin-top: 10vh;
   }
 
   &__sub {

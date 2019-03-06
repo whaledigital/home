@@ -4,6 +4,7 @@ import React from 'react';
 import GQL from 'src/graphql-types';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
+import Head from 'components/Head';
 import Jobs from 'components/Jobs';
 
 interface CareersData extends LayoutData {
@@ -29,7 +30,12 @@ const CareersPage = ({ data }: CareersProps) => {
   return (
     <>
       <SEO {...seo} />
-      <Jobs title={page.headerTitle} items={jobs} />
+      <Head
+        type="small"
+        title={page.headerTitle}
+        description={page.headerDescription && page.headerDescription.headerDescription}
+      />
+      <Jobs items={jobs} />
     </>
   );
 };

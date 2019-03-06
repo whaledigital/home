@@ -9,11 +9,10 @@ import s from './Jobs.module.scss';
 
 interface JobsProps {
   items: GQL.ContentfulJob[];
-  title: string;
 }
 
 const Jobs = (props: JobsProps) => (
-  <Section title={props.title}>
+  <Section>
     <div className={s.jobs}>
       {props.items && props.items.map((job: GQL.ContentfulJob) => (
         <div key={job.id} className={s.jobs__item}>
