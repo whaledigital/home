@@ -4,10 +4,11 @@ import React from 'react';
 import GQL from 'src/graphql-types';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Head from 'components/Head';
+import Jobs from 'components/Jobs';
 
 interface CareersData extends LayoutData {
   page: GQL.ContentfulPage;
+  jobs: GQL.ContentfulJobConnection;
 }
 
 export interface CareersProps extends LayoutProps {
@@ -23,13 +24,12 @@ const CareersPage = ({ data }: CareersProps) => {
     title: page.pageTitle,
   };
 
+  const jobs = data.jobs.edges.map(({ node }) => node);
+
   return (
     <>
       <SEO {...seo} />
-      <Head
-        type="page"
-        title={page.headerTitle}
-      />
+      <Jobs title={page.headerTitle} items={jobs} />
     </>
   );
 };
@@ -44,6 +44,11 @@ export const pageQuery = graphql`
       node_locale: { eq: $lang }
     ) {
       ...PageFragment
+    }
+    jobs: allContentfulJob(
+      filter: { node_locale: { eq: $lang } }
+    ) {
+      edges { node { ...JobFragment } }
     }
   }
 `;
