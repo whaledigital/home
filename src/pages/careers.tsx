@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import GQL from 'src/graphql-types';
+import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Head from 'components/Head';
@@ -10,6 +11,7 @@ import Jobs from 'components/Jobs';
 interface CareersData extends LayoutData {
   page: GQL.ContentfulPage;
   jobs: GQL.ContentfulJobConnection;
+  dictionaryCareers: GQL.ContentfulDictionaryConnection;
 }
 
 export interface CareersProps extends LayoutProps {
@@ -25,6 +27,7 @@ const CareersPage = ({ data }: CareersProps) => {
     title: page.pageTitle,
   };
 
+  const dictionaryCareers = getDictionary(data.dictionaryCareers.edges);
   const jobs = data.jobs.edges.map(({ node }) => node);
 
   return (
@@ -35,7 +38,7 @@ const CareersPage = ({ data }: CareersProps) => {
         title={page.headerTitle}
         description={page.headerDescription && page.headerDescription.headerDescription}
       />
-      <Jobs items={jobs} />
+      <Jobs items={jobs} buttonTitle={dictionaryCareers.jobDetails} />
     </>
   );
 };
@@ -50,6 +53,14 @@ export const pageQuery = graphql`
       node_locale: { eq: $lang }
     ) {
       ...PageFragment
+    }
+    dictionaryCareers: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        slug: { in: [ "jobDetails" ]
+      }}
+    ) {
+      edges { node { slug title } }
     }
     jobs: allContentfulJob(
       filter: { node_locale: { eq: $lang } }

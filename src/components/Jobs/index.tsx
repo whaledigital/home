@@ -9,6 +9,7 @@ import s from './Jobs.module.scss';
 
 interface JobsProps {
   items: GQL.ContentfulJob[];
+  buttonTitle: string;
 }
 
 const Jobs = (props: JobsProps) => (
@@ -20,7 +21,7 @@ const Jobs = (props: JobsProps) => (
           <h3 className={s.jobs__itemTitle}>{job.title}</h3>
           <p className={s.jobs__itemSalary}>{job.salary}</p>
           <p className={s.jobs__itemShort}>{job.short}</p>
-          <Button title="Details" />
+          <Button title={props.buttonTitle} type="link" to={`/careers/${job.slug}`} />
         </div>
       ))}
     </div>
@@ -38,11 +39,6 @@ export const jobQuery = graphql`
     salary
     office {
       title
-    }
-    description {
-      childMarkdownRemark {
-        html
-      }
     }
   }
 `;

@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const templates = ['servicePage', 'casePage'].reduce(
+    const templates = ['servicePage', 'casePage', 'jobPage'].reduce(
       (mem, templateName) => ({
         ...mem,
         [templateName]: path.resolve(
@@ -75,6 +75,14 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        jobs: allContentfulJob {
+          edges {
+            node {
+              slug
+              node_locale
+            }
+          }
+        }
       }
     `).then(result => {
       if (result.errors) {
@@ -83,6 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       const services = result.data.services.edges.map(p => p.node);
       const cases = result.data.cases.edges.map(p => p.node);
+      const jobs = result.data.jobs.edges.map(p => p.node);
       const { defaultLangKey } = languages;
 
       // Create services pages
@@ -115,6 +124,23 @@ exports.createPages = ({ graphql, actions }) => {
           context: {
             slug: caseItem.slug,
             lang: caseItem.node_locale,
+          },
+        });
+      });
+
+      // Create jobs pages
+      jobs.forEach(jobItem => {
+        const localizedPath =
+          jobItem.node_locale === defaultLangKey
+            ? `/careers/${jobItem.slug}`
+            : `${jobItem.node_locale}/careers/${jobItem.slug}`;
+
+        createPage({
+          path: localizedPath,
+          component: slash(templates.jobPage),
+          context: {
+            slug: jobItem.slug,
+            lang: jobItem.node_locale,
           },
         });
       });
