@@ -5,7 +5,7 @@ import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Contacts from 'components/contacts/Contacts';
+import Contacts from 'components/FormContacts';
 import Head from 'components/Head';
 import Statistics from 'components/Statistics';
 import Gallery from 'components/Gallery';

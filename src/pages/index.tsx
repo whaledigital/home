@@ -9,7 +9,7 @@ import Expertise from 'components/expertise/Expertise';
 import Cases from 'components/cases/Cases';
 import Tiles from 'components/Tiles';
 import Head from 'components/Head';
-import Contacts from 'components/contacts/Contacts';
+import Contacts from 'components/FormContacts';
 
 interface HomeData extends LayoutData {
   cases: GQL.ContentfulCaseConnection;

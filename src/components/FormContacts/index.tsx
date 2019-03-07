@@ -11,8 +11,8 @@ import Bubbles5 from 'assets/svg/bubbles-5.svg';
 import { Dictionary } from 'utils/dictionary';
 import Section from 'components/Section';
 import Button from 'components/button/Button';
+import Input from 'components/Input';
 
-import Input from './components/input/Input';
 import s from './Contacts.module.scss';
 
 function encode (data: { [key: string]: any }) {

@@ -5,7 +5,7 @@ import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
-import Contacts from 'components/contacts/Contacts';
+import Contacts from 'components/FormContacts';
 import OfficeMap from 'components/OfficeMap';
 
 interface ContactsData extends LayoutData {

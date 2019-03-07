@@ -4,7 +4,7 @@ import * as React from 'react';
 import GQL from 'src/graphql-types';
 import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
-import Contacts from 'components/contacts/Contacts';
+import Contacts from 'components/FormContacts';
 import Head from 'components/Head';
 import ServiceSection from 'components/ServiceSection';
 import TechMap from 'components/TechMap';
