@@ -1,12 +1,16 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 
+import { getDictionary } from 'utils/dictionary';
 import Head from 'components/Head';
 import Description from 'components/Description';
 import { withLayout } from 'components/layout/Layout';
+import FormJob from 'components/FormJob';
 
 const JobPage = (props: any) => {
   const { jobItem } = props.data;
+  const dictionaryContacts = getDictionary(props.data.dictionaryContacts.edges);
+
   return (
     <>
       <Head
@@ -17,6 +21,7 @@ const JobPage = (props: any) => {
       <Description>
         {jobItem.description && jobItem.description.childMarkdownRemark.html}
       </Description>
+      <FormJob dictionary={dictionaryContacts} jobTitle={jobItem.title} />
     </>
   );
 };
@@ -40,6 +45,14 @@ export const pageQuery = graphql`
           html
         }
       }
+    }
+    dictionaryContacts: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        category: { eq: "contacts" }
+      }
+    ) {
+      edges { node { slug title } }
     }
   }
 `;

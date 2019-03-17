@@ -13,7 +13,7 @@ import Section from 'components/Section';
 import Button from 'components/button/Button';
 import Input from 'components/Input';
 
-import s from './FormContacts.module.scss';
+import s from './FormJob.module.scss';
 
 function encode (data: { [key: string]: any }) {
   const formData = new FormData();
@@ -23,19 +23,20 @@ function encode (data: { [key: string]: any }) {
   return formData;
 }
 
-interface FormContactsProps {
+interface FormJobProps {
   dictionary: Dictionary;
+  jobTitle?: string;
 }
 
-interface FormContactsState {
+interface FormJobState {
   fields: {
     [key: string]: any;
   };
   showErrors: boolean;
 }
 
-class FormContacts extends React.Component<FormContactsProps, FormContactsState> {
-  state: FormContactsState = {
+class FormJob extends React.Component<FormJobProps, FormJobState> {
+  state: FormJobState = {
     fields: {
       agreement: false,
     },
@@ -93,7 +94,13 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
     const formErrors = validate(this.state.fields, this.constraints);
     const { attachment, ...body } = this.state.fields; // Temporary remove file sending
 
+    if (this.props.jobTitle) {
+      body.jobTitle = this.props.jobTitle;
+    }
+
     if (formErrors) return this.setState({ showErrors: true });
+
+    console.log('body', body);
 
     fetch('/', {
       body: encode({
@@ -109,18 +116,18 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
   render () {
     const { dictionary } = this.props;
     return (
-      <Section title={dictionary.contacts}>
+      <Section title={dictionary.job}>
         <div className={s.contacts} data-aos="fade-up">
           <form
-            name="contact"
+            name="career"
             method="POST"
-            action="/thank-you"
+            action="/thank-you-cv"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
             noValidate
           >
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="career" />
             <div hidden>
               <Input
                 label="Don’t fill this out"
@@ -144,18 +151,6 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
 
                 <div className={s.formItem__gridItem}>
                   <Input
-                    label={dictionary.contactsCompany}
-                    name="company"
-                    onChange={this.handleChange}
-                    showErrors={this.state.showErrors}
-                  />
-                </div>
-
-              </div>
-              <div className={s.formItem__gridContainer}>
-
-                <div className={s.formItem__gridItem}>
-                  <Input
                     type="email"
                     label={dictionary.contactsEmail}
                     name="email"
@@ -165,6 +160,9 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
                     showErrors={this.state.showErrors}
                   />
                 </div>
+
+              </div>
+              <div className={s.formItem__gridContainer}>
 
                 <div className={s.formItem__gridItem}>
                   <Input
@@ -177,24 +175,6 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
                     showErrors={this.state.showErrors}
                   />
                 </div>
-
-              </div>
-              <div className={s.formItem__gridContainer}>
-
-                <div className={s.formItem__gridItem}>
-                  <Input
-                    label={dictionary.contactsMessage}
-                    name="message"
-                    onChange={this.handleChange}
-                    required
-                    multiline
-                    constraints={this.constraints.message}
-                    showErrors={this.state.showErrors}
-                  />
-                </div>
-
-              </div>
-              <div className={s.formItem__gridContainer}>
 
                 <div className={s.formItem__gridItem}>
                   <Dropzone onDrop={this.handleDrop}>
@@ -214,10 +194,10 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
                       >
                         <input {...getInputProps()} />
                         {isDragAccept
-                          ? dictionary.contactsFileDrop
+                          ? dictionary.jobFileDrop
                           : acceptedFiles.length
                             ? acceptedFiles[0].name
-                            : dictionary.contactsFileDrag
+                            : dictionary.jobFileDrag
                         }
                         {
                           !acceptedFiles.length &&
@@ -228,6 +208,21 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
                       </div>
                     )}
                   </Dropzone>
+                </div>
+
+              </div>
+              <div className={s.formItem__gridContainer}>
+
+                <div className={s.formItem__gridItem}>
+                  <Input
+                    label={dictionary.jobMessage}
+                    name="message"
+                    onChange={this.handleChange}
+                    required
+                    multiline
+                    constraints={this.constraints.message}
+                    showErrors={this.state.showErrors}
+                  />
                 </div>
 
               </div>
@@ -279,4 +274,4 @@ class FormContacts extends React.Component<FormContactsProps, FormContactsState>
   }
 }
 
-export default FormContacts;
+export default FormJob;

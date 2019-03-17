@@ -7,11 +7,13 @@ import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Head from 'components/Head';
 import Jobs from 'components/Jobs';
+import FormJob from 'components/FormJob';
 
 interface CareersData extends LayoutData {
   page: GQL.ContentfulPage;
   jobs: GQL.ContentfulJobConnection;
   dictionaryCareers: GQL.ContentfulDictionaryConnection;
+  dictionaryContacts: GQL.ContentfulDictionaryConnection;
 }
 
 export interface CareersProps extends LayoutProps {
@@ -28,6 +30,7 @@ const CareersPage = ({ data }: CareersProps) => {
   };
 
   const dictionaryCareers = getDictionary(data.dictionaryCareers.edges);
+  const dictionaryContacts = getDictionary(data.dictionaryContacts.edges);
   const jobs = data.jobs.edges.map(({ node }) => node);
 
   return (
@@ -39,6 +42,7 @@ const CareersPage = ({ data }: CareersProps) => {
         description={page.headerDescription && page.headerDescription.headerDescription}
       />
       <Jobs items={jobs} buttonTitle={dictionaryCareers.jobDetails} />
+      <FormJob dictionary={dictionaryContacts} />
     </>
   );
 };
@@ -66,6 +70,14 @@ export const pageQuery = graphql`
       filter: { node_locale: { eq: $lang } }
     ) {
       edges { node { ...JobFragment } }
+    }
+    dictionaryContacts: allContentfulDictionary(
+      filter: {
+        node_locale: { eq: $lang },
+        category: { eq: "contacts" }
+      }
+    ) {
+      edges { node { slug title } }
     }
   }
 `;
