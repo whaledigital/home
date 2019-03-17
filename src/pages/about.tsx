@@ -66,7 +66,10 @@ export const pageQuery = graphql`
     }
     statistics: allContentfulStatistics(
       sort: { fields: order },
-      filter: { node_locale: { eq: $lang } }
+      filter: {
+        node_locale: { eq: $lang },
+        category: { eq: "about" }
+      }
     ) {
       edges { node { id title description } }
     }
