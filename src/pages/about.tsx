@@ -36,6 +36,7 @@ const AboutPage = ({ data }: AboutProps) => {
   const dictionaryAbout = getDictionary(data.dictionaryAbout.edges);
   const experts = data.experts.edges;
   const gallery = data.gallery.edges.map(({ node }) => node)[0];
+  const statistics = data.statistics.edges.map(({ node }) => node);
 
   return (
     <>
@@ -45,7 +46,7 @@ const AboutPage = ({ data }: AboutProps) => {
         title={page.headerTitle}
         description={page.headerDescription.headerDescription}
       />
-      <Statistics items={data.statistics.edges} />
+      <Statistics items={statistics} />
       <Gallery gallery={gallery} />
       <Experts title={dictionaryAbout.experts} items={experts} />
       <Contacts dictionary={dictionaryContacts} />

@@ -6,16 +6,16 @@ import Section from 'components/Section';
 import s from './Statistics.module.scss';
 
 interface StatisticsProps {
-  items: GQL.ContentfulStatisticsEdge[];
+  items: GQL.ContentfulStatistics[];
 }
 
 const Statistics = (props: StatisticsProps) => (
   <Section fill="dark">
     <div className={s.statistics}>
-      {props.items && props.items.map(({ node }: GQL.ContentfulStatisticsEdge) => (
-        <div key={node.id} className={s.statistics__item}>
-          <p className={s.statistics__itemTitle}>{node.title}</p>
-          <p className={s.statistics__itemDescription}>{node.description}</p>
+      {props.items && props.items.map((item: GQL.ContentfulStatistics) => (
+        <div key={item.id} className={s.statistics__item}>
+          <p className={s.statistics__itemTitle}>{item.title}</p>
+          <p className={s.statistics__itemDescription}>{item.description}</p>
         </div>
       ))}
     </div>
