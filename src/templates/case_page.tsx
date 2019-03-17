@@ -5,19 +5,17 @@ import * as React from 'react';
 import Section from 'components/Section';
 import Head from 'components/Head';
 import { withLayout } from 'components/layout/Layout';
+import Case from 'components/Case';
 
 const CasePage = (props: any) => {
   const { caseItem } = props.data;
   return (
     <>
       <Head
-        type="page"
-        title={caseItem.title}
-        description={caseItem.description}
+        type="case"
+        background={caseItem.thumbnail.fluid}
       />
-      <Section fill="dark">
-        <Img fixed={caseItem.thumbnail.fixed} />
-      </Section>
+      <Case {...caseItem} />
     </>
   );
 };
@@ -32,9 +30,25 @@ export const pageQuery = graphql`
       title
       description
       thumbnail {
-        fixed(width: 700, height: 300) {
-          ...GatsbyContentfulFixed_noBase64
+        fluid {
+          ...GatsbyContentfulFluid_noBase64
         }
+      }
+      leadText { leadText }
+      task { task }
+      solution { solution }
+      statistics { id title description }
+      imageWeb {
+        id
+        fixed(width: 700) { ...GatsbyContentfulFixed_noBase64 }
+      }
+      imageFull {
+        id
+        fluid { ...GatsbyContentfulFluid_noBase64 }
+      }
+      imageMobile {
+        id
+        fixed(width: 700) { ...GatsbyContentfulFixed_noBase64 }
       }
     }
   }

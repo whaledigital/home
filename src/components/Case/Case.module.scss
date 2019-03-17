@@ -1,0 +1,53 @@
+@import 'config';
+
+.case {
+  &Title {
+    font-size: 3em;
+  }
+
+  &Description {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: $color-grey;
+  }
+
+  &Lead {
+    font-size: 1.3em;
+    color: $color-grey;
+    margin-top: $gutter * 4;
+  }
+
+  &__tiles {
+    @include grid-row($grid-gutter: $gutter * 2);
+
+    margin-top: $gutter * 4;
+
+    @media (min-width: $min-tablet) {
+      @include grid-row($grid-gutter: $gutter * 4);
+    }
+
+    &Item {
+      @include grid-col($width: calc(100% - 40px), $grid-gutter: $gutter * 2);
+
+      margin: 20px;
+      position: relative;
+      background: $color-dark-lighter;
+      padding: $gutter * 2;
+
+      @media (min-width: $min-tablet) {
+        @include grid-col($width: calc(50% - 40px), $grid-gutter: $gutter * 4);
+
+        padding: $gutter * 4;
+      }
+
+      &__title {
+        font-size: 2em;
+        font-weight: 600;
+      }
+
+      &__description {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
