@@ -40,7 +40,7 @@ export const pageQuery = graphql`
       statistics { id title description }
       imageWeb {
         id
-        fixed(width: 700) { ...GatsbyContentfulFixed_noBase64 }
+        fluid { ...GatsbyContentfulFluid_noBase64 }
       }
       imageFull {
         id
@@ -48,7 +48,7 @@ export const pageQuery = graphql`
       }
       imageMobile {
         id
-        fixed(width: 700) { ...GatsbyContentfulFixed_noBase64 }
+        fluid { ...GatsbyContentfulFluid_noBase64 }
       }
     }
   }

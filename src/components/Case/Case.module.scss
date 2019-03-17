@@ -17,6 +17,10 @@
     margin-top: $gutter * 4;
   }
 
+  &Subtitle {
+    font-size: 2.1em;
+  }
+
   &__tiles {
     @include grid-row($grid-gutter: $gutter * 2);
 
@@ -47,6 +51,58 @@
 
       &__description {
         font-size: 0.9em;
+      }
+    }
+  }
+
+  &__slider {
+    &Web {
+      &__item {
+        &Wrapper {
+          border-radius: 7px 7px 0 0;
+          overflow: hidden;
+          background: $color-dark-light;
+          margin: $gutter;
+        }
+
+        &Svg {
+          display: block;
+        }
+
+        &Image {
+          width: 100%;
+        }
+      }
+    }
+
+    &Mobile {
+      &__item {
+        position: relative;
+        padding: calc(100% / 23) calc(100% / 22);
+
+        &Image {
+          width: 100%;
+        }
+
+        &Svg {
+          @include fit;
+        }
+      }
+    }
+
+    &Web,
+    &Mobile {
+      & > *:not(:first-child),
+      & > *:not(:last-child) {
+        margin-right: -15px;
+
+        @media (min-width: $min-tablet) {
+          overflow: initial;
+        }
+      }
+
+      &__item:focus {
+        outline: none;
       }
     }
   }

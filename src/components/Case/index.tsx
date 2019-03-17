@@ -6,6 +6,9 @@ import classNames from 'classnames';
 
 import 'slick-carousel/slick/slick.scss';
 
+import Browser from 'assets/svg/browser.svg';
+import IPhone from 'assets/svg/iphone.svg';
+
 import GQL from 'src/graphql-types';
 import Section from 'components/Section';
 import Link from 'components/Link';
@@ -27,6 +30,42 @@ interface CaseProps {
 
 class Case extends React.Component<CaseProps> {
   render () {
+    const sliderWeb = {
+      className: s.case__sliderWeb,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 420,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+      slidesToShow: 2,
+      speed: 500,
+    };
+
+    const sliderMobile = {
+      className: s.case__sliderMobile,
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 720,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 420,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+      slidesToShow: 3,
+      speed: 500,
+    };
+
     return (
       <>
         <Section>
@@ -46,13 +85,27 @@ class Case extends React.Component<CaseProps> {
         </Section>
         <Statistics items={this.props.statistics} />
         <Section>
-          <h4>Web version</h4>
-          {this.props.imageWeb.map(image => <Img key={image.id} fixed={image.fixed} />)}
+          <Slider {...sliderWeb}>
+            {this.props.imageWeb.map(image => (
+              <div key={image.id} className={s.case__sliderWeb__item}>
+                <div className={s.case__sliderWeb__itemWrapper}>
+                  <Browser width="100%" className={s.case__sliderWeb__itemSvg} />
+                  <Img fluid={image.fluid} className={s.case__sliderWeb__itemImage} />
+                </div>
+              </div>
+            ))}
+          </Slider>
         </Section>
         {this.props.imageFull.map(image => <Img key={image.id} fluid={image.fluid} />)}
         <Section>
-          <h4>Mobile version</h4>
-          {this.props.imageMobile.map(image => <Img key={image.id} fixed={image.fixed} />)}
+          <Slider {...sliderMobile}>
+            {this.props.imageMobile.map(image => (
+              <div key={image.id} className={s.case__sliderMobile__item}>
+                <Img fluid={image.fluid} className={s.case__sliderMobile__itemImage} />
+                <IPhone width="100%" height="100%" className={s.case__sliderMobile__itemSvg} />
+              </div>
+            ))}
+          </Slider>
         </Section>
       </>
     );
