@@ -59,6 +59,29 @@
     }
   }
 
+  &__case {
+    top: 70px;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+
+    &Background {
+      @include fit;
+
+      z-index: 0;
+
+      &__image {
+        height: 100%;
+      }
+
+      &__svg {
+        position: absolute;
+        bottom: 0;
+        fill: $color-dark;
+      }
+    }
+  }
+
   &__page {
     height: 80vh;
     min-height: 400px;

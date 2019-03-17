@@ -104,7 +104,7 @@ class Cases extends React.Component<CasesProps> {
 export default Cases;
 
 export const caseQuery = graphql`
-  fragment CaseFragment on ContentfulCase {
+  fragment CasePreviewFragment on ContentfulCase {
     id
     title
     slug

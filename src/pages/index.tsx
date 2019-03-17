@@ -96,7 +96,7 @@ export const pageQuery = graphql`
       sort: { fields: order },
       filter: { node_locale: { eq: $lang } }
     ) {
-      edges { node { ...CaseFragment } }
+      edges { node { ...CasePreviewFragment } }
     }
     tiles: allContentfulTiles(
       sort: { fields: order },
