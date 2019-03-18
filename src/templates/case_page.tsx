@@ -1,8 +1,6 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import * as React from 'react';
 
-import Section from 'components/Section';
 import Head from 'components/Head';
 import { withLayout } from 'components/layout/Layout';
 import Case from 'components/Case';
@@ -13,7 +11,7 @@ const CasePage = (props: any) => {
     <>
       <Head
         type="case"
-        background={caseItem.thumbnail.fluid}
+        background={caseItem.imageFull ? caseItem.imageFull[0].fluid : caseItem.thumbnail.fluid}
       />
       <Case {...caseItem} />
     </>

@@ -3,6 +3,7 @@
 .case {
   &Title {
     font-size: 3em;
+    margin-top: $gutter * 4;
   }
 
   &Description {
@@ -77,8 +78,12 @@
 
     &Mobile {
       &__item {
-        position: relative;
-        padding: calc(100% / 23) calc(100% / 22);
+        &Wrapper {
+          position: relative;
+          overflow: hidden;
+          padding: calc(100% / 23) calc(100% / 22);
+          margin: $gutter;
+        }
 
         &Image {
           width: 100%;
@@ -104,6 +109,14 @@
       &__item:focus {
         outline: none;
       }
+    }
+  }
+
+  &__full {
+    &Image {
+      min-height: 400px;
+      height: 50vh;
+      overflow: hidden;
     }
   }
 }

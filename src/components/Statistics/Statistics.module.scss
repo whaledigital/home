@@ -42,5 +42,17 @@
         font-size: 1rem;
       }
     }
+
+    &Two {
+      @media (min-width: $min-tablet) {
+        @include grid-col($width: 50%, $grid-gutter: $gutter * 8);
+      }
+    }
+
+    &One {
+      @media (min-width: $min-tablet) {
+        @include grid-col($width: 100%, $grid-gutter: $gutter * 8);
+      }
+    }
   }
 }
