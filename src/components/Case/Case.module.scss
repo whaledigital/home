@@ -114,9 +114,12 @@
 
   &__full {
     &Image {
-      min-height: 400px;
       height: 50vh;
       overflow: hidden;
+
+      & > div {
+        height: 100%;
+      }
     }
   }
 }

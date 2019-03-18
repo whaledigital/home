@@ -23,6 +23,7 @@ interface CaseProps {
   imageWeb: GQL.ContentfulAsset[];
   imageFull: GQL.ContentfulAsset[];
   imageMobile: GQL.ContentfulAsset[];
+  dictionary: { [key: string]: string };
 }
 
 class Case extends React.Component<CaseProps> {
@@ -75,14 +76,14 @@ class Case extends React.Component<CaseProps> {
             {
               this.props.task &&
               <div className={s.case__tilesItem}>
-                <p className={s.case__tilesItem__title}>Task</p>
+                <p className={s.case__tilesItem__title}>{this.props.dictionary.task}</p>
                 <p className={s.case__tilesItem__description}>{this.props.task.task}</p>
               </div>
             }
             {
               this.props.solution &&
               <div className={s.case__tilesItem}>
-                <p className={s.case__tilesItem__title}>Solution</p>
+                <p className={s.case__tilesItem__title}>{this.props.dictionary.solution}</p>
                 <p className={s.case__tilesItem__description}>{this.props.solution.solution}</p>
               </div>
             }
@@ -110,7 +111,7 @@ class Case extends React.Component<CaseProps> {
         {
           this.props.imageFull && this.props.imageFull[1] &&
           <div className={s.case__fullImage}>
-            <Img key={this.props.imageFull[1].id} fluid={this.props.imageFull[1].fluid} />
+            <Img fluid={this.props.imageFull[1].fluid} />
           </div>
         }
         {
