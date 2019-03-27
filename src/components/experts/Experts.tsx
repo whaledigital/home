@@ -71,8 +71,8 @@ export const expertQuery = graphql`
     title
     position
     photo {
-      fluid(maxWidth: 280) {
-        ...GatsbyContentfulFluid_noBase64
+      fluid(maxWidth: 280, quality: 80) {
+        ...GatsbyContentfulFluid_withWebp_noBase64
       }
     }
   }

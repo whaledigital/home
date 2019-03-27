@@ -109,8 +109,8 @@ export const caseQuery = graphql`
     title
     slug
     thumbnail {
-      fluid(maxHeight: 400) {
-        ...GatsbyContentfulFluid_noBase64
+      fluid(maxWidth: 1280, quality: 80) {
+        ...GatsbyContentfulFluid_withWebp_noBase64
       }
     }
     description

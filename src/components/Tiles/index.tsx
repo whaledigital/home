@@ -38,8 +38,8 @@ export const expertQuery = graphql`
   fragment TilesFragment on ContentfulTiles {
     id
     image {
-      fluid(maxWidth: 240) {
-        ...GatsbyContentfulFluid_noBase64
+      fluid(maxWidth: 780, quality: 80) {
+        ...GatsbyContentfulFluid_withWebp_noBase64
       }
     }
   }

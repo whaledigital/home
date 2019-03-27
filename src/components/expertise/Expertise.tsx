@@ -162,8 +162,8 @@ export const expertiseQuery = graphql`
     title
     slug
     image {
-      fluid(maxWidth: 1280) {
-        ...GatsbyContentfulFluid_noBase64
+      fluid(maxWidth: 1280, quality: 80) {
+        ...GatsbyContentfulFluid_withWebp_noBase64
       }
     }
     sections {
