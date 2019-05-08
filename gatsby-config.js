@@ -19,15 +19,6 @@ module.exports = {
     languages,
   },
   plugins: [
-    // Expose `/data` to graphQL layer
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data`,
-      },
-    },
-
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -62,7 +53,15 @@ module.exports = {
 
     // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
-
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['Lato', 'Avenir Next'],
+          urls: ['/fonts/style.css'],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

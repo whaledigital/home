@@ -3,8 +3,8 @@ import Typography from 'typography';
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.666,
-  bodyFontFamily: ['Lato', 'Helvetica Neue', 'serif'],
-  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'sans-serif'],
+  bodyFontFamily: ['Lato'],
+  headerFontFamily: ['Avenir Next'],
 });
 
 // Hot reload typography in development.
