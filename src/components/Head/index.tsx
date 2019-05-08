@@ -14,6 +14,7 @@ interface HeadProps {
   title?: string;
   description?: string;
   button?: string;
+  buttonLink?: string;
   background?: FluidObject;
 }
 
@@ -52,7 +53,7 @@ const renderBackground = (type: HeadType, background?: FluidObject) => {
   return null;
 };
 
-const Head = ({ type, title, description, button, background }: HeadProps) => (
+const Head = ({ type, title, description, button, buttonLink, background }: HeadProps) => (
   <div
     className={classNames(s.heading, {
       [s.heading__home]: type === 'home',
@@ -75,8 +76,8 @@ const Head = ({ type, title, description, button, background }: HeadProps) => (
       </div>
       <div className={s.heading__sub} data-aos="fade-left">
         {
-          button &&
-          <Button title={button} size="large" />
+          button && buttonLink &&
+          <Button title={button} size="large" type="link" to={buttonLink} />
         }
       </div>
     </div>

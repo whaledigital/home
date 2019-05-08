@@ -44,6 +44,7 @@ const Home: React.SFC<HomeProps> = ({ data }) => {
         type="home"
         title={page.headerDescription.headerDescription}
         button={dictionaryHome.startProject}
+        buttonLink={`/contacts`}
       />
       <Expertise title={dictionaryHome.expertise} items={services} />
       <Cases title={dictionaryHome.cases} items={cases} />
