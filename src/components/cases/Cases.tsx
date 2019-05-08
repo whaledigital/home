@@ -23,6 +23,7 @@ const NextArrow = (props: CustomArrowProps) => (
     className={classNames(s.cases__arrow, s.cases__arrowNext)}
     onClick={props.onClick}
     data-aos="fade-left"
+    data-aos-offset="-100"
   >
     <IconNext />
   </div>
@@ -33,6 +34,7 @@ const PrevArrow = (props: CustomArrowProps) => (
     className={classNames(s.cases__arrow, s.cases__arrowPrev)}
     onClick={props.onClick}
     data-aos="fade-right"
+    data-aos-offset="-100"
   >
     <IconPrev />
   </div>
