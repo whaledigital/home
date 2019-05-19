@@ -6,13 +6,13 @@ import { getDictionary } from 'utils/dictionary';
 import { LayoutData, LayoutProps, withLayout } from 'components/layout/Layout';
 import { SEO } from 'components/seo/SEO';
 import Expertise from 'components/expertise/Expertise';
-import Cases from 'components/cases/Cases';
+// import Cases from 'components/cases/Cases';
 import Tiles from 'components/Tiles';
 import Head from 'components/Head';
 import Contacts from 'components/FormContacts';
 
 interface HomeData extends LayoutData {
-  cases: GQL.ContentfulCaseConnection;
+  // cases: GQL.ContentfulCaseConnection;
   tiles: GQL.ContentfulTilesConnection;
   services: GQL.ContentfulServiceConnection;
   page: GQL.ContentfulPage;
@@ -28,7 +28,7 @@ const Home: React.SFC<HomeProps> = ({ data }) => {
   const { page } = data;
   const services = data.services.edges;
   const tiles = data.tiles.edges;
-  const cases = data.cases.edges;
+  // const cases = data.cases.edges;
   const dictionaryHome = getDictionary(data.dictionaryHome.edges);
   const dictionaryContacts = getDictionary(data.dictionaryContacts.edges);
   const seo = {
@@ -47,7 +47,7 @@ const Home: React.SFC<HomeProps> = ({ data }) => {
         buttonLink={`/contacts`}
       />
       <Expertise title={dictionaryHome.expertise} items={services} />
-      <Cases title={dictionaryHome.cases} items={cases} />
+      {/* <Cases title={dictionaryHome.cases} items={cases} /> */}
       <Tiles title={dictionaryHome.clients} items={tiles} />
       <Contacts dictionary={dictionaryContacts} />
     </>
@@ -70,7 +70,7 @@ export const pageQuery = graphql`
         node_locale: { eq: $lang },
         slug: { in: [
           "expertise",
-          "cases",
+          # "cases",
           "contacts",
           "clients",
           "startProject"
@@ -93,12 +93,12 @@ export const pageQuery = graphql`
     ) {
       edges { node { ...ServiceFragment } }
     }
-    cases: allContentfulCase(
-      sort: { fields: order },
-      filter: { node_locale: { eq: $lang } }
-    ) {
-      edges { node { ...CasePreviewFragment } }
-    }
+    # cases: allContentfulCase(
+    #   sort: { fields: order },
+    #   filter: { node_locale: { eq: $lang } }
+    # ) {
+    #   edges { node { ...CasePreviewFragment } }
+    # }
     tiles: allContentfulTiles(
       sort: { fields: order },
       filter: { node_locale: { eq: $lang } }
